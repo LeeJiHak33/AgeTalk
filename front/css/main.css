@@ -13,6 +13,7 @@
   a {
     text-decoration: none;
   }
+  
   ul {
     list-style: none;
   }  
@@ -21,6 +22,7 @@
     color: #fff;
     font-size: 48px;
   }
+
 body{
     margin: 0 auto;
 }
