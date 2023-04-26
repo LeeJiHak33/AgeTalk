@@ -1,0 +1,71 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "NotoSansKR"; /* 사용하고 싶은 font-family명을 지정 */
+  src: url("../font/NotoSansKR-Regular.otf") format("opentype"); /* 폰트파일 불러오기 */
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "NotoSansKR", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  padding: 0 50px;
+  width: 100%;
+  height: 100px;
+  display: flex;
+}
+header .logo_wrap {
+  height: 100%;
+}
+header .logo_wrap a {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+header .logo_wrap a img {
+  width: 120px;
+  height: 90%;
+  object-fit: contain;
+}
+header .menu_wrap {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+header .menu_wrap .menu_list {
+  display: flex;
+  width: 300px;
+}
+header .menu_wrap .menu_list li {
+  width: 90px;
+  margin-right: 15px;
+}
+header .menu_wrap .menu_list li a {
+  display: block;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+}
+header .menu_wrap .menu_list li:last-child {
+  margin-right: 0px;
+}
+header .login_wrap {
+  width: 150px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+header .login_wrap a {
+  color: #fff;
+}
