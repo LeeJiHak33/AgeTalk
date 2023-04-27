@@ -25,10 +25,10 @@ header {
     margin: 0 auto;
     .menu_list {
       display: flex;
-      width: 360px;
+      width: 420px;
 
       li {
-        width: calc((360px - 90px) / 3);
+        width: calc((420px - 90px) / 3);
         margin-right: 45px;
         a {
           display: block;
@@ -48,7 +48,7 @@ header {
     height: 100%;
     display: flex;
     align-items: center;
-
+    justify-content: right;
     a {
       color: #fff;
       border: 2px solid #e0ceb3;
