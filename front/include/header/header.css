@@ -1,3 +1,4 @@
+
 header {
   padding: 0 50px;
   width: 100%;
@@ -52,5 +53,6 @@ header .login_wrap a {
   color: #fff;
   border: 2px solid #e0ceb3;
   border-radius: 50px;
-  padding: 10px 30px;
+  padding: 10px 35px;
+  font-size: 15px;
 }

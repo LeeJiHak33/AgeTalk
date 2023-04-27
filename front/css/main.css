@@ -1,4 +1,10 @@
 
+@font-face {
+    font-family: "NotoSansKR-Black"; /* 사용하고 싶은 font-family명을 지정 */
+    src: url("../font/NotoSansKR-Black.otf") format("opentype"); /* 폰트파일 불러오기 */
+  }
+  
+
 body{
     margin: 0 auto;
 }
@@ -21,17 +27,20 @@ body{
 
 .bg_img h1{
     color: #fff;
-    font-size: 65px;
-    margin-left: 50px;
-    margin-top: 10%;
+    font-size: 50px;
+    font-family: "NotoSansKR-Black";
+    margin-left: 260px;
+    margin-top: 5%;
+    line-height: 65px;
   }
 
 .bg_img p{
     color: #fff;
-    font-size: 22px;
-    margin-left: 50px;
+    font-size: 18px;
+    margin-left: 260px;
     margin-top: 25px;
     opacity: 70%;
+    line-height: 25px;
 }
 .main_sub {
     height: 1024px;
