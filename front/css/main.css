@@ -124,7 +124,9 @@ body{
     text-align: center;
     margin-top: 35px;
     line-height: 40px;
+    letter-spacing: -1px;
     color: #b0b0b0;
+    opacity: 70%;
 }
 
 .carousel-wrapper{
