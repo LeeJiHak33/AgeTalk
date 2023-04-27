@@ -1,6 +1,7 @@
 header {
   padding: 0 50px;
   width: 100%;
+  min-width: 1400px;
   height: 100px;
   display: flex;
   font-size: 19px;
@@ -24,11 +25,11 @@ header {
     margin: 0 auto;
     .menu_list {
       display: flex;
-      width: 300px;
+      width: 360px;
 
       li {
-        width: calc((300px - 30px) / 3);
-        margin-right: 15px;
+        width: calc((360px - 90px) / 3);
+        margin-right: 45px;
         a {
           display: block;
           width: 100%;
@@ -42,13 +43,16 @@ header {
     }
   }
   .login_wrap {
-    width: 150px;
+    width: 200px;
     height: 100%;
     display: flex;
     align-items: center;
 
     a {
       color: #fff;
+      border: 1px solid #e0ceb3;
+      border-radius: 50px;
+      padding: 10px 20px;
     }
   }
 }
