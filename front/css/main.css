@@ -1,4 +1,10 @@
 
+@font-face {
+    font-family: "NotoSansKR-Black"; /* 사용하고 싶은 font-family명을 지정 */
+    src: url("../font/NotoSansKR-Black.otf") format("opentype"); /* 폰트파일 불러오기 */
+  }
+  
+
 body{
     margin: 0 auto;
 }
@@ -21,17 +27,20 @@ body{
 
 .bg_img h1{
     color: #fff;
-    font-size: 65px;
-    margin-left: 50px;
+    font-size: 54px;
+    font-family: "NotoSansKR-Bold";
+    margin-left: 260px;
     margin-top: 10%;
+    line-height: 65px;
   }
 
 .bg_img p{
     color: #fff;
-    font-size: 22px;
-    margin-left: 50px;
+    font-size: 19px;
+    margin-left: 260px;
     margin-top: 25px;
     opacity: 70%;
+    line-height: 25px;
 }
 .main_sub {
     height: 1024px;
@@ -47,17 +56,160 @@ body{
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background-color: #999999;
+    background-color: rgba( 255, 255, 255, 0.6 );
+    border: 2px solid rgba( 200, 200, 200, 0.7 ); 
     opacity: 100%;
+    box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.25);
     position: fixed;
-    left: 1750px;
-    top: 830px;
+    left: 92%;
+    top: 84%;
 }
 
 .circle img{
     width: 50px;
     height: 43px;
     position: relative;
-    top: 23px;
-    left: 15px;
+    top: 21px;
+    left: 14px;
+}
+
+.scroll-downs {
+    position: absolute;
+    top: 88%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    
+    width :34px;
+    height: 55px;
+  }
+
+  .mousey {
+    width: 3px;
+    padding: 10px 15px;
+    height: 35px;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    opacity: 0.7;
+    box-sizing: content-box;
+  }
+
+  .scroller {
+    width: 3px;
+    height: 10px;
+    border-radius: 25%;
+    background-color: #fff;
+    animation-name: scroll;
+    animation-duration: 2.2s;
+    animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes scroll {
+    0% { opacity: 0; }
+    10% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(15px); opacity: 0;}
+  }
+
+  
+.main_sub h2{
+    font-family: "NotoSansKR-Bold";
+    font-size: 42px;
+    margin-top: 40px;
+}
+
+.main_sub p{
+    font-size: 24px;
+    text-align: center;
+    margin-top: 35px;
+    line-height: 40px;
+    letter-spacing: -1px;
+    color: #b0b0b0;
+    opacity: 70%;
+}
+
+.carousel-wrapper{
+    width: 1000px;
+    height: 600px;
+    text-align: center;
+    background-color: #ccc;
+    border: 1px solid #ccc;
+    margin: auto;
+    margin-top: 50px;
+    overflow: hidden;
+}
+
+.carousel-wrapper > .carousel {
+    display: flex;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.2s;
+}
+
+.carousel-wrapper > .carousel > img{
+    width: 1000px;
+    height: 600px;
+}
+
+.prev {
+    margin: 0 auto;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    position:relative;
+    bottom: 320px;
+    left: 18%;
+    font-size: 25px;
+    border: none;
+}
+
+.prev:hover{
+    background-color: #e2e2e2;
+}
+
+.next {
+    margin: 0 auto;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    position:relative;
+    bottom: 320px;
+    left: 75%;
+    border: none;
+}
+
+.next:hover{
+    background-color: #e2e2e2;
+}
+
+.arrow-prev,
+.arrow-next {
+    position: relative;
+    float:left;
+    margin-right:5px;
+}
+
+.arrow-prev::after {
+    position: absolute;
+    left: 28px; 
+    top: -5px;
+    content: '';
+    width: 10px; /* 사이즈 */
+    height: 10px; /* 사이즈 */
+    border-top: 3px solid #a0a0a0; /* 선 두께 */
+    border-right: 3px solid #a0a0a0; /* 선 두께 */
+    transform: rotate(225deg); /* 각도 */
+}
+
+
+.arrow-next::after {
+    position: absolute;
+    left: 24px; 
+    top: -5px; 
+    content: '';
+    width: 10px; /* 사이즈 */
+    height: 10px; /* 사이즈 */
+    border-top: 3px solid #a0a0a0; /* 선 두께 */
+    border-right: 3px solid #a0a0a0; /* 선 두께 */
+    transform: rotate(45deg); /* 각도 */
 }
