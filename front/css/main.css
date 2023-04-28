@@ -115,15 +115,14 @@ body{
   
 .main_sub h2{
     font-family: "NotoSansKR-Bold";
-    font-size: 42px;
-    margin-top: 40px;
+    font-size: 36px;
 }
 
 .main_sub p{
-    font-size: 24px;
+    font-size: 22px;
     text-align: center;
     margin-top: 35px;
-    line-height: 40px;
+    line-height: 35px;
     letter-spacing: -1px;
     color: #b0b0b0;
     opacity: 70%;
@@ -143,7 +142,7 @@ body{
 .carousel-wrapper > .carousel {
     display: flex;
     transform: translate3d(0, 0, 0);
-    transition: transform 0.2s;
+    transition: transform 0.3s;
 }
 
 .carousel-wrapper > .carousel > img{
@@ -201,7 +200,6 @@ body{
     transform: rotate(225deg); /* 각도 */
 }
 
-
 .arrow-next::after {
     position: absolute;
     left: 24px; 
@@ -213,3 +211,18 @@ body{
     border-right: 3px solid #a0a0a0; /* 선 두께 */
     transform: rotate(45deg); /* 각도 */
 }
+
+.sub_grid{
+    display: flex;
+    padding: 0px 260px;
+}
+
+.sub_grid > div{
+    margin-right: 70px;
+    width: 420px;
+    border: 1px solid #ccc;
+}
+
+.sub_grid > div:nth-child(3) {
+    margin: 0;
+  }
