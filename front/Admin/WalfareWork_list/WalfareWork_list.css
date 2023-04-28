@@ -5,4 +5,11 @@
 .layout .banner {
   width: 100%;
   height: 400px;
+  background: url("/image/sub_img_1.jpg") no-repeat center;
+  background-size: cover;
+}
+
+header {
+  position: absolute;
+  top: 0;
 }
