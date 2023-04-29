@@ -6,6 +6,8 @@ footer {
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  position: absolute;
+  bottom: 0;
 }
 footer .footer_wrap {
   margin: 0 auto;

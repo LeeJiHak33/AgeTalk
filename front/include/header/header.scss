@@ -7,13 +7,14 @@ header {
   font-size: 19px;
   .logo_wrap {
     height: 100%;
+    width: 220px;
     a {
       height: 100%;
-      width: 100%;
+      width: 140px;
       display: flex;
       align-items: center;
       img {
-        width: 140px;
+        width: 100%;
         height: 90%;
         object-fit: contain;
       }
@@ -51,7 +52,7 @@ header {
     justify-content: right;
     a {
       color: #fff;
-      border: 2px solid #ffff;
+      border: 1px solid #ffff;
       font-size: 15px;
       border-radius: 50px;
       padding: 10px 35px;
