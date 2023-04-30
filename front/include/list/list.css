@@ -9,7 +9,9 @@
 body{
   background: #ffffff;
   margin: 0 auto;
-  height: 100%;
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
   
 
@@ -69,10 +71,22 @@ body{
   }
   .manage_list th{
     padding: 1em 0.5em;
+    text-align: center;
   }
   .manage_list td{
     position: relative; 
     width:16.6666666667%;
     padding: 1em 0.5em;
+    text-align: center;
   }
-  
+  .del_btn{
+    border: 1px #fe8e8d;
+    padding:5px;
+    background-color: #fe8e8d;
+    color:white;
+		border-top-left-radius: 5px;
+     border-bottom-left-radius: 5px;
+      border-top-right-radius: 5px;
+       border-bottom-right-radius: 5px;
+
+  }
