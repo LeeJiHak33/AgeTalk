@@ -52,15 +52,7 @@ progress {
 	border-radius: 2px;
   }
   
-  span {
-	
-	width: 30%;
-	
-	transform: translate(-50%, -50%);
-	color: #939292;
-	font-size: 0.6em;
-	font-weight: bold;
-  }
+
   .manage_list{
   padding-top: 100px;
   width: 80%;
@@ -69,3 +61,4 @@ progress {
   text-align: center;
   font-family: "NotoSansKR-Bold";
   }
+  
