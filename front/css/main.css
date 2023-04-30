@@ -38,7 +38,7 @@ body{
 
 }
 
-.bg_img h1{
+.bg_img > .main_title{
     color: #fff;
     font-size: 54px;
     font-family: "NotoSansKR-Bold";
@@ -48,7 +48,7 @@ body{
     animation: ani-txt 1s forwards;
   }
 
-.bg_img p{
+.bg_img > .main_subtitle{
     color: #fff;
     font-size: 19px;
     margin-left: 260px;
@@ -98,6 +98,10 @@ body{
     position: fixed;
     left: 92%;
     top: 84%;
+}
+
+.circle:hover {
+    background-color: rgba( 245, 245, 245, 0.5 );
 }
 
 .circle img{
@@ -276,3 +280,47 @@ body{
     color: #777777;
     padding-top: 20px;
 }
+
+.modal-header{
+    margin: 0px 30px;
+  }
+
+  .modal-head{
+    margin-top: 50px;
+  }
+  .modal-body{
+    margin: 40px 30px;
+  }
+
+  .modal-footer{
+    margin: 40px 30px;
+  }
+
+  .nickname{
+    margin: 0;
+    margin-top: 10px;
+  }
+
+  .modal-body{
+    margin: 0;
+  }
+
+  .modal-footer{
+    margin-top: 0;
+  }
+
+  .info{
+    margin-top: 20px;
+  }
+
+  .modal-notice{
+    margin: 0 30px;
+    margin-top: 20px;
+    padding: 0 16px;
+  }
+
+  .notice_title{
+    margin-left: 20px;
+  }
+
+
