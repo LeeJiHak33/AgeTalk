@@ -36,7 +36,7 @@ body{
     background-image: url("../image/main-background-dark.jpg");
     background-repeat: no-repeat;
     background-position: center center;
-
+    min-width: 1400px;
 }
 
 .bg_img h1{
@@ -61,12 +61,10 @@ body{
 }
 
 
-.item{
-    box-sizing: border-box;
-}
 
 .main_sub {
     height: 1080px;
+    width: 1920px;
 }
 
 
@@ -177,9 +175,9 @@ body{
     width: 65px;
     height: 65px;
     border-radius: 50%;
-    position:relative;
+    position: relative;
     bottom: 320px;
-    left: 18%;
+    left: 330px;
     font-size: 25px;
     border: none;
 }
@@ -195,7 +193,7 @@ body{
     border-radius: 50%;
     position:relative;
     bottom: 320px;
-    left: 75%;
+    left: 1440px;
     border: none;
 }
 
@@ -249,6 +247,11 @@ body{
     border-left: none;
     border-right: none;
     padding-top: 75px;
+}
+
+.item{
+    box-sizing: border-box;
+    min-width: 420px;
 }
 
 .sub_grid > div:nth-child(3) {
