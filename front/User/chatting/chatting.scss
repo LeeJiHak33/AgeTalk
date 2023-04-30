@@ -39,22 +39,121 @@ header {
 .layout {
   width: 100%;
   height: 100%;
-  .date_wrap {
+  position: relative;
+  .search_wrap {
+    display: none;
+    position: absolute;
+    top: 0;
     width: 100%;
-    height: 70px;
+    height: 50px;
+    background: #f8f5f5;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    .search_inner {
+      width: calc(100% - (20px * 4 + 50px));
+      height: 100%;
+      .search_form {
+        background: #ffff;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        .search_icon {
+          display: block;
+          width: 20px;
+          height: 20px;
+          margin: 0 5px;
+          background: url(/image/icon/inner_search.png) no-repeat center;
+          background-size: cover;
+        }
+        .inner_search {
+          width: calc(100% - 30px);
+          font-size: 16px;
+          border: none;
+          padding: 5px;
+        }
+      }
+    }
+    button {
+      width: 20px;
+      height: 20px;
+      margin-left: 10px;
+      border: none;
+      cursor: pointer;
+    }
+    .up_btn {
+      background: url(/image/icon/up.png) no-repeat center;
+      background-size: cover;
+    }
+    .down_btn {
+      background: url(/image/icon/down.png) no-repeat center;
+      background-size: cover;
+    }
+    .calendar {
+      background: url(/image/icon/calendar.png) no-repeat center;
+      background-size: cover;
+    }
+    .close {
+      background: url(/image/icon/close.png) no-repeat center;
+      background-size: cover;
+      margin-left: 20px;
+    }
+  }
+  .chatting_list {
+    width: 100%;
+    height: 100%;
+    .date_wrap {
+      width: 100%;
+      height: 70px;
+      display: flex;
+      justify-content: center;
 
-    .date {
-      width: auto;
-      height: auto;
+      .date {
+        width: auto;
+        height: auto;
+        display: flex;
+        align-items: center;
+        p {
+          background-color: rgba(213, 213, 213, 0.4);
+          padding: 5px 30px;
+          border-radius: 25px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .chatting_input_wrap {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    height: 60px;
+    border-top: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+    background-color: #fff;
+
+    .chatting_form {
+      width: 100%;
+      height: 100%;
       display: flex;
       align-items: center;
-      p {
-        background-color: rgba(213, 213, 213, 0.4);
-        padding: 5px 30px;
+      padding: 0 20px;
+      .chatting {
+        width: calc(100% - 40px);
+        border: 1px solid #999999;
         border-radius: 25px;
-        font-size: 14px;
+        font-size: 16px;
+        padding: 5px 10px;
+      }
+      .chatting_btn {
+        width: 30px;
+        height: 30px;
+        background: url(/image/icon/chatting_btn.png) no-repeat center;
+        background-size: cover;
+        border: none;
+        margin-left: 10px;
       }
     }
   }
