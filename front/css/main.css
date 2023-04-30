@@ -272,13 +272,13 @@ body{
 .sub_title{
     font-size: 30px;
     line-height: 40px;
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 .sub_content{
     font-size: 18px;
     color: #777777;
-    padding-top: 20px;
+    padding-top: 15px;
 }
 
 .modal-header{
@@ -290,23 +290,17 @@ body{
   }
   .modal-body{
     margin: 40px 30px;
+    margin: 0;
   }
 
   .modal-footer{
     margin: 40px 30px;
+    margin-top: 0;
   }
 
   .nickname{
     margin: 0;
-    margin-top: 10px;
-  }
-
-  .modal-body{
-    margin: 0;
-  }
-
-  .modal-footer{
-    margin-top: 0;
+    margin-top: 20px;
   }
 
   .info{
@@ -323,4 +317,45 @@ body{
     margin-left: 20px;
   }
 
+#ModalLabel{
+    font-size: 23px;
+    font-family: "NotoSansKR-Bold";
+}
 
+  .btn_out{
+    background-color: #fe8e8d;
+    border: none;
+    border-radius: 30px;
+    width: 105px;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    margin-left: 10px;
+  }
+
+  .btn_out:hover{
+    background-color: #f48382;
+  }
+
+  .btn_update{
+    background-color: #ffdd67;
+    border: none;
+    border-radius: 30px;
+    width: 105px;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+  }
+
+  .btn_update:hover{
+    background-color: #f7d664;
+  }
+
+  .modal_btns{
+    padding-top: 30px;
+  }
+
+  .text_gray{
+    color: #999999;
+    opacity: 80%;
+  }
