@@ -18,6 +18,10 @@
     .modal-dialog{
     width: 700px;
   }
+
+  .modal-content{
+    border-radius: 45px;
+  }
 </style>
 </head>
 
@@ -48,23 +52,23 @@
                   </a>
                 </div>
                 <!-- Modal -->
-                <div class="modal fade" id="MyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="MyModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                       <div class="modal-head">
                       <div class="modal-header">
-                        <p class="modal-title text-dark" id="exampleModalLabel">마이페이지</p>
+                        <p class="modal-title text-dark" id="ModalLabel">마이페이지</p>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-header">
                         <p class="modal-title text-dark">{닉네임}님의 마이페이지 입니다.</p>
                       </div>
                       <div class="modal-header" style="display: block;">
-                        <p class="modal-title text-secondary">프로필</p>
+                        <p class="modal-title text_gray">프로필</p>
                         <p class="text-dark nickname">{닉네임}</p>
                       </div>
                       <div class="modal-header" style="display: block;">
-                        <p class="modal-title text-secondary">계정 정보</p>
+                        <p class="modal-title text_gray">계정 정보</p>
                         <div class="info">
                         <p class="text-dark">이름 : {이름}</p>
                         <p class="text-dark">휴대폰 : 010-1234-5678</p>
@@ -75,16 +79,18 @@
                       </div>
                     </div>
                       <div class="modal-notice" style="display: flex; justify-content: flex-start;">
-                        <p class="text-secondary">공지사항</p><p class="notice_title">{공지사항 제목}</p><p style="margin-left: auto;">></p>
+                        <p class="text_gray">공지사항</p><p class="notice_title">{공지사항 제목}</p><p style="margin-left: auto;">></p>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-warning">정보수정</button>
-                        <button type="button" class="btn btn-danger">회원탈퇴</button>
+                        <div class="modal_btns">
+                          <button type="button" class="btn_update">정보수정</button>
+                          <button type="button" class="btn_out">회원탈퇴</button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </header>
+            </header>
 
                 <h1 class="main_title">청년과 노년이 함께하는<br/>따뜻한 문화 교류의 공간</h1>
                 <p class="main_subtitle">문화적 다양성을 누리고 새로운 인연을 만나는 곳,<br/>AgeTalk에서 시작해보세요!</p>
