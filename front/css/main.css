@@ -23,7 +23,7 @@ body{
 .main {
     position: relative;
     height: 100%;
-    width: 1920px;
+    width: 100%;
 }
 
 .bg_img{
@@ -38,7 +38,7 @@ body{
 
 }
 
-.bg_img h1{
+.bg_img > .main_title{
     color: #fff;
     font-size: 54px;
     font-family: "NotoSansKR-Bold";
@@ -48,7 +48,7 @@ body{
     animation: ani-txt 1s forwards;
   }
 
-.bg_img p{
+.bg_img > .main_subtitle{
     color: #fff;
     font-size: 19px;
     margin-left: 260px;
@@ -63,7 +63,7 @@ body{
 
 .main_sub {
     height: 100%;
-    width: 1920px;
+    width: 100%;
 
 }
 
@@ -98,6 +98,10 @@ body{
     position: fixed;
     left: 92%;
     top: 84%;
+}
+
+.circle:hover {
+    background-color: rgba( 245, 245, 245, 0.5 );
 }
 
 .circle img{
@@ -177,7 +181,7 @@ body{
     border-radius: 50%;
     position: relative;
     bottom: 320px;
-    left: 330px;
+    left: 16%;
     font-size: 25px;
     border: none;
 }
@@ -193,7 +197,7 @@ body{
     border-radius: 50%;
     position:relative;
     bottom: 320px;
-    left: 1440px;
+    left: 77%;
     border: none;
 }
 
@@ -238,7 +242,7 @@ body{
     margin-bottom: 150px;
     margin-top: 100px;
     height: 100%;
-    width: 1920px;
+    width: 100%;
 }
 
 .sub_grid > div{
@@ -276,3 +280,47 @@ body{
     color: #777777;
     padding-top: 20px;
 }
+
+.modal-header{
+    margin: 0px 30px;
+  }
+
+  .modal-head{
+    margin-top: 50px;
+  }
+  .modal-body{
+    margin: 40px 30px;
+  }
+
+  .modal-footer{
+    margin: 40px 30px;
+  }
+
+  .nickname{
+    margin: 0;
+    margin-top: 10px;
+  }
+
+  .modal-body{
+    margin: 0;
+  }
+
+  .modal-footer{
+    margin-top: 0;
+  }
+
+  .info{
+    margin-top: 20px;
+  }
+
+  .modal-notice{
+    margin: 0 30px;
+    margin-top: 20px;
+    padding: 0 16px;
+  }
+
+  .notice_title{
+    margin-left: 20px;
+  }
+
+
