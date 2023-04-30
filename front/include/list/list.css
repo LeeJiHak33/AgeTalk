@@ -3,23 +3,30 @@
 @font-face {
     font-family: "NotoSansKR-Black"; /* 사용하고 싶은 font-family명을 지정 */
     src: url("../font/NotoSansKR-Black.otf") format("opentype"); /* 폰트파일 불러오기 */
+    src: url("../font/NotoSerifKR-Bold.otf") format("opentype");
   }
   
+body{
+  background: #ffffff;
+  margin: 0 auto;
+  height: 100%;
+}
+  
+
 .tle {
     position: relative;
-    height: 100%;
+
     width: 100%;
 }
 
 .sub_image{
     max-width: 100%;
-    height: 100vh;
+    height: 400px;
     margin: 0 auto;
     background-size: cover;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../image/sub_img_2.jpg");
-
     background-repeat: no-repeat;
-	max-height: 300px;
+	  max-height: 400px;
 	position: relative;
 	
 	
@@ -27,8 +34,8 @@
 	  .sub_image  h1{
 		color: #fff;
 		font-size: 54px;
-		font-family: "NotoSansKR-Bold";
-		margin-left: 40%;
+		font-family: "NotoSerifKR-Bold";
+		margin-left: 47%;
 		margin-top: 3%;
 		line-height: 65px;
 	  }
@@ -42,18 +49,23 @@
 	position: relative;
 	height: 2em;
 	margin: 0;
-  padding: -1em;
  }
-
+  
+ .sub_tle {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
  
 
   .manage_list{
   padding-top: 100px;
   width: 80%;   
   position: relative; 
-  left: 8%;
   text-align: center;
   font-family: "NotoSansKR-Bold";
+  margin: 0 auto;
+  
   }
   .manage_list th{
     padding: 1em 0.5em;
