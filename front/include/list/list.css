@@ -1,45 +1,58 @@
-@charset "UTF-8";
+@font-face {
+  font-family: "NotoSansKR"; /* 사용하고 싶은 font-family명을 지정 */
+  src: url("../../font/NotoSansKR/NotoSansKR-Regular.otf/NotoSansKR/NotoSansKR-Regular.otf") format("opentype"); /* 폰트파일 불러오기 */
+}
+@font-face {
+  font-family: "NotoSansKR-Bold"; /* 사용하고 싶은 font-family명을 지정 */
+  src: url("../../font/NotoSansKR/NotoSansKR-Bold.otf/NotoSansKR/NotoSansKR-Bold.otf") format("opentype"); /* 폰트파일 불러오기 */
+}
 
 @font-face {
-    font-family: "NotoSansKR-Black"; /* 사용하고 싶은 font-family명을 지정 */
-    src: url("../font/NotoSansKR-Black.otf") format("opentype"); /* 폰트파일 불러오기 */
-    src: url("../font/NotoSerifKR-Bold.otf") format("opentype");
-  }
+  font-family: "NotoSansKR-Black"; /* 사용하고 싶은 font-family명을 지정 */
+  src: url("../../font/NotoSansKR/NotoSansKR-Black.otf/NotoSansKR/NotoSansKR-Black.otf") format("opentype"); /* 폰트파일 불러오기 */
+}
+@font-face {
+  font-family: "NotoSerifKR-Regular"; /* 사용하고 싶은 font-family명을 지정 */
+  src: url("../../font/NotoSerifKR/NotoSerifKR-Regular.otf") format("opentype"); /* 폰트파일 불러오기 */
+}
+@font-face {
+  font-family: "NotoSerifKR-Bold"; /* 사용하고 싶은 font-family명을 지정 */
+  src: url("../../font/NotoSerifKR/NotoSerifKR-Bold.otf/NotoSerifKR/NotoSerifKR-Bold.otf") format("opentype"); /* 폰트파일 불러오기 */
+}
+@font-face {
+  font-family: "NotoSerifKR-Black"; /* 사용하고 싶은 font-family명을 지정 */
+  src: url("../../font/NotoSerifKR/NotoSerifKR-Black.otf/NotoSerifKR/NotoSerifKR-Black.otf") format("opentype"); /* 폰트파일 불러오기 */
+}
+
   
 body{
-  background: #ffffff;
-  margin: 0 auto;
-    position: relative;
-    width: 100%;
-    height: 100%;
+background: #ffffff;
+margin: 0 auto;
+width: 100%;
+height: 100%;
 }
   
 
 .tle {
-    position: relative;
-
-    width: 100%;
+position: relative;
+width: 100%;
 }
 
 .sub_image{
-    max-width: 100%;
-    height: 400px;
-    margin: 0 auto;
-    background-size: cover;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../image/sub_img_2.jpg");
-    background-repeat: no-repeat;
-	  max-height: 400px;
-	position: relative;
+  width: 100%;
+  min-width: 100%;
+  height: 400px;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../../image/sub_img_2.jpg") no-repeat;
+  background-size: cover;
+}
 	
-	
-	  }
-	  .sub_image  h1{
-		color: #fff;
-		font-size: 54px;
-		font-family: "NotoSerifKR-Bold";
-		margin-left: 47%;
-		margin-top: 3%;
-		line-height: 65px;
+	  .sub_image h1{		
+    padding-top: 130px;
+    text-align: center;
+    font-family: "NotoSerifKR-Regular";
+    color: #fff;
+    font-size: 53px;
 	  }
 
 .full header {
@@ -59,7 +72,24 @@ body{
   width: 100%;
 }
  
-
+  .youth_list{
+  padding-top: 100px;
+  width: 80%;   
+  position: relative; 
+  text-align: center;
+  font-family: "NotoSansKR-Bold";
+  margin: 0 auto;
+  }
+  .youth_list th{
+    padding: 1em 0.5em;
+    text-align: center;
+  }
+  .youth_list td{
+    position: relative; 
+    width:16.6666666667%;
+    padding: 1em 0.5em;
+    text-align: center;
+  }
   .manage_list{
   padding-top: 100px;
   width: 80%;   
@@ -84,9 +114,6 @@ body{
     padding:5px;
     background-color: #fe8e8d;
     color:white;
-		border-top-left-radius: 5px;
-     border-bottom-left-radius: 5px;
-      border-top-right-radius: 5px;
-       border-bottom-right-radius: 5px;
+		border-radius: 5px;
 
   }
