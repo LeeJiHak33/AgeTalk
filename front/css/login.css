@@ -46,6 +46,10 @@ body {
   padding-bottom: 10px;
 }
 
+input {
+  color: #ffffff;
+}
+
 .id_wrap input::placeholder {
   font-size: 14px;
   color: #cbcbcb;
