@@ -72,25 +72,25 @@ width: 100%;
   width: 100%;
 }
  
-  .youth_list{
+.y_list{
   padding-top: 100px;
   width: 80%;   
   position: relative; 
   text-align: center;
   font-family: "NotoSansKR-Bold";
   margin: 0 auto;
+}
+.y_list th{
+  padding: 1em 0.5em;
+  text-align: center;
+}
+.y_list td{
+  position: relative; 
+  width:10.6666666667%;
+  padding: 1em 0.5em;
+  text-align: center;
   }
-  .youth_list th{
-    padding: 1em 0.5em;
-    text-align: center;
-  }
-  .youth_list td{
-    position: relative; 
-    width:16.6666666667%;
-    padding: 1em 0.5em;
-    text-align: center;
-  }
-  .manage_list{
+.manage_list{
   padding-top: 100px;
   width: 80%;   
   position: relative; 
@@ -99,21 +99,27 @@ width: 100%;
   margin: 0 auto;
   
   }
-  .manage_list th{
-    padding: 1em 0.5em;
-    text-align: center;
+.manage_list th{
+  padding: 1em 0.5em;
+  text-align: center;
   }
-  .manage_list td{
-    position: relative; 
-    width:16.6666666667%;
-    padding: 1em 0.5em;
-    text-align: center;
-  }
-  .del_btn{
-    border: 1px #fe8e8d;
-    padding:5px;
-    background-color: #fe8e8d;
-    color:white;
-		border-radius: 5px;
-
-  }
+.manage_list td{
+  position: relative; 
+  width:16.6666666667%;
+  padding: 1em 0.5em;
+  text-align: center;
+}
+.del_btn{
+  border: 1px #fe8e8d;
+  padding:5px;
+  background-color: #fe8e8d;
+  color:white;
+	border-radius: 5px;
+}
+.youthlist_btn{
+  border: 1px #ffdd67;
+  padding:5px;
+  background-color: #ffdd67;
+  color:white;
+	border-radius: 5px;  
+}
