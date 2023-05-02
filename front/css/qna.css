@@ -64,6 +64,11 @@ th,
 td {
   border: none;
 }
+
+.bbsList th, td, a {
+  font-family: "NotoSansKR";
+}
+
 .bbsList th,
 .bbsList td {
   padding: 18px 10px;
@@ -295,4 +300,36 @@ a {
 
 ul.pagenation {
   padding-top: 50px;
+}
+
+.ct_2 {
+  width: 350px;
+  height: 68px;
+  border-radius: 45px;
+  border: 1px solid #b0b0b0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  margin-bottom: 39px;
+}
+
+.ct_2 a {
+  font-family: "NotoSerif";
+}
+
+.ct_2 a.login-link {
+  color: #b0b0b0;
+}
+
+span {
+  font-family: "NotoSerif";
+  color: #b0b0b0;
+}
+.separator {
+  margin: 0px 50px;
 }
