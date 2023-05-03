@@ -1,0 +1,60 @@
+header {
+  padding: 0 50px;
+  width: 100%;
+  min-width: 1400px;
+  height: 100px;
+  display: flex;
+  font-size: 19px;
+}
+header .logo_wrap {
+  height: 100%;
+  width: 220px;
+}
+header .logo_wrap a {
+  height: 100%;
+  width: 140px;
+  display: flex;
+  align-items: center;
+}
+header .logo_wrap a img {
+  width: 100%;
+  height: 90%;
+  object-fit: contain;
+}
+header .menu_wrap {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+header .menu_wrap .menu_list {
+  display: flex;
+  width: 420px;
+}
+header .menu_wrap .menu_list li {
+  width: 110px;
+  margin-right: 45px;
+}
+header .menu_wrap .menu_list li a {
+  display: block;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  font-family: "NotoSansKR-Bold", sans-serif;
+}
+header .menu_wrap .menu_list li:last-child {
+  margin-right: 0px;
+}
+header .login_wrap {
+  width: 220px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+header .login_wrap a {
+  color: #fff;
+  border: 1px solid white;
+  font-size: 15px;
+  border-radius: 50px;
+  padding: 10px 35px;
+}

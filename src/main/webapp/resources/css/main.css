@@ -1,24 +1,361 @@
-h1{
-    color: #fff;
-    font-size: 48px;
+
+@font-face {
+    font-family: "NotoSansKR-Black"; /* 사용하고 싶은 font-family명을 지정 */
+    src: url("resources/font/NotoSansKR-Black.otf") format("opentype"); /* 폰트파일 불러오기 */
   }
+  
+  @keyframes ani-txt {
+    0% {transform:translateY(100px); opacity: 0;}
+    100% {transform:translateY(0px); opacity: 1;}
+  }
+
+  @keyframes ani-txt2 {
+    0% {transform:translateY(100px); opacity: 0;}
+    100% {transform:translateY(0px); opacity: 0.7;}
+  }
+
 
 body{
     margin: 0 auto;
+    overflow-x: hidden;
 }
 
 .main {
     position: relative;
-    height: 1024px;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
 }
 
 .bg_img{
     width: 100%;
     height: 100vh;
     margin: 0 auto;
-
-    background-image: url("../image/main-background-dark.jpg");
+    background-size: cover;
+    background-image: url("../../resources/image/main-background-dark.jpg");
     background-repeat: no-repeat;
     background-position: center center;
+    min-width: 1400px;
+
 }
+
+.bg_img > .main_title{
+    color: #fff;
+    font-size: 54px;
+    font-family: "NotoSansKR-Bold";
+    margin-left: 260px;
+    margin-top: 10%;
+    line-height: 65px;
+    animation: ani-txt 1s forwards;
+  }
+
+.bg_img > .main_subtitle{
+    color: #fff;
+    font-size: 19px;
+    margin-left: 260px;
+    margin-top: 25px;
+    opacity: 0;
+    line-height: 25px;
+    animation: ani-txt2 1s forwards;
+    animation-delay: 0.6s;
+}
+
+
+
+.main_sub {
+    height: 100%;
+    width: 100%;
+
+}
+
+
+.main_sub h2{
+    font-family: "NotoSansKR-Bold";
+    font-size: 36px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.main_sub p{
+    font-size: 22px;
+    text-align: center;
+    margin-top: 35px;
+    line-height: 35px;
+    letter-spacing: -1px;
+    color: #b0b0b0;
+    opacity: 70%;
+}
+
+
+.circle {
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgba( 255, 255, 255, 0.6 );
+    border: 2px solid rgba( 200, 200, 200, 0.7 ); 
+    opacity: 100%;
+    box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.25);
+    position: fixed;
+    left: 92%;
+    top: 84%;
+}
+
+.circle:hover {
+    background-color: rgba( 245, 245, 245, 0.5 );
+}
+
+.circle img{
+    width: 50px;
+    height: 43px;
+    position: relative;
+    top: 21px;
+    left: 14px;
+}
+
+.scroll-downs {
+    position: absolute;
+    top: 88%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    
+    width :34px;
+    height: 55px;
+  }
+
+  .mousey {
+    width: 3px;
+    padding: 10px 15px;
+    height: 35px;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    opacity: 0.7;
+    box-sizing: content-box;
+  }
+
+  .scroller {
+    width: 3px;
+    height: 10px;
+    border-radius: 25%;
+    background-color: #fff;
+    animation-name: scroll;
+    animation-duration: 2.2s;
+    animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes scroll {
+    0% { opacity: 0; }
+    10% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(15px); opacity: 0;}
+  }
+
+
+.carousel-wrapper{
+    width: 1000px;
+    height: 600px;
+    text-align: center;
+    background-color: #ccc;
+    border: 1px solid #ccc;
+    margin: auto;
+    margin-top: 50px;
+    overflow: hidden;
+}
+
+.carousel-wrapper > .carousel {
+    display: flex;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.3s;
+}
+
+.carousel-wrapper > .carousel > img{
+    width: 1000px;
+    height: 600px;
+}
+
+.prev {
+    margin: 0 auto;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    position: relative;
+    bottom: 320px;
+    left: 16%;
+    font-size: 25px;
+    border: none;
+}
+
+.prev:hover{
+    background-color: #e2e2e2;
+}
+
+.next {
+    margin: 0 auto;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    position:relative;
+    bottom: 320px;
+    left: 77%;
+    border: none;
+}
+
+.next:hover{
+    background-color: #e2e2e2;
+}
+
+.arrow-prev,
+.arrow-next {
+    position: relative;
+    float:left;
+    margin-right:5px;
+}
+
+.arrow-prev::after {
+    position: absolute;
+    left: 28px; 
+    top: -5px;
+    content: '';
+    width: 10px; /* 사이즈 */
+    height: 10px; /* 사이즈 */
+    border-top: 3px solid #a0a0a0; /* 선 두께 */
+    border-right: 3px solid #a0a0a0; /* 선 두께 */
+    transform: rotate(225deg); /* 각도 */
+}
+
+.arrow-next::after {
+    position: absolute;
+    left: 24px; 
+    top: -5px; 
+    content: '';
+    width: 10px; /* 사이즈 */
+    height: 10px; /* 사이즈 */
+    border-top: 3px solid #a0a0a0; /* 선 두께 */
+    border-right: 3px solid #a0a0a0; /* 선 두께 */
+    transform: rotate(45deg); /* 각도 */
+}
+
+.sub_grid{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 150px;
+    margin-top: 100px;
+    height: 100%;
+    width: 100%;
+}
+
+.sub_grid > div{
+    margin-right: 70px;
+    width: 420px;
+    height: 448px;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-right: none;
+    padding-top: 75px;
+}
+
+.item{
+    box-sizing: border-box;
+    min-width: 420px;
+}
+
+.sub_grid > div:nth-child(3) {
+    margin: 0;
+  }
+
+.title{
+    font-size: 36px;
+    font-family: "NotoSansKR-Bold";
+}
+
+.sub_title{
+    font-size: 30px;
+    line-height: 40px;
+    padding-top: 5px;
+}
+
+.sub_content{
+    font-size: 18px;
+    color: #777777;
+    padding-top: 15px;
+}
+
+.modal-header{
+    margin: 0px 30px;
+  }
+
+  .modal-head{
+    margin-top: 50px;
+  }
+  .modal-body{
+    margin: 40px 30px;
+    margin: 0;
+  }
+
+  .modal-footer{
+    margin: 40px 30px;
+    margin-top: 0;
+  }
+
+  .nickname{
+    margin: 0;
+    margin-top: 20px;
+  }
+
+  .info{
+    margin-top: 20px;
+  }
+
+  .modal-notice{
+    margin: 0 30px;
+    margin-top: 20px;
+    padding: 0 16px;
+  }
+
+  .notice_title{
+    margin-left: 20px;
+  }
+
+#ModalLabel{
+    font-size: 23px;
+    font-family: "NotoSansKR-Bold";
+}
+
+  .btn_out{
+    background-color: #fe8e8d;
+    border: none;
+    border-radius: 30px;
+    width: 105px;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    margin-left: 10px;
+  }
+
+  .btn_out:hover{
+    background-color: #f48382;
+  }
+
+  .btn_update{
+    background-color: #ffdd67;
+    border: none;
+    border-radius: 30px;
+    width: 105px;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+  }
+
+  .btn_update:hover{
+    background-color: #f7d664;
+  }
+
+  .modal_btns{
+    padding-top: 30px;
+  }
+
+  .text_gray{
+    color: #999999;
+    opacity: 80%;
+  }
