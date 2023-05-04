@@ -5,6 +5,27 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>AgeTalk</title>
+	
+	<!--파비콘-->
+	<link rel="shortcut icon" href="../image/favicon/favicon.ico"> <!--추가-->
+	<link rel="apple-touch-icon" sizes="57x57" href="../image/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="../image/favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="../image/favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="../image/favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="../image/favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="../image/favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="../image/favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="../image/favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="../image/favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="../image/favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../image/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="../image/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../image/favicon/favicon-16x16.png">
+	<link rel="manifest" href="../image/favicon/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="../image/favicon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	
 	<link rel="stylesheet" href="../css/main.css">
 	<link rel="stylesheet" href="../include/header/header.css">
 	<link rel="stylesheet" href="../include/footer/footer.css">
@@ -72,6 +93,66 @@
 					<th>관리(매칭해제)</th>
 				</tr>
 			</thead>
+<<<<<<< Updated upstream
+=======
+						<tr>
+							<td>김진수</td>
+							<td>
+								<div class="progress">
+									<div id="progress-bar1" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+										<div id="progress-value">72<span>%</span></div>
+									</div>
+								</div>
+								<script>
+									const progressBar = document.querySelector('#progress-bar1');
+									if (progressBar) {
+										progressBar.style.width = '100%';
+										progressBar.style.transition = 'width 2s ease-out-in';
+							
+										const number = parseInt(document.querySelector('#progress-value').innerText);
+										progressBar.style.width = `${number}%`;
+							
+										if (number >= 80) {
+											progressBar.style.backgroundColor = '#ff0000';
+										} else if (number >= 50) {
+											progressBar.style.backgroundColor = '#ffea00';
+										} else {
+											progressBar.style.backgroundColor = '#0040ff';
+										}
+									}
+								
+								</script>
+							</td>
+							<td>이화랑</td>
+							<td>
+								<div class="progress">
+									<div id="progress-bar2" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+										<div id="progress-value2">80<span>%</span></div>
+									</div>
+								</div>
+								<script>
+									const progressBar2 = document.querySelector('#progress-bar2');
+									if (progressBar2) {
+										progressBar2.style.width = '100%';
+										progressBar2.style.transition = 'width 0.5s ease-in-out';
+							
+										const number = parseInt(document.querySelector('#progress-value2').innerText);
+										progressBar2.style.width = `${number}%`;
+							
+										if (number >= 80) {
+											progressBar2.style.backgroundColor = '#ff0000';
+										} else if (number >= 50) {
+											progressBar2.style.backgroundColor = '#ffea00';
+										} else {
+											progressBar2.style.backgroundColor = '#0040ff';
+										}
+									}
+								</script>
+							</td>
+					<td><a class="popup" style="text-decoration: none; cursor: pointer;">채팅 바로가기</a></td>
+						<td><button class="del_btn">매칭해제</button></td>
+				</tr>
+>>>>>>> Stashed changes
 
 			<tbody id="list" class="table-group-divider">
 
