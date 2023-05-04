@@ -35,7 +35,7 @@ body{
     background-repeat: no-repeat;
     background-position: center center;
     min-width: 1400px;
-
+    background-attachment: fixed;
 }
 
 .bg_img > .main_title{
@@ -64,7 +64,6 @@ body{
 .main_sub {
     height: 100%;
     width: 100%;
-
 }
 
 

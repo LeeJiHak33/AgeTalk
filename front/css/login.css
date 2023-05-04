@@ -13,6 +13,7 @@ body{
   background-repeat: no-repeat;
   background-position: center center;
   min-width: 1400px;
+  background-attachment: fixed;
 }
 
 .login_box {

@@ -1,12 +1,16 @@
+
 body{
   margin: 0 auto;
+  padding: 0;
   overflow-x: hidden;
+  height: 100%;
 }
 
 
 .signup_back{
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
 .bg_img {
@@ -18,7 +22,9 @@ body{
   background-repeat: no-repeat;
   background-position: center center;
   min-width: 1400px;
+  background-attachment: fixed;
 }
+
 
 .signup_box {
   margin: 0 auto;
@@ -32,14 +38,25 @@ body{
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   /* opacity : 20%; */
   color: #ffffff;
+
+  
 }
 
 .lg_wrap input {
-  margin: 0 auto;
   width: 96%;
-  
+  height: 45px;
+  border-radius: 30px;
   background-color: transparent;
-  padding-bottom: 10px;
+  padding-left: 15px;
+  border: 1px solid rgba(0,0,0,0.21);
+  border-radius: 30px;
+  border-bottom-color: rgba(0,0,0,0.34);
+  text-shadow:0 1px 0 rgba(0,0,0,0.15);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.34) inset, 
+              0 2px 0 -1px rgba(0,0,0,0.13), 
+              0 3px 0 -1px rgba(0,0,0,0.08), 
+              0 3px 13px -1px rgba(0,0,0,0.21);
+  font-size: 15px;
 }
 
 input {
@@ -56,10 +73,14 @@ input {
   color: #cbcbcb;
 }
 
+.phone_wrap input::placeholder {
+  font-size: 14px;
+  color: #cbcbcb;
+}
+
 h1 {
-  padding-bottom: 50px;
+  padding-bottom: 40px;
   font-size: 30px;
-  line-height: 48px;
   letter-spacing: -0.5px;
   font-weight: 700;
 }
@@ -70,12 +91,41 @@ h1 {
   margin-bottom: 16px;
   padding-bottom: 20px;
 }
+
 .id_wrap label {
-  padding-bottom: 15px;
-  margin-bottom: 8px;
+  margin-bottom: 15px;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
+}
+
+.id_subwrap{
+  display: flex;
+}
+
+.login_check{
+  margin: 0 20px;
+  background-color: transparent;
+  color: white; 
+  width: 140px;
+  height: 45px;
+  font-size: 14px;
+  border: 1px solid rgba(0,0,0,0.21);
+  border-radius: 30px;
+  border-bottom-color: rgba(0,0,0,0.34);
+  text-shadow:0 1px 0 rgba(0,0,0,0.15);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.34) inset, 
+              0 2px 0 -1px rgba(0,0,0,0.13), 
+              0 3px 0 -1px rgba(0,0,0,0.08), 
+              0 3px 13px -1px rgba(0,0,0,0.21);
+  
+}
+
+.login_check:active {
+  top: 1px;
+  border-color: rgba(0,0,0,0.34) rgba(0,0,0,0.21) rgba(0,0,0,0.21);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05),0 1px rgba(0,0,0,0.05) inset;
+  position: relative;
 }
 
 .pw_wrap {
@@ -85,8 +135,20 @@ h1 {
   padding-bottom: 20px;
 }
 .pw_wrap label {
-  padding-bottom: 15px;
-  margin-bottom: 8px;
+  margin-bottom: 15px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.phone_wrap {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  padding-bottom: 20px;
+}
+.phone_wrap label {
+  margin-bottom: 15px;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;

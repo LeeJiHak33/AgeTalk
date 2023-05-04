@@ -1,5 +1,6 @@
 body{
   margin: 0 auto;
+  padding: 0;
   overflow-x: hidden;
 }
 
@@ -12,6 +13,7 @@ body{
   background-repeat: no-repeat;
   background-position: center center;
   min-width: 1400px;
+  background-attachment: fixed;
 }
 
 .box{
