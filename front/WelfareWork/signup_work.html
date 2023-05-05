@@ -7,10 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
-    <link rel="stylesheet" href="../css/signup.css">
+    <link rel="stylesheet" href="../css/signup_work.css">
     <link rel="stylesheet" href="../include/header/header.css">
     <link rel="stylesheet" href="../include/footer/footer.css">
     <link rel="stylesheet" href="../include/index.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <!--파비콘-->
     <link rel="shortcut icon" href="../image/favicon/favicon.ico"> <!--추가-->
@@ -23,9 +24,10 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="../image/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    
 </head>
 <body>
-    <div class="signup_back">
+
 
        <div class="bg_img">
             <header>
@@ -47,7 +49,7 @@
             <div class="signup_box">
               
               <div class="su_wrap">
-                <h1>회원가입</h1>
+                <h1>복지사 회원가입</h1>
                 <form method="post">
                 <div class="lg_wrap">
                   <div class="id_wrap">
@@ -71,28 +73,39 @@
                     <input type="text" name="phone" placeholder="'-'를 제외하고 입력해주세요">
                   </div>
                 </div>
-                   <a href="../User/signup_success.html" style="color:white">
-                     <div class="signup_btn"> 회원가입</div>
-                   </a>
+      
+                <form action="upload" method="post" enctype="multipart/form-data">
+                  <label id="file_label">관련 서류제출</label>
+                  <div class="filebox btn_upload">
+                    <input class="upload_name" value="선택된 파일이 없습니다." disabled="disabled">
+                    <label for="files">파일선택</label>
+                    <input type="file" name="files" id="files" class="upload_hidden">
+                  </div>
+                </form>
+                  <div id="file_chk">
+                    <p>*복지사임을 인증할 수 있는 파일을 첨부해주세요.</p>
+                  </div>
+                  <div class="signup_btn">
+                    <a href="../WelfareWork/signup_success_work.html" style="color:white">회원가입</a>
+                  </div>
                 </form>
               </div>
-          </div>
+      </div>
 
       
-      </div>
     </div>
-
+    <script src="../WelfareWork/signup_work.js"></script>
+    <footer>
+      <div class="footer_wrap">
+        <div class="footer_logo_wrap">
+          <img src="../image/footer_logo.png" alt="footer_logo" />
+        </div>
+        <div class="footer_text_wrap">
+          <p>Copyright 2023. AgeTalk All right reserved.</p>
+        </div>
+      </div>
+    </footer>
 </body>
 
 
-<footer>
-  <div class="footer_wrap">
-    <div class="footer_logo_wrap">
-      <img src="../image/footer_logo.png" alt="footer_logo" />
-    </div>
-    <div class="footer_text_wrap">
-      <p>Copyright 2023. AgeTalk All right reserved.</p>
-    </div>
-  </div>
-</footer>
 </html>
