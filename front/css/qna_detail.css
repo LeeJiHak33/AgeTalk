@@ -1,0 +1,74 @@
+.layout {
+  width: 100%;
+  height: 100%;
+}
+.layout .banner {
+  width: 100%;
+  min-width: 1400px;
+  height: 400px;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../image/sub_img_1.jpg") no-repeat;
+  background-size: cover;
+  background-position: 40% 30%;
+}
+
+.inner_banner {
+  padding-top: 130px;
+  text-align: center;
+  font-family: "NotoSerif";
+  color: #ffffff;
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 54px;
+  font-weight: 300;
+  font-family: "NotoSerif";
+}
+p.in_2 {
+  font-family: "NotoSerif";
+}
+
+.container {
+  margin: 0 auto;
+  padding: 130px 0;
+  overflow: hidden;
+  width: 1400px;
+}
+
+.title {
+  text-align: center;
+  font-size: 43px;
+  font-weight: 500;
+  font-family: "NotoSerifKR";
+}
+
+.title h2 {
+  font-size: 43px;
+  padding-bottom: 80px;
+}
+
+table {
+  width: 100%;
+}
+
+.bbsTitle {
+  padding: 25px 10px !important;
+  margin: 0px !important;
+  border-top: 2px solid #fe8e8d;
+  border-bottom: 1px dotted #8c92a3;
+  font-size: 21px !important;
+  font-weight: 400 !important;
+  color: #222 !important;
+  text-align: center;
+}
+
+.bbsView {
+  border-top: 1px solid #505c78;
+  border-collapse: inherit;
+  table-layout: fixed;
+}
+
+.bbsTitle ~ .bbsView {
+  border-top-width: 0px;
+}

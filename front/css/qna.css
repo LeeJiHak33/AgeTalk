@@ -65,7 +65,9 @@ td {
   border: none;
 }
 
-.bbsList th, td, a {
+.bbsList th,
+td,
+a {
   font-family: "NotoSansKR";
 }
 
@@ -84,7 +86,7 @@ td {
   font-size: 17px;
 }
 .bbsList thead tr:first-child th {
-  border-top: 2px solid #505c78;
+  border-top: 2px solid #fe8e8d;
 }
 .bbsList td {
   color: #666;
@@ -178,7 +180,7 @@ html[lang="ru"] .bbsList td[data-table="number"] .notice:before {
 }
 
 ul.bbsList {
-  border-top: 2px solid #505c78;
+  border-top: 2px solid #fe8e8d;
 }
 ul.bbsList li {
   position: relative;
