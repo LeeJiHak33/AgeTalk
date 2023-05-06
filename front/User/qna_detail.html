@@ -7,7 +7,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>상세페이지</title>
+    <title>Q&A</title>
+
+    <link rel="shortcut icon" href="../image/favicon/favicon.ico"> <!--추가-->
+    <link rel="apple-touch-icon" sizes="180x180" href="../image/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../image/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../image/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../image/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../image/favicon/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../image/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
     <link rel="stylesheet" href="../css/qna_detail.css">
     <link rel="stylesheet" href="../include/footer/footer.css">
     <link rel="stylesheet" href="../include/header/header.css">
@@ -50,12 +61,16 @@
             <table class="bbsView">
                 <colgroup>
                     <col data-view="th" style="width:25%">
-                    <col data-view="td" style="width:75%">
+                    <col data-view="td" style="width:25%">
+                    <col data-view="th" style="width:25%">
+                    <col data-view="td" style="width:25%">
                 </colgroup>
                 <tbody>
                     <tr>
                         <th scope="row" data-view="date">작성일</th>
                         <td>2023년 04월 xx일</td>
+                        <th scope="row" data-view="count">조회수</th>
+                        <td>2000회</td>
                     </tr>
                     <tr>
                         <td colspan="4" class="conts">
@@ -66,6 +81,33 @@
                     </tr>
                 </tbody>
             </table>
+            <table class="bbsView page">
+                <colgroup>
+                    <col data-view="th" style="width:15%">
+                    <col data-view="td" style="width:85%">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th scope="row" style="display: flex; align-items: center;">
+                            <span class="icon"></span>
+                            <span>관리자</span>
+                        </th>
+                        <td>
+                            <a>
+                                같이 홍소망을 때리세요
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="btn_area">
+                <a href="qna.html" class="button">
+                    <span>목록</span>
+                </a>
+                <a href="" class="button">
+                    <span>수정하기</span>
+                </a>
+            </div>
         </section>
     </div>
 </body>
