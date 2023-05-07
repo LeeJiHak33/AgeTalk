@@ -1,3 +1,20 @@
+1. https://wmmu.tistory.com/entry/Git-%EC%84%A4%EC%B9%98%EB%B0%A9%EB%B2%95 || git설치방법(먼저설치해야함)
+2. git lfs 설치
+3. cmd 열기
+4. cd repository 폴더 경로 d 드라이면 d:로 시작
+5. git lfs install
+6. git lfs track 파일 경로 ex ) (*(모든파일선택 <- 이건쓰지마), "*.zip")
+7. git add .gitattributes
+8. 올라가짐(github에들어가 올라갔는지 확인)
+
+
+LFS File 관리 해제하기
+git lfs untrack <file>
+
+LFS로 관리중인 File 다운로드 받기
 version https://git-lfs.github.com/spec/v1
-oid sha256:728ecd8e56ab9aedc5efa4076b63f2dc555f3e1046621dae652deaf6d2e2cb8a
-size 379
+oid sha256:265d20bff17c6e19af9c76ef9e00c89de14e34135e23ac2626f6db56e7fb3182
+size 15927 <- 요따구로 뜰때
+git lfs pull
+
+

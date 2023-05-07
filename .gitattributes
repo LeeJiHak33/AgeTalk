@@ -1,3 +1,2 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2edd4c1f6c0b0d23c8cb49608b7edb304e4ddf91a009473750beab66c4b8bde5
-size 117
+eXERD_Installer_v3.3.7.20200914-1426_x86 filter=lfs diff=lfs merge=lfs -text
+*.zip filter=lfs diff=lfs merge=lfs -text
