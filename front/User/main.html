@@ -56,68 +56,69 @@
   
 
     <div class="main">
+      <header style="position: absolute; z-index: 1;">
+        <div class="logo_wrap">
+          <a href=".."><img src="../image/agetalk_logo.png" alt="logo" /></a>
+        </div>
+        <div class="menu_wrap">
+          <ul class="menu_list" style="margin-bottom: 0; padding-left: 0;">
+            <li><a href="" style="text-decoration: none;">소개</a></li>
+            <li><a class="popup" style="text-decoration: none; cursor: pointer;">채팅하기</a></li>
+            <li><a href="notice.html" style="text-decoration: none;">고객센터</a></li>
+          </ul>
+        </div>
+        <div class="login_wrap">
+          
+          <a href="login.html" style="text-decoration: none;">로그인 &nbsp; | &nbsp; 회원가입</a>
+          <!-- Button trigger modal -->
+          <!-- <a>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#MyModal" style="background-color: transparent; border: none;">
+            마이페이지
+          </button>
+          </a> -->
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="MyModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-head">
+              <div class="modal-header">
+                <p class="modal-title text-dark" id="ModalLabel">마이페이지</p>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-header">
+                <p class="modal-title text-dark">{닉네임}님의 마이페이지 입니다.</p>
+              </div>
+              <div class="modal-header" style="display: block;">
+                <p class="modal-title text_gray">프로필</p>
+                <p class="text-dark nickname">{닉네임}</p>
+              </div>
+              <div class="modal-header" style="display: block;">
+                <p class="modal-title text_gray">계정 정보</p>
+                <div class="info">
+                <p class="text-dark">이름 : {이름}</p>
+                <p class="text-dark">휴대폰 : 010-1234-5678</p>
+                <p class="text-dark">아이디 : {아이디}</p>
+                <p class="text-dark">나이 : {나이}</p>
+                <p class="text-dark">설문조사여부 : {완료 & 미완료}</p>
+                </div>
+              </div>
+            </div>
+              <div class="modal-notice" style="display: flex; justify-content: flex-start;">
+                <p class="text_gray">공지사항</p><p class="notice_title">{공지사항 제목}</p><p style="margin-left: auto;">></p>
+              </div>
+              <div class="modal-footer">
+                <div class="modal_btns">
+                  <button type="button" class="btn_update">정보수정</button>
+                  <button type="button" class="btn_out">회원탈퇴</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </header>
         <div class="bg_img">
-            <header>
-                <div class="logo_wrap">
-                  <a href=".."><img src="../image/agetalk_logo.png" alt="logo" /></a>
-                </div>
-                <div class="menu_wrap">
-                  <ul class="menu_list" style="margin-bottom: 0; padding-left: 0;">
-                    <li><a href="" style="text-decoration: none;">소개</a></li>
-                    <li><a class="popup" style="text-decoration: none; cursor: pointer;">채팅하기</a></li>
-                    <li><a href="notice.html" style="text-decoration: none;">고객센터</a></li>
-                  </ul>
-                </div>
-                <div class="login_wrap">
-                  
-                  <a href="login.html" style="text-decoration: none;">로그인 &nbsp; | &nbsp; 회원가입</a>
-                  <!-- Button trigger modal -->
-                  <!-- <a>
-                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#MyModal" style="background-color: transparent; border: none;">
-                    마이페이지
-                  </button>
-                  </a> -->
-                </div>
-                <!-- Modal -->
-                <div class="modal fade" id="MyModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                      <div class="modal-head">
-                      <div class="modal-header">
-                        <p class="modal-title text-dark" id="ModalLabel">마이페이지</p>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-header">
-                        <p class="modal-title text-dark">{닉네임}님의 마이페이지 입니다.</p>
-                      </div>
-                      <div class="modal-header" style="display: block;">
-                        <p class="modal-title text_gray">프로필</p>
-                        <p class="text-dark nickname">{닉네임}</p>
-                      </div>
-                      <div class="modal-header" style="display: block;">
-                        <p class="modal-title text_gray">계정 정보</p>
-                        <div class="info">
-                        <p class="text-dark">이름 : {이름}</p>
-                        <p class="text-dark">휴대폰 : 010-1234-5678</p>
-                        <p class="text-dark">아이디 : {아이디}</p>
-                        <p class="text-dark">나이 : {나이}</p>
-                        <p class="text-dark">설문조사여부 : {완료 & 미완료}</p>
-                        </div>
-                      </div>
-                    </div>
-                      <div class="modal-notice" style="display: flex; justify-content: flex-start;">
-                        <p class="text_gray">공지사항</p><p class="notice_title">{공지사항 제목}</p><p style="margin-left: auto;">></p>
-                      </div>
-                      <div class="modal-footer">
-                        <div class="modal_btns">
-                          <button type="button" class="btn_update">정보수정</button>
-                          <button type="button" class="btn_out">회원탈퇴</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            </header>
+            
 
                 <h1 class="main_title">청년과 노년이 함께하는<br/>따뜻한 문화 교류의 공간</h1>
                 <p class="main_subtitle">문화적 다양성을 누리고 새로운 인연을 만나는 곳,<br/>AgeTalk에서 시작해보세요!</p>
@@ -139,7 +140,7 @@
 
   <div class="main_sub" data-aos="fade-down" data-aos-duration="1000">
       <h2>채팅</h2>
-      <p>AgeTalk는 서로의 마음을 나누고 치유할 수 있는 공간을 제공합니다.<br/>1:1 채팅을 통하여 소중한 시간을 나눠보세요.</p>
+      <p class="sub">AgeTalk는 서로의 마음을 나누고 치유할 수 있는 공간을 제공합니다.<br/>1:1 채팅을 통하여 소중한 시간을 나눠보세요.</p>
 
       <div class="carousel-wrapper">
         <div class="carousel">
@@ -152,6 +153,8 @@
       <button class="next" type="button"><span class="arrow-next"></span></button>
       <script src="../User/main.js"></script>
 
+
+      
     </div>
 
     <div class="sub_grid">
@@ -174,19 +177,20 @@
       <script> 
         AOS.init();
      </script>
+
+
     </div>
 
     
-    <footer>
-      <div class="footer_wrap">
-        <div class="footer_logo_wrap">
-          <img src="../image/footer_logo.png" alt="footer_logo" />
-        </div>
-        <div class="footer_text_wrap">
-          <p style="margin-bottom: 0;">Copyright 2023. AgeTalk All right reserved.</p>
-        </div>
-      </div>
-    </footer>
-
 </body>
+<footer>
+  <div class="footer_wrap">
+    <div class="footer_logo_wrap">
+      <img src="../image/footer_logo.png" alt="footer_logo" />
+    </div>
+    <div class="footer_text_wrap">
+      <p style="margin-bottom: 0;">Copyright 2023. AgeTalk All right reserved.</p>
+    </div>
+  </div>
+</footer>
 </html>
