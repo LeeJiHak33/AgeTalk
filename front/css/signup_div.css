@@ -1,3 +1,14 @@
+@keyframes fadeInUp {
+  from {
+      transform: translate3d(0,40px,0)
+  }
+
+  to {
+      transform: translate3d(0,0,0);
+      opacity: 1
+  }
+}
+
 body{
   margin: 0 auto;
   padding: 0;
@@ -33,7 +44,21 @@ body{
   margin-right: 100px;
   text-align: center;
   transition: box-shadow 0.5s;
+  animation: fadeInUp 1s;
+  animation-duration: 1s;
+    animation-fill-mode: both;
 }
+
+.animatedFadeInUp {
+  opacity: 0
+}
+
+.fadeInUp {
+  opacity: 0;
+  animation-name: fadeInUp;
+  -webkit-animation-name: fadeInUp;
+}
+
 
 .user_box:hover{
     box-shadow: 0 0 20px rgba(255, 255, 255, 1);
@@ -75,6 +100,10 @@ body{
   margin-top: 5%;
   text-align: center;
   transition: box-shadow 0.5s;
+  animation: fadeInUp 1s;
+  animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-delay: 0.5s;
 }
 
 .work_box:hover{
