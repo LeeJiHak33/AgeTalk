@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Q&A</title>
+    <title>공지사항 변경</title>
 
     <link rel="shortcut icon" href="../image/favicon/favicon.ico" />
     <!--추가-->
@@ -46,11 +46,28 @@
     />
     <meta name="theme-color" content="#ffffff" />
 
-    <link rel="stylesheet" href="../css/qna_detail.css" />
+    <link rel="stylesheet" href="../css/qna_insert.css" />
     <link rel="stylesheet" href="../include/footer/footer.css" />
     <link rel="stylesheet" href="../include/header/header.css" />
     <link rel="stylesheet" href="../include/footer/footer.css" />
     <link rel="stylesheet" href="../include/index.css" />
+    <link rel="stylesheet" href="../css/summernote/summernote-lite.css" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="/js/summernote/summernote-lite.js"></script>
+    <script src="/js/summernote/lang/summernote-ko-KR.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#summernote").summernote({
+          height: 500,
+          minHeight: null,
+          maxHeight: null,
+          focus: true,
+          lang: "ko-KR",
+          placeholder: "{@value}",
+        });
+      });
+    </script>
   </head>
 
   <body>
@@ -70,69 +87,35 @@
             </ul>
           </div>
           <div class="login_wrap">
-            <a href="login.html">로그인 &nbsp; | &nbsp; 회원가입</a>
+            <a href="login.html">관리자</a>
           </div>
         </header>
         <div class="inner_banner">
-          <h2>고객지원</h2>
-          <p>Customer Support</p>
+          <h2>관리자</h2>
+          <p>Admin</p>
         </div>
       </div>
 
-      <section class="container">
-        <div class="title">
-          <h2>Q&A</h2>
+      <div class="title">
+        <h2>공지사항 변경</h2>
+      </div>
+      <div class="edit">
+        <div class="insert_title">
+          <input type="text" placeholder="{@value}" />
         </div>
-
-        <h3 class="bbsTitle">안녕하세요</h3>
-        <table class="bbsView">
-          <colgroup>
-            <col data-view="th" style="width: 25%" />
-            <col data-view="td" style="width: 25%" />
-            <col data-view="th" style="width: 25%" />
-            <col data-view="td" style="width: 25%" />
-          </colgroup>
-          <tbody>
-            <tr>
-              <th scope="row" data-view="date">작성일</th>
-              <td>2023년 04월 xx일</td>
-              <th scope="row" data-view="count">조회수</th>
-              <td>2000회</td>
-            </tr>
-            <tr>
-              <td colspan="4" class="conts">
-                <div>홍소망이 자꾸 때립니다.</div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <table class="bbsView page">
-          <colgroup>
-            <col data-view="th" style="width: 15%" />
-            <col data-view="td" style="width: 85%" />
-          </colgroup>
-          <tbody>
-            <tr>
-              <th scope="row" style="display: flex; align-items: center">
-                <span class="icon"></span>
-                <span>관리자</span>
-              </th>
-              <td>
-                <a> 같이 홍소망을 때리세요 </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="btn_area">
-          <a href="qna.html" class="button">
-            <span>목록</span>
-          </a>
-          <span class="space"></span>
-          <a href="qna_update.html" class="button">
-            <span>수정하기</span>
-          </a>
-        </div>
-      </section>
+        <form method="post">
+          <textarea id="summernote" name="editor"></textarea>
+        </form>
+      </div>
+      <div class="btn_area">
+        <a href="" class="button">
+          <span>변경</span>
+        </a>
+        <span class="space"></span>
+        <a href="Admin_notice_detail.html" class="button">
+          <span>취소</span>
+        </a>
+      </div>
     </div>
   </body>
 </html>

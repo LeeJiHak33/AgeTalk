@@ -209,3 +209,6 @@ th {
   background: url("../image/icon/icon_qna_a.png") no-repeat center !important ;
   border-radius: 60%;
 }
+.space {
+  margin: 0 10px;
+}

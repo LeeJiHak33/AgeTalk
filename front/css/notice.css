@@ -198,31 +198,65 @@ ul.bbsList li .date:before {
   background: #e5e5e5;
 }
 
-/* ul.bbsList li .more { */
-/* overflow: hidden; */
-/* position: absolute; */
-/* right: 15px;
-  top: 50%;
-  width: 36px;
-  height: 36px;
-  margin-top: -16px;
-  background: #fff;
-  border: 1px solid #ddd;
-  transition: all 0.3s ease 0s;
-} */
+ul.pagenation {
+  padding-top: 50px;
+}
 
-/* ul.bbsList li .more:before {
+.btn_area .button {
+  margin-top: 30px;
+  height: 45px;
+  line-height: 43px;
+}
+
+.button {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  min-width: 100px;
+  height: 45px;
+  line-height: 43px;
+  box-sizing: border-box;
+  padding: 0 15px;
+  margin: 2px 0px;
+  background: #fe8e8d;
+  color: #fff !important;
+  text-align: center;
+  vertical-align: middle;
+  transition: all 0.4s ease-out 0.1s;
+}
+.button:before {
   content: "";
   display: block;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 14px;
-  height: 14px;
-  margin: -7px 0 0 -7px;
-  background: url(../image/icon_more.png) no-repeat 0 0;
-} */
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 1;
+  width: 120%;
+  height: 110%;
+  color: #ffffff !important;
+  background: #ff6e6d;
+  transform: translateX(-120%) skew(-15deg);
+  transition: transform 0.7s cubic-bezier(0, 0, 0.21, 0.87) 0s;
+}
+.button:hover:before,
+.button:focus:before {
+  color: #ffffff !important;
+  background: #ff6e6d;
+  transform: translateX(-10%) skew(-15deg) perspective(500px);
+}
+.button:hover {
+  color: #ffffff !important;
+  background-color: #ff6e6d;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.15);
+}
 
-ul.pagenation {
-  padding-top: 50px;
+.button span {
+  position: relative;
+  z-index: 2;
+}
+span.btn_write {
+  font-family: "NotoSansKR";
+  color: #fff;
 }
