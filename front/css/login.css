@@ -161,6 +161,7 @@ h1 {
   border-radius: 45px;
   cursor: pointer;
   text-decoration: none;
+  transition: 0.3s;
 }
 .lg_btn:hover {
   background-color: #ff6e6d;

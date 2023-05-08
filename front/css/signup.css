@@ -91,6 +91,10 @@ input {
   color: #ffffff;
 }
 
+input:focus{
+  outline: none;
+}
+
 .id_wrap input::placeholder {
   font-size: 14px;
   color: #cbcbcb;
@@ -198,6 +202,7 @@ h1 {
   border-radius: 45px;
   cursor: pointer;
   text-decoration: none;
+  transition: 0.3s;
 }
 .signup_btn:hover {
   background-color: #ff6e6d;
