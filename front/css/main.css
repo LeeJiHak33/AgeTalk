@@ -18,7 +18,7 @@
 
     0% {transform:scale(1.0);}
     
-    100% {transform:scale(1.03);}
+    100% {transform:scale(1.02);}
     
     }
 
@@ -254,7 +254,7 @@ body{
     display: flex;
     justify-content: center;
     margin-bottom: 150px;
-    margin-top: 100px;
+    margin-top: 50px;
     height: 500px;
     width: 100%;
 }
@@ -325,6 +325,8 @@ body{
     margin: 0 30px;
     margin-top: 20px;
     padding: 0 16px;
+    display: flex;
+    justify-content: flex-start;
   }
 
   .notice_title{
@@ -363,6 +365,25 @@ body{
 
   .btn_update:hover{
     background-color: #f7d664;
+  }
+
+  .modal_diagnosis{
+    background-color: #fe8e8d;
+    border: none;
+    border-radius: 30px;
+    width: 105px;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    margin-left: 30px;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    bottom: 5px;
+  }
+
+  .modal_diagnosis:hover{
+    background-color: #f48382;
   }
 
   .modal_btns{

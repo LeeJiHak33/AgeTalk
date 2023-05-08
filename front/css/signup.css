@@ -56,6 +56,7 @@ body{
   animation: fadeInUp 1s;
   animation-duration: 1s;
     animation-fill-mode: both;
+    margin-top: 20px;
 }
 
 .animatedFadeInUp {

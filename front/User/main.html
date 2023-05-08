@@ -74,7 +74,7 @@
         <div class="login_wrap">
           
           <a href="login.html" style="text-decoration: none;">로그인 &nbsp; | &nbsp; 회원가입</a>
-          <!-- Button trigger modal -->
+          <!-- modal trigger button -->
           <!-- <a>
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#MyModal" style="background-color: transparent; border: none;">
             마이페이지
@@ -104,12 +104,18 @@
                 <p class="text-dark">휴대폰 : 010-1234-5678</p>
                 <p class="text-dark">아이디 : {아이디}</p>
                 <p class="text-dark">나이 : {나이}</p>
+                <div style="display: flex; justify-content: flex-start;">
                 <p class="text-dark">설문조사여부 : {완료 & 미완료}</p>
+                <!--설문 완료시-->
+                <a href="../User/diagnosis.html"><button type="button" class="modal_diagnosis">검사</button></a>
+                <!-- 설문 미완료시 -->
+                <!-- <a href="../User/diagnosis.html"><button type="button" class="modal_diagnosis">재검사</button></a> -->
+                </div>
                 </div>
               </div>
             </div>
-              <div class="modal-notice" style="display: flex; justify-content: flex-start;">
-                <p class="text_gray">공지사항</p><p class="notice_title">{공지사항 제목}</p><p style="margin-left: auto;">></p>
+              <div class="modal-notice">
+                <p class="text_gray">공지사항</p><p class="notice_title">{공지사항 제목}</p><p style="margin-left: auto;"><a href="../User/notice.html" style="text-decoration: none; color: black;">></a></p>
               </div>
               <div class="modal-footer">
                 <div class="modal_btns">
