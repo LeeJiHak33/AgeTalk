@@ -5,10 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>채팅</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="/User/chatting/chatting.js"></script>
     <link rel="stylesheet" href="/User/chatting/chatting.css" />
     <link rel="stylesheet" href="/include/index.css" />
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+   
     <link rel="shortcut icon" href="/image/favicon/favicon.ico"> <!--추가-->
 </head>
 <body>
@@ -27,9 +30,11 @@
           </div>
           <button class="up_btn"></button>
           <button class="down_btn"></button>
-          <button class="calendar"></button>
+          <input type="date" id="date" style="visibility: hidden;">
           <button class="close"></button>
         </div>
+        
+       
         </div>
       </header>
       <div class="layout">

@@ -58,9 +58,8 @@ header .search_wrap .down_btn {
   background: url(/image/icon/down.png) no-repeat center;
   background-size: cover;
 }
-header .search_wrap .calendar {
-  background: url(/image/icon/calendar.png) no-repeat center;
-  background-size: cover;
+header .search_wrap #date {
+  width: 10px;
 }
 header .search_wrap .close {
   background: url(/image/icon/close.png) no-repeat center;
