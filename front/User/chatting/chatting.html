@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="chatting.js"></script>
     <link rel="stylesheet" href="chatting.css" />
     <link rel="stylesheet" href="/include/index.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+
+    <link rel="shortcut icon" href="../image/favicon/favicon.ico"> <!--추가-->
+    <link rel="apple-touch-icon" sizes="180x180" href="../image/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../image/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../image/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../image/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../image/favicon/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../image/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <title>채팅</title>
   </head>
   <body>
@@ -16,6 +28,19 @@
         <div></div>
         <div class="title_wrap"><p>채팅</p></div>
         <div class="search_btn_wrap"><button class="search_btn"></button></div>
+      </div>
+      <div class="search_wrap" style="display: none">
+        <div class="search_inner">
+          <form class="search_form" action="">
+            <span class="search_icon"></span>
+            <input type="text" class="inner_search" />
+          </form>
+        </div>
+        <button class="up_btn"></button>
+        <button class="down_btn"></button>
+        <button class="calendar"></button>
+        <button class="close"></button>
+      </div>
       </div>
     </header>
     <div class="layout">
@@ -73,19 +98,6 @@
             </p>
           </div>
         </div>
-      </div>
-      <div class="search_wrap" style="display: none">
-        <div class="search_inner">
-          <form class="search_form" action="">
-            <span class="search_icon"></span>
-            <input type="text" class="inner_search" />
-          </form>
-        </div>
-        <button class="up_btn"></button>
-        <button class="down_btn"></button>
-        <button class="calendar"></button>
-        <button class="close"></button>
-      </div>
       <div class="chatting_input_wrap">
         <form class="chatting_form" action="" method="post">
           <input type="text" class="chatting" />
