@@ -7,7 +7,7 @@
   min-width: 1400px;
   height: 400px;
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("../image/sub_img_1.jpg") no-repeat;
+    url("../image/sub_img_2.jpg") no-repeat;
   background-size: cover;
   background-position: 40% 30%;
 }
@@ -20,7 +20,7 @@
   font-size: 32px;
 }
 
-.inner_banner p{
+.inner_banner p {
   font-family: "NotoSerif";
   font-size: 32px;
 }
