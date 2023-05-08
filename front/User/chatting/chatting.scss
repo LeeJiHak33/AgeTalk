@@ -7,54 +7,16 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  .header_wrap {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-
-    div:first-child {
-      width: 60px;
-      height: 100%;
-    }
-    .title_wrap {
-      width: calc(100% - 120px);
-      font-size: 24px;
-      color: #ffff;
-      text-align: center;
-    }
-    .search_btn_wrap {
-      margin: 0 auto;
-      width: 60px;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      .search_btn {
-        width: 25px;
-        height: 25px;
-        background: url(/image/icon/search.png) no-repeat center;
-        background-size: cover;
-        border: none;
-        cursor: pointer;
-      }
-    }
-  }
-}
-.layout {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  padding: 50px 0;
   .search_wrap {
     position: absolute;
-    top: 0;
+    top: 60px;
     width: 100%;
     height: 50px;
     background: #f8f5f5;
     display: flex;
     align-items: center;
     padding: 5px 10px;
+
     .search_inner {
       width: calc(100% - (20px * 4 + 50px));
       height: 100%;
@@ -95,9 +57,8 @@ header {
       background: url(/image/icon/down.png) no-repeat center;
       background-size: cover;
     }
-    .calendar {
-      background: url(/image/icon/calendar.png) no-repeat center;
-      background-size: cover;
+    #date {
+      width: 10px;
     }
     .close {
       background: url(/image/icon/close.png) no-repeat center;
@@ -105,6 +66,47 @@ header {
       margin-left: 20px;
     }
   }
+
+  .header_wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    div:first-child {
+      width: 60px;
+      height: 100%;
+    }
+    .title_wrap {
+      width: calc(100% - 120px);
+      font-size: 24px;
+      color: #ffff;
+      text-align: center;
+    }
+    .search_btn_wrap {
+      margin: 0 auto;
+      width: 60px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .search_btn {
+        width: 25px;
+        height: 25px;
+        background: url(/image/icon/search.png) no-repeat center;
+        background-size: cover;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.layout {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 50px 0;
+
   .chatting_list {
     width: 100%;
     height: 100%;

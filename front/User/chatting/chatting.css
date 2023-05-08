@@ -8,6 +8,64 @@ header {
   left: 0;
   right: 0;
 }
+header .search_wrap {
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  height: 50px;
+  background: #f8f5f5;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+}
+header .search_wrap .search_inner {
+  width: calc(100% - 130px);
+  height: 100%;
+}
+header .search_wrap .search_inner .search_form {
+  background: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+header .search_wrap .search_inner .search_form .search_icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  background: url(/image/icon/inner_search.png) no-repeat center;
+  background-size: cover;
+}
+header .search_wrap .search_inner .search_form .inner_search {
+  width: calc(100% - 30px);
+  font-size: 16px;
+  border: none;
+  padding: 5px;
+}
+header .search_wrap button {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  border: none;
+  cursor: pointer;
+}
+header .search_wrap .up_btn {
+  background: url(/image/icon/up.png) no-repeat center;
+  background-size: cover;
+}
+header .search_wrap .down_btn {
+  background: url(/image/icon/down.png) no-repeat center;
+  background-size: cover;
+}
+header .search_wrap #date {
+  width: 10px;
+}
+header .search_wrap .close {
+  background: url(/image/icon/close.png) no-repeat center;
+  background-size: cover;
+  margin-left: 20px;
+}
 header .header_wrap {
   width: 100%;
   height: 100%;
@@ -46,65 +104,6 @@ header .header_wrap .search_btn_wrap .search_btn {
   height: 100%;
   position: relative;
   padding: 50px 0;
-}
-.layout .search_wrap {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 50px;
-  background: #f8f5f5;
-  display: flex;
-  align-items: center;
-  padding: 5px 10px;
-}
-.layout .search_wrap .search_inner {
-  width: calc(100% - 130px);
-  height: 100%;
-}
-.layout .search_wrap .search_inner .search_form {
-  background: white;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-.layout .search_wrap .search_inner .search_form .search_icon {
-  display: block;
-  width: 20px;
-  height: 20px;
-  margin: 0 5px;
-  background: url(/image/icon/inner_search.png) no-repeat center;
-  background-size: cover;
-}
-.layout .search_wrap .search_inner .search_form .inner_search {
-  width: calc(100% - 30px);
-  font-size: 16px;
-  border: none;
-  padding: 5px;
-}
-.layout .search_wrap button {
-  width: 20px;
-  height: 20px;
-  margin-left: 10px;
-  border: none;
-  cursor: pointer;
-}
-.layout .search_wrap .up_btn {
-  background: url(/image/icon/up.png) no-repeat center;
-  background-size: cover;
-}
-.layout .search_wrap .down_btn {
-  background: url(/image/icon/down.png) no-repeat center;
-  background-size: cover;
-}
-.layout .search_wrap .calendar {
-  background: url(/image/icon/calendar.png) no-repeat center;
-  background-size: cover;
-}
-.layout .search_wrap .close {
-  background: url(/image/icon/close.png) no-repeat center;
-  background-size: cover;
-  margin-left: 20px;
 }
 .layout .chatting_list {
   width: 100%;

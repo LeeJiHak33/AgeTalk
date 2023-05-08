@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="chatting.js"></script>
     <link rel="stylesheet" href="chatting.css" />
     <link rel="stylesheet" href="/include/index.css" />
+   
+    <link rel="shortcut icon" href="/image/favicon/favicon.ico"> <!--추가-->
+    
     <title>채팅</title>
   </head>
   <body>
@@ -17,6 +23,18 @@
         <div class="title_wrap"><p>채팅</p></div>
         <div class="search_btn_wrap"><button class="search_btn"></button></div>
       </div>
+      <div class="search_wrap" style="display: none">
+        <div class="search_inner">
+          <form class="search_form" action="">
+            <span class="search_icon"></span>
+            <input type="text" class="inner_search" />
+          </form>
+        </div>
+        <button class="up_btn"></button>
+        <button class="down_btn"></button>
+        <input type="date" id="date" style="visibility: hidden;">
+        <button class="close"></button>
+      
     </header>
     <div class="layout">
       <div class="chatting_list">
@@ -73,19 +91,6 @@
             </p>
           </div>
         </div>
-      </div>
-      <div class="search_wrap" style="display: none">
-        <div class="search_inner">
-          <form class="search_form" action="">
-            <span class="search_icon"></span>
-            <input type="text" class="inner_search" />
-          </form>
-        </div>
-        <button class="up_btn"></button>
-        <button class="down_btn"></button>
-        <button class="calendar"></button>
-        <button class="close"></button>
-      </div>
       <div class="chatting_input_wrap">
         <form class="chatting_form" action="" method="post">
           <input type="text" class="chatting" />
