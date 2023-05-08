@@ -1,43 +1,6 @@
-@font-face {
-  font-family: "NotoSansKR"; /* 사용하고 싶은 font-family명을 지정 */
-  src: url("../font/NotoSansKR/NotoSansKR-Regular.otf") format("opentype"); /* 폰트파일 불러오기 */
-}
-@font-face {
-  font-family: "NotoSansKR-Bold"; /* 사용하고 싶은 font-family명을 지정 */
-  src: url("../font/NotoSansKR/NotoSansKR-Bold.otf") format("opentype"); /* 폰트파일 불러오기 */
-}
-
-@font-face {
-  font-family: "NotoSansKR-Black"; /* 사용하고 싶은 font-family명을 지정 */
-  src: url("../font/NotoSansKR/NotoSansKR-Black.otf") format("opentype"); /* 폰트파일 불러오기 */
-}
-@font-face {
-  font-family: "NotoSerifKR"; /* 사용하고 싶은 font-family명을 지정 */
-  src: url("../font/NotoSerifKR/NotoSerifKR-Regular.otf") format("opentype"); /* 폰트파일 불러오기 */
-}
-@font-face {
-  font-family: "NotoSerifKR-Bold"; /* 사용하고 싶은 font-family명을 지정 */
-  src: url("../font/NotoSerifKR/NotoSerifKR-Bold.otf") format("opentype"); /* 폰트파일 불러오기 */
-}
-@font-face {
-  font-family: "NotoSerifKR-Black"; /* 사용하고 싶은 font-family명을 지정 */
-  src: url("../font/NotoSerifKR/NotoSerifKR-Black.otf") format("opentype"); /* 폰트파일 불러오기 */
-}
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 a {
-  color: #000000;
-  text-decoration: none;
+  color: #222;
 }
-ul {
-  list-style: none;
-}
-
 .layout {
   width: 100%;
   height: 100%;
@@ -47,7 +10,7 @@ ul {
   min-width: 1400px;
   height: 400px;
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("../image/sub_img_1.jpg") no-repeat;
+    url("../image/sub_img_2.jpg") no-repeat;
   background-size: cover;
   background-position: 40% 30%;
 }
@@ -58,6 +21,7 @@ h2 {
 }
 
 .title h2 {
+  font-family: "NotoSerif";
   font-size: 43px;
   padding-bottom: 80px;
 }
@@ -69,6 +33,14 @@ h2 {
   src: url("../font/NotoSerifKR/NotoSerifKR-Regular.otf") format("opentype");
   color: #ffffff;
   font-size: 32px;
+}
+
+.inner_banner h2 {
+  font-family: "NotoSerif";
+}
+
+.inner_banner p {
+  font-family: "NotoSerif";
 }
 
 .title {
@@ -100,6 +72,9 @@ h2 {
   align-items: center;
   margin-bottom: 39px;
   font-family: "NotoSerifKR";
+}
+.ct_2 a {
+  font-family: "NotoSerif";
 }
 
 .ct_2 a.login-link2 {
@@ -133,6 +108,7 @@ ul {
 }
 
 ul.bbsList li {
+  font-family: "NotoSansKR";
   position: relative;
   padding: 39px 15px;
   border-bottom: 1px solid #eaecf1;
@@ -209,7 +185,7 @@ ul.pagenation {
 }
 
 .button {
-  display: inline-block;
+  display: block;
   overflow: hidden;
   position: relative;
   min-width: 100px;
@@ -221,8 +197,8 @@ ul.pagenation {
   background: #fe8e8d;
   color: #fff !important;
   text-align: center;
-  vertical-align: middle;
   transition: all 0.4s ease-out 0.1s;
+  float: right;
 }
 .button:before {
   content: "";

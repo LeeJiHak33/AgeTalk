@@ -7,7 +7,7 @@
   min-width: 1400px;
   height: 400px;
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("../image/sub_img_1.jpg") no-repeat;
+    url("../image/sub_img_2.jpg") no-repeat;
   background-size: cover;
   background-position: 40% 30%;
 }
@@ -343,7 +343,7 @@ span {
 }
 
 .button {
-  display: inline-block;
+  display: block;
   overflow: hidden;
   position: relative;
   min-width: 100px;
@@ -355,8 +355,8 @@ span {
   background: #fe8e8d;
   color: #fff !important;
   text-align: center;
-  vertical-align: middle;
   transition: all 0.4s ease-out 0.1s;
+  float: right;
 }
 .button:before {
   content: "";
