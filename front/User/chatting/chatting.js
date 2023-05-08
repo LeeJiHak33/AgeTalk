@@ -5,4 +5,5 @@ $(document).ready(function () {
   $(".close").click(function () {
     $(".search_wrap").css("display", "none");
   });
+  $("#datepicker").datepicker();
 });
