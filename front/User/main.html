@@ -35,6 +35,10 @@
   .modal-content{
     border-radius: 45px;
   }
+
+  .modal-backdrop{
+    z-index: 0;
+  }
 </style>
 <script>
   $(document).ready(function () {
@@ -78,7 +82,7 @@
           </a> -->
         </div>
         <!-- Modal -->
-        <div class="modal fade" id="MyModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal fade" id="MyModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true" style="position: none;">
           <div class="modal-dialog modal-lg">
             <div class="modal-content">
               <div class="modal-head">
