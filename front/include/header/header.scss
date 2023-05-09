@@ -38,9 +38,28 @@ header {
           text-align: center;
           font-family: "NotoSansKR-Bold", sans-serif;
         }
+        position: relative;
+        .sub_list {
+          position: absolute;
+          top: 50px;
+          visibility: hidden;
+          opacity: 0;
+          transition: 0.2s ease-in-out;
+          transform: translateY (10px);
+          .sub_menu {
+            margin-top: 10px;
+          }
+        }
       }
       li:last-child {
         margin-right: 0px;
+      }
+      li:hover {
+        .sub_list {
+          visibility: visible;
+          opacity: 1;
+          transform: translateY (0);
+        }
       }
     }
   }

@@ -33,6 +33,7 @@ header .menu_wrap .menu_list {
 header .menu_wrap .menu_list li {
   width: 110px;
   margin-right: 45px;
+  position: relative;
 }
 header .menu_wrap .menu_list li a {
   display: block;
@@ -41,8 +42,24 @@ header .menu_wrap .menu_list li a {
   text-align: center;
   font-family: "NotoSansKR-Bold", sans-serif;
 }
+header .menu_wrap .menu_list li .sub_list {
+  position: absolute;
+  top: 50px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s ease-in-out;
+  transform: translateY 10px;
+}
+header .menu_wrap .menu_list li .sub_list .sub_menu {
+  margin-top: 10px;
+}
 header .menu_wrap .menu_list li:last-child {
   margin-right: 0px;
+}
+header .menu_wrap .menu_list li:hover .sub_list {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY 0;
 }
 header .login_wrap {
   width: 220px;
