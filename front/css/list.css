@@ -153,6 +153,13 @@ width: 100%;
   color:white;
 	border-radius: 5px;
 }
+.update_btn{
+  border: 1px #ffdd67;
+  padding:5px;
+  background-color: #ffdd67;
+  color:white;
+	border-radius: 5px;
+}
 .youthlist_btn{
   border: 1px #ffdd67;
   padding:5px;
