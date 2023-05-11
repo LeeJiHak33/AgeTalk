@@ -26,6 +26,10 @@
             </li>
             <li>
               <a href="../user/notice" style="text-decoration: none">고객센터</a>
+              	<ul class="sub_list" style="padding:0; padding-top:20px;">
+						<li class="sub_menu"><a href="">공지사항</a></li>
+						<li class="sub_menu"><a href="">QnA</a></li>
+				</ul>
             </li>
           </ul>
         </div>
