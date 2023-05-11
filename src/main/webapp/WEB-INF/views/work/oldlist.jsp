@@ -8,16 +8,17 @@
 	<title>어르신 리스트</title>
 	
 	<!--파비콘-->
+    <!--파비콘-->
     <link rel="shortcut icon" href="resources/image/favicon/favicon.ico">
+
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-	<link rel="stylesheet" href="../css/main.css">
-	<link rel="stylesheet" href="../include/footer/footer.css">
-	<link rel="stylesheet" href="../include/header/header.css" />
-	<link rel="stylesheet" href="../css/list.css" />
-	<link rel="stylesheet" href="../include/index.css" />
-	<link rel="stylesheet" href="../include/pagenation/pagenation.css">
+	<link rel="stylesheet" href="../../../resources/css/main.css">
+	<link rel="stylesheet" href="../../../resources/css/header.css">
+	<link rel="stylesheet" href="../../../resources/css/list.css" />
+	<link rel="stylesheet" href="../../../resources/css/pagenation.css">
+	
 </head>
 <body>
 	<div>
@@ -55,9 +56,9 @@
 			
 			<div class="y_list">
 				<div class="ct_2">
-					<a href="../WelfareWork/youthlist.html" class= "yetc-link">청년 목록</a>
+					<a href="../work/youthlist" class="yetc-link">청년 목록</a>
 					<span class="separator">|</span>
-					<a class="chosen-link">어르신 목록</a>
+					<a class="chosen-link" href="../work/oldlist" >어르신 목록</a>
 				  </div>
 				<table border="1" class="table table-sm  table-hover">
 					<thead>
@@ -219,38 +220,21 @@
 
 
 			
-		<tfoot>
-			<tr>
-				<td colspan="6">
-					<div class="pagenation_wrap">
-						<ul class="pagenation">
-							<li class="page"><a href="">&lt;&lt;</a></li>
-							<li class="page"><a href="">&lt;</a></li>
-							<li class="page"><a class="active" href="">1</a></li>
-							<li class="page"><a href="">2</a></li>
-							<li class="page"><a href="">3</a></li>
-							<li class="page"><a href="">4</a></li>
-							<li class="page"><a href="">5</a></li>
-							<li class="page"><a href="">&gt;</a></li>
-							<li class="page"><a href="">&gt;&gt;</a></li>
-						</ul>
-
-					</div>
-				</td>
-			</tr>
-		</tfoot>
+		<div>
+			<jsp:include page="../../../WEB-INF/views/pagenation.jsp"></jsp:include>
+		</div>
 	</div>
 </div>
-		
+</div>		
 
 
 
 
 
 <div>
-		<jsp:include page="../../../WEB-INF/views/footer.jsp"></jsp:include>
+		<jsp:include page="../footer.jsp"></jsp:include>
 	</div>
-	</div>
+	
 </body>
 
 </html>

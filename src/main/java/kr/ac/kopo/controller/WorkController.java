@@ -6,17 +6,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/work")
 public class WorkController {
-	final String path = "work/";
+	final String path = "/work/";
 	
-	@RequestMapping("/youth")
+	@RequestMapping("/youthlist")
 	public String youth() {
 		return "/work/youthlist";
 	}
-	@RequestMapping("/old")
+	@RequestMapping("/oldlist")
 	public String old() {
 		return "/work/oldlist";
 	}
-	@RequestMapping("/manage")
+	@RequestMapping("/managelist")
 	public String manage() {
 		return "/work/managelist";
 	}

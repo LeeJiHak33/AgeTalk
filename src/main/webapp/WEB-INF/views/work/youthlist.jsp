@@ -6,18 +6,16 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>청년리스트</title>
-	<!--파비콘-->
+	
 <!--파비콘-->
     <link rel="shortcut icon" href="resources/image/favicon/favicon.ico">
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../../../resources/css/main.css">
 	<link rel="stylesheet" href="../../../resources/css/header.css">
-	<link rel="stylesheet" href="../../../resources/css/footer.css" />
 	<link rel="stylesheet" href="../../../resources/css/list.css" />
-	<link rel="stylesheet" href="../../../resources/css/index.css" />
 	<link rel="stylesheet" href="../../../resources/css/pagenation.css">
 	
 </head>
@@ -37,8 +35,8 @@
 						<li>
 						  <a href="">관리</a>
 						  <ul class="sub_list" style="padding-top: 20px; padding-left: 0;">
-							<li class="sub_menu"><a href="../../views/work/youthlist.jsp">사용자 관리</a></li>
-							<li class="sub_menu"><a href="../../views/work/managelist.jsp">매칭 관리</a></li>
+							<li class="sub_menu"><a href="../work/youthlist">사용자 관리</a></li>
+							<li class="sub_menu"><a href="../work/managelist">매칭 관리</a></li>
 						  </ul>
 						</li>
 						<li><a href="">고객센터</a></li>
@@ -59,9 +57,9 @@
 			
 			<div class="y_list">
 				<div class="ct_2">
-					<a class="chosen-link">청년 목록</a>
+					<a class="chosen-link" href="../work/youthlist">청년 목록</a>
 					<span class="separator">|</span>
-					<a href="../../views/work/oldlist.jsp" class="yetc-link">어르신 목록</a>
+					<a href="../work/oldlist" class="yetc-link">어르신 목록</a>
 				  </div>
 				<table border="1" class="table table-sm  table-hover">
 					<thead>
@@ -232,26 +230,9 @@
 
 
 			
-		<tfoot>
-			<tr>
-				<td colspan="6">
-					<div class="pagenation_wrap">
-						<ul class="pagenation">
-							<li class="page"><a href="">&lt;&lt;</a></li>
-							<li class="page"><a href="">&lt;</a></li>
-							<li class="page"><a class="active" href="">1</a></li>
-							<li class="page"><a href="">2</a></li>
-							<li class="page"><a href="">3</a></li>
-							<li class="page"><a href="">4</a></li>
-							<li class="page"><a href="">5</a></li>
-							<li class="page"><a href="">&gt;</a></li>
-							<li class="page"><a href="">&gt;&gt;</a></li>
-						</ul>
-
-					</div>
-				</td>
-			</tr>
-		</tfoot>
+		<div>
+			<jsp:include page="../../../WEB-INF/views/pagenation.jsp"></jsp:include>
+		</div>
 	</div>
 </div>
 </div>		
@@ -261,7 +242,7 @@
 
 
 <div>
-		<jsp:include page="../../../WEB-INF/views/footer.jsp"></jsp:include>
+		<jsp:include page="../footer.jsp"></jsp:include>
 	</div>
 	
 </body>
