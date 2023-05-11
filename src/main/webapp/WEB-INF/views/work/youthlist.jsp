@@ -8,7 +8,7 @@
 	<title>청년리스트</title>
 	
 <!--파비콘-->
-    <link rel="shortcut icon" href="resources/image/favicon/favicon.ico">
+    <link rel="shortcut icon" href="../resources/image/favicon/favicon.ico">
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -229,18 +229,14 @@
 					</tbody>
 
 
-			
-		<div>
-			<jsp:include page="../../../WEB-INF/views/pagenation.jsp"></jsp:include>
-		</div>
-	</div>
+			</div>
 </div>
-</div>		
 
-
-
-
-
+		
+			<jsp:include page="../../../WEB-INF/views/pagenation.jsp"></jsp:include>
+		
+		</div>	
+		
 <div>
 		<jsp:include page="../footer.jsp"></jsp:include>
 	</div>

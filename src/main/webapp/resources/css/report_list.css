@@ -1,0 +1,128 @@
+.layout {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 25px;
+}
+.layout .banner {
+  width: 100%;
+  min-width: 1400px;
+  height: 400px;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/resources/image/sub_img_1.jpg") no-repeat;
+  background-size: cover;
+  background-position: 40% 30%;
+  padding-top: 140px;
+}
+.layout .banner .inner_banner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.layout .banner .inner_banner p {
+  text-align: center;
+  color: white;
+  font-family: "NotoSerif", "serif";
+  font-size: 45px;
+}
+.layout .inner_layout {
+  width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+.layout .inner_layout .report_title {
+  cursor: pointer;
+}
+.layout .inner_layout .modal {
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px #e6e6e6;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 300px;
+  background: white;
+}
+.layout .inner_layout .modal .modal_top {
+  border-radius: 15px 15px 0 0;
+  width: 100%;
+  height: 50px;
+  background: #73685d;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+.layout .inner_layout .modal .modal_top div:first-child {
+  width: 50px;
+  height: 100%;
+}
+.layout .inner_layout .modal .modal_top .modal_top_title_wrap {
+  width: calc(100% - 100px);
+  text-align: center;
+}
+.layout .inner_layout .modal .modal_top .modal_top_btn_wrap {
+  width: 50px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.layout .inner_layout .modal .modal_top .modal_top_btn_wrap .close_btn {
+  width: 100%;
+  height: 50%;
+  background: url(/image/icon/close_white.png) no-repeat center;
+  background-size: contain;
+  border: none;
+}
+.layout .inner_layout .modal .modal_inner_wrap {
+  width: 100%;
+  height: calc(100% - 120px);
+  padding: 20px;
+}
+.layout .inner_layout .modal .modal_inner_wrap div {
+  display: flex;
+  margin-bottom: 10px;
+}
+.layout .inner_layout .modal .modal_inner_wrap div p:first-child {
+  margin-right: 10px;
+}
+.layout .inner_layout .modal .btn_wrap {
+  width: 100%;
+  height: 70px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.layout .inner_layout .modal .btn_wrap button {
+  width: 40px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+.layout .inner_layout .modal .btn_wrap .report_btn {
+  background: #73685d;
+  color: white;
+  border: none;
+}
+.layout .inner_layout .modal .btn_wrap .cancel_btn {
+  background: white;
+  color: #73685d;
+  border: 2px solid #73685d;
+}
+
+header {
+  position: absolute;
+  top: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+.pagenation_wrap .pagenation .active2 {
+  background: #73685d !important;
+  border: 2px solid #73685d !important;
+}

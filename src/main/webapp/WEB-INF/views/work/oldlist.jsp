@@ -9,7 +9,7 @@
 	
 	<!--파비콘-->
     <!--파비콘-->
-    <link rel="shortcut icon" href="resources/image/favicon/favicon.ico">
+    <link rel="shortcut icon" href="../resources/image/favicon/favicon.ico">
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -26,7 +26,7 @@
 			<div class="sub_image">
 				<header>
 					<div class="logo_wrap">
-					  <a href="../User/main.html"><img src="../image/agetalk_logo.png" alt="logo" /></a>
+					  <a href="../User/main.html"><img src="../../../resources/image/agetalk_logo.png" alt="logo" /></a>
 					</div>
 					<div class="menu_wrap">
 					  <ul class="menu_list" style="margin-bottom: 0; padding-left: 0;">
@@ -34,8 +34,8 @@
 						<li>
 						  <a href="">관리</a>
 						  <ul class="sub_list" style="padding-top: 20px; padding-left: 0;">
-							<li class="sub_menu"><a href="../WelfareWork/youthlist.html">사용자 관리</a></li>
-							<li class="sub_menu"><a href="../WelfareWork/managelisttest.html">매칭 관리</a></li>
+							<li class="sub_menu"><a href="../work/youthlist">사용자 관리</a></li>
+							<li class="sub_menu"><a href="../work/managelist">매칭 관리</a></li>
 						  </ul>
 						</li>
 						<li><a href="">고객센터</a></li>
@@ -219,18 +219,14 @@
 					</tbody>
 
 
-			
-		<div>
-			<jsp:include page="../../../WEB-INF/views/pagenation.jsp"></jsp:include>
-		</div>
-	</div>
+			</div>
 </div>
-</div>		
 
-
-
-
-
+		
+			<jsp:include page="../../../WEB-INF/views/pagenation.jsp"></jsp:include>
+		
+		</div>	
+		
 <div>
 		<jsp:include page="../footer.jsp"></jsp:include>
 	</div>

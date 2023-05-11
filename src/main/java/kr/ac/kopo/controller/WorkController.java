@@ -1,23 +1,28 @@
 package kr.ac.kopo.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/work")
 public class WorkController {
-	final String path = "/work/";
+	final String path = "work/";
 	
 	@RequestMapping("/youthlist")
 	public String youth() {
-		return "/work/youthlist";
+		return path + "youthlist";
 	}
 	@RequestMapping("/oldlist")
 	public String old() {
-		return "/work/oldlist";
+		return path + "oldlist";
 	}
 	@RequestMapping("/managelist")
 	public String manage() {
-		return "/work/managelist";
+		return path + "/managelist";
+	}
+	@GetMapping("/maninsert")
+	public String maninsert() {
+		return path + "/maninsert";
 	}
 }

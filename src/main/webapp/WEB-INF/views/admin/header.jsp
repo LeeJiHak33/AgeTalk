@@ -9,7 +9,14 @@
 <title>Document</title>
 <link rel="stylesheet" href="/resources/css/header.css" />
 <link rel="stylesheet" href="/resources/css/index.css" />
-
+<style type="text/css">
+	header .menu_wrap .menu_list{
+		width:480px;
+	}
+	header .menu_wrap .menu_list li{
+		width: 130px;
+	}
+</style>
 </head>
 <body>
 	<header>
@@ -21,9 +28,9 @@
 				<!--공지사항 & Q&A 관리 페이지 페이지-->
 				<li><a href="">고객지원 관리</a></li>
 				<!--일반 회원 신고 게시판 페이지-->
-				<li><a href="">신고 관리</a></li>
+				<li><a href="../admin/report_list">신고 관리</a></li>
 				<!--복지사 관리 페이지-->
-				<li><a href="">복지사 관리</a></li>
+				<li><a href="../admin/work_list">복지사 관리</a></li>
 			</ul>
 		</div>
 		<div class="login_wrap">
