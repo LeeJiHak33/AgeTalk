@@ -7,24 +7,24 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>청년리스트</title>
 	<!--파비콘-->
-<link rel="shortcut icon" href="../image/favicon/favicon.ico"> <!--추가-->
-<link rel="apple-touch-icon" sizes="180x180" href="../image/favicon/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="../image/favicon/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../image/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="../image/favicon/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../image/favicon/favicon-16x16.png">
+<link rel="shortcut icon" href="../../../resources/image/favicon/favicon.ico"> <!--추가-->
+<link rel="apple-touch-icon" sizes="180x180" href="../../../resources/image/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../../../resources/image/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../resources/image/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../../../resources/image/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../resources/image/favicon/favicon-16x16.png">
 <meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="../image/favicon/ms-icon-144x144.png">
+<meta name="msapplication-TileImage" content="../../../resources/image/favicon/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 	<link rel="stylesheet" href="../css/main.css">
-	<link rel="stylesheet" href="../include/footer/footer.css">
-	<link rel="stylesheet" href="../include/header/header.css" />
-	<link rel="stylesheet" href="../css/list.css" />
-	<link rel="stylesheet" href="../include/index.css" />
+	<link rel="stylesheet" href="../../../resources/css/header.css">
+	<link rel="stylesheet" href="../../../resources/css/footer.css" />
+	<link rel="stylesheet" href="../../../resources/css/list.css" />
+	<link rel="stylesheet" href="../../../resources/css/index.css" />
 	<link rel="stylesheet" href="../include/pagenation/pagenation.css">
 </head>
 <body>
@@ -33,7 +33,7 @@
 			<div class="sub_image">
 				<header>
 					<div class="logo_wrap">
-					  <a href="../User/main.html"><img src="../image/agetalk_logo.png" alt="logo" /></a>
+					  <a href="../User/main.html"><img src="../../../resources/image/agetalk_logo.png" alt="logo" /></a>
 					</div>
 					<div class="menu_wrap">
 					  <ul class="menu_list" style="margin-bottom: 0; padding-left: 0;">
@@ -41,8 +41,8 @@
 						<li>
 						  <a href="">관리</a>
 						  <ul class="sub_list" style="padding-top: 20px; padding-left: 0;">
-							<li class="sub_menu"><a href="../WelfareWork/youthlist.html">사용자 관리</a></li>
-							<li class="sub_menu"><a href="../WelfareWork/managelisttest.html">매칭 관리</a></li>
+							<li class="sub_menu"><a href="../../views/work/youthlist.jsp">사용자 관리</a></li>
+							<li class="sub_menu"><a href="../../views/work/managelist.jsp">매칭 관리</a></li>
 						  </ul>
 						</li>
 						<li><a href="">고객센터</a></li>
@@ -65,7 +65,7 @@
 				<div class="ct_2">
 					<a class="chosen-link">청년 목록</a>
 					<span class="separator">|</span>
-					<a href="../WelfareWork/oldlist.html" class="yetc-link">어르신 목록</a>
+					<a href="../../views/work/oldlist.jsp" class="yetc-link">어르신 목록</a>
 				  </div>
 				<table border="1" class="table table-sm  table-hover">
 					<thead>
