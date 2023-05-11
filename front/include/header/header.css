@@ -44,7 +44,7 @@ header .menu_wrap .menu_list li a {
 }
 header .menu_wrap .menu_list li .sub_list {
   position: absolute;
-  top: 50px;
+  top: 20px;
   visibility: hidden;
   opacity: 0;
   transition: 0.2s ease-in-out;
