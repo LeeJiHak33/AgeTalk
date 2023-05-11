@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="resources/css/header.css" />
-    <link rel="stylesheet" href="resources/css/index.css" />
+    <link rel="stylesheet" href="/resources/css/header.css" />
+    <link rel="stylesheet" href="/resources/css/index.css" />
 
   </head>
  <body>
    <header style="position: absolute; z-index: 1">
         <div class="logo_wrap">
-          <a href=".."><img src="resources/image/agetalk_logo.png" alt="logo" /></a>
+          <a href=".."><img src="/resources/image/agetalk_logo.png" alt="logo" /></a>
         </div>
         <div class="menu_wrap">
           <ul class="menu_list" style="margin-bottom: 0; padding-left: 0">
@@ -27,8 +27,8 @@
             <li>
               <a href="../user/notice" style="text-decoration: none">고객센터</a>
               	<ul class="sub_list" style="padding:0; padding-top:20px;">
-						<li class="sub_menu"><a href="">공지사항</a></li>
-						<li class="sub_menu"><a href="">QnA</a></li>
+						<li class="sub_menu"><a href="../user/notice">공지사항</a></li>
+						<li class="sub_menu"><a href="../user/qna">QnA</a></li>
 				</ul>
             </li>
           </ul>

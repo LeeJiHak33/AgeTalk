@@ -11,31 +11,18 @@
 <link rel="shortcut icon" href="/resources/image/favicon/favicon.ico" />
 
 <link rel="stylesheet" href="/resources/css/qna.css" />
-<link rel="stylesheet" href="/resources/footer.css" />
-<link rel="stylesheet" href="/resources/header.css" />
-<link rel="stylesheet" href="/resources/pagenation.css" />
-<link rel="stylesheet" href="/resources/index.css" />
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+	rel="stylesheet" />
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
 </head>
 
 <body>
 	<div class="layout">
 		<div class="banner">
-			<header>
-				<div class="logo_wrap">
-					<a href="/"><img
-						src="/resources/image/agetalk_logo.png" alt="logo" /></a>
-				</div>
-				<div class="menu_wrap">
-					<ul class="menu_list">
-						<li><a href="">소개</a></li>
-						<li><a href="">채팅하기</a></li>
-						<li><a href="">고객센터</a></li>
-					</ul>
-				</div>
-				<div class="login_wrap">
-					<a href="login">로그인 &nbsp; | &nbsp; 회원가입</a>
-				</div>
-			</header>
+			<jsp:include page="../header.jsp"></jsp:include>
 			<div class="inner_banner">
 				<h2>고객지원</h2>
 				<p class="in_2">Customer Support</p>
@@ -162,30 +149,9 @@
 					class="btn_write">글쓰기</span>
 				</a>
 			</div>
-			<div class="pagenation_wrap">
-				<ul class="pagenation">
-					<li class="page"><a href="">&lt;&lt;</a></li>
-					<li class="page"><a href="">&lt;</a></li>
-					<li class="page"><a class="active2" href="">1</a></li>
-					<li class="page"><a href="">2</a></li>
-					<li class="page"><a href="">3</a></li>
-					<li class="page"><a href="">4</a></li>
-					<li class="page"><a href="">5</a></li>
-					<li class="page"><a href="">&gt;</a></li>
-					<li class="page"><a href="">&gt;&gt;</a></li>
-				</ul>
-			</div>
+			<jsp:include page="../pagenation.jsp"></jsp:include>
 		</section>
 	</div>
-	<footer>
-		<div class="footer_wrap">
-			<div class="footer_logo_wrap">
-				<img src="/resources/image/footer_logo.png" alt="footer_logo" />
-			</div>
-			<div class="footer_text_wrap">
-				<p>Copyright 2023. AgeTalk All right reserved.</p>
-			</div>
-		</div>
-	</footer>
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>
