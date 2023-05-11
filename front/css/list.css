@@ -24,148 +24,142 @@
   src: url("../font/NotoSerifKR/NotoSerifKR-Black.otf") format("opentype"); /* 폰트파일 불러오기 */
 }
 
-  
-body{
-background: #ffffff;
-margin: 0 auto;
-width: 100%;
-height: 100%;
+body {
+  background: #ffffff;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
 }
-  
 
 .tle {
-position: relative;
-width: 100%;
+  position: relative;
+  width: 100%;
 }
 
-.sub_image{
+.sub_image {
   width: 100%;
-  min-width: 100%;
+  min-width: 1400px;
   height: 400px;
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("../image/sub_img_2.jpg") no-repeat;
   background-size: cover;
+  background-position: 40% 30%;
 }
-	
-	  .sub_image h1{		
-    padding-top: 130px;
-    text-align: center;
-    font-family: "NotoSerifKR-Regular";
-    color: #fff;
-    font-size: 53px;
-	  }
 
+.sub_image h1 {
+  padding-top: 130px;
+  text-align: center;
+  font-family: "NotoSerifKR-Regular";
+  color: #fff;
+  font-size: 53px;
+}
 
 .full header {
-    position: relative;
-    height: 100%;
-    width: 100%;
+  position: relative;
+  height: 100%;
+  width: 100%;
 }
 .separator {
   margin: 0px 30px;
 }
-
 
 .ct_2 a.login-link2 {
   color: #b0b0b0;
 }
 
 .progress {
-	position: relative;
-	height: 2em;
-	margin: 0;
- }
-  
- .sub_tle {
+  position: relative;
+  height: 2em;
+  margin: 0;
+}
+
+.sub_tle {
   position: relative;
   height: 100%;
   width: 100%;
 }
- 
-.y_list{
+
+.y_list {
   padding-top: 100px;
-  width: 80%;   
-  position: relative; 
+  width: 80%;
+  position: relative;
   text-align: center;
   font-family: "NotoSansKR-Bold";
   margin: 0 auto;
 }
-.y_list th{
+.y_list th {
   padding: 1em 0.5em;
   text-align: center;
 }
-.y_list td{
-  position: relative; 
-  width:10.6666666667%;
+.y_list td {
+  position: relative;
+  width: 10.6666666667%;
   padding: 1em 0.5em;
   text-align: center;
-  }
-  .ct_2 {
-    width: 350px;
-    height: 68px;
-    border-radius: 45px;
-    border: 1px solid #b0b0b0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    margin-bottom: 39px;
-   
-  }
-  .ct_2 a.chosen-link {
-    color: #000000;
-    font-weight: bold;
-    font-family: "NotoSerifKR-Regular";
-    font-size: 20px;
-  }
-  .ct_2 a.yetc-link {
-    color: #b0b0b0;
-    font-family: "NotoSerifKR-Regular";
-    font-size: 20px;
-    
-  }
-  
-.manage_list{
+}
+.ct_2 {
+  width: 350px;
+  height: 68px;
+  border-radius: 45px;
+  border: 1px solid #b0b0b0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  margin-bottom: 39px;
+}
+.ct_2 a.chosen-link {
+  color: #000000;
+  font-weight: bold;
+  font-family: "NotoSerifKR-Regular";
+  font-size: 20px;
+}
+.ct_2 a.yetc-link {
+  color: #b0b0b0;
+  font-family: "NotoSerifKR-Regular";
+  font-size: 20px;
+}
+
+.manage_list {
   padding-top: 100px;
-  width: 80%;   
-  position: relative; 
+  width: 80%;
+  position: relative;
   text-align: right;
   font-family: "NotoSansKR-Bold";
   margin: 0 auto;
-  
-  }
-.manage_list th{
-  padding: 1em 0.5em;
-  text-align: center;
-  }
-.manage_list td{
-  position: relative; 
-  width:16.6666666667%;
+}
+.manage_list th {
   padding: 1em 0.5em;
   text-align: center;
 }
-.del_btn{
+.manage_list td {
+  position: relative;
+  width: 16.6666666667%;
+  padding: 1em 0.5em;
+  text-align: center;
+}
+.del_btn {
   border: 1px #fe8e8d;
-  padding:5px;
+  padding: 5px;
   background-color: #fe8e8d;
-  color:white;
-	border-radius: 5px;
+  color: white;
+  border-radius: 5px;
 }
-.update_btn{
+.update_btn {
   border: 1px #ffdd67;
-  padding:5px;
+  padding: 5px;
   background-color: #ffdd67;
-  color:white;
-	border-radius: 5px;
+  color: white;
+  border-radius: 5px;
 }
-.youthlist_btn{
+.youthlist_btn {
   border: 1px #ffdd67;
-  padding:5px;
+  padding: 5px;
   background-color: #ffdd67;
-  color:white;
-	border-radius: 5px;  
+  color: white;
+  border-radius: 5px;
 }
 .btn_area .button {
   margin-top: 30px;
@@ -188,4 +182,3 @@ width: 100%;
   vertical-align: middle;
   transition: all 0.4s ease-out 0.1s;
 }
-
