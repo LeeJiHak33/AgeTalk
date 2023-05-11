@@ -7,15 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>청년리스트</title>
 	<!--파비콘-->
-<link rel="shortcut icon" href="../../../resources/image/favicon/favicon.ico"> <!--추가-->
-<link rel="apple-touch-icon" sizes="180x180" href="../../../resources/image/favicon/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="../../../resources/image/favicon/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../../../resources/image/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="../../../resources/image/favicon/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../../../resources/image/favicon/favicon-16x16.png">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="../../../resources/image/favicon/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
+<!--파비콘-->
+    <link rel="shortcut icon" href="resources/image/favicon/favicon.ico">
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -25,9 +18,12 @@
 	<link rel="stylesheet" href="../../../resources/css/footer.css" />
 	<link rel="stylesheet" href="../../../resources/css/list.css" />
 	<link rel="stylesheet" href="../../../resources/css/index.css" />
-	<link rel="stylesheet" href="../include/pagenation/pagenation.css">
+	<link rel="stylesheet" href="../../../resources/css/pagenation.css">
+	
 </head>
+
 <body>
+
 	<div>
 		<div class="tle">
 			<div class="sub_image">
@@ -84,7 +80,7 @@
 							<td>
 								<div class="progress">
 									<div id="progress-bar1" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-										<div id="progress-value">40<span>%</span></div>
+										<div id="progress-value">80<span>%</span></div>
 									</div>
 								</div>
 								<script>
@@ -94,7 +90,7 @@
 										progressBar.style.transition = 'width 2s ease-out-in';
 							
 										const number = parseInt(document.querySelector('#progress-value').innerText);
-										progressBar.style.width = `${number}%`;
+										progressBar.style.width = number + "%";
 							
 										if (number >= 80) {
 											progressBar.style.backgroundColor = '#ff0000';
@@ -258,25 +254,16 @@
 		</tfoot>
 	</div>
 </div>
-		
+</div>		
 
 
 
 
 
 <div>
-		<footer>
-			<div class="footer_wrap">
-				<div class="footer_logo_wrap">
-					<img src="../image/footer_logo.png" alt="footer_logo" />
-				</div>
-				<div class="footer_text_wrap">
-					<p>Copyright 2023. AgeTalk All right reserved.</p>
-				</div>
-			</div>
-		</footer>
+		<jsp:include page="../../../WEB-INF/views/footer.jsp"></jsp:include>
 	</div>
-	</div>
+	
 </body>
 
 </html>
