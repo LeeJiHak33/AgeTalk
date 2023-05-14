@@ -24,4 +24,9 @@ public class UserController {
 		return path + "qna";
 	}
 	
+	@RequestMapping("/explain")
+	public String explain() {
+		return path + "explain";
+	}
+	
 }
