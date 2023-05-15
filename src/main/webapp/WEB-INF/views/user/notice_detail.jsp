@@ -10,6 +10,11 @@
 
 <link rel="shortcut icon" href="/resources/image/favicon/favicon.ico" />
 <link rel="stylesheet" href="/resources/css/notice_detail.css" />
+<<<<<<< Updated upstream
+=======
+<link rel="stylesheet" href="/resources/css/footer.css" />
+<link rel="stylesheet" href="/resources/css/header.css" />
+>>>>>>> Stashed changes
 <link rel="stylesheet" href="/resources/css/index.css" />
 </head>
 

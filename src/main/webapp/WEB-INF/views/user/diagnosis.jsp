@@ -11,7 +11,11 @@
 <link rel="shortcut icon" href="/resources/image/favicon/favicon.ico" />
 
 <link rel="stylesheet" href="/resources/css/diagnosis.css" />
+<<<<<<< Updated upstream
 <link rel="stylesheet" href="/resources/css/index.css" />
+=======
+<link rel="stylesheet" href="/resources/index.css" />
+>>>>>>> Stashed changes
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
 	rel="stylesheet" />
@@ -223,7 +227,9 @@
 							</div>
 						</div>
 					</article>
+					
 				</div>
+				
 			</div>
 		</section>
 		<jsp:include page="../footer.jsp"></jsp:include>

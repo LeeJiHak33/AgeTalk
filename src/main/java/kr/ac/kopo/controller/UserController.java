@@ -24,6 +24,11 @@ public class UserController {
 		return path + "notice";
 	}
 	
+	@GetMapping("/notice_detail")
+	public String notice_detail() {
+		return path + "notice_detail";
+	}
+	
 	@GetMapping("/qna")
 	public String qna() {
 		return path + "qna";
