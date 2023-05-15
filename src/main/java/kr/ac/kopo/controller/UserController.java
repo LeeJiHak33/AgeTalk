@@ -29,4 +29,9 @@ public class UserController {
 		return path + "explain";
 	}
 	
+	@RequestMapping("/diagnosis")
+	public String diagnosis() {
+		return path + "diagnosis";
+	}
+	
 }
