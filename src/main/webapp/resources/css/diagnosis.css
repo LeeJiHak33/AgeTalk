@@ -18,7 +18,7 @@
 }
 
 .inner_banner {
-  padding-top: 130px;
+  padding-top: 230px !important;
   text-align: center;
   font-family: "NotoSerif";
   color: #ffffff;
@@ -26,10 +26,21 @@
 }
 
 .inner_banner p {
+	margin-bottom: 0px;
   font-family: "NotoSerif";
 }
 
-h2 {
+
+
+.inner_banner h2 {
+	margin-bottom: 0px;
+  font-size: 54px;
+  font-weight: 300;
+  font-family: "NotoSerif";
+}
+
+.title h2 {
+	margin-bottom: 0px;
   font-size: 54px;
   font-weight: 300;
   font-family: "NotoSerif";
@@ -161,7 +172,7 @@ p.in_2 {
   padding-left: 12px;
 }
 .wrapper {
-  width: 1400px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 .container {

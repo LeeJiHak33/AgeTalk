@@ -37,7 +37,7 @@
 			<ul class="bbsList">
 				<!-- 리스트 시작 -->
 				<li><span class="date"> <i>30</i> 2023.04
-				</span> <a href="notice" class="subject"> 2023 지원 프로그램 연계 협약 </a> <a
+				</span> <a href="notice_detail" class="subject"> 2023 지원 프로그램 연계 협약 </a> <a
 					class="more"> <!-- <em>자세히보기</em> -->
 				</a></li>
 				<!-- 리스트 종료 -->

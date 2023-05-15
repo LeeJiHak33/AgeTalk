@@ -14,6 +14,11 @@ public class UserController {
 		return path+"chatting";
 	}
 	
+	@GetMapping("/notice_detail")
+	public String notice_detail() {
+		return path + "notice_detail";
+	}
+	
 	@GetMapping("/notice")
 	public String notice() {
 		return path + "notice";
