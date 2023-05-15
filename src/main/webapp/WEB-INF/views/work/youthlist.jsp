@@ -5,7 +5,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>청년리스트</title>
+	<title>사용자 관리</title>
 	
 <!--파비콘-->
     <link rel="shortcut icon" href="../resources/image/favicon/favicon.ico">
@@ -27,7 +27,7 @@
 			<div class="sub_image">
 				<header>
 					<div class="logo_wrap">
-					  <a href="../User/main.html"><img src="../../../resources/image/agetalk_logo.png" alt="logo" /></a>
+					  <a href="../"><img src="../../../resources/image/agetalk_logo.png" alt="logo" /></a>
 					</div>
 					<div class="menu_wrap">
 					  <ul class="menu_list" style="margin-bottom: 0; padding-left: 0;">

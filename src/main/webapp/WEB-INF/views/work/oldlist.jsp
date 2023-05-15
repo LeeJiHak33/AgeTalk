@@ -5,28 +5,29 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>어르신 리스트</title>
+	<title>사용자 관리</title>
 	
-	<!--파비콘-->
+
     <!--파비콘-->
-    <link rel="shortcut icon" href="../resources/image/favicon/favicon.ico">
+    <link rel="shortcut icon" href="/resources/image/favicon/favicon.ico">
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-	<link rel="stylesheet" href="../../../resources/css/main.css">
-	<link rel="stylesheet" href="../../../resources/css/header.css">
-	<link rel="stylesheet" href="../../../resources/css/list.css" />
-	<link rel="stylesheet" href="../../../resources/css/pagenation.css">
+	<link rel="stylesheet" href="/resources/css/main.css">
+	<link rel="stylesheet" href="/resources/css/header.css">
+	<link rel="stylesheet" href="/resources/css/list.css" />
+	<link rel="stylesheet" href="/resources/css/pagenation.css">
 	
 </head>
 <body>
 	<div>
 		<div class="tle">
 			<div class="sub_image">
-				<header>
+			<jsp:include page="../header.jsp"></jsp:include>
+				<!-- <header>
 					<div class="logo_wrap">
-					  <a href="../User/main.html"><img src="../../../resources/image/agetalk_logo.png" alt="logo" /></a>
+					  <a href="../"><img src="../../../resources/image/agetalk_logo.png" alt="logo" /></a>
 					</div>
 					<div class="menu_wrap">
 					  <ul class="menu_list" style="margin-bottom: 0; padding-left: 0;">
@@ -44,7 +45,7 @@
 					<div class="login_wrap">
 					  <a href="">복지사 이름</a>
 					</div>
-				  </header>
+				  </header> -->
 				<h1>사용자 관리</h1>
 			</div>
 			
