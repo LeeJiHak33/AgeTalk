@@ -33,21 +33,21 @@
             </li>
           </ul>
         </div>
-        <div class="login_wrap">
+        <div class="login_wrap" style="display:none;">
           <a href="login" style="text-decoration: none;"
             >로그인 &nbsp; | &nbsp; 회원가입</a
           >
           
         </div>
         <!-- modal trigger button -->
-        <!-- <div class="login_wrap">
+        <div class="login_wrap">
           <a
             data-bs-toggle="modal"
             data-bs-target="#MyModal"
             style="font-size: 15px; color: #ffff; cursor: pointer;">
             마이페이지
           </a>
-        </div> -->
+        </div>
         <!-- Modal -->
         <div
           class="modal fade"
@@ -58,7 +58,7 @@
           style="position: none"
         >
           <div class="modal-dialog modal-lg">
-            <div class="modal-content">
+            <div class="modal-content" style="top: 70px;">
               <div class="modal-head">
                 <div class="modal-header">
                   <p class="modal-title text-dark" id="ModalLabel">
@@ -86,7 +86,6 @@
                     <p class="text-dark">이름 : {이름}</p>
                     <p class="text-dark">휴대폰 : 010-1234-5678</p>
                     <p class="text-dark">아이디 : {아이디}</p>
-                    <p class="text-dark">나이 : {나이}</p>
                     <div style="display: flex; justify-content: flex-start">
                       <p class="text-dark">설문조사여부 : {완료 & 미완료}</p>
                       <!--설문 완료시-->
@@ -129,7 +128,7 @@
           style="position: none"
         >
           <div class="modal-dialog modal-lg">
-            <div class="modal-content">
+            <div class="modal-content" style="top: 50px;">
               <div class="modal-head">
                 <div class="modal-header">
                   <p class="modal-title text-dark" id="ModalLabel">
@@ -154,15 +153,21 @@
                 <div class="modal-header" style="display: block">
                   <p class="modal-title text_gray">계정 정보</p>
                   <div class="info">
-                  	<div class="input-group mb-3">
+                  	<div class="input-group mb-4">
                     <span class="text-dark input-group-text">이름</span> 
                     <input name="name" type="text" value="${item.name}" class="form-control">
                     </div>
-                    <p class="text-dark">휴대폰 : 010-1234-5678</p>
-                    <p class="text-dark">아이디 : {아이디}</p>
-                    <p class="text-dark">나이 : {나이}</p>
+                    <div class="input-group mb-4">
+                    <span class="text-dark input-group-text">휴대폰</span> 
+                    <input name="phone" type="text" value="${item.phone}" class="form-control">
+                    </div>
+                    <div class="input-group mb-4" style="padding-bottom: 10px;">
+                    <span class="text-dark input-group-text">아이디</span> 
+                    <input name="id" type="text" value="${item.id}" class="form-control">
+                    </div>
+
                     <div style="display: flex; justify-content: flex-start">
-                      <p class="text-dark">설문조사여부 : {완료 & 미완료}</p>
+                      <p class="text-dark" style="font-size: 18px;">설문조사여부 : {완료 & 미완료}</p>
                       <!--설문 완료시-->
                       <a href="../user/diagnosis"><button type="button" class="modal_diagnosis">검사</button></a>
                       <!-- 설문 미완료시 -->
@@ -171,16 +176,7 @@
                   </div>
                 </div>
               </div>
-              <div class="modal-notice">
-                <p class="text_gray">공지사항</p>
-                <p class="notice_title">{공지사항 제목}</p>
-                <p style="margin-left: auto">
-                  <a
-                    href="../User/notice"
-                    style="text-decoration: none; color: black"
-                    >></a>
-                </p>
-              </div>
+
               <div class="modal-footer">
                 <div class="modal_btns">
                   <button type="button" class="btn_update">정보수정</button>
