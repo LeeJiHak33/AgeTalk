@@ -46,6 +46,11 @@
                     <label>비밀번호 확인</label>
                     <input type="password" name="passwd_chk" placeholder="비밀번호 확인을 위하여 위와 동일하게 입력해주세요.">
                   </div>
+                   <div class="pw_wrap">
+                    <label>이름</label>
+                    <input type="text" name="name" placeholder="이름을 입력해주세요.">
+                  </div>
+                  
                   <div class="phone_wrap">
                     <label>전화번호</label>
                     <input type="text" name="phone" placeholder="'-'를 제외하고 입력해주세요">
