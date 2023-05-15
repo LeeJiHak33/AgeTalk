@@ -49,3 +49,8 @@ Command-line arguments:  -os win32 -ws win32 -arch x86
 
 !ENTRY org.eclipse.osgi 2 1 2023-05-15 16:08:37.285
 !MESSAGE NLS unused message: AboutFeaturesDialog_SimpleTitle in: org.eclipse.ui.internal.messages
+
+!ENTRY org.eclipse.core.resources 2 2 2023-05-15 18:43:06.064
+!MESSAGE 오퍼레이션 경고를 저장합니다.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2023-05-15 18:43:06.064
+!MESSAGE 'AgeTalk'의 프로젝트 설명 파일(.project)이 누락되었습니다.   이 파일에는 프로젝트에 대한 중요 정보가 들어 있습니다.    새 프로젝트 설명 파일이 작성되었으나, 프로젝트에 대한 일부 정보가 손실되었을 수 있습니다.
