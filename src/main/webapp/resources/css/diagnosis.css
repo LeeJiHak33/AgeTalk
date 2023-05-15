@@ -20,43 +20,15 @@
 }
 
 .inner_banner {
-<<<<<<< Updated upstream
-  padding-top: 230px !important;
-  text-align: center;
-  font-family: "NotoSerif";
-  color: #ffffff;
-  font-size: 32px;
-=======
-	padding-top : 235px !important;
+	padding-top: 235px !important;
 	text-align: center;
 	font-family: "NotoSerif";
 	color: #ffffff;
-	font-size: 32px;
-	padding-top: 230px;
->>>>>>> Stashed changes
 }
 
 .inner_banner p {
 	margin-bottom: 0px;
-<<<<<<< Updated upstream
-  font-family: "NotoSerif";
-}
-
-
-
-.inner_banner h2 {
-	margin-bottom: 0px;
-  font-size: 54px;
-  font-weight: 300;
-  font-family: "NotoSerif";
-}
-
-.title h2 {
-	margin-bottom: 0px;
-  font-size: 54px;
-  font-weight: 300;
-  font-family: "NotoSerif";
-=======
+	font-size: 34px;
 	font-family: "NotoSerif";
 }
 
@@ -65,10 +37,10 @@
 	font-size: 54px;
 	font-weight: 300;
 	font-family: "NotoSerif";
->>>>>>> Stashed changes
 }
 
 .title h2 {
+	margin-bottom: 0px;
 	font-size: 54px;
 	font-weight: 300;
 	font-family: "NotoSerif";
@@ -222,14 +194,9 @@ p.in_2 {
 	padding-left: 12px;
 }
 
-.wrapper {
-<<<<<<< Updated upstream
-  max-width: 1400px;
-  margin: 0 auto;
-=======
+.wrapper { 
 	max-width: 1400px;
 	margin: 0 auto;
->>>>>>> Stashed changes
 }
 
 .container {
