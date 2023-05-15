@@ -33,7 +33,7 @@
             </li>
           </ul>
         </div>
-        <div class="login_wrap"">
+        <div class="login_wrap">
           <a href="login" style="text-decoration: none;"
             >로그인 &nbsp; | &nbsp; 회원가입</a
           >
