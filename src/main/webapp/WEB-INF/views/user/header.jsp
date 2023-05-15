@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,26 +12,26 @@
 
 </head>
 <body>
-	<header>
-		<div class="logo_wrap">
-			<a href=""><img src="/resources/image/agetalk_logo.png"
-				alt="logo" /></a>
-		</div>
-		<div class="menu_wrap">
-			<ul class="menu_list">
-				<li><a href="">소개</a></li>
-				<li><a href="">채팅하기</a></li>
-				<li><a href="">고객센터</a>
-					<ul class="sub_list">
-						<li class="sub_menu"><a href="">공지사항</a></li>
-						<li class="sub_menu"><a href="">QnA</a></li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-		<div class="login_wrap">
-			<a href="">로그인 &nbsp; | &nbsp; 회원가입</a>
-		</div>
-	</header>
+   <header>
+      <div class="logo_wrap">
+         <a href=""><img src="/resources/image/agetalk_logo.png"
+            alt="logo" /></a>
+      </div>
+      <div class="menu_wrap">
+         <ul class="menu_list">
+            <li><a href="">소개</a></li>
+            <li><a href="">채팅하기</a></li>
+            <li><a href="">고객센터</a>
+               <ul class="sub_list">
+                  <li class="sub_menu"><a href="">공지사항</a></li>
+                  <li class="sub_menu"><a href="">QnA</a></li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+      <div class="login_wrap">
+         <a href="">로그인 &nbsp; | &nbsp; 회원가입</a>
+      </div>
+   </header>
 </body>
 </html>

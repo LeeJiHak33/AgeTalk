@@ -9,33 +9,19 @@
 <title>우울도 진단</title>
 
 <link rel="shortcut icon" href="/resources/image/favicon/favicon.ico" />
-
 <link rel="stylesheet" href="/resources/css/diagnosis.css" />
-<link rel="stylesheet" href="/resources/footer.css" />
-<link rel="stylesheet" href="/resources/header.css" />
-<link rel="stylesheet" href="/resources/pagenation.css" />
-<link rel="stylesheet" href="/resources/index.css" />
+<link rel="stylesheet" href="/resources/css/index.css" />
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+	rel="stylesheet" />
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
 	<div class="layout">
 		<div class="banner">
-			<header>
-				<div class="logo_wrap">
-					<a href="/"><img
-						src="/resources/image/agetalk_logo.png" alt="logo" /></a>
-				</div>
-				<div class="menu_wrap">
-					<ul class="menu_list">
-						<li><a href="">소개</a></li>
-						<li><a href="">채팅하기</a></li>
-						<li><a href="">고객센터</a></li>
-					</ul>
-				</div>
-				<div class="login_wrap">
-					<a href="login">로그인 &nbsp; | &nbsp; 회원가입</a>
-				</div>
-			</header>
+			<jsp:include page="../header.jsp"></jsp:include>
 			<div class="inner_banner">
 				<h2>우울도 진단</h2>
 				<p>Depression Diagnosis</p>
@@ -236,9 +222,12 @@
 							</div>
 						</div>
 					</article>
+					
 				</div>
+				
 			</div>
 		</section>
+		<jsp:include page="../footer.jsp"></jsp:include>
 	</div>
 </body>
 </html>
