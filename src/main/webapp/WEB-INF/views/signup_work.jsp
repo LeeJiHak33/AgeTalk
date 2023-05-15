@@ -28,7 +28,7 @@
             <div class="signup_box animatedFadeInUp fadeInUp">
               
               <div class="su_wrap">
-                <h1>복지사 회원가입</h1>
+                <h2>복지사 회원가입</h2>
                 <form method="post">
                 <div class="lg_wrap">
                   <div class="id_wrap">
@@ -46,6 +46,10 @@
                   <div class="pw_wrap">
                     <label>비밀번호 확인</label>
                     <input type="password" name="passwd_chk" placeholder="비밀번호 확인을 위하여 위와 동일하게 입력해주세요.">
+                  </div>
+                  <div class="pw_wrap">
+                    <label>이름</label>
+                    <input type="text" name="name" placeholder="이름을 입력해주세요.">
                   </div>
                   <div class="phone_wrap">
                     <label>전화번호</label>
