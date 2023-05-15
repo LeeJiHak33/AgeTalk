@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class WorkController {
 	final String path = "work/";
 	
+	@GetMapping("/chatting")
+	public String chatting() {
+		return path+"chatting";
+	}
+	
 	@RequestMapping("/youthlist")
 	public String youth() {
 		return path + "youthlist";
