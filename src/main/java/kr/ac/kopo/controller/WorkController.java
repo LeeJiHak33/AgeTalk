@@ -25,4 +25,12 @@ public class WorkController {
 	public String maninsert() {
 		return path + "/maninsert";
 	}
+	@GetMapping("/chatting")
+	public String chatting() {
+		return path+"chatting";
+	
+	}
+		
+	
+	
 }
