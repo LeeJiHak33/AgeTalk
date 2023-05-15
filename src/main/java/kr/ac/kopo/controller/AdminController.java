@@ -20,4 +20,9 @@ public class AdminController {
 	public String work_detail() {
 		return path+"work_detail";
 	}
+	
+	@RequestMapping("/login_admin")
+	public String login_admin() {
+		return path + "login_admin";
+	}
 }
