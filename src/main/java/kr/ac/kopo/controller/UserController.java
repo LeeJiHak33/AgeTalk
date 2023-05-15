@@ -14,4 +14,24 @@ public class UserController {
 		return path+"chatting";
 	}
 	
+	@GetMapping("/notice")
+	public String notice() {
+		return path + "notice";
+	}
+	
+	@GetMapping("/qna")
+	public String qna() {
+		return path + "qna";
+	}
+	
+	@RequestMapping("/explain")
+	public String explain() {
+		return path + "explain";
+	}
+	
+	@RequestMapping("/diagnosis")
+	public String diagnosis() {
+		return path + "diagnosis";
+	}
+	
 }
