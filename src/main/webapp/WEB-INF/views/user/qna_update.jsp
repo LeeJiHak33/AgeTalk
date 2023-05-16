@@ -27,7 +27,6 @@
 			maxHeight : null,
 			focus : true,
 			lang : "ko-KR",
-			placeholder : "{@value}",
 		});
 	});
 </script>
@@ -61,20 +60,23 @@
 		<div class="title">
 			<h2>Q&A변경</h2>
 		</div>
+		<form method="post">
 		<div class="edit">
 			<div class="insert_title">
-				<input type="text" placeholder="{@value}" />
+				<input name="title" type="text" value="${item.title}" />
 			</div>
-			<form method="post">
-				<textarea id="summernote" name="editor"></textarea>
-			</form>
+			
+				<textarea id="summernote" name="content">${item.content}</textarea>
+	
 		</div>
 		<div class="btn_area">
-			<a href="" class="button"> <span>변경</span>
-			</a> <span class="space"></span> <a href="qna_detail" class="button">
-				<span>취소</span>
+			<button class="button" style="border: none; font-size: 16px;"> <span>변경</span></button>
+			
+			<span class="space"></span>
+			<a href="../qna" class="button"> <span>취소</span>
 			</a>
 		</div>
+		</form>
 	</div>
 </body>
 </html>

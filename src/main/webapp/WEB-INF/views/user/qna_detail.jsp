@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,7 +47,7 @@
 				<h2>Q&A</h2>
 			</div>
 
-			<h3 class="bbsTitle">안녕하세요</h3>
+			<h3 class="bbsTitle">${item.title}</h3>
 			<table class="bbsView">
 				<colgroup>
 					<col data-view="th" style="width: 25%" />
@@ -57,13 +58,13 @@
 				<tbody>
 					<tr>
 						<th scope="row" data-view="date">작성일</th>
-						<td>2023년 04월 xx일</td>
+						<td><fmt:formatDate value="${item.date}" pattern="yyyy-MM-dd" /></td>
 						<th scope="row" data-view="count">조회수</th>
-						<td>2000회</td>
+						<td>${item.view}</td>
 					</tr>
 					<tr>
 						<td colspan="4" class="conts">
-							<div>홍소망이 자꾸 때립니다.</div>
+							<div>${item.content}</div>
 						</td>
 					</tr>
 				</tbody>
@@ -83,7 +84,7 @@
 			</table>
 			<div class="btn_area">
 				<a href="qna" class="button"> <span>목록</span>
-				</a> <span class="space"></span> <a href="qna_update"
+				</a> <span class="space"></span> <a href="../qna_update/${item.id }"
 					class="button"> <span>수정하기</span>
 				</a>
 			</div>

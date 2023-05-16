@@ -9,6 +9,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="/resources/css/header.css" />
     <link rel="stylesheet" href="/resources/css/index.css" />
+    <link rel="stylesheet" href="/resources/css/modal.css" />
 
   </head>
  <body>
