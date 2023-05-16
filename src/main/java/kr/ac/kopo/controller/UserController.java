@@ -93,7 +93,7 @@ public class UserController {
 	}
 	
 	@GetMapping("/diagnosis/{id}")
-	public String diagnosis() {
+	public String diagnosis(@PathVariable int id) {
 		return path + "diagnosis";
 	}
 	
