@@ -10,10 +10,7 @@
 
 <link rel="shortcut icon" href="/resources/image/favicon/favicon.ico" />
 <link rel="stylesheet" href="/resources/css/notice_detail.css" />
-<link rel="stylesheet" href="/resources/footer.css" />
-<link rel="stylesheet" href="/resources/header.css" />
-<link rel="stylesheet" href="/resources/footer.css" />
-<link rel="stylesheet" href="/resources/index.css" />
+<link rel="stylesheet" href="/resources/css/index.css" />
 </head>
 
 <body>

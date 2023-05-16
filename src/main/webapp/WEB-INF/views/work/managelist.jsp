@@ -25,7 +25,7 @@
     $(".popup").click(function () {
       console.log("팝업");
       window.open(
-        "../User/chatting/chatting.html",
+        "../chatting",
         "_blank",
         "top=100, left=300, width=430, height=750, toolbar=no, menubar=no, location=no, status=no,  resizable=no"
       ).onresize = (_) => {
@@ -41,7 +41,7 @@
 	<div class="sub_image">
 		<header>
 					<div class="logo_wrap">
-					  <a href="../User/main.html"><img src="../../../resources/image/agetalk_logo.png" alt="logo" /></a>
+					  <a href="../"><img src="../../../resources/image/agetalk_logo.png" alt="logo" /></a>
 					</div>
 					<div class="menu_wrap">
 					  <ul class="menu_list" style="margin-bottom: 0; padding-left: 0;">
@@ -351,7 +351,7 @@
 		
 			<jsp:include page="../../../WEB-INF/views/pagenation.jsp"></jsp:include>
 		
-		</div>	
+		
 		
 <div>
 		<jsp:include page="../footer.jsp"></jsp:include>
