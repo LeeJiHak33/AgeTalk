@@ -9,7 +9,7 @@
 <!--파비콘-->
 
 
-<link rel="shortcut icon" href="../resources/image/favicon/favicon.ico">
+<link rel="shortcut icon" href="/resources/image/favicon/favicon.ico">
 
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -17,8 +17,8 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="../../../resources/css/main.css">
-<link rel="stylesheet" href="../../../resources/css/list.css" />
+<link rel="stylesheet" href="/resources/css/main.css">
+<link rel="stylesheet" href="/resources/css/list.css" />
 
 </head>
 <style>
@@ -42,7 +42,7 @@ header .menu_wrap .sub_list {
     $(".popup").click(function () {
       console.log("팝업");
       window.open(
-        "../chatting",
+        "../work/chatting",
         "_blank",
         "top=100, left=300, width=430, height=750, toolbar=no, menubar=no, location=no, status=no,  resizable=no"
       ).onresize = (_) => {
@@ -82,25 +82,25 @@ header .menu_wrap .sub_list {
 							<div class="progress">
 								<div id="progress-bar1" class="progress-bar" role="progressbar"
 									aria-valuemin="0" aria-valuemax="100">
-									<div id="progress-value">
-										20<span>%</span>
+									<div id="progress-value1">
+										25<span>%</span>
 									</div>
 								</div>
 							</div> <script>
-									const progressBar = document.querySelector('#progress-bar1');
-									if (progressBar) {
-										progressBar.style.width = '100%';
-										progressBar.style.transition = 'width 2s ease-out-in';
+									const progressBar1 = document.querySelector('#progress-bar1');
+									if (progressBar1) {
+										progressBar1.style.width = '100%';
+										progressBar1.style.transition = 'width 2s ease-out-in';
 							
-										const number = parseInt(document.querySelector('#progress-value').innerText);
-										progressBar.style.width = number "%";
+										const number = parseInt(document.querySelector('#progress-value1').innerText);
+										progressBar1.style.width = number + "%";
 							
 										if (number >= 80) {
-											progressBar.style.backgroundColor = '#ff0000';
+											progressBar1.style.backgroundColor = '#ff0000';
 										} else if (number >= 50) {
-											progressBar.style.backgroundColor = '#ffea00';
+											progressBar1.style.backgroundColor = '#ffea00';
 										} else {
-											progressBar.style.backgroundColor = '#0040ff';
+											progressBar1.style.backgroundColor = '#0040ff';
 										}
 									}
 								
@@ -116,20 +116,20 @@ header .menu_wrap .sub_list {
 									</div>
 								</div>
 							</div> <script>
-								const progressBar = document.querySelector('#progress-bar1');
-								if (progressBar) {
-									progressBar.style.width = '100%';
-									progressBar.style.transition = 'width 2s ease-out-in';
+								const progressBar2 = document.querySelector('#progress-bar2');
+								if (progressBar2) {
+									progressBar2.style.width = '100%';
+									progressBar2.style.transition = 'width 2s ease-out-in';
 						
-									const number = parseInt(document.querySelector('#progress-value').innerText);
-									progressBar.style.width = number + "%";
+									const number = parseInt(document.querySelector('#progress-value2').innerText);
+									progressBar2.style.width = number + "%";
 						
 									if (number >= 80) {
-										progressBar.style.backgroundColor = '#ff0000';
+										progressBar2.style.backgroundColor = '#ff0000';
 									} else if (number >= 50) {
-										progressBar.style.backgroundColor = '#ffea00';
+										progressBar2.style.backgroundColor = '#ffea00';
 									} else {
-										progressBar.style.backgroundColor = '#0040ff';
+										progressBar2.style.backgroundColor = '#0040ff';
 									}
 								}
 								</script>

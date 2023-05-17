@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="/resources/css/main.css">
 		<link rel="stylesheet" href="/resources/css/list.css" />
 	<link rel="stylesheet" href="/resources/css/pagenation.css">
+	<link rel="stylesheet" href="/resources/css/modal.css" />
 	<style>
 	header{
 	position: relative !important;
@@ -37,27 +38,7 @@
 			<div class="sub_image">
 
 			<jsp:include page="header.jsp"></jsp:include>
-				<!-- <header>
-					<div class="logo_wrap">
-					  <a href="../"><img src="../../../resources/image/agetalk_logo.png" alt="logo" /></a>
-					</div>
-					<div class="menu_wrap">
-					  <ul class="menu_list" style="margin-bottom: 0; padding-left: 0;">
-						<li><a href="">소개</a></li>
-						<li>
-						  <a href="">관리</a>
-						  <ul class="sub_list" style="padding-top: 20px; padding-left: 0;">
-							<li class="sub_menu"><a href="../work/youthlist">사용자 관리</a></li>
-							<li class="sub_menu"><a href="../work/managelist">매칭 관리</a></li>
-						  </ul>
-						</li>
-						<li><a href="">고객센터</a></li>
-					  </ul>
-					</div>
-					<div class="login_wrap">
-					  <a href="">복지사 이름</a>
-					</div>
-				  </header> -->
+				
 
 				<h1>사용자 관리</h1>
 			</div>	
@@ -111,8 +92,10 @@
 							</td>
 							
 							
-							<td><button class="update_btn">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>
-						</tr>
+<td><button class="update_btn"
+            data-bs-toggle="modal"
+            data-bs-target="#oldupdateModal"
+            style="font-size: 15px; cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
 
 						<tr>
 							
@@ -125,8 +108,10 @@
 								</div>
 							</td>
 							
-							<td><button class="update_btn">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>
-						</tr>
+<td><button class="update_btn"
+            data-bs-toggle="modal"
+            data-bs-target="#oldupdateModal"
+            style="font-size: 15px; cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
 						<tr>
 							
 							<td>황갑수</td>
@@ -138,8 +123,10 @@
 
 								</div>
 							</td>
-							<td><button class="update_btn">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>
-						</tr>
+<td><button class="update_btn"
+            data-bs-toggle="modal"
+            data-bs-target="#oldupdateModal"
+            style="font-size: 15px; cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
 						<tr>
 							<td>김갑수</td>
 							<td>
@@ -151,8 +138,10 @@
 								</div>
 							</td>
 							
-							<td><button class="update_btn">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>
-						</tr>
+<td><button class="update_btn"
+            data-bs-toggle="modal"
+            data-bs-target="#oldupdateModal"
+            style="font-size: 15px; cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
 						<tr>
 							<td>김진수</td>
 							<td>
@@ -163,8 +152,10 @@
 								</div>
 							</td>
 							
-							<td><button class="update_btn">수정</button> <span class="gap"></span> <button class="del_btn">삭제</button></td>
-						</tr>
+<td><button class="update_btn"
+            data-bs-toggle="modal"
+            data-bs-target="#oldupdateModal"
+            style="font-size: 15px; cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
 						<tr>
 							
 							<td>김강랑</td>
@@ -175,8 +166,10 @@
 										aria-valuemin="0" aria-valuemax="100">90%</div>
 								</div>
 							</td>
-							<td><button class="update_btn">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>
-						</tr>
+<td><button class="update_btn"
+            data-bs-toggle="modal"
+            data-bs-target="#oldupdateModal"
+            style="font-size: 15px; cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
 						<tr id="y_list">
 							
 							<td>이화찬</td>
@@ -188,8 +181,10 @@
 
 								</div>
 							</td>
-							<td><button class="update_btn">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>
-						</tr>
+<td><button class="update_btn"
+            data-bs-toggle="modal"
+            data-bs-target="#oldupdateModal"
+            style="font-size: 15px; cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
 						<tr id="y_list">							
 							<td>박하진</td>
 							<td>
@@ -199,8 +194,10 @@
 										aria-valuemin="0" aria-valuemax="100">90%</div>
 								</div>
 							</td>
-							<td><button class="update_btn">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>
-						</tr>
+<td><button class="update_btn"
+            data-bs-toggle="modal"
+            data-bs-target="#oldupdateModal"
+            style="font-size: 15px; cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
 						<tr>
 							
 							<td>김환랑</td>
@@ -212,7 +209,10 @@
 
 								</div>
 							</td>
-							<td><button class="update_btn">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>
+							<td><button class="update_btn"
+            data-bs-toggle="modal"
+            data-bs-target="#oldupdateModal"
+            style="font-size: 15px; cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>
 						</tr>
 						<tr>							
 							<td>최화랑</td>
@@ -223,24 +223,88 @@
 										aria-valuemin="0" aria-valuemax="100">90%</div>
 								</div>
 							</td>
-							<td><button class="update_btn">수정</button><span class="gap"></span> <button class="del_btn">삭제</button></td>
+							<td>
+          <button class="update_btn"
+            data-bs-toggle="modal"
+            data-bs-target="#oldupdateModal"
+            style="font-size: 15px; cursor: pointer;">수정</button>
+
+        <span class="gap"></span> <button class="del_btn">삭제</button></td>
 						</tr>
 					</table>
-					</tbody>
-
+										 
 
 			</div>
 </div>
 
 		
-			<jsp:include page="../../../WEB-INF/views/pagenation.jsp"></jsp:include>
+			<jsp:include page="../pagenation.jsp"></jsp:include>
 		
 		</div>	
 		
 <div>
 		<jsp:include page="../footer.jsp"></jsp:include>
 	</div>
-	
+	<div class="modal fade"
+          id="oldupdateModal"
+          tabindex="-1"
+          aria-labelledby="ModalLabel"
+          aria-hidden="true"
+          style="position: none">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="top: 50px;">
+              <div class="modal-head">
+                <div class="modal-header">
+                  <p class="modal-title text-dark" id="ModalLabel">
+                    정보 수정
+                  </p>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-header">
+                  <p class="modal-title text-dark">
+                    {어르신 성함} 정보 수정하기
+                  </p>
+                </div>
+                <div class="modal-header" style="display: block">
+                  <p class="modal-title text_gray">프로필</p>
+                  <p class="text-dark nickname">{이름}</p>
+                </div>
+                <div class="modal-header" style="display: block">
+                  <p class="modal-title text_gray">계정 정보</p>
+                  <div class="info">
+                  	<div class="input-group mb-4">
+                    <span class="text-dark input-group-text">이름</span> 
+                    <input name="name" type="text" <%-- value="${item.name}" --%> class="form-control">
+                    </div>
+                    <div class="input-group mb-4">
+                    <span class="text-dark input-group-text">기기 고유 번호</span> 
+                    <input name="phone" type="text" <%-- value="${item.phone}" --%> class="form-control">
+                    </div>
+                   
+
+                    <div style="display: flex; justify-content: flex-start">
+                      <p class="text-dark" style="font-size: 18px;">설문등록여부 : {완료 & 미완료}</p>
+                      <!--설문 완료시-->
+                      <a href="../user/diagnosis"><button type="button" class="modal_diagnosis">검사 결과</button></a>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal-footer">
+                <div class="modal_btns">
+                  <button type="button" class="btn_update">정보수정</button>                  
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
 </body>
 
 </html>

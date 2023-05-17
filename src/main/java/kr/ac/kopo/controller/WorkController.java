@@ -27,7 +27,7 @@ public class WorkController {
 	}
 	@GetMapping("/chatting")
 	public String chatting() {
-		return path+"chatting";
+		return path + "chatting";
 	
 	}
 		
