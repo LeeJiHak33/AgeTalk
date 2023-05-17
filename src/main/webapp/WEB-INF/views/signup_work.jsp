@@ -80,6 +80,6 @@
     <script src="resources/js/signup_work.js"></script>
     
 </body>
-<%-- <jsp:include page="footer.jsp"></jsp:include> --%>
+<jsp:include page="footer.jsp"></jsp:include>
 
 </html>
