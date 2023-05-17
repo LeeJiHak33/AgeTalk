@@ -7,15 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AgeTalk</title>
-    <link rel="stylesheet" href="resources/css/login.css">
-    <link rel="stylesheet" href="resources/css/index.css">
+    <link rel="stylesheet" href="/resources/css/login.css">
+    <link rel="stylesheet" href="/resources/css/index.css">
      <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <!--파비콘-->
-    <link rel="shortcut icon" href="resources/image/favicon/favicon.ico"> <!--추가-->
+    <link rel="shortcut icon" href="/resources/image/favicon/favicon.ico"> <!--추가-->
 
 
 </head>
@@ -47,7 +47,7 @@
                   </label>
                 </div>
                 <div class="right-options">
-                  <a href="signup_div" class="login-link" style="color: white">회원가입</a>
+                  <a href="signup" class="login-link" style="color: white">회원가입</a>
 
                 </div>
               </div>

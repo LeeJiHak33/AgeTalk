@@ -35,10 +35,8 @@
           </ul>
         </div>
         <div class="login_wrap">
-          <a href="login" style="text-decoration: none;"
-            >로그인 &nbsp; | &nbsp; 회원가입</a
-          >
-          
+          <a href="../../login_div" style="text-decoration: none;"
+            >로그인 &nbsp; | &nbsp; 회원가입</a>
         </div>
         <!-- modal trigger button -->
         <!-- <div class="login_wrap">

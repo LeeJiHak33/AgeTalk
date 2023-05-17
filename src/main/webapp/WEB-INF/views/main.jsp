@@ -8,10 +8,10 @@
 <title>AgeTalk</title>
 
 <!--파비콘-->
-<link rel="shortcut icon" href="resources/image/favicon/favicon.ico" />
+<link rel="shortcut icon" href="/resources/image/favicon/favicon.ico" />
 
-<link rel="stylesheet" href="resources/css/main.css" />
-<link rel="stylesheet" href="resources/css/index.css" />
+<link rel="stylesheet" href="/resources/css/main.css" />
+<link rel="stylesheet" href="/resources/css/index.css" />
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
