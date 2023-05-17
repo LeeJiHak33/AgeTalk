@@ -65,4 +65,11 @@ public class AdminController {
 		return path+"notice_detail";
 	}
 	
+	
+	@GetMapping("/notice_update/{id}")
+	public String notice_update(@PathVariable int id,Model model) {
+		Notice item=service.notice_item(id);
+		model.addAttribute("item",item);
+		return path+"notice_update";
+	}
 }
