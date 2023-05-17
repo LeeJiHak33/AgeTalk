@@ -38,7 +38,7 @@
 
 <body>
 	<div class="main">
-		<jsp:include page="header.jsp"></jsp:include>
+		<jsp:include page="user/header.jsp"></jsp:include>
 		<div class="bg_img">
 			<h1 class="main_title">
 				청년과 노년이 함께하는<br />따뜻한 문화 교류의 공간

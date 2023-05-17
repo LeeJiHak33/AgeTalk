@@ -90,8 +90,8 @@ public class UserController {
 		return path + "explain";
 	}
 	
-	@GetMapping("/diagnosis/{id}")
-	public String diagnosis(@PathVariable int id) {
+	@GetMapping("/diagnosis")
+	public String diagnosis() {
 		return path + "diagnosis";
 	}
 	

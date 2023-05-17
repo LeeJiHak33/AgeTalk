@@ -35,7 +35,30 @@
 	<div>
 		<div class="tle">
 			<div class="sub_image">
-			<jsp:include page="./header.jsp"></jsp:include>						
+
+			<jsp:include page="header.jsp"></jsp:include>
+				<!-- <header>
+					<div class="logo_wrap">
+					  <a href="../"><img src="../../../resources/image/agetalk_logo.png" alt="logo" /></a>
+					</div>
+					<div class="menu_wrap">
+					  <ul class="menu_list" style="margin-bottom: 0; padding-left: 0;">
+						<li><a href="">소개</a></li>
+						<li>
+						  <a href="">관리</a>
+						  <ul class="sub_list" style="padding-top: 20px; padding-left: 0;">
+							<li class="sub_menu"><a href="../work/youthlist">사용자 관리</a></li>
+							<li class="sub_menu"><a href="../work/managelist">매칭 관리</a></li>
+						  </ul>
+						</li>
+						<li><a href="">고객센터</a></li>
+					  </ul>
+					</div>
+					<div class="login_wrap">
+					  <a href="">복지사 이름</a>
+					</div>
+				  </header> -->
+
 				<h1>사용자 관리</h1>
 			</div>	
 		</div>

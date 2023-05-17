@@ -23,7 +23,7 @@
 
 
        <div class="bg_img">
-            <jsp:include page="header.jsp"></jsp:include>
+            <jsp:include page="user/header.jsp"></jsp:include>
 
             <div class="signup_box animatedFadeInUp fadeInUp">
               
