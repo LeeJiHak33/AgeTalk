@@ -46,4 +46,9 @@ public class UserServiceImpl implements UserService {
 		dao.qna_comment(item);
 	}
 
+	@Override
+	public Comment cmt(int id) {
+		return dao.cmt(id);
+	}
+
 }

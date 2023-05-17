@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,12 +64,15 @@
 					<col data-view="td" style="width: 85%" />
 				</colgroup>
 				<tbody>
-					<tr>
-						<th scope="row" style="display: flex; align-items: center"><span
-							class="icon"></span> <span>관리자</span></th>
-						<td><a> 같이 홍소망을 때리세요 </a></td>
-					</tr>
+					<c:if test="${item.cmt != null}">
+						<tr>
+							<th scope="row" style="display: flex; align-items: center"><span
+								class="icon"></span> <span>관리자</span></th>
+							<td>${item.cmt}</td>
+						</tr>
+					</c:if>
 					
+					<c:if test="${item.cmt == null}">
 					<tr>
 						<th>
 							<form method="post">
@@ -79,7 +83,7 @@
 							</form>
 						</th>
 					</tr>
-					
+					</c:if>
 				</tbody>
 			</table>
 			<div class="btn_area">

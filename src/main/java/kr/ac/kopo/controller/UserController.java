@@ -105,14 +105,16 @@ public class UserController {
 		Qna item = service.item(id);
 		item.setId(id);
 		model.addAttribute("item", item);
-			
 		return path + "qna_detail";
 	}
 	
 	@PostMapping("/qna_detail/{id}")
 	public String qna_comment(@PathVariable int id, Comment item) {
-		service.qna_comment(item);
 		
+		item.setQnaId(id);
+		
+		service.qna_comment(item);
+
 		return "redirect:../qna_detail/{id}";
 	}
 	

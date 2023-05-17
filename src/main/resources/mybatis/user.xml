@@ -14,9 +14,9 @@
 	</insert>
 	
 	<select id="qna_item" resultType="Qna">
-		SELECT *
-		FROM qna
-		WHERE id = #{id}
+		SELECT qna.*, comment.id cid, comment.content cmt, comment.date cdate, qna_id
+		FROM qna left join comment on(qna.id = comment.qna_id)
+		WHERE qna.id = #{id}
 	</select>
 	
 	<update id="qna_update">
@@ -31,7 +31,7 @@
 	</delete>
 	
 	<insert id="qna_comment">
-		INSERT INTO Comment(content, date)
-		VALUES(#{content}, Now())
+		INSERT INTO Comment(content, date, qna_id)
+		VALUES(#{content}, Now(), #{id})
 	</insert>
 </mapper>

@@ -45,4 +45,9 @@ public class UserDaoImpl implements UserDao {
 		sql.insert("user.qna_comment", item);
 	}
 
+	@Override
+	public Comment cmt(int id) {
+		return sql.selectOne("user.cmt", id);
+	}
+
 }
