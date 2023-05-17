@@ -34,21 +34,21 @@
             </li>
           </ul>
         </div>
-        <div class="login_wrap">
+        <div class="login_wrap" style="display: none;">
           <a href="login" style="text-decoration: none;"
             >로그인 &nbsp; | &nbsp; 회원가입</a
           >
           
         </div>
         <!-- modal trigger button -->
-        <!-- <div class="login_wrap">
+        <div class="login_wrap">
           <a
             data-bs-toggle="modal"
             data-bs-target="#MyModal"
             style="font-size: 15px; color: #ffff; cursor: pointer;">
             마이페이지
           </a>
-        </div> -->
+        </div>
         <!-- Modal -->
         <div
           class="modal fade"

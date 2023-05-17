@@ -57,10 +57,10 @@
 				</colgroup>
 				<tbody>
 					<tr>
+						<th scope="row" data-view="count">작성자</th>
+						<td>${item.view}</td>
 						<th scope="row" data-view="date">작성일</th>
 						<td><fmt:formatDate value="${item.date}" pattern="yyyy-MM-dd" /></td>
-						<th scope="row" data-view="count">조회수</th>
-						<td>${item.view}</td>
 					</tr>
 					<tr>
 						<td colspan="4" class="conts">
@@ -85,7 +85,10 @@
 			<div class="btn_area">
 				<a href="qna" class="button"> <span>목록</span>
 				</a> <span class="space"></span> <a href="../qna_update/${item.id }"
-					class="button"> <span>수정하기</span>
+					class="button"> <span>수정</span>
+				</a> <span class="space"></span>
+				<a href="../qna_delete/${item.id }"
+					class="button"> <span>삭제</span>
 				</a>
 			</div>
 		</section>

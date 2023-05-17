@@ -74,6 +74,7 @@ public class UserController {
 		
 		return "redirect:../qna";
 	}
+
 	
 	@GetMapping("/qna_detail/{id}")
 	public String qna_detail(@PathVariable int id, Model model, Qna qna) {

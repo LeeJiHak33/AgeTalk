@@ -13,6 +13,7 @@ public class Qna {
 	@DateTimeFormat(pattern = "yyyy/MM/dd")
 	private Date date;
 	private String userId;
+	private String name;
 
 	public int getId() {
 		return id;
@@ -68,6 +69,14 @@ public class Qna {
 
 	public void setUserId(String userId) {
 		this.userId = userId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }
