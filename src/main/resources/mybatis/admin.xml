@@ -3,9 +3,14 @@
 
 <mapper namespace="admin">
 	<select id="notice_list" resultType="Notice">
-		SELECT *
+		SELECT id, title, date
 		FROM notice
 		ORDER BY id desc
 	</select>
-
+	<insert id="notice_insert">
+		insert into notice(title,content,date,user_id) values (#{title},#{content},NOW(),#{userId})
+	</insert>
+	<select id="notice_item" resultType="Notice">
+		select * from notice where id=#{id}
+	</select>
 </mapper>

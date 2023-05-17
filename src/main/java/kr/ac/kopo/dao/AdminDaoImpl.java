@@ -16,9 +16,21 @@ public class AdminDaoImpl implements AdminDao {
 	SqlSession sql;
 
 	@Override
-	public List<Notice> list() {
+	public List<Notice> notice_list() {
 		// TODO Auto-generated method stub
-		return sql.selectList("admin.list");
+		return sql.selectList("admin.notice_list");
+	}
+
+	@Override
+	public void notice_insert(Notice item) {
+		// TODO Auto-generated method stub
+		sql.insert("admin.notice_insert", item);
+	}
+
+	@Override
+	public Notice notice_item(int id) {
+		// TODO Auto-generated method stub
+		return sql.selectOne("admin.notice_item",id);
 	}
 	
 	

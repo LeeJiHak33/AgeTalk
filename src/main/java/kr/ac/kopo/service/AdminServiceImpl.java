@@ -14,9 +14,22 @@ public class AdminServiceImpl implements AdminService {
 	AdminDao dao;
 
 	@Override
-	public List<Notice> list() {
+	public List<Notice> notice_list() {
 		// TODO Auto-generated method stub
-		return dao.list();
+		return dao.notice_list();
+	}
+
+	@Override
+	public void notice_insert(Notice item) {
+		// TODO Auto-generated method stub
+		
+		dao.notice_insert(item);
+	}
+
+	@Override
+	public Notice notice_item(int id) {
+		// TODO Auto-generated method stub
+		return dao.notice_item(id);
 	}
 	
 	

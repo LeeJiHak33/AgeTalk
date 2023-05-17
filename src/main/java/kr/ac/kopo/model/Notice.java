@@ -2,16 +2,17 @@ package kr.ac.kopo.model;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Notice {
 
 	private int id;
 	private String title;
 	private String content;
 	private int view;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date date;
-	private String user_id;
-	
-	
+	private String userId;
 	public int getId() {
 		return id;
 	}
@@ -42,12 +43,15 @@ public class Notice {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	public String getUser_id() {
-		return user_id;
+	public String getUserId() {
+		return userId;
 	}
-	public void setUser_id(String user_id) {
-		this.user_id = user_id;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
+	
+	
+	
 	
 	
 	
