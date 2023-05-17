@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import kr.ac.kopo.model.Comment;
 import kr.ac.kopo.model.Qna;
+import kr.ac.kopo.pager.Pager;
 
 @Repository
 public class UserDaoImpl implements UserDao {
@@ -16,8 +17,8 @@ public class UserDaoImpl implements UserDao {
 	SqlSession sql;
 	
 	@Override
-	public List<Qna> qna() {
-		return sql.selectList("user.qna");
+	public List<Qna> qna(Pager pager) {
+		return sql.selectList("user.qna", pager);
 	}
 
 	@Override

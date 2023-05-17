@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import kr.ac.kopo.dao.UserDao;
 import kr.ac.kopo.model.Comment;
 import kr.ac.kopo.model.Qna;
+import kr.ac.kopo.pager.Pager;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -16,9 +17,9 @@ public class UserServiceImpl implements UserService {
 	UserDao dao;
 	
 	@Override
-	public List<Qna> qna() {
+	public List<Qna> qna(Pager pager) {
 
-		return dao.qna();
+		return dao.qna(pager);
 	}
 
 	@Override
@@ -44,6 +45,40 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void qna_comment(Comment item) {
 		dao.qna_comment(item);
+	}
+
+	@Override
+	public void dummy() {
+		for(int i=1; i<100; i++) {
+			Qna item = new Qna();
+			
+			item.setTitle("글제목" + i);
+			item.setContent("내용" + i);
+			item.setDate("2023-05-17"+ i);
+	
+		
+		}
+		
+	}
+
+	@Override
+	public void init() {
+		List<Qna> qna;
+		
+		Pager pager = new Pager();
+		pager.setPerPage(9999);
+		
+		do {
+			qna = dao.qna(pager);
+			
+			for(Qna item : qna) {
+				
+				dao.qna_delete(item.getId());
+			}
+			
+		} while(qna.size() > 0);
+	
+		
 	}
 
 }
