@@ -9,7 +9,7 @@
 	</select>
 	
 	<insert id="qna_insert">
-		INSERT INTO Qna(title, content, date)
+		INSERT INTO qna(title, content, date)
 		VALUES(#{title}, #{content}, Now())
 	</insert>
 	

@@ -41,7 +41,7 @@
 				<tbody>
 					<tr>
 						<th scope="row" data-view="date">작성일</th>
-						<fmt:formatDate var="date" value="${item.date}" pattern="yyyy년 mm월 dd일" />
+						<fmt:formatDate var="date" value="${item.date}" pattern="yyyy년 MM월 dd일" />
 						<td>${date }</td>
 						<th scope="row" data-view="count">조회수</th>
 						<td>${item.view }</td>
