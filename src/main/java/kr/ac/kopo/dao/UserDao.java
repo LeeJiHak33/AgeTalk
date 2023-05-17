@@ -2,6 +2,7 @@ package kr.ac.kopo.dao;
 
 import java.util.List;
 
+import kr.ac.kopo.model.Comment;
 import kr.ac.kopo.model.Qna;
 
 public interface UserDao {
@@ -13,6 +14,10 @@ public interface UserDao {
 	Qna item(int id);
 
 	void qna_update(Qna item);
+
+	void qna_delete(int id);
+
+	void qna_comment(Comment item);
 
 
 }

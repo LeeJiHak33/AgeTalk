@@ -43,6 +43,7 @@ p.in_2 {
 	padding: 130px 0;
 	overflow: hidden;
 	width: 1400px;
+	max-width: 1400px !important;
 }
 
 .title {
@@ -56,7 +57,6 @@ p.in_2 {
 	font-family: "NotoSerif";
 	font-size: 43px;
 	padding-bottom: 80px;
-	padding: 130px 0;
 	text-align: center;
 }
 
@@ -224,4 +224,18 @@ th {
 
 .space {
 	margin: 0 10px;
+}
+
+.comment{
+	display: flex;
+	width: 1400px;
+	height: 100%;
+}
+
+.comment > input{
+	width: 1270px;
+	height: 45px;
+	position : relative;
+	top: 2px;
+	padding-left : 10px;
 }
