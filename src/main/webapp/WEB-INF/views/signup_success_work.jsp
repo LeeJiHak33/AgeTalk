@@ -22,7 +22,7 @@
     <div class="lg_back">
 
        <div class="bg_img">
-            <jsp:include page="header.jsp"></jsp:include>
+            <jsp:include page="user/header.jsp"></jsp:include>
             
         <div class="success_box">
            <div class="circle">

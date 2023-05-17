@@ -20,7 +20,7 @@
 <body>
 	<div class="layout">
 		<div class="banner">
-			<jsp:include page="../header.jsp"></jsp:include>
+			<jsp:include page="header.jsp"></jsp:include>
 			<div class="inner_banner">
 				<h2 style="font-size : 54px; margin-top: 100px;">소개</h2>
 			</div>
