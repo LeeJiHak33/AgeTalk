@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,33 +12,16 @@
 <link rel="shortcut icon" href="/resources/image/favicon/favicon.ico" />
 
 <link rel="stylesheet" href="/resources/css/notice_detail.css" />
-<link rel="stylesheet" href="/resources/footer.css" />
-<link rel="stylesheet" href="/resources/header.css" />
-<link rel="stylesheet" href="/resources/index.css" />
+
 </head>
 
 <body>
 	<div class="layout">
 		<div class="banner">
-			<header>
-				<div class="logo_wrap">
-					<a href="/"><img
-						src="/resources/image/agetalk_logo.png" alt="logo" /></a>
-				</div>
-				<div class="menu_wrap">
-					<ul class="menu_list">
-						<li><a href="">소개</a></li>
-						<li><a href="">채팅하기</a></li>
-						<li><a href="">고객센터</a></li>
-					</ul>
-				</div>
-				<div class="login_wrap">
-					<a href="login">관리자</a>
-				</div>
-			</header>
+			<jsp:include page="header.jsp"></jsp:include>
 			<div class="inner_banner">
-				<h2>관리자</h2>
-				<p>Admin</p>
+				<h2>공지사항 관리</h2>
+				<p class="in_2">Notice Management</p>
 			</div>
 		</div>
 
@@ -46,7 +30,7 @@
 				<h2>공지사항</h2>
 			</div>
 
-			<h3 class="bbsTitle">2023 지원 프로그램 연계 협약</h3>
+			<h3 class="bbsTitle">${item.title }</h3>
 			<table class="bbsView">
 				<colgroup>
 					<col data-view="th" style="width: 25%" />
@@ -57,13 +41,14 @@
 				<tbody>
 					<tr>
 						<th scope="row" data-view="date">작성일</th>
-						<td>2023년 04월 xx일</td>
+						<fmt:formatDate var="date" value="${item.date}" pattern="yyyy년 mm월 dd일" />
+						<td>${date }</td>
 						<th scope="row" data-view="count">조회수</th>
-						<td>2000회</td>
+						<td>${item.view }</td>
 					</tr>
 					<tr>
 						<td colspan="4" class="conts">
-							<div>공지사항 입니다.</div>
+							<div>${item.content}</div>
 						</td>
 					</tr>
 				</tbody>
@@ -85,12 +70,12 @@
 				</tbody>
 			</table>
 			<div class="btn_area">
-				<a href="notice" class="button"> <span>목록</span>
-				</a> <a href="notice_update" class="button"> <span>수정</span>
-				</a> <a href="" class="button"> <span>삭제</span>
-				</a>
+				<a href="../notice" class="button"> <span>목록</span></a>
+				<a href="notice_update/${item.id}" class="button"> <span>수정</span></a>
+				<a href="notice_delete/${item.id}" class="button"> <span>삭제</span></a>
 			</div>
 		</section>
 	</div>
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>
