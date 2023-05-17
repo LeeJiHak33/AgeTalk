@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,95 +55,24 @@
 					</tr>
 				</thead>
 				<tbody>
+				
+				<c:if test="${list.size() < 1 }">
 					<tr class="">
-						<td data-table="number">10</td>
-						<td data-table="subject"><a href="qna_detail.html">안녕하세요</a>
+						<td colspan="5">등록된 게시글이 없습니다.</td>
+					</tr>
+				</c:if>
+				
+				<c:forEach items="${list}" var="item">
+					<tr class="">
+						<td data-table="number">${item.id}</td>
+						<td data-table="subject"><a href="qna_detail/${item.id}">${item.title}</a>
 						</td>
 						<td data-table="write">박**</td>
-						<td data-table="date">2023-04-12</td>
+						<td data-table="date"><fmt:formatDate value="${item.date}" pattern="yyyy-MM-dd" /></td>
 						<td>답변완료</td>
 					</tr>
-					<tr class="">
-						<td data-table="number">9</td>
-						<td data-table="subject"><a
-							href="?board_id=board_question&amp;mode=view&amp;no=12">안녕하세요</a>
-						</td>
-						<td data-table="write">강**</td>
-						<td data-table="date">2023-04-06</td>
-						<td>답변완료</td>
-					</tr>
-					<tr class="">
-						<td data-table="number">8</td>
-						<td data-table="subject"><a
-							href="?board_id=board_question&amp;mode=view&amp;no=11">상담요청</a>
-						</td>
-						<td data-table="write">이**</td>
-						<td data-table="date">2023-03-09</td>
-						<td>답변완료</td>
-					</tr>
-					<tr class="">
-						<td data-table="number">7</td>
-						<td data-table="subject"><a
-							href="?board_id=board_question&amp;mode=view&amp;no=13">안녕하세요</a>
-						</td>
-						<td data-table="write">박**</td>
-						<td data-table="date">2023-04-12</td>
-						<td>답변완료</td>
-					</tr>
-					<tr class="">
-						<td data-table="number">6</td>
-						<td data-table="subject"><a
-							href="?board_id=board_question&amp;mode=view&amp;no=12">안녕하세요</a>
-						</td>
-						<td data-table="write">강**</td>
-						<td data-table="date">2023-04-06</td>
-						<td>답변완료</td>
-					</tr>
-					<tr class="">
-						<td data-table="number">5</td>
-						<td data-table="subject"><a
-							href="?board_id=board_question&amp;mode=view&amp;no=11">상담요청</a>
-						</td>
-						<td data-table="write">이**</td>
-						<td data-table="date">2023-03-09</td>
-						<td>답변완료</td>
-					</tr>
-					<tr class="">
-						<td data-table="number">4</td>
-						<td data-table="subject"><a
-							href="?board_id=board_question&amp;mode=view&amp;no=13">안녕하세요</a>
-						</td>
-						<td data-table="write">박**</td>
-						<td data-table="date">2023-04-12</td>
-						<td>답변완료</td>
-					</tr>
-					<tr class="">
-						<td data-table="number">3</td>
-						<td data-table="subject"><a
-							href="?board_id=board_question&amp;mode=view&amp;no=12">안녕하세요</a>
-						</td>
-						<td data-table="write">강**</td>
-						<td data-table="date">2023-04-06</td>
-						<td>답변완료</td>
-					</tr>
-					<tr class="">
-						<td data-table="number">2</td>
-						<td data-table="subject"><a
-							href="?board_id=board_question&amp;mode=view&amp;no=11">상담요청</a>
-						</td>
-						<td data-table="write">이**</td>
-						<td data-table="date">2023-03-09</td>
-						<td>답변완료</td>
-					</tr>
-					<tr class="">
-						<td data-table="number">1</td>
-						<td data-table="subject"><a
-							href="?board_id=board_question&amp;mode=view&amp;no=11">상담요청</a>
-						</td>
-						<td data-table="write">이**</td>
-						<td data-table="date">2023-03-09</td>
-						<td>답변완료</td>
-					</tr>
+				</c:forEach>
+					
 				</tbody>
 			</table>
 			<div class="btn_area">

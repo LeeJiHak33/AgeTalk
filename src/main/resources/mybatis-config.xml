@@ -8,10 +8,10 @@
 	</settings>
 	
 	<typeAliases>
-	
+		<typeAlias type="kr.ac.kopo.model.Qna" alias="Qna"/>
 	</typeAliases>
 	
 	<mappers>
-		
+		<mapper resource="mybatis/user.xml"/>
 	</mappers>
 </configuration>

@@ -61,19 +61,23 @@
 		<div class="title">
 			<h2>Q&A작성</h2>
 		</div>
+		
+		<form method="post">
 		<div class="edit">
 			<div class="insert_title">
-				<input type="text" placeholder="제목을 입력하세요" />
+				<input name="title" type="text" placeholder="제목을 입력하세요" />
+				
 			</div>
-			<form method="post">
-				<textarea id="summernote" name="editor"></textarea>
-			</form>
+				<textarea id="summernote" name="content"></textarea>
 		</div>
 		<div class="btn_area">
-			<a href="" class="button"> <span>등록</span>
-			</a> <span class="space"></span> <a href="qna" class="button"> <span>취소</span>
+			<button class="button" style="border: none; font-size: 16px;"> <span>등록</span></button>
+			
+			<span class="space"></span>
+			<a href="qna" class="button"> <span>취소</span>
 			</a>
 		</div>
+		</form>
 	</div>
 </body>
 </html>
