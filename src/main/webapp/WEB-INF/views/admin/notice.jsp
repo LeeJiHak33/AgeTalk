@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,10 +12,10 @@
 <link rel="shortcut icon" href="/resources/image/favicon/favicon.ico" />
 
 <link rel="stylesheet" href="/resources/css/notice.css" />
-<link rel="stylesheet" href="/resources/footer.css" />
-<link rel="stylesheet" href="/resources/header.css" />
-<link rel="stylesheet" href="/resources/pagenation.css" />
-<link rel="stylesheet" href="/resources/index.css" />
+<link rel="stylesheet" href="/resources/css/footer.css" />
+<link rel="stylesheet" href="/resources/css/header.css" />
+<link rel="stylesheet" href="/resources/css/pagenation.css" />
+<link rel="stylesheet" href="/resources/css/index.css" />
 </head>
 
 <body>
@@ -45,60 +46,13 @@
 			<div class="title">
 				<h2>공지사항</h2>
 			</div>
-			<div class="ct_2">
-				<a class="login-link">공지사항</a> <span class="separator">|</span> <a
-					href="qna" class="login-link2">Q&A</a>
-			</div>
+		
 			<ul class="bbsList">
 				<!-- 리스트 시작 -->
+				<c:if test=""></c:if>
 				<li><span class="date"> <i>30</i> 2023.04
 				</span> <a href="notice_detail" class="subject"> 2023 지원
 						프로그램 연계 협약 </a></li>
-				<!-- 리스트 종료 -->
-
-				<!-- 리스트 시작 -->
-				<li><span class="date"> <i>30</i> 2023.04
-				</span> <a class="subject"> 2023 지원 프로그램 연계 협약 </a></li>
-				<!-- 리스트 종료 -->
-
-				<!-- 리스트 시작 -->
-				<li><span class="date"> <i>30</i> 2023.04
-				</span> <a class="subject"> 2023 지원 프로그램 연계 협약 </a></li>
-				<!-- 리스트 종료 -->
-
-				<!-- 리스트 시작 -->
-				<li><span class="date"> <i>30</i> 2023.04
-				</span> <a class="subject"> 2023 지원 프로그램 연계 협약 </a></li>
-				<!-- 리스트 종료 -->
-
-				<!-- 리스트 시작 -->
-				<li><span class="date"> <i>30</i> 2023.04
-				</span> <a class="subject"> 2023 지원 프로그램 연계 협약 </a></li>
-				<!-- 리스트 종료 -->
-
-				<!-- 리스트 시작 -->
-				<li><span class="date"> <i>30</i> 2023.04
-				</span> <a class="subject"> 2023 지원 프로그램 연계 협약 </a></li>
-				<!-- 리스트 종료 -->
-
-				<!-- 리스트 시작 -->
-				<li><span class="date"> <i>30</i> 2023.04
-				</span> <a class="subject"> 2023 지원 프로그램 연계 협약 </a></li>
-				<!-- 리스트 종료 -->
-
-				<!-- 리스트 시작 -->
-				<li><span class="date"> <i>30</i> 2023.04
-				</span> <a class="subject"> 2023 지원 프로그램 연계 협약 </a></li>
-				<!-- 리스트 종료 -->
-
-				<!-- 리스트 시작 -->
-				<li><span class="date"> <i>30</i> 2023.04
-				</span> <a class="subject"> 2023 지원 프로그램 연계 협약 </a></li>
-				<!-- 리스트 종료 -->
-
-				<!-- 리스트 시작 -->
-				<li><span class="date"> <i>30</i> 2023.04
-				</span> <a class="subject"> 2023 지원 프로그램 연계 협약 </a></li>
 				<!-- 리스트 종료 -->
 			</ul>
 			<div class="btn_area">

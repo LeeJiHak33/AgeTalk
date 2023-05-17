@@ -9,9 +9,11 @@
 	
 	<typeAliases>
 		<typeAlias type="kr.ac.kopo.model.Qna" alias="Qna"/>
+		<typeAlias type="kr.ac.kopo.model.Notice" alias="Notice"/>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="mybatis/user.xml"/>
+		<mapper resource="mybatis/admin.xml"/>
 	</mappers>
 </configuration>
