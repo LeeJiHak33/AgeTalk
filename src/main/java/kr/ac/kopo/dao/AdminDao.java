@@ -12,4 +12,8 @@ public interface AdminDao {
 
 	Notice notice_item(int id);
 
+	void notice_update(Notice item);
+
+	void notice_delete(int id);
+
 }

@@ -71,8 +71,8 @@
 			</table>
 			<div class="btn_area">
 				<a href="../notice" class="button"> <span>목록</span></a>
-				<a href="notice_update/${item.id}" class="button"> <span>수정</span></a>
-				<a href="notice_delete/${item.id}" class="button"> <span>삭제</span></a>
+				<a href="../notice_update/${item.id}" class="button"> <span>수정</span></a>
+				<a href="../notice_delete/${item.id}" class="button"> <span>삭제</span></a>
 			</div>
 		</section>
 	</div>
