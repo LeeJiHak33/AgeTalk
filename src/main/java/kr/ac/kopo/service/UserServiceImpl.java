@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.dao.UserDao;
 import kr.ac.kopo.model.Comment;
+import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.Qna;
 
 @Service
@@ -44,6 +45,12 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void qna_comment(Comment item) {
 		dao.qna_comment(item);
+	}
+
+	@Override
+	public List<Notice> notice() {
+		// TODO Auto-generated method stub
+		return dao.notice();
 	}
 
 }

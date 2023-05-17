@@ -34,4 +34,7 @@
 		INSERT INTO Comment(content, date)
 		VALUES(#{content}, Now())
 	</insert>
+	<select id="notice" resultType="Notice">
+		select id,title,date from notice
+	</select>
 </mapper>

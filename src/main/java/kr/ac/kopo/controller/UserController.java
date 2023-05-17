@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.ac.kopo.model.Comment;
+import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.Qna;
 import kr.ac.kopo.service.UserService;
 
@@ -43,7 +44,9 @@ public class UserController {
 	}
 		
 	@GetMapping("/notice")
-	public String notice() {
+	public String notice(Model model) {
+		List<Notice> list =service.notice();
+		model.addAttribute("list", list);
 		return path + "notice";
 	}
 	

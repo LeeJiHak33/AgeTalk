@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,66 +37,17 @@
 					href="qna" class="login-link2">Q&A</a>
 			</div>
 			<ul class="bbsList">
-				<!-- 리스트 시작 -->
-				<li><span class="date"> <i>30</i> 2023.04
-				</span> <a href="notice_detail" class="subject"> 2023 지원 프로그램 연계 협약 </a> <a
-					class="more"> <!-- <em>자세히보기</em> -->
-				</a></li>
-				<!-- 리스트 종료 -->
-
-				<!-- 리스트 시작 -->
-				<li><span class="date"> <i>30</i> 2023.04
-				</span> <a class="subject"> 2023 지원 프로그램 연계 협약 </a> <a class="more"> <!-- <em>자세히보기</em> -->
-				</a></li>
-				<!-- 리스트 종료 -->
-
-				<!-- 리스트 시작 -->
-				<li><span class="date"> <i>30</i> 2023.04
-				</span> <a class="subject"> 2023 지원 프로그램 연계 협약 </a> <a class="more"> <!-- <em>자세히보기</em> -->
-				</a></li>
-				<!-- 리스트 종료 -->
-
-				<!-- 리스트 시작 -->
-				<li><span class="date"> <i>30</i> 2023.04
-				</span> <a class="subject"> 2023 지원 프로그램 연계 협약 </a> <a class="more"> <!-- <em>자세히보기</em> -->
-				</a></li>
-				<!-- 리스트 종료 -->
-
-				<!-- 리스트 시작 -->
-				<li><span class="date"> <i>30</i> 2023.04
-				</span> <a class="subject"> 2023 지원 프로그램 연계 협약 </a> <a class="more"> <!-- <em>자세히보기</em> -->
-				</a></li>
-				<!-- 리스트 종료 -->
-
-				<!-- 리스트 시작 -->
-				<li><span class="date"> <i>30</i> 2023.04
-				</span> <a class="subject"> 2023 지원 프로그램 연계 협약 </a> <a class="more"> <!-- <em>자세히보기</em> -->
-				</a></li>
-				<!-- 리스트 종료 -->
-
-				<!-- 리스트 시작 -->
-				<li><span class="date"> <i>30</i> 2023.04
-				</span> <a class="subject"> 2023 지원 프로그램 연계 협약 </a> <a class="more"> <!-- <em>자세히보기</em> -->
-				</a></li>
-				<!-- 리스트 종료 -->
-
-				<!-- 리스트 시작 -->
-				<li><span class="date"> <i>30</i> 2023.04
-				</span> <a class="subject"> 2023 지원 프로그램 연계 협약 </a> <a class="more"> <!-- <em>자세히보기</em> -->
-				</a></li>
-				<!-- 리스트 종료 -->
-
-				<!-- 리스트 시작 -->
-				<li><span class="date"> <i>30</i> 2023.04
-				</span> <a class="subject"> 2023 지원 프로그램 연계 협약 </a> <a class="more"> <!-- <em>자세히보기</em> -->
-				</a></li>
-				<!-- 리스트 종료 -->
-
-				<!-- 리스트 시작 -->
-				<li><span class="date"> <i>30</i> 2023.04
-				</span> <a class="subject"> 2023 지원 프로그램 연계 협약 </a> <a class="more"> <!-- <em>자세히보기</em> -->
-				</a></li>
-				<!-- 리스트 종료 -->
+					<c:if test="${list.size()< 1 }">
+					<p style="margin: 20px 0 0 25px;">공지사항이 없습니다.</p>
+				</c:if>
+				<c:forEach items="${list}" var="item">
+					<li >
+						<fmt:formatDate var="day" value="${item.date}" pattern="dd" />
+						<fmt:formatDate var="year_mon" value="${item.date}" pattern="yyyy.MM" />
+						<span class="date"> <i>${day}</i> ${year_mon}</span>
+						<a href="notice_detail/${item.id}" class="subject"> ${item.title }</a>
+					</li>
+				</c:forEach>
 			</ul>
 			<!-- page -->
 			<jsp:include page="../pagenation.jsp"></jsp:include>
