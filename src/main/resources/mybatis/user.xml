@@ -3,9 +3,9 @@
 
 <mapper namespace="user">
 	<select id="qna" resultType="Qna">
-		SELECT *
-		FROM qna
-		ORDER BY id desc
+		SELECT qna.*, comment.content cmt
+		FROM qna left join comment on(qna.id = comment.qna_id)
+		ORDER BY qna.id desc
 	</select>
 	
 	<insert id="qna_insert">
