@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="8" version="2.0">
+<workbench progressCount="14" version="2.0">
 <workbenchAdvisor/>
 <window height="768" maximized="true" width="1024" x="532" y="71">
 <fastViewData fastViewLocation="1024"/>
@@ -30,8 +30,8 @@
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="AgeTalk.exerd" partName="AgeTalk.exerd" path="D:/LeeJiHak/AgeTalk/document/AgeTalk/AgeTalk.exerd" title="AgeTalk.exerd" tooltip="AgeTalk/AgeTalk.exerd" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/AgeTalk/AgeTalk.exerd"/>
+<editor focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="AgeTalk.exerd" partName="AgeTalk.exerd" title="AgeTalk.exerd" tooltip="D:\LeeJiHak\AgeTalk\document\erd\AgeTalk.exerd" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/D:/LeeJiHak/AgeTalk/document/erd/AgeTalk.exerd"/>
 </editor>
 </editors>
 <views>
@@ -40,25 +40,34 @@
 <filters>
 <filter element=".*" isEnabled="false"/>
 </filters>
+<selection>
+<element path="/AgeTalk"/>
+</selection>
 </viewState>
 </view>
 <view id="com.tomato.exerd.ui.views.thumbnail" partName="썸네일">
 <viewState/>
 </view>
-<view id="com.tomato.exerd.validate.ui.ValidateView" partName="검토"/>
+<view id="com.tomato.exerd.validate.ui.ValidateView" partName="검토">
+<viewState/>
+</view>
 <view id="com.tomato.exerd.modelview3.ModelView3" partName="모델">
 <viewState/>
 </view>
-<view id="org.eclipse.ui.console.ConsoleView" partName="콘솔"/>
+<view id="org.eclipse.ui.console.ConsoleView" partName="콘솔">
+<viewState/>
+</view>
 <view id="com.tomato.exerd.ui.views.domain" partName="도메인">
 <viewState/>
 </view>
-<view id="org.eclipse.ui.views.ContentOutline" partName="아웃라인"/>
+<view id="org.eclipse.ui.views.ContentOutline" partName="아웃라인">
+<viewState/>
+</view>
 <view id="org.eclipse.gef.ui.palette_view" partName="Palette">
 <viewState/>
 </view>
 </views>
-<perspectives activePart="com.tomato.exerd.editor.DiagramEditor" activePerspective="com.tomato.exerd.perspective.design">
+<perspectives activePart="org.eclipse.ui.console.ConsoleView" activePerspective="com.tomato.exerd.perspective.design">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="com.tomato.exerd.perspective.ExerdPerspectiveFactory" id="com.tomato.exerd.perspective.design" label="eXERD"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -84,11 +93,11 @@
 <new_wizard_action id="com.tomato.exerd.ui.wizards.newEXerdWizardFromDatabase"/>
 <new_wizard_action id="com.tomato.exerd.term.ui.wizard.NewTermDictionaryWizard"/>
 <new_wizard_action id="com.tomato.exerd.xscript.ui.wizard.NewXScriptWizard"/>
+<view id="com.tomato.exerd.modelview3.ModelView3"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
 <view id="org.eclipse.ui.views.ResourceNavigator"/>
 <view id="org.eclipse.gef.ui.palette_view"/>
 <view id="com.tomato.exerd.ui.views.thumbnail"/>
-<view id="com.tomato.exerd.modelview3.ModelView3"/>
-<view id="org.eclipse.ui.views.ContentOutline"/>
 <view id="com.tomato.exerd.ui.views.domain"/>
 <view id="com.tomato.exerd.validate.ui.ValidateView"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
@@ -112,7 +121,7 @@
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.18" ratioLeft="180" ratioRight="820" relationship="2" relative="leftFolder"/>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@1099cef" ratio="0.77926826" ratioLeft="639" ratioRight="181" relationship="2" relative="org.eclipse.ui.editorss">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1099cef" ratio="0.829664" ratioLeft="1432" ratioRight="294" relationship="2" relative="org.eclipse.ui.editorss">
 <folder activePageID="com.tomato.exerd.ui.views.thumbnail" appearance="2" expanded="2">
 <page content="com.tomato.exerd.ui.views.thumbnail" label="썸네일"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -121,7 +130,7 @@
 </folder>
 </info>
 <info folder="true" part="rightFolder" ratio="0.249226" ratioLeft="161" ratioRight="485" relationship="4" relative="org.eclipse.ui.internal.ViewStack@1099cef">
-<folder activePageID="com.tomato.exerd.modelview3.ModelView3" appearance="2" expanded="2">
+<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
 <page content="com.tomato.exerd.modelview3.ModelView3" label="모델"/>
 <page content="org.eclipse.ui.views.ContentOutline" label="아웃라인"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -130,8 +139,8 @@
 </presentation>
 </folder>
 </info>
-<info folder="true" part="bottomFolder" ratio="0.6996904" ratioLeft="452" ratioRight="194" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="com.tomato.exerd.ui.views.domain" appearance="2" expanded="2">
+<info folder="true" part="bottomFolder" ratio="0.7916219" ratioLeft="737" ratioRight="194" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="com.tomato.exerd.ui.views.domain" label="도메인"/>
 <page content="com.tomato.exerd.validate.ui.ValidateView" label="검토"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="콘솔"/>
@@ -159,14 +168,24 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/AgeTalk/AgeTalk.exerd"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" uri="file:/D:/LeeJiHak/AgeTalk/document/erd/AgeTalk.exerd"/>
 </editors>
-<item active="true" historyLabel="AgeTalk.exerd" index="0"/>
+<item historyLabel="AgeTalk.exerd" index="0"/>
+<item active="true" historyLabel="AgeTalk.exerd" index="1"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
+<trimArea IMemento.internal.id="16384">
+<trimItem IMemento.internal.id="leftFolder"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@7667dd"/>
+</trimArea>
+<trimArea IMemento.internal.id="131072">
+<trimItem IMemento.internal.id="org.eclipse.ui.editorss"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@1099cef"/>
+</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -174,10 +193,14 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+<trimItem IMemento.internal.id="bottomFolder"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="AgeTalk.exerd" tooltip="D:\LeeJiHak\AgeTalk\document\erd\AgeTalk.exerd">
+<persistable uri="file:/D:/LeeJiHak/AgeTalk/document/erd/AgeTalk.exerd"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="AgeTalk.exerd" tooltip="AgeTalk/AgeTalk.exerd">
 <persistable path="/AgeTalk/AgeTalk.exerd"/>
 </file>

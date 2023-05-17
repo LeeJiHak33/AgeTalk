@@ -24,7 +24,7 @@
 	<div>
 		<div class="tle">
 			<div class="sub_image">
-			<jsp:include page="../header.jsp"></jsp:include>
+			<jsp:include page="header.jsp"></jsp:include>
 				<!-- <header>
 					<div class="logo_wrap">
 					  <a href="../"><img src="../../../resources/image/agetalk_logo.png" alt="logo" /></a>
