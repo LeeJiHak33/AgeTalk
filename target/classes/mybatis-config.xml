@@ -9,6 +9,7 @@
 	
 	<typeAliases>
 		<typeAlias type="kr.ac.kopo.model.Qna" alias="Qna"/>
+		<typeAlias type="kr.ac.kopo.model.Comment" alias="Comment"/>
 	</typeAliases>
 	
 	<mappers>

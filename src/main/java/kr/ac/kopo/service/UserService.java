@@ -2,6 +2,7 @@ package kr.ac.kopo.service;
 
 import java.util.List;
 
+import kr.ac.kopo.model.Comment;
 import kr.ac.kopo.model.Qna;
 
 
@@ -15,6 +16,9 @@ public interface UserService {
 
 	void qna_update(Qna item);
 
+	void qna_delete(int id);
+
+	void qna_comment(Comment item);
 
 
 }

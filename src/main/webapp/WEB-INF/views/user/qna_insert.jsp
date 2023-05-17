@@ -11,7 +11,7 @@
 <link rel="shortcut icon" href="/resources/image/favicon/favicon.ico" />
 
 <link rel="stylesheet" href="/resources/css/qna_insert.css" />
-<link rel="stylesheet" href="/resources/index.css" />
+<link rel="stylesheet" href="/resources/css/index.css" />
 <link rel="stylesheet" href="/resources/css/summernote/summernote-lite.css" />
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
@@ -67,5 +67,6 @@
 		</div>
 		</form>
 	</div>
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>
