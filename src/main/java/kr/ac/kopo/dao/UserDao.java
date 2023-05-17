@@ -14,5 +14,7 @@ public interface UserDao {
 
 	void qna_update(Qna item);
 
+	void qna_delete(int id);
+
 
 }

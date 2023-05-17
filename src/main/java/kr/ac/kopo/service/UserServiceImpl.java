@@ -35,4 +35,9 @@ public class UserServiceImpl implements UserService {
 		dao.qna_update(item);
 	}
 
+	@Override
+	public void qna_delete(int id) {
+		dao.qna_delete(id);
+	}
+
 }

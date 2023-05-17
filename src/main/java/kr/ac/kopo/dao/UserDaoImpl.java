@@ -34,4 +34,9 @@ public class UserDaoImpl implements UserDao {
 		sql.update("user.qna_update", item);
 	}
 
+	@Override
+	public void qna_delete(int id) {
+		sql.delete("user.qna_delete", id);
+	}
+
 }

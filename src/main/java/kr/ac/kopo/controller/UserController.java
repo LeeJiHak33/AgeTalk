@@ -74,7 +74,13 @@ public class UserController {
 		
 		return "redirect:../qna";
 	}
-
+	
+	@GetMapping("/qna_delete/{id}")
+	public String qna_delete(@PathVariable int id) {
+		service.qna_delete(id);
+		
+		return "redirect:../qna";
+	}
 	
 	@GetMapping("/qna_detail/{id}")
 	public String qna_detail(@PathVariable int id, Model model, Qna qna) {

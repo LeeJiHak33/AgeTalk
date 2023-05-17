@@ -24,4 +24,9 @@
 		SET title = #{title}, content = #{content}
 		WHERE id = #{id}
 	</update>
+	
+	<delete id="qna_delete">
+		DELETE FROM qna
+		WHERE id = #{id}
+	</delete>
 </mapper>
