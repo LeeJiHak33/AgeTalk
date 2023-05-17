@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import kr.ac.kopo.model.Comment;
 import kr.ac.kopo.model.Qna;
 import kr.ac.kopo.service.UserService;
 
@@ -83,13 +85,20 @@ public class UserController {
 	}
 	
 	@GetMapping("/qna_detail/{id}")
-	public String qna_detail(@PathVariable int id, Model model, Qna qna) {
+	public String qna_detail(@PathVariable int id, Model model, Qna qna, Comment comment) {
 		
 		Qna item = service.item(id);
 		item.setId(id);
 		model.addAttribute("item", item);
-		
+			
 		return path + "qna_detail";
+	}
+	
+	@PostMapping("/qna_detail/{id}")
+	public String qna_comment(@PathVariable int id, Comment item) {
+		service.qna_comment(item);
+		
+		return "redirect:../qna_detail/{id}";
 	}
 	
 	@RequestMapping("/explain")

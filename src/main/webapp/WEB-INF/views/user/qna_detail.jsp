@@ -12,7 +12,7 @@
 <link rel="shortcut icon" href="/resources/image/favicon/favicon.ico" />
 
 <link rel="stylesheet" href="/resources/css/qna_detail.css" />
-<link rel="stylesheet" href="/resources/index.css" />
+<link rel="stylesheet" href="/resources/css/index.css" />
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
 	rel="stylesheet" />
@@ -68,9 +68,18 @@
 							class="icon"></span> <span>관리자</span></th>
 						<td><a> 같이 홍소망을 때리세요 </a></td>
 					</tr>
+					
 					<tr>
-						<th><input type="text" name="comment"></th>
+						<th>
+							<form method="post">
+								<div class="comment">
+									<input name="content" type="text" placeholder="답변을 등록해주세요.">
+									<button class="button" style="border: none; font-size: 16px;"> <span>등록</span></button>
+								</div>
+							</form>
+						</th>
 					</tr>
+					
 				</tbody>
 			</table>
 			<div class="btn_area">
@@ -83,6 +92,8 @@
 				</a>
 			</div>
 		</section>
+		<jsp:include page="../footer.jsp"></jsp:include>
 	</div>
+	
 </body>
 </html>

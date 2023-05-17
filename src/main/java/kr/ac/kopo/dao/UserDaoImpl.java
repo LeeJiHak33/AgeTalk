@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import kr.ac.kopo.model.Comment;
 import kr.ac.kopo.model.Qna;
 
 @Repository
@@ -37,6 +38,11 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public void qna_delete(int id) {
 		sql.delete("user.qna_delete", id);
+	}
+
+	@Override
+	public void qna_comment(Comment item) {
+		sql.insert("user.qna_comment", item);
 	}
 
 }

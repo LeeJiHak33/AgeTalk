@@ -29,4 +29,9 @@
 		DELETE FROM qna
 		WHERE id = #{id}
 	</delete>
+	
+	<insert id="qna_comment">
+		INSERT INTO Comment(content, date)
+		VALUES(#{content}, Now())
+	</insert>
 </mapper>
