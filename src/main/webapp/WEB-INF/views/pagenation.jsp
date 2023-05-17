@@ -13,7 +13,7 @@
 <body>
 
 	<div class="pagenation_wrap">
-		<ul class="pagenation">
+		<ul class="pagenation" style="padding-left:0;">
 			<li class="page"><a href="">&lt;&lt;</a></li>
 			<li class="page"><a href="">&lt;</a></li>
 			<li class="page"><a class="active2" href="">1</a></li>

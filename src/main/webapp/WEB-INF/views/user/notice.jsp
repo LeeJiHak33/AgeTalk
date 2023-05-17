@@ -20,7 +20,7 @@
 <body>
 	<div class="layout">
 		<div class="banner">
-			<jsp:include page="../header.jsp"></jsp:include>
+			<jsp:include page="header.jsp"></jsp:include>
 			<div class="inner_banner">
 				<h2>고객지원</h2>
 				<p>Customer Support</p>
