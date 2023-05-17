@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="" %>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,13 +55,13 @@
 				<tbody>
 					<tr>
 						<th scope="row" data-view="date">작성일</th>
-						<td>2023년 04월 xx일</td>
+						<td></td>
 						<th scope="row" data-view="count">조회수</th>
-						<td>2000회</td>
+						<td>${item.view }</td>
 					</tr>
 					<tr>
 						<td colspan="4" class="conts">
-							<div>공지사항 입니다.</div>
+							<div>${item.content}</div>
 						</td>
 					</tr>
 				</tbody>
@@ -82,7 +83,7 @@
 				</tbody>
 			</table>
 			<div class="btn_area">
-				<a href="notice" class="button"> <span>목록</span>
+				<a href="../notice" class="button"> <span>목록</span>
 				</a>
 			</div>
 		</section>
