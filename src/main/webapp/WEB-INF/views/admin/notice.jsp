@@ -38,7 +38,7 @@
 				<c:forEach items="${list}" var="item">
 					<li >
 						<fmt:formatDate var="day" value="${item.date}" pattern="dd" />
-						<fmt:formatDate var="year_mon" value="${item.date}" pattern="yyyy.mm" />
+						<fmt:formatDate var="year_mon" value="${item.date}" pattern="yyyy.MM" />
 						<span class="date"> <i>${day}</i> ${year_mon}</span>
 						<a href="notice_detail/${item.id}" class="subject"> ${item.title }</a>
 					</li>
