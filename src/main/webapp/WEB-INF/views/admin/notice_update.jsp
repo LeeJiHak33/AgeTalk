@@ -11,9 +11,7 @@
 <link rel="shortcut icon" href="/resources/image/favicon/favicon.ico" />
 
 <link rel="stylesheet" href="/resources/css/qna_insert.css" />
-<link rel="stylesheet" href="/resources/footer.css" />
-<link rel="stylesheet" href="/resources/header.css" />
-<link rel="stylesheet" href="/resources/index.css" />
+
 <link rel="stylesheet"
 	href="/resources/css/summernote/summernote-lite.css" />
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -37,45 +35,31 @@
 <body>
 	<div class="layout">
 		<div class="banner">
-			<header>
-				<div class="logo_wrap">
-					<a href="/"><img src="/resources/image/agetalk_logo.png"
-						alt="logo" /></a>
-				</div>
-				<div class="menu_wrap">
-					<ul class="menu_list">
-						<li><a href="">소개</a></li>
-						<li><a href="">채팅하기</a></li>
-						<li><a href="">고객센터</a></li>
-					</ul>
-				</div>
-				<div class="login_wrap">
-					<a href="login">관리자</a>
-				</div>
-			</header>
-			<div class="inner_banner">
-				<h2>관리자</h2>
-				<p>Admin</p>
+			<jsp:include page="header.jsp"></jsp:include>
+			<div class="inner_banner" style="padding-top: 135px !important;">
+				<h2>공지사항 관리</h2>
+				<p>Notice Management</p>
 			</div>
 		</div>
 
 		<div class="title">
-			<h2>공지사항 변경</h2>
+			<h2 style="font-weight: 300;">공지사항 변경</h2>
 		</div>
-		<div class="edit">
-			<div class="insert_title">
-				<input type="text" placeholder="{@value}" />
+		<form method="post">
+			<div class="edit">
+				<div class="insert_title">
+					<input type="text" placeholder="{@value}" value="${item.title }" name="title" />
+				</div>
+				<textarea id="summernote" name="content" >${item.content}</textarea>
 			</div>
-			<form method="post">
-				<textarea id="summernote" name="editor"></textarea>
-			</form>
-		</div>
-		<div class="btn_area">
-			<a href="" class="button"> <span>변경</span>
-			</a> <span class="space"></span> <a href="notice_detail" class="button">
-				<span>취소</span>
-			</a>
-		</div>
+			<div class="btn_area">
+				<button class="button" style="border: none; font-size: 16px;"> <span>등록</span></button>
+				</a> <span class="space"></span> <a href="../notice_detail/${item.id}" class="button">
+					<span>취소</span>
+				</a>
+			</div>
+		</form>
 	</div>
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>
