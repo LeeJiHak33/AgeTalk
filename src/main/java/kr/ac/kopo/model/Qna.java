@@ -8,7 +8,6 @@ public class Qna {
 	private int id;
 	private String title;
 	private String content;
-	private int view;
 	private int status;
 	@DateTimeFormat(pattern = "yyyy/MM/dd")
 	private Date date;
@@ -37,14 +36,6 @@ public class Qna {
 
 	public void setContent(String content) {
 		this.content = content;
-	}
-
-	public int getView() {
-		return view;
-	}
-
-	public void setView(int view) {
-		this.view = view;
 	}
 
 	public int getStatus() {

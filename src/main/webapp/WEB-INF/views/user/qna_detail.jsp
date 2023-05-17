@@ -58,7 +58,7 @@
 				<tbody>
 					<tr>
 						<th scope="row" data-view="count">작성자</th>
-						<td>${item.view}</td>
+						<td>0</td>
 						<th scope="row" data-view="date">작성일</th>
 						<td><fmt:formatDate value="${item.date}" pattern="yyyy-MM-dd" /></td>
 					</tr>
@@ -80,10 +80,13 @@
 							class="icon"></span> <span>관리자</span></th>
 						<td><a> 같이 홍소망을 때리세요 </a></td>
 					</tr>
+					<tr>
+						<th><input type="text" name="comment"></th>
+					</tr>
 				</tbody>
 			</table>
 			<div class="btn_area">
-				<a href="qna" class="button"> <span>목록</span>
+				<a href="../qna" class="button"> <span>목록</span>
 				</a> <span class="space"></span> <a href="../qna_update/${item.id }"
 					class="button"> <span>수정</span>
 				</a> <span class="space"></span>
