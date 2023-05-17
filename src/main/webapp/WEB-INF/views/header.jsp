@@ -34,19 +34,21 @@
             </li>
           </ul>
         </div>
-        <div class="login_wrap">
-          <a href="../../login_div" style="text-decoration: none;"
-            >로그인 &nbsp; | &nbsp; 회원가입</a>
+        <div class="login_wrap" style="display: none;">
+          <a href="login" style="text-decoration: none;"
+            >로그인 &nbsp; | &nbsp; 회원가입</a
+          >
+          
         </div>
         <!-- modal trigger button -->
-        <!-- <div class="login_wrap">
+        <div class="login_wrap">
           <a
             data-bs-toggle="modal"
             data-bs-target="#MyModal"
             style="font-size: 15px; color: #ffff; cursor: pointer;">
             마이페이지
           </a>
-        </div> -->
+        </div>
         <!-- Modal -->
         <div
           class="modal fade"
@@ -154,15 +156,15 @@
                   <div class="info">
                   	<div class="input-group mb-4">
                     <span class="text-dark input-group-text">이름</span> 
-                    <input name="name" type="text" <%-- value="${item.name}" --%> class="form-control">
+                    <input name="name" type="text" value="${item.name}" class="form-control">
                     </div>
                     <div class="input-group mb-4">
                     <span class="text-dark input-group-text">휴대폰</span> 
-                    <input name="phone" type="text" <%-- value="${item.phone}" --%> class="form-control">
+                    <input name="phone" type="text" value="${item.phone}" class="form-control">
                     </div>
                     <div class="input-group mb-4" style="padding-bottom: 10px;">
                     <span class="text-dark input-group-text">아이디</span> 
-                    <input name="id" type="text" <%-- value="${item.id}" --%> class="form-control">
+                    <input name="id" type="text" value="${item.id}" class="form-control">
                     </div>
 
                     <div style="display: flex; justify-content: flex-start">

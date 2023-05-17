@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import kr.ac.kopo.model.Comment;
 import kr.ac.kopo.model.Qna;
 import kr.ac.kopo.service.UserService;
 
@@ -19,6 +21,21 @@ public class UserController {
 	
 	@Autowired
 	UserService service;
+	
+	
+	/*
+	 * @RequestMapping("/login_div") public String login_div() { return "login_div";
+	 * }
+	 * 
+	 * @RequestMapping("/login_user") public String login_user() { return path+
+	 * "login_user"; }
+	 * 
+	 * @RequestMapping("/signup") public String signup() { return path+ "signup"; }
+	 * 
+	 * @RequestMapping("/signup_success") public String signup_success() { return
+	 * path+ "signup_success"; }
+	 */
+	
 	
 	@GetMapping("/chatting")
 	public String chatting() {
@@ -75,14 +92,28 @@ public class UserController {
 		return "redirect:../qna";
 	}
 	
+	@GetMapping("/qna_delete/{id}")
+	public String qna_delete(@PathVariable int id) {
+		service.qna_delete(id);
+		
+		return "redirect:../qna";
+	}
+	
 	@GetMapping("/qna_detail/{id}")
-	public String qna_detail(@PathVariable int id, Model model, Qna qna) {
+	public String qna_detail(@PathVariable int id, Model model, Qna qna, Comment comment) {
 		
 		Qna item = service.item(id);
 		item.setId(id);
 		model.addAttribute("item", item);
-		
+			
 		return path + "qna_detail";
+	}
+	
+	@PostMapping("/qna_detail/{id}")
+	public String qna_comment(@PathVariable int id, Comment item) {
+		service.qna_comment(item);
+		
+		return "redirect:../qna_detail/{id}";
 	}
 	
 	@RequestMapping("/explain")

@@ -7,15 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
-    <link rel="stylesheet" href="resources/css/signup_success.css">
-    <link rel="stylesheet" href="resources/css/index.css">
+    <link rel="stylesheet" href="/resources/css/signup_success.css">
+    <link rel="stylesheet" href="/resources/css/index.css">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <!--파비콘-->
-    <link rel="shortcut icon" href="resources/image/favicon/favicon.ico"> 
+    <link rel="shortcut icon" href="/resources/image/favicon/favicon.ico"> 
 
 </head>
 <body>
@@ -34,7 +34,7 @@
 
            
            <p>환영합니다! 지금 바로 로그인 후 AgeTalk에서<br/>소통하며 새로운 경험을 쌓아보세요.</p>
-           <a href="login" style="color: white;" class="lg_btn">로그인 바로가기</a>
+           <a href="login_user" style="color: white;" class="lg_btn">로그인 바로가기</a>
       </div>
 
     </div>

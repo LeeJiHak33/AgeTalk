@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.dao.UserDao;
+import kr.ac.kopo.model.Comment;
 import kr.ac.kopo.model.Qna;
 
 @Service
@@ -33,6 +34,16 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void qna_update(Qna item) {
 		dao.qna_update(item);
+	}
+
+	@Override
+	public void qna_delete(int id) {
+		dao.qna_delete(id);
+	}
+
+	@Override
+	public void qna_comment(Comment item) {
+		dao.qna_comment(item);
 	}
 
 }
