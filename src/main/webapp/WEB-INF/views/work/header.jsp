@@ -25,7 +25,13 @@ pageEncoding="UTF-8"%>
 			  <li class="sub_menu"><a href="./managelist">매칭 관리</a></li>
             </ul>
           </li>
-          <li><a href="">고객센터</a></li>
+          <li>
+              <a href="../user/notice" style="text-decoration: none">고객센터</a>
+              	<ul class="sub_list" style="padding:0; padding-top:20px;">
+						<li class="sub_menu"><a href="../user/notice">공지사항</a></li>
+						<li class="sub_menu"><a href="../user/qna">QnA</a></li>
+				</ul>
+            </li>
         </ul>
       </div>
       <div class="login_wrap">
