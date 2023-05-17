@@ -21,8 +21,8 @@ pageEncoding="UTF-8"%>
           <li>
             <a href="">관리</a>
             <ul class="sub_list">
-              <li class="sub_menu"><a href="">사용자 관리</a></li>
-              <li class="sub_menu"><a href="">매칭 관리</a></li>
+              <li class="sub_menu"><a href="./youthlist">사용자 관리</a></li>
+			  <li class="sub_menu"><a href="./managelist">매칭 관리</a></li>
             </ul>
           </li>
           <li><a href="">고객센터</a></li>
