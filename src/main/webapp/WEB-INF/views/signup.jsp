@@ -56,9 +56,9 @@
                     <input type="text" name="phone" placeholder="'-'를 제외하고 입력해주세요">
                   </div>
                 </div>
-                   <a href="signup_success" style="color:white">
-                     <div class="signup_btn"> 회원가입</div>
-                   </a>
+                	<div class="signup_btn">
+                   		<a href="signup_success" style="color:white">회원가입</a>
+                   </div>
                 </form>
               </div>
           </div>

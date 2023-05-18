@@ -27,20 +27,6 @@ public class UserController {
 	UserService service;
 	
 	
-	/*
-	 * @RequestMapping("/login_div") public String login_div() { return "login_div";
-	 * }
-	 * 
-	 * @RequestMapping("/login_user") public String login_user() { return path+
-	 * "login_user"; }
-	 * 
-	 * @RequestMapping("/signup") public String signup() { return path+ "signup"; }
-	 * 
-	 * @RequestMapping("/signup_success") public String signup_success() { return
-	 * path+ "signup_success"; }
-	 */
-	
-	
 	@GetMapping("/chatting")
 	public String chatting() {
 		return path+"chatting";
@@ -69,14 +55,14 @@ public class UserController {
 		return path + "qna";
 	}
 	
-	@RequestMapping("/dummy")
+	@RequestMapping("/qna_dummy")
 	public String dummy() {
 		service.dummy();
 		
 		return "redirect:qna";
 	}
 	
-	@RequestMapping("/init")
+	@RequestMapping("/qna_init")
 	public String init() {
 		service.init();
 		

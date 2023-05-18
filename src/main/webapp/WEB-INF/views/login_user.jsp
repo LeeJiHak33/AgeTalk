@@ -30,31 +30,43 @@
           <h1>로그인</h1>
           <div>
             <form method="post">
+            
             <div class="lg_wrap">
+              
               <div class="id_wrap">
                 <label>아이디</label>
                 <input type="text" name="id" placeholder="아이디 입력">
               </div>
+              
               <div class="pw_wrap">
                 <label>비밀번호</label>
                 <input type="password" name="passwd" placeholder="비밀번호 입력">
               </div>
+                       
             </div>
+              
               <div class="login-options">
+                
                 <div class="left-options">
                   <label class="checkbox-label">
                     <input type="checkbox" name="id-save" value="yes"> 아이디 저장
                   </label>
+                
                 </div>
+                
                 <div class="right-options">
                   <a href="signup" class="login-link" style="color: white">회원가입</a>
 
+                
                 </div>
               </div>
+              
               <div class="lg_btn">
                 <a>로그인</a>
               </div>
+              
             </form>
+            
           </div>
         </div>
       </div>

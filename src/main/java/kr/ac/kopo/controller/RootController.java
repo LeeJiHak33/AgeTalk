@@ -32,8 +32,8 @@ public class RootController {
 	}
 	
 	@RequestMapping("/signup_success")
-	public String signup_sucess() {
-		return "signup_sucess";
+	public String signup_success() {
+		return "signup_success";
 	}
 	
 	

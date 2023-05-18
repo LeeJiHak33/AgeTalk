@@ -60,6 +60,8 @@ public class UserServiceImpl implements UserService {
 	public void comment_delete(int id) {
 		dao.comment_delete(id);
 	}
+	
+	@Override
 	public void dummy() {
 		for(int i=1; i<100; i++) {
 			Qna item = new Qna();

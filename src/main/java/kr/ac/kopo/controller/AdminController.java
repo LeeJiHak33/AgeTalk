@@ -1,6 +1,5 @@
 package kr.ac.kopo.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +20,7 @@ public class AdminController {
 	
 	@Autowired
 	AdminService service;
+	
 	
 	@RequestMapping("/report_list")
 	public String report_list() {
