@@ -56,6 +56,7 @@ public class UserDaoImpl implements UserDao {
 	public void comment_delete(int id) {
 		sql.delete("user.comment_delete", id);
 	}
+	
 	@Override
 	public int total(Pager pager) {
 		return sql.selectOne("user.qna_total", pager);

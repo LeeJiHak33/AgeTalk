@@ -91,16 +91,13 @@ public class UserServiceImpl implements UserService {
 		} while(qna.size() > 0);
 	}
 	
-		
-	}
+	@Override
 	public List<Notice> notice() {
-		// TODO Auto-generated method stub
 		return dao.notice();
 	}
 
 	@Override
 	public Notice notice_item(int id) {
-		// TODO Auto-generated method stub
 		return dao.notice_item(id);
 
 	}
