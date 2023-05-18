@@ -89,6 +89,7 @@ public class UserServiceImpl implements UserService {
 			}
 			
 		} while(qna.size() > 0);
+	}
 	
 		
 
