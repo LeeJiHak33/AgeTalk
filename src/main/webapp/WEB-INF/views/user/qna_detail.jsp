@@ -23,18 +23,26 @@
 <script>
 	window.onload = () => {
 		const button = document.getElementById("update");
-		const tr = document.getElementById("cmt_tr");
+		const tbody = document.getElementById("cmt_tbody");
 		
 		button.addEventListener("click", e => {
 			alert("클릭");
 			
 			const input = document.createElement("input");
+			const tr = document.createElement("tr");
+			const btn = document.createElement("button");
 			
 			input.setAttribute("type", "text");
 			input.setAttribute("name", "cmt_update");
-			input.setAttribute("placeholder", "수정할 답변을 입력해주세요.");
+			input.setAttribute("placeholder", "수정할 답변을 입력해주세요."); 
 			
-			input.append(tr);
+			btn.setAttribute("class", "button");
+			btn.setAttribute("class", "button");
+			btn.setAttribute("class", "button");
+			
+			tr.append(input);
+			tbody.append(tr);
+			
 		})
 	}
 </script>
@@ -82,9 +90,9 @@
 					<col data-view="th" style="width: 15%" />
 					<col data-view="td" style="width: 85%" />
 				</colgroup>
-				<tbody>
+				<tbody id="cmt_tbody">
 					<c:if test="${item.cmt != null}">
-						<tr id="cmt_tr">
+						<tr>
 							<th scope="row"><span
 								class="icon"><p class="icon_txt">관리자</p></span></th>
 							<td>${item.cmt}</td>
