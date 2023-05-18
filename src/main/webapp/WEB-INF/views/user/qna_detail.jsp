@@ -111,7 +111,7 @@
 				</tbody>
 			</table>
 			<div class="btn_area">
-				<a href="../qna" class="button"> <span>목록</span>
+				<a href="../qna/" class="button"> <span>목록</span>
 				</a> <span class="space"></span> <a href="../qna_update/${item.id }"
 					class="button"> <span>수정</span>
 				</a> <span class="space"></span>

@@ -85,6 +85,12 @@
 					class="btn_write">글쓰기</span>
 				</a>
 			</div>
+			<div>
+				<a href="dummy">대량등록</a>
+			</div>
+			<div>
+				<a href="init">초기화</a>
+			</div>
 			<jsp:include page="../pagenation.jsp"></jsp:include>
 		</section>	
 	</div>

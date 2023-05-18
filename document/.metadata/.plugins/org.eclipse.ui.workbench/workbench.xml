@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="14" version="2.0">
+<workbench progressCount="16" version="2.0">
 <workbenchAdvisor/>
 <window height="768" maximized="true" width="1024" x="532" y="71">
 <fastViewData fastViewLocation="1024"/>
@@ -30,7 +30,7 @@
 </folder>
 </info>
 </editorArea>
-<editor focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="AgeTalk.exerd" partName="AgeTalk.exerd" title="AgeTalk.exerd" tooltip="D:\LeeJiHak\AgeTalk\document\erd\AgeTalk.exerd" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="AgeTalk.exerd" partName="AgeTalk.exerd" title="AgeTalk.exerd" tooltip="D:\LeeJiHak\AgeTalk\document\erd\AgeTalk.exerd" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/D:/LeeJiHak/AgeTalk/document/erd/AgeTalk.exerd"/>
 </editor>
 </editors>
@@ -67,7 +67,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.ui.console.ConsoleView" activePerspective="com.tomato.exerd.perspective.design">
+<perspectives activePart="com.tomato.exerd.editor.DiagramEditor" activePerspective="com.tomato.exerd.perspective.design">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="com.tomato.exerd.perspective.ExerdPerspectiveFactory" id="com.tomato.exerd.perspective.design" label="eXERD"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -178,14 +178,6 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="leftFolder"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@7667dd"/>
-</trimArea>
-<trimArea IMemento.internal.id="131072">
-<trimItem IMemento.internal.id="org.eclipse.ui.editorss"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@1099cef"/>
-</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -193,7 +185,6 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
-<trimItem IMemento.internal.id="bottomFolder"/>
 </trimArea>
 </trimLayout>
 </window>

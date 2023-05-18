@@ -6,6 +6,7 @@
 		SELECT qna.*, comment.content cmt
 		FROM qna left join comment on(qna.id = comment.qna_id)
 		ORDER BY qna.id desc
+		LiMIT #{offset},#{perPager} 
 	</select>
 	
 	<insert id="qna_insert">
@@ -39,4 +40,18 @@
 		INSERT INTO comment(content, date, qna_id)
 		VALUES(#{content}, Now(), #{id})
 	</insert>
+
+	
+	<select id="qna_total" resultType="Integer">
+		SELECT COUNT(*) FROM qna
+	</select>
+	
+
+	<select id="notice" resultType="Notice">
+		select id,title,date from notice
+	</select>
+	<select id="notice_item" resultType="Notice">
+		select * from notice where id=#{id}
+	</select>
+
 </mapper>

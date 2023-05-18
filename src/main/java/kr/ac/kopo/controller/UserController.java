@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.ac.kopo.model.Comment;
+import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.Qna;
+import kr.ac.kopo.pager.Pager;
 import kr.ac.kopo.service.UserService;
 
 @Controller
@@ -45,22 +47,40 @@ public class UserController {
 	}
 		
 	@GetMapping("/notice")
-	public String notice() {
+	public String notice(Model model) {
+		List<Notice> list =service.notice();
+		model.addAttribute("list", list);
 		return path + "notice";
 	}
 	
-	@GetMapping("/notice_detail")
-	public String notice_detail() {
+	@GetMapping("/notice_detail/{id}")
+	public String notice_detail(@PathVariable int id,Model model) {
+		Notice item=service.notice_item(id);
+		model.addAttribute("item", item);
 		return path + "notice_detail";
 	}
 	
 	@GetMapping("/qna")
-	public String qna(Model model) {
-		List<Qna> list = service.qna();
+	public String qna(Model model, Pager pager) {
+		List<Qna> list = service.qna(pager);
 		
 		model.addAttribute("list", list);
 		
 		return path + "qna";
+	}
+	
+	@RequestMapping("/dummy")
+	public String dummy() {
+		service.dummy();
+		
+		return "redirect:qna";
+	}
+	
+	@RequestMapping("/init")
+	public String init() {
+		service.init();
+		
+		return "redirect:qna";
 	}
 	
 	@GetMapping("/qna_insert")
