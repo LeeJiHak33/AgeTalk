@@ -22,5 +22,7 @@ public interface UserDao {
 
 	List<Notice> notice();
 
+	Notice notice_item(int id);
+
 
 }

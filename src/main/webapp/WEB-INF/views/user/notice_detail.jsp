@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="" %>	
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,31 +11,20 @@
 
 <link rel="shortcut icon" href="/resources/image/favicon/favicon.ico" />
 <link rel="stylesheet" href="/resources/css/notice_detail.css" />
-<link rel="stylesheet" href="/resources/css/index.css" />
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+	rel="stylesheet" />
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
 	<div class="layout">
 		<div class="banner">
-			<header>
-				<div class="logo_wrap">
-					<a href="/"><img
-						src="/resources/image/agetalk_logo.png" alt="logo" /></a>
-				</div>
-				<div class="menu_wrap">
-					<ul class="menu_list">
-						<li><a href="">소개</a></li>
-						<li><a href="">채팅하기</a></li>
-						<li><a href="">고객센터</a></li>
-					</ul>
-				</div>
-				<div class="login_wrap">
-					<a href="login">로그인 &nbsp; | &nbsp; 회원가입</a>
-				</div>
-			</header>
-			<div class="inner_banner">
-				<h2>고객지원</h2>
-				<p>Customer Support</p>
+			<jsp:include page="header.jsp"></jsp:include>
+			<div class="inner_banner" style="padding-top: 235px !important;">
+				<h2 style="margin-bottom: 0px;font-size: 54px;font-weight: 300;">고객지원</h2>
+				<p style=" margin-bottom: 0px;font-size: 34px; font-family: NotoSerif;">Customer Support</p>
 			</div>
 		</div>
 
@@ -44,7 +33,7 @@
 				<h2>공지사항</h2>
 			</div>
 
-			<h3 class="bbsTitle">2023 지원 프로그램 연계 협약</h3>
+			<h3 class="bbsTitle">${item.title }</h3>
 			<table class="bbsView">
 				<colgroup>
 					<col data-view="th" style="width: 25%" />
@@ -55,7 +44,7 @@
 				<tbody>
 					<tr>
 						<th scope="row" data-view="date">작성일</th>
-						<td></td>
+						<td><fmt:formatDate value="${item.date}" pattern="yyyy년 MM월 dd일" /></td>
 						<th scope="row" data-view="count">조회수</th>
 						<td>${item.view }</td>
 					</tr>
@@ -88,5 +77,6 @@
 			</div>
 		</section>
 	</div>
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

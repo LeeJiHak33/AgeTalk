@@ -53,4 +53,10 @@ public class UserServiceImpl implements UserService {
 		return dao.notice();
 	}
 
+	@Override
+	public Notice notice_item(int id) {
+		// TODO Auto-generated method stub
+		return dao.notice_item(id);
+	}
+
 }

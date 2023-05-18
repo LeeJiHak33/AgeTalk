@@ -37,4 +37,7 @@
 	<select id="notice" resultType="Notice">
 		select id,title,date from notice
 	</select>
+	<select id="notice_item" resultType="Notice">
+		select * from notice where id=#{id}
+	</select>
 </mapper>

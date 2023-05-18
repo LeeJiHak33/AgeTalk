@@ -23,5 +23,7 @@ public interface UserService {
 
 	List<Notice> notice();
 
+	Notice notice_item(int id);
+
 
 }

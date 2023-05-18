@@ -50,8 +50,10 @@ public class UserController {
 		return path + "notice";
 	}
 	
-	@GetMapping("/notice_detail")
-	public String notice_detail() {
+	@GetMapping("/notice_detail/{id}")
+	public String notice_detail(@PathVariable int id,Model model) {
+		Notice item=service.notice_item(id);
+		model.addAttribute("item", item);
 		return path + "notice_detail";
 	}
 	

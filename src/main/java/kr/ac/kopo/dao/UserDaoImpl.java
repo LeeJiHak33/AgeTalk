@@ -52,4 +52,10 @@ public class UserDaoImpl implements UserDao {
 		return sql.selectList("user.notice");
 	}
 
+	@Override
+	public Notice notice_item(int id) {
+		// TODO Auto-generated method stub
+		return sql.selectOne("user.notice_item", id);
+	}
+
 }
