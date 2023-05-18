@@ -92,7 +92,7 @@ public class UserServiceImpl implements UserService {
 	}
 	
 		
-
+	}
 	public List<Notice> notice() {
 		// TODO Auto-generated method stub
 		return dao.notice();
