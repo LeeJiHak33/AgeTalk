@@ -35,9 +35,18 @@
 		INSERT INTO Comment(content, date)
 		VALUES(#{content}, Now())
 	</insert>
+
 	
 	<select id="qna_total" resultType="Integer">
 		SELECT COUNT(*) FROM qna
 	</select>
 	
+
+	<select id="notice" resultType="Notice">
+		select id,title,date from notice
+	</select>
+	<select id="notice_item" resultType="Notice">
+		select * from notice where id=#{id}
+	</select>
+
 </mapper>

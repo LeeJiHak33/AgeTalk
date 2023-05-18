@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.dao.UserDao;
 import kr.ac.kopo.model.Comment;
+import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.Qna;
 import kr.ac.kopo.pager.Pager;
 
@@ -82,6 +83,17 @@ public class UserServiceImpl implements UserService {
 		} while(qna.size() > 0);
 	
 		
+
+	public List<Notice> notice() {
+		// TODO Auto-generated method stub
+		return dao.notice();
+	}
+
+	@Override
+	public Notice notice_item(int id) {
+		// TODO Auto-generated method stub
+		return dao.notice_item(id);
+
 	}
 
 }

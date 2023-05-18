@@ -3,6 +3,7 @@ package kr.ac.kopo.service;
 import java.util.List;
 
 import kr.ac.kopo.model.Comment;
+import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.Qna;
 import kr.ac.kopo.pager.Pager;
 
@@ -24,6 +25,11 @@ public interface UserService {
 	void dummy();
 
 	void init();
+
+	List<Notice> notice();
+
+	Notice notice_item(int id);
+
 
 
 }

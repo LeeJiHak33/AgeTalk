@@ -21,7 +21,7 @@
 <body>
 	<header>
 		<div class="logo_wrap">
-			<a href="../admin/work_list"><img src="/resources/image/agetalk_logo.png" alt="logo" /></a>
+			<a href="../../admin/work_list"><img src="/resources/image/agetalk_logo.png" alt="logo" /></a>
 		</div>
 		<div class="menu_wrap">
 			<ul class="menu_list">
