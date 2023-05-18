@@ -83,7 +83,7 @@ public class UserServiceImpl implements UserService {
 		} while(qna.size() > 0);
 	
 		
-
+	}
 	public List<Notice> notice() {
 		// TODO Auto-generated method stub
 		return dao.notice();

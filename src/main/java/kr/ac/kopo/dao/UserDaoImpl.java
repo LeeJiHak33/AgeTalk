@@ -50,7 +50,7 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public int total(Pager pager) {
 		return sql.selectOne("user.qna_total", pager);
-
+	}
 	public List<Notice> notice() {
 		// TODO Auto-generated method stub
 		return sql.selectList("user.notice");
