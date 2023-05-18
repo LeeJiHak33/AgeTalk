@@ -56,37 +56,37 @@ header .menu_wrap .sub_list {
 </head>
 <body>
 	<div>
-	<div class="tle">
-		<div class="sub_image">
-			<jsp:include page="./header.jsp"></jsp:include>
-			<h1>사용자 관리</h1>
+		<div class="tle">
+			<div class="sub_image">
+				<jsp:include page="./header.jsp"></jsp:include>
+				<h1>매칭 관리</h1>
+			</div>
 		</div>
-	</div>
-	<div class="gaptle">
-		<div class="sub_tle">
-			<div class="manage_list">
-				<table border="1" class="table table-sm table-hover">
-					<thead>
+		<div class="gaptle">
+			<div class="sub_tle">
+				<div class="manage_list">
+					<table border="1" class="table table-sm table-hover">
+						<thead>
+							<tr>
+								<th>어르신</th>
+								<th>우울도</th>
+								<th>청년</th>
+								<th>우울도</th>
+								<th>채팅</th>
+								<th>관리</th>
+							</tr>
+						</thead>
 						<tr>
-							<th>어르신</th>
-							<th>우울도</th>
-							<th>청년</th>
-							<th>우울도</th>
-							<th>채팅</th>
-							<th>관리</th>
-						</tr>
-					</thead>
-					<tr>
-						<td>김진수</td>
-						<td>
-							<div class="progress">
-								<div id="progress-bar1" class="progress-bar" role="progressbar"
-									aria-valuemin="0" aria-valuemax="100">
-									<div id="progress-value1">
-										25<span>%</span>
+							<td>김진수</td>
+							<td>
+								<div class="progress">
+									<div id="progress-bar1" class="progress-bar" role="progressbar"
+										aria-valuemin="0" aria-valuemax="100">
+										<div id="progress-value1">
+											25<span>%</span>
+										</div>
 									</div>
-								</div>
-							</div> <script>
+								</div> <script>
 									const progressBar1 = document.querySelector('#progress-bar1');
 									if (progressBar1) {
 										progressBar1.style.width = '100%';
@@ -105,17 +105,17 @@ header .menu_wrap .sub_list {
 									}
 								
 								</script>
-						</td>
-						<td>이화랑</td>
-						<td>
-							<div class="progress">
-								<div id="progress-bar2" class="progress-bar" role="progressbar"
-									aria-valuemin="0" aria-valuemax="100">
-									<div id="progress-value2">
-										80<span>%</span>
+							</td>
+							<td>이화랑</td>
+							<td>
+								<div class="progress">
+									<div id="progress-bar2" class="progress-bar" role="progressbar"
+										aria-valuemin="0" aria-valuemax="100">
+										<div id="progress-value2">
+											80<span>%</span>
+										</div>
 									</div>
-								</div>
-							</div> <script>
+								</div> <script>
 								const progressBar2 = document.querySelector('#progress-bar2');
 								if (progressBar2) {
 									progressBar2.style.width = '100%';
@@ -133,230 +133,226 @@ header .menu_wrap .sub_list {
 									}
 								}
 								</script>
-						</td>
-						<td><a class="popup"
-							style="text-decoration: none; cursor: pointer;">채팅 바로가기</a></td>
-						<td><button class="unlock_btn">매칭해제</button></td>
-					</tr>
+							</td>
+							<td><a class="popup"
+								style="text-decoration: none; cursor: pointer;">채팅 바로가기</a></td>
+							<td><button class="unlock_btn">매칭해제</button></td>
+						</tr>
 
-					<tr>
-						<td>김갑수</td>
-						<td>
-							<div class="progress">
-								<div class="progress-bar" role="progressbar"
-									style="width: 50%; background-color: #ffea00"
-									aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">50%
+						<tr>
+							<td>김갑수</td>
+							<td>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar"
+										style="width: 50%; background-color: #ffea00"
+										aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">50%
+									</div>
 								</div>
-							</div>
-						</td>
-						<td>최화랑</td>
-						<td>
-							<div class="progress">
-								<div class="progress-bar" role="progressbar"
-									style="width: 90%; background-color: #ff0000"
-									aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">90%</div>
-							</div>
-						</td>
-						<td><a class="popup"
-							style="text-decoration: none; cursor: pointer;">채팅 바로가기</a></td>
-						<td><button class="unlock_btn">매칭해제</button></td>
-					</tr>
-					<tr>
-						<td>김진수</td>
-						<td>
-							<div class="progress">
-								<div class="progress-bar" role="progressbar"
-									style="width: 25%; background-color: #0040ff"
-									aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">25%</div>
-							</div>
-						</td>
-						<td>이화랑</td>
-						<td>
-							<div class="progress">
-								<div class="progress-bar" role="progressbar"
-									style="width: 90%; background-color: #ff0000"
-									aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">90%</div>
-
-							</div>
-						</td>
-						<td><a class="popup"
-							style="text-decoration: none; cursor: pointer;">채팅 바로가기</a></td>
-						<td><button class="unlock_btn">매칭해제</button></td>
-					</tr>
-					<tr>
-						<td>김갑수</td>
-						<td>
-							<div class="progress">
-								<div class="progress-bar" role="progressbar"
-									style="width: 50%; background-color: #ffea00"
-									aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">50%
+							</td>
+							<td>최화랑</td>
+							<td>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar"
+										style="width: 90%; background-color: #ff0000"
+										aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">90%</div>
 								</div>
-							</div>
-						</td>
-						<td>최화랑</td>
-						<td>
-							<div class="progress">
-								<div class="progress-bar" role="progressbar"
-									style="width: 90%; background-color: #ff0000"
-									aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">90%</div>
-							</div>
-						</td>
-						<td><a class="popup"
-							style="text-decoration: none; cursor: pointer;">채팅 바로가기</a></td>
-						<td><button class="unlock_btn">매칭해제</button></td>
-					</tr>
-					<tr>
-						<td>김진수</td>
-						<td>
-							<div class="progress">
-								<div class="progress-bar" role="progressbar"
-									style="width: 25%; background-color: #0040ff"
-									aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">25%</div>
-							</div>
-						</td>
-						<td>이화랑</td>
-						<td>
-							<div class="progress">
-								<div class="progress-bar" role="progressbar"
-									style="width: 90%; background-color: #ff0000"
-									aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">90%</div>
-
-							</div>
-						</td>
-						<td><a class="popup"
-							style="text-decoration: none; cursor: pointer;">채팅 바로가기</a></td>
-						<td><button class="unlock_btn">매칭해제</button></td>
-					</tr>
-					<tr>
-						<td>김갑수</td>
-						<td>
-							<div class="progress">
-								<div class="progress-bar" role="progressbar"
-									style="width: 50%; background-color: #ffea00"
-									aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">50%
+							</td>
+							<td><a class="popup"
+								style="text-decoration: none; cursor: pointer;">채팅 바로가기</a></td>
+							<td><button class="unlock_btn">매칭해제</button></td>
+						</tr>
+						<tr>
+							<td>김진수</td>
+							<td>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar"
+										style="width: 25%; background-color: #0040ff"
+										aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">25%</div>
 								</div>
-							</div>
-						</td>
-						<td>최화랑</td>
-						<td>
-							<div class="progress">
-								<div class="progress-bar" role="progressbar"
-									style="width: 90%; background-color: #ff0000"
-									aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">90%</div>
-							</div>
-						</td>
-						<td><a class="popup"
-							style="text-decoration: none; cursor: pointer;">채팅 바로가기</a></td>
-						<td><button class="unlock_btn">매칭해제</button></td>
-					</tr>
-					<tr>
-						<td>김진수</td>
-						<td>
-							<div class="progress">
-								<div class="progress-bar" role="progressbar"
-									style="width: 25%; background-color: #0040ff"
-									aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">25%</div>
-							</div>
-						</td>
-						<td>이화랑</td>
-						<td>
-							<div class="progress">
-								<div class="progress-bar" role="progressbar"
-									style="width: 90%; background-color: #ff0000"
-									aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">90%</div>
+							</td>
+							<td>이화랑</td>
+							<td>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar"
+										style="width: 90%; background-color: #ff0000"
+										aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">90%</div>
 
-							</div>
-						</td>
-						<td><a class="popup"
-							style="text-decoration: none; cursor: pointer;">채팅 바로가기</a></td>
-						<td><button class="unlock_btn">매칭해제</button></td>
-					</tr>
-					<tr>
-						<td>김갑수</td>
-						<td>
-							<div class="progress">
-								<div class="progress-bar" role="progressbar"
-									style="width: 50%; background-color: #ffea00"
-									aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">50%
 								</div>
-							</div>
-						</td>
-						<td>최화랑</td>
-						<td>
-							<div class="progress">
-								<div class="progress-bar" role="progressbar"
-									style="width: 90%; background-color: #ff0000"
-									aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">90%</div>
-							</div>
-						</td>
-						<td><a class="popup"
-							style="text-decoration: none; cursor: pointer;">채팅 바로가기</a></td>
-						<td><button class="unlock_btn">매칭해제</button></td>
-					</tr>
-					<tr>
-						<td>김진수</td>
-						<td>
-							<div class="progress">
-								<div class="progress-bar" role="progressbar"
-									style="width: 25%; background-color: #0040ff"
-									aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">25%</div>
-							</div>
-						</td>
-						<td>이화랑</td>
-						<td>
-							<div class="progress">
-								<div class="progress-bar" role="progressbar"
-									style="width: 90%; background-color: #ff0000"
-									aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">90%</div>
+							</td>
+							<td><a class="popup"
+								style="text-decoration: none; cursor: pointer;">채팅 바로가기</a></td>
+							<td><button class="unlock_btn">매칭해제</button></td>
+						</tr>
+						<tr>
+							<td>김갑수</td>
+							<td>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar"
+										style="width: 50%; background-color: #ffea00"
+										aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">50%
+									</div>
+								</div>
+							</td>
+							<td>최화랑</td>
+							<td>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar"
+										style="width: 90%; background-color: #ff0000"
+										aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">90%</div>
+								</div>
+							</td>
+							<td><a class="popup"
+								style="text-decoration: none; cursor: pointer;">채팅 바로가기</a></td>
+							<td><button class="unlock_btn">매칭해제</button></td>
+						</tr>
+						<tr>
+							<td>김진수</td>
+							<td>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar"
+										style="width: 25%; background-color: #0040ff"
+										aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">25%</div>
+								</div>
+							</td>
+							<td>이화랑</td>
+							<td>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar"
+										style="width: 90%; background-color: #ff0000"
+										aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">90%</div>
 
-							</div>
-						</td>
-						<td><a class="popup"
-							style="text-decoration: none; cursor: pointer;">채팅 바로가기</a></td>
-						<td><button class="unlock_btn">매칭해제</button></td>
-					</tr>
+								</div>
+							</td>
+							<td><a class="popup"
+								style="text-decoration: none; cursor: pointer;">채팅 바로가기</a></td>
+							<td><button class="unlock_btn">매칭해제</button></td>
+						</tr>
+						<tr>
+							<td>김갑수</td>
+							<td>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar"
+										style="width: 50%; background-color: #ffea00"
+										aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">50%
+									</div>
+								</div>
+							</td>
+							<td>최화랑</td>
+							<td>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar"
+										style="width: 90%; background-color: #ff0000"
+										aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">90%</div>
+								</div>
+							</td>
+							<td><a class="popup"
+								style="text-decoration: none; cursor: pointer;">채팅 바로가기</a></td>
+							<td><button class="unlock_btn">매칭해제</button></td>
+						</tr>
+						<tr>
+							<td>김진수</td>
+							<td>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar"
+										style="width: 25%; background-color: #0040ff"
+										aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">25%</div>
+								</div>
+							</td>
+							<td>이화랑</td>
+							<td>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar"
+										style="width: 90%; background-color: #ff0000"
+										aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">90%</div>
 
-					<tr>
-						<td>이화랑</td>
-						<td>
-							<div class="progress">
-								<div class="progress-bar" role="progressbar"
-									style="width: 90%; background-color: #ff0000"
-									aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">90%</div>
+								</div>
+							</td>
+							<td><a class="popup"
+								style="text-decoration: none; cursor: pointer;">채팅 바로가기</a></td>
+							<td><button class="unlock_btn">매칭해제</button></td>
+						</tr>
+						<tr>
+							<td>김갑수</td>
+							<td>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar"
+										style="width: 50%; background-color: #ffea00"
+										aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">50%
+									</div>
+								</div>
+							</td>
+							<td>최화랑</td>
+							<td>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar"
+										style="width: 90%; background-color: #ff0000"
+										aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">90%</div>
+								</div>
+							</td>
+							<td><a class="popup"
+								style="text-decoration: none; cursor: pointer;">채팅 바로가기</a></td>
+							<td><button class="unlock_btn">매칭해제</button></td>
+						</tr>
+						<tr>
+							<td>김진수</td>
+							<td>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar"
+										style="width: 25%; background-color: #0040ff"
+										aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">25%</div>
+								</div>
+							</td>
+							<td>이화랑</td>
+							<td>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar"
+										style="width: 90%; background-color: #ff0000"
+										aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">90%</div>
 
-							</div>
-						</td>
-						<td>매칭 상대가 없습니다.</td>
+								</div>
+							</td>
+							<td><a class="popup"
+								style="text-decoration: none; cursor: pointer;">채팅 바로가기</a></td>
+							<td><button class="unlock_btn">매칭해제</button></td>
+						</tr>
+
+						<tr>
+							<td>이화랑</td>
+							<td>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar"
+										style="width: 90%; background-color: #ff0000"
+										aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">90%</div>
+
+								</div>
+							</td>
+							<td>매칭 상대가 없습니다.</td>
 
 
-						<td><div class="progress">
-								<div class="progress-bar" role="progressbar"
-									style="width: 00%; background-color: #ffff" aria-valuenow="0"
-									aria-valuemin="0" aria-valuemax="100">0%</div>
-							</div></td>
-						<td>진행중인 채팅이 없습니다.</td>
+							<td><div class="progress">
+									<div class="progress-bar" role="progressbar"
+										style="width: 00%; background-color: #ffff" aria-valuenow="0"
+										aria-valuemin="0" aria-valuemax="100">0%</div>
+								</div></td>
+							<td>진행중인 채팅이 없습니다.</td>
 
-						<td><a href="../work/youthlist"><button
-									class="youthlist_btn">매칭하기</button></a></td>
-
-
+							<td><a href="../work/youthlist"><button
+										class="youthlist_btn">매칭하기</button></a></td>
 
 
 
-					</tr>
 
-				</table>
-				<div class="btn_area">
-					<a href="./maninsert" class="button"> <span
-						class="btn_write">사용자 등록</span>
-					</a>
+
+						</tr>
+
+					</table>
+					<jsp:include page="./maninsert.jsp"></jsp:include>						
 				</div>
-				</div>
-				
-</div>
+
+			</div>
 
 
-			
+
 		</div>
 
 
