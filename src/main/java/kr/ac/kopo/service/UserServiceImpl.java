@@ -9,6 +9,7 @@ import kr.ac.kopo.dao.UserDao;
 import kr.ac.kopo.model.Comment;
 import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.Qna;
+import kr.ac.kopo.model.User;
 import kr.ac.kopo.pager.Pager;
 
 @Service
@@ -110,6 +111,11 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void comment_update(Comment item) {
 		dao.comment_update(item);
+	}
+
+	@Override
+	public void hyp_update(User item) {
+		dao.hyp_update(item);
 	}
 
 }

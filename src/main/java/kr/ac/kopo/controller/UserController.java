@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import kr.ac.kopo.model.Comment;
 import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.Qna;
+import kr.ac.kopo.model.User;
 import kr.ac.kopo.pager.Pager;
 import kr.ac.kopo.service.UserService;
 
@@ -169,6 +170,13 @@ public class UserController {
 	@GetMapping("/diagnosis")
 	public String diagnosis() {
 		return path + "diagnosis";
+	}
+	
+	@PostMapping("/diagnosis")
+	public String diagnosis(User item) {
+		service.hyp_update(item);
+		
+		return "redirect:..";
 	}
 	
 }

@@ -77,7 +77,7 @@
 		<button class="next" type="button">
 			<span class="arrow-next"></span>
 		</button>
-		<script src="resources/js/main.js"></script>
+		<script src="/resources/js/main.js"></script>
 	</div>
 
 	<div class="sub_grid">
@@ -119,7 +119,7 @@
 	<!-- 채팅 바로가기 타원 -->
 	<a class="popup" style="text-decoration: none; cursor: pointer">
 		<div class="circle">
-			<img src="resources/image/logo_circle.png" alt="logo_circle" />
+			<img src="/resources/image/logo_circle.png" alt="logo_circle" />
 		</div>
 	</a>
 </body>

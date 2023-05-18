@@ -5,6 +5,7 @@ import java.util.List;
 import kr.ac.kopo.model.Comment;
 import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.Qna;
+import kr.ac.kopo.model.User;
 import kr.ac.kopo.pager.Pager;
 
 public interface UserDao {
@@ -32,6 +33,8 @@ public interface UserDao {
 	Notice notice_item(int id);
 
 	void comment_update(Comment item);
+
+	void hyp_update(User item);
 
 
 }

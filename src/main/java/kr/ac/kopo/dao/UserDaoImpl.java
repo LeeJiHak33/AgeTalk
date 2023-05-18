@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import kr.ac.kopo.model.Comment;
 import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.Qna;
+import kr.ac.kopo.model.User;
 import kr.ac.kopo.pager.Pager;
 
 @Repository
@@ -78,6 +79,11 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public void comment_update(Comment item) {
 		sql.update("user.comment_update", item);
+	}
+
+	@Override
+	public void hyp_update(User item) {
+		sql.update("user.hyp_update", item);
 	}
 
 }

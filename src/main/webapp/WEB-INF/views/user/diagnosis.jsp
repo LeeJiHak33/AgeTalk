@@ -18,6 +18,8 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
+<script src="/resources/js/diagnosis.js"></script>
+
 </head>
 
 <body>
@@ -32,9 +34,7 @@
 		<section class="container">
 			<div class="content" id="content">
 				<div class="wrapper">
-					<form method="post" id="diagnosis_form">
-						<input id="total" type="hidden" name="score" value="" />
-					</form>
+					
 					<div class="title">
 						<h2>우울도 자가진단 검사지</h2>
 					</div>
@@ -224,27 +224,25 @@
 			</div>
 			<div class="diagnosis_bottom">
 				<div class="btn_box">
-					<button type="button" class="btn" id="btn_sub">결과전송</button>
+					<form method="post" name="diagnosis_form">
+					<input id="total" type="hidden" name="hyp" value="" />
+					
+					<button type="button" class="sub_btn" id="btn_sub"
+					style=" font-family: 'NotosansKR';
+							width: 200px;
+							height: 74px;
+							line-height: 54px;
+							font-size: 20px;
+							color: white;
+							background-color: #fe8e8d;
+							border-radius: 45px;
+							cursor: pointer;
+							border: none;">결과전송</button>
+					</form>
 				</div>
 			</div>
 		</section>
-		<script>
-	document.addEventListener('DOMContentLoaded', function() {
-		const value1 = parseInt($('input[name=hyp1]:checked').val()) || 0;
-		const value2 = parseInt($('input[name=hyp2]:checked').val()) || 0;
-		const value3 = parseInt($('input[name=hyp3]:checked').val()) || 0;
-		const value4 = parseInt($('input[name=hyp4]:checked').val()) || 0;
-		const value5 = parseInt($('input[name=hyp5]:checked').val()) || 0;
-		const value6 = parseInt($('input[name=hyp6]:checked').val()) || 0;
-		const value7 = parseInt($('input[name=hyp7]:checked').val()) || 0;
-		const value8 = parseInt($('input[name=hyp8]:checked').val()) || 0;
-		const value9 = parseInt($('input[name=hyp9]:checked').val()) || 0;
 		
-		const total = value1 + value2 + value3 + value4 + value5 + value6 + value7 + value8 + value9;
-	
-		$('#total').val(total);
-	});
-	</script>
 		<jsp:include page="../footer.jsp"></jsp:include>
 	</div>
 </body>
