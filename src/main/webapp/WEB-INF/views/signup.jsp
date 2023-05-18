@@ -28,7 +28,7 @@
               
               <div class="su_wrap">
                 <h1>회원가입</h1>
-                <form method="post">
+                <form method="post" >
                 <div class="lg_wrap">
                   <div class="id_wrap">
                     <label>아이디</label>
@@ -40,7 +40,7 @@
                   
                   <div class="pw_wrap">
                     <label>비밀번호</label>
-                    <input type="password" name="passwd" placeholder="비밀번호 입력">
+                    <input type="password" name="pwd" placeholder="비밀번호 입력">
                   </div>
                   <div class="pw_wrap">
                     <label>비밀번호 확인</label>
@@ -57,7 +57,7 @@
                   </div>
                 </div>
                 	<div class="signup_btn">
-                   		<a href="signup_success" style="color:white">회원가입</a>
+                   		<button style="color:white">회원가입</button>
                    </div>
                 </form>
               </div>

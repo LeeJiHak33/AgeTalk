@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import kr.ac.kopo.model.Comment;
 import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.Qna;
+import kr.ac.kopo.model.User;
 import kr.ac.kopo.pager.Pager;
 
 @Repository
@@ -66,15 +67,19 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public List<Notice> notice() {
-		// TODO Auto-generated method stub
 		return sql.selectList("user.notice");
 	}
 
 	@Override
 	public Notice notice_item(int id) {
-		// TODO Auto-generated method stub
 		return sql.selectOne("user.notice_item", id);
 
+	}
+
+	@Override
+	public void signup(User item) {
+		sql.insert("user.add", item);
+		
 	}
 
 }
