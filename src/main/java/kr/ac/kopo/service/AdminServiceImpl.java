@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.dao.AdminDao;
 import kr.ac.kopo.model.Notice;
+import kr.ac.kopo.model.Report;
+import kr.ac.kopo.pager.Pager;
 
 @Service
 public class AdminServiceImpl implements AdminService {
@@ -42,6 +44,15 @@ public class AdminServiceImpl implements AdminService {
 	public void notice_delete(int id) {
 		// TODO Auto-generated method stub
 		dao.notice_delete(id);
+	}
+
+	@Override
+	public List<Report> report_list(Pager pager) {
+		// TODO Auto-generated method stub
+		int total=dao.report_total();
+		pager.setTotal(total);
+		
+		return dao.report_list(pager);
 	}
 	
 	

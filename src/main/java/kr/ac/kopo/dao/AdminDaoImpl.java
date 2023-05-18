@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kr.ac.kopo.model.Notice;
+import kr.ac.kopo.model.Report;
+import kr.ac.kopo.pager.Pager;
 
 @Repository
 public class AdminDaoImpl implements AdminDao {
@@ -43,6 +45,18 @@ public class AdminDaoImpl implements AdminDao {
 	public void notice_delete(int id) {
 		// TODO Auto-generated method stub
 		sql.delete("admin.notice_delete", id);
+	}
+
+	@Override
+	public int report_total() {
+		// TODO Auto-generated method stub
+		return sql.selectOne("admin.report_total");
+	}
+
+	@Override
+	public List<Report> report_list(Pager pager) {
+		// TODO Auto-generated method stub
+		return sql.selectList("admin.report_list", pager);
 	}
 	
 	

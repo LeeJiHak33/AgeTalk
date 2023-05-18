@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.ac.kopo.model.Notice;
+import kr.ac.kopo.model.Report;
+import kr.ac.kopo.pager.Pager;
 import kr.ac.kopo.service.AdminService;
 
 @Controller
@@ -85,5 +87,12 @@ public class AdminController {
 	public String notice_delete(@PathVariable int id) {
 		service.notice_delete(id);
 		return "redirect:../notice";
+	}
+	
+	@GetMapping("/report_list")
+	public String report_list(Model model, Pager pager) {
+		List<Report> list =service.report_list(pager);
+		model.addAttribute("list", list);
+		return path+"report_list";
 	}
 }

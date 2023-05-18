@@ -3,6 +3,8 @@ package kr.ac.kopo.service;
 import java.util.List;
 
 import kr.ac.kopo.model.Notice;
+import kr.ac.kopo.model.Report;
+import kr.ac.kopo.pager.Pager;
 
 public interface AdminService {
 
@@ -15,5 +17,7 @@ public interface AdminService {
 	void notice_update(Notice item);
 
 	void notice_delete(int id);
+
+	List<Report> report_list(Pager pager);
 
 }
