@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Pager {
 	private int page = 1;
-	private int perPage = 10;
+	private int perPager = 10;
 	private float total;
 	final int perGroup = 5;
 	
@@ -51,7 +51,7 @@ public class Pager {
 	}
 	
 	public int getLast() {
-		return (int) Math.ceil( total / perPage );
+		return (int) Math.ceil( total / perPager );
 	}
 	
 	public int getPrev() {
@@ -67,15 +67,15 @@ public class Pager {
 
 	//몇개를 건너뛰고 보여줄지 설정
 	public int getOffset() {
-		return (page - 1) * perPage;
+		return (page - 1) * perPager;
 	}
 	
-	public int getPerPage() {
-		return perPage;
+	public int getPerPager() {
+		return perPager;
 	}
 
-	public void setPerPage(int perPage) {
-		this.perPage = perPage;
+	public void setPerPager(int perPager) {
+		this.perPager = perPager;
 	}
 
 	public int getPage() {

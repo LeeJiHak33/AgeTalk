@@ -18,6 +18,9 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public List<Qna> qna(Pager pager) {
+		
+		int total=dao.total(pager);
+		pager.setTotal(total);
 
 		return dao.qna(pager);
 	}
@@ -54,9 +57,9 @@ public class UserServiceImpl implements UserService {
 			
 			item.setTitle("글제목" + i);
 			item.setContent("내용" + i);
-			item.setDate("2023-05-17"+ i);
+			
 	
-		
+		dao.qna_insert(item);
 		}
 		
 	}
@@ -66,7 +69,7 @@ public class UserServiceImpl implements UserService {
 		List<Qna> qna;
 		
 		Pager pager = new Pager();
-		pager.setPerPage(9999);
+		pager.setPerPager(9999);
 		
 		do {
 			qna = dao.qna(pager);

@@ -46,4 +46,9 @@ public class UserDaoImpl implements UserDao {
 		sql.insert("user.qna_comment", item);
 	}
 
+	@Override
+	public int total(Pager pager) {
+		return sql.selectOne("user.qna_total", pager);
+	}
+
 }

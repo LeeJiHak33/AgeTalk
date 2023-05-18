@@ -20,6 +20,8 @@ public interface UserDao {
 
 	void qna_comment(Comment item);
 
+	int total(Pager pager);
+
 
 
 }
