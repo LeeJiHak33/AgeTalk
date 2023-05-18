@@ -7,9 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import kr.ac.kopo.model.Qna;
 import kr.ac.kopo.model.User;
+import kr.ac.kopo.pager.Pager;
 import kr.ac.kopo.service.WorkService;
 
 @Controller
@@ -27,8 +26,8 @@ public class WorkController {
 	 *
 	 */	
 	@RequestMapping("/youthlist")
-	public String youth(Model model) {
-	List<User> list = service.youthlist();
+	public String youth(Model model, Pager pager) {
+	List<User> list = service.youthlist(pager);
 		
 		model.addAttribute("list", list);
 		

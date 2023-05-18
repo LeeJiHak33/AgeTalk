@@ -11,11 +11,14 @@
 		<typeAlias type="kr.ac.kopo.model.Qna" alias="Qna"/>
 		<typeAlias type="kr.ac.kopo.model.Notice" alias="Notice"/>
 		<typeAlias type="kr.ac.kopo.model.Comment" alias="Comment"/>
+		<typeAlias type="kr.ac.kopo.model.Work" alias="Work"/>
+		<typeAlias type="kr.ac.kopo.model.User" alias="User" />
 
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="mybatis/user.xml"/>
 		<mapper resource="mybatis/admin.xml"/>
+		<mapper resource="mybatis/work.xml"/>
 	</mappers>
 </configuration>
