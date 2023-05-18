@@ -15,7 +15,7 @@
  <body>
    <header style="position: absolute; z-index: 1">
         <div class="logo_wrap">
-          <a href=".."><img src="/resources/image/agetalk_logo.png" alt="logo" /></a>
+          <a href="../../"><img src="/resources/image/agetalk_logo.png" alt="logo" /></a>
         </div>
         <div class="menu_wrap">
           <ul class="menu_list" style="margin-bottom: 0; padding-left: 0">

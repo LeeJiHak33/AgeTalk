@@ -21,6 +21,9 @@ public interface UserDao {
 
 	void qna_comment(Comment item);
 
+	Comment cmt(int id);
+
+	void comment_delete(int id);
 	int total(Pager pager);
 
 

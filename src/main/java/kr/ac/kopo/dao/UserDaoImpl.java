@@ -48,9 +48,22 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
+	public Comment cmt(int id) {
+		return sql.selectOne("user.cmt", id);
+	}
+
+	@Override
+	public void comment_delete(int id) {
+		sql.delete("user.comment_delete", id);
+	}
+	@Override
 	public int total(Pager pager) {
 		return sql.selectOne("user.qna_total", pager);
 	}
+
+
+
+	@Override
 	public List<Notice> notice() {
 		// TODO Auto-generated method stub
 		return sql.selectList("user.notice");

@@ -95,7 +95,7 @@
 <td><button class="update_btn"
             data-bs-toggle="modal"
             data-bs-target="#oldupdateModal"
-            style="font-size: 15px; cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
+            style=" cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
 
 						<tr>
 							
@@ -111,7 +111,7 @@
 <td><button class="update_btn"
             data-bs-toggle="modal"
             data-bs-target="#oldupdateModal"
-            style="font-size: 15px; cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
+            style="font-size: 15px; cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>							</tr>
 						<tr>
 							
 							<td>황갑수</td>
@@ -126,7 +126,7 @@
 <td><button class="update_btn"
             data-bs-toggle="modal"
             data-bs-target="#oldupdateModal"
-            style="font-size: 15px; cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
+            style=" cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
 						<tr>
 							<td>김갑수</td>
 							<td>
@@ -155,7 +155,7 @@
 <td><button class="update_btn"
             data-bs-toggle="modal"
             data-bs-target="#oldupdateModal"
-            style="font-size: 15px; cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
+            style=" cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
 						<tr>
 							
 							<td>김강랑</td>
@@ -169,7 +169,7 @@
 <td><button class="update_btn"
             data-bs-toggle="modal"
             data-bs-target="#oldupdateModal"
-            style="font-size: 15px; cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
+            style="cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
 						<tr id="y_list">
 							
 							<td>이화찬</td>
@@ -184,7 +184,7 @@
 <td><button class="update_btn"
             data-bs-toggle="modal"
             data-bs-target="#oldupdateModal"
-            style="font-size: 15px; cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
+            style=" cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
 						<tr id="y_list">							
 							<td>박하진</td>
 							<td>
@@ -197,7 +197,7 @@
 <td><button class="update_btn"
             data-bs-toggle="modal"
             data-bs-target="#oldupdateModal"
-            style="font-size: 15px; cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
+            style=" cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
 						<tr>
 							
 							<td>김환랑</td>
@@ -212,8 +212,8 @@
 							<td><button class="update_btn"
             data-bs-toggle="modal"
             data-bs-target="#oldupdateModal"
-            style="font-size: 15px; cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>
-						</tr>
+            style=" cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
+						
 						<tr>							
 							<td>최화랑</td>
 							<td>
@@ -227,10 +227,8 @@
           <button class="update_btn"
             data-bs-toggle="modal"
             data-bs-target="#oldupdateModal"
-            style="font-size: 15px; cursor: pointer;">수정</button>
+                        style=" cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
 
-        <span class="gap"></span> <button class="del_btn">삭제</button></td>
-						</tr>
 					</table>
 										 
 
