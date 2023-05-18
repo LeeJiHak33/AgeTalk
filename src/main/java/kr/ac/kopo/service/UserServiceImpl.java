@@ -51,4 +51,9 @@ public class UserServiceImpl implements UserService {
 		return dao.cmt(id);
 	}
 
+	@Override
+	public void comment_delete(int id) {
+		dao.comment_delete(id);
+	}
+
 }

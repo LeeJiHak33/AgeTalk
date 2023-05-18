@@ -21,5 +21,7 @@ public interface UserDao {
 
 	Comment cmt(int id);
 
+	void comment_delete(int id);
+
 
 }

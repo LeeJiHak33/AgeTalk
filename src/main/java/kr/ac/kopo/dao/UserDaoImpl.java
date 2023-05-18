@@ -50,4 +50,9 @@ public class UserDaoImpl implements UserDao {
 		return sql.selectOne("user.cmt", id);
 	}
 
+	@Override
+	public void comment_delete(int id) {
+		sql.delete("user.comment_delete", id);
+	}
+
 }

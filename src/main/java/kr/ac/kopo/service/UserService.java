@@ -22,5 +22,7 @@ public interface UserService {
 
 	Comment cmt(int id);
 
+	void comment_delete(int id);
+
 
 }

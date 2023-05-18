@@ -30,8 +30,13 @@
 		WHERE id = #{id}
 	</delete>
 	
+	<delete id="comment_delete">
+		DELETE FROM comment
+		WHERE id = #{id}
+	</delete>
+	
 	<insert id="qna_comment">
-		INSERT INTO Comment(content, date, qna_id)
+		INSERT INTO comment(content, date, qna_id)
 		VALUES(#{content}, Now(), #{id})
 	</insert>
 </mapper>

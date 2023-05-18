@@ -2,6 +2,8 @@ package kr.ac.kopo.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -97,6 +99,15 @@ public class UserController {
 		service.qna_delete(id);
 		
 		return "redirect:../qna";
+	}
+	
+	@GetMapping("/qna_detail/comment_delete/{id}")
+	public String comment_delete(@PathVariable int id, HttpServletRequest request) {
+		String referer = request.getHeader("Referer");
+		
+		service.comment_delete(id);
+		
+		return "redirect:" + referer;
 	}
 	
 	@GetMapping("/qna_detail/{id}")
