@@ -14,10 +14,10 @@
 </head>
 
   <body>
-  <button class="button1"
+  <a class="button"
             data-bs-toggle="modal"
             data-bs-target="#insertModal"
-            style="cursor: pointer;">사용자 등록</button>
+            style="cursor: pointer;">사용자 등록</a>
             
 <div class="modal fade"
      id="insertModal" 
@@ -39,15 +39,16 @@
 													<span class="text-dark input-group-text">이름</span>
 													<input name="name" type="text"	placeholder="등록하실 어르신의 성함을 입력해주세요." class="form-control">
 												</div>
-												<div class="input-group mb-4">
-													<span class="text-dark input-group-text">기기번호</span> <input
-														name="sId" type="text"placeholder="기기의 시리얼 번호를 입력해주세요."
-														<%-- value="${item.s_id}" --%> class="form-control">
-												</div>
+												
 												<div class="input-group mb-4">
 													<span class="text-dark input-group-text">점수</span> <input
 														name="score" type="text" placeholder="설문조사 점수를 입력해주세요."
 														class="form-control">
+												</div>
+												<div class="input-group mb-4">
+													<span class="text-dark input-group-text">기기번호</span> <input
+														name="sId" type="text"placeholder="기기의 시리얼 번호를 입력해주세요."
+														<%-- value="${item.s_id}" --%> class="form-control">
 												</div>
 												</div>
 												</div>
