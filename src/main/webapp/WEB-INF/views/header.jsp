@@ -19,7 +19,7 @@
         </div>
         <div class="menu_wrap">
           <ul class="menu_list" style="margin-bottom: 0; padding-left: 0">
-            <li><a href="../user/explain" style="text-decoration: none">소개</a></li>
+            <li><a href="../../user/explain" style="text-decoration: none">소개</a></li>
             <li>
               <a class="popup" style="text-decoration: none; cursor: pointer"
                 >채팅하기
@@ -28,8 +28,8 @@
             <li>
               <a href="../user/notice" style="text-decoration: none">고객센터</a>
               	<ul class="sub_list" style="padding:0; padding-top:20px;">
-						<li class="sub_menu"><a href="../user/notice">공지사항</a></li>
-						<li class="sub_menu"><a href="../user/qna">QnA</a></li>
+						<li class="sub_menu"><a href="../../user/notice">공지사항</a></li>
+						<li class="sub_menu"><a href="../../user/qna">QnA</a></li>
 				</ul>
             </li>
           </ul>

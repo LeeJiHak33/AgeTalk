@@ -6,6 +6,7 @@
 		SELECT *
 		FROM qna
 		ORDER BY id desc
+		LiMIT #{offset},#{perPager} 
 	</select>
 	
 	<insert id="qna_insert">
@@ -34,4 +35,9 @@
 		INSERT INTO Comment(content, date)
 		VALUES(#{content}, Now())
 	</insert>
+	
+	<select id="qna_total" resultType="Integer">
+		SELECT COUNT(*) FROM qna
+	</select>
+	
 </mapper>

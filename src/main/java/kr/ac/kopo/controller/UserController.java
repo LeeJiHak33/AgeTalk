@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.ac.kopo.model.Comment;
 import kr.ac.kopo.model.Qna;
+import kr.ac.kopo.pager.Pager;
 import kr.ac.kopo.service.UserService;
 
 @Controller
@@ -53,12 +54,26 @@ public class UserController {
 	}
 	
 	@GetMapping("/qna")
-	public String qna(Model model) {
-		List<Qna> list = service.qna();
+	public String qna(Model model, Pager pager) {
+		List<Qna> list = service.qna(pager);
 		
 		model.addAttribute("list", list);
 		
 		return path + "qna";
+	}
+	
+	@RequestMapping("/dummy")
+	public String dummy() {
+		service.dummy();
+		
+		return "redirect:qna";
+	}
+	
+	@RequestMapping("/init")
+	public String init() {
+		service.init();
+		
+		return "redirect:qna";
 	}
 	
 	@GetMapping("/qna_insert")
