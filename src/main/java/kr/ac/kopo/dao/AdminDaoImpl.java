@@ -32,6 +32,18 @@ public class AdminDaoImpl implements AdminDao {
 		// TODO Auto-generated method stub
 		return sql.selectOne("admin.notice_item",id);
 	}
+
+	@Override
+	public void notice_update(Notice item) {
+		// TODO Auto-generated method stub
+		sql.update("admin.notice_update", item);
+	}
+
+	@Override
+	public void notice_delete(int id) {
+		// TODO Auto-generated method stub
+		sql.delete("admin.notice_delete", id);
+	}
 	
 	
 }

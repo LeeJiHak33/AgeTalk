@@ -13,4 +13,11 @@
 	<select id="notice_item" resultType="Notice">
 		select * from notice where id=#{id}
 	</select>
+	
+	<update id="notice_update">
+		update notice set title=#{title} , content=#{content} where id=#{id}
+	</update>
+	<delete id="notice_delete">
+		delete from notice where id=#{id}
+	</delete>
 </mapper>

@@ -72,4 +72,18 @@ public class AdminController {
 		model.addAttribute("item",item);
 		return path+"notice_update";
 	}
+	
+	@PostMapping("/notice_update/{id}")
+	public String notice_update(@PathVariable int id, Notice item) {
+		item.setId(id);
+		service.notice_update(item);
+		
+		return "redirect:../notice_detail/"+id;
+	}
+	
+	@GetMapping("/notice_delete/{id}")
+	public String notice_delete(@PathVariable int id) {
+		service.notice_delete(id);
+		return "redirect:../notice";
+	}
 }

@@ -31,6 +31,18 @@ public class AdminServiceImpl implements AdminService {
 		// TODO Auto-generated method stub
 		return dao.notice_item(id);
 	}
+
+	@Override
+	public void notice_update(Notice item) {
+		// TODO Auto-generated method stub
+		dao.notice_update(item);
+	}
+
+	@Override
+	public void notice_delete(int id) {
+		// TODO Auto-generated method stub
+		dao.notice_delete(id);
+	}
 	
 	
 }
