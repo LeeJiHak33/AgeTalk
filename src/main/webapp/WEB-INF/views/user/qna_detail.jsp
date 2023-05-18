@@ -26,6 +26,8 @@
 		const tr = document.getElementById("cmt_tr");
 		
 		button.addEventListener("click", e => {
+			alert("클릭");
+			
 			const input = document.createElement("input");
 			
 			input.setAttribute("type", "text");
