@@ -13,6 +13,11 @@ public class Qna {
 	private Date date;
 	private String userId;
 	private String name;
+	private int cid;
+	private String cmt;
+	@DateTimeFormat(pattern = "yyyy/MM/dd")
+	private Date cdate;
+	private int qnaId;
 
 	public int getId() {
 		return id;
@@ -68,6 +73,38 @@ public class Qna {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public int getCid() {
+		return cid;
+	}
+
+	public void setCid(int cid) {
+		this.cid = cid;
+	}
+
+	public String getCmt() {
+		return cmt;
+	}
+
+	public void setCmt(String cmt) {
+		this.cmt = cmt;
+	}
+
+	public Date getCdate() {
+		return cdate;
+	}
+
+	public void setCdate(Date cdate) {
+		this.cdate = cdate;
+	}
+
+	public int getQnaId() {
+		return qnaId;
+	}
+
+	public void setQnaId(int qnaId) {
+		this.qnaId = qnaId;
 	}
 
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kr.ac.kopo.model.Comment;
+import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.Qna;
 import kr.ac.kopo.pager.Pager;
 
@@ -47,8 +48,26 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
+	public Comment cmt(int id) {
+		return sql.selectOne("user.cmt", id);
+	}
+
+	@Override
+	public void comment_delete(int id) {
+		sql.delete("user.comment_delete", id);
 	public int total(Pager pager) {
 		return sql.selectOne("user.qna_total", pager);
+
+	public List<Notice> notice() {
+		// TODO Auto-generated method stub
+		return sql.selectList("user.notice");
+	}
+
+	@Override
+	public Notice notice_item(int id) {
+		// TODO Auto-generated method stub
+		return sql.selectOne("user.notice_item", id);
+
 	}
 
 }

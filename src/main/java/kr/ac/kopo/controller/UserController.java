@@ -2,6 +2,8 @@ package kr.ac.kopo.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.ac.kopo.model.Comment;
+import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.Qna;
 import kr.ac.kopo.pager.Pager;
 import kr.ac.kopo.service.UserService;
@@ -44,12 +47,16 @@ public class UserController {
 	}
 		
 	@GetMapping("/notice")
-	public String notice() {
+	public String notice(Model model) {
+		List<Notice> list =service.notice();
+		model.addAttribute("list", list);
 		return path + "notice";
 	}
 	
-	@GetMapping("/notice_detail")
-	public String notice_detail() {
+	@GetMapping("/notice_detail/{id}")
+	public String notice_detail(@PathVariable int id,Model model) {
+		Notice item=service.notice_item(id);
+		model.addAttribute("item", item);
 		return path + "notice_detail";
 	}
 	
@@ -114,20 +121,31 @@ public class UserController {
 		return "redirect:../qna";
 	}
 	
+	@GetMapping("/qna_detail/comment_delete/{id}")
+	public String comment_delete(@PathVariable int id, HttpServletRequest request) {
+		String referer = request.getHeader("Referer");
+		
+		service.comment_delete(id);
+		
+		return "redirect:" + referer;
+	}
+	
 	@GetMapping("/qna_detail/{id}")
 	public String qna_detail(@PathVariable int id, Model model, Qna qna, Comment comment) {
 		
 		Qna item = service.item(id);
 		item.setId(id);
 		model.addAttribute("item", item);
-			
 		return path + "qna_detail";
 	}
 	
 	@PostMapping("/qna_detail/{id}")
 	public String qna_comment(@PathVariable int id, Comment item) {
-		service.qna_comment(item);
 		
+		item.setQnaId(id);
+		
+		service.qna_comment(item);
+
 		return "redirect:../qna_detail/{id}";
 	}
 	

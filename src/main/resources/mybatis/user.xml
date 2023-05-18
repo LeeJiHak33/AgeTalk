@@ -3,9 +3,9 @@
 
 <mapper namespace="user">
 	<select id="qna" resultType="Qna">
-		SELECT *
-		FROM qna
-		ORDER BY id desc
+		SELECT qna.*, comment.content cmt
+		FROM qna left join comment on(qna.id = comment.qna_id)
+		ORDER BY qna.id desc
 		LiMIT #{offset},#{perPager} 
 	</select>
 	
@@ -15,9 +15,9 @@
 	</insert>
 	
 	<select id="qna_item" resultType="Qna">
-		SELECT *
-		FROM qna
-		WHERE id = #{id}
+		SELECT qna.*, comment.id cid, comment.content cmt, comment.date cdate, qna_id
+		FROM qna left join comment on(qna.id = comment.qna_id)
+		WHERE qna.id = #{id}
 	</select>
 	
 	<update id="qna_update">
@@ -31,13 +31,27 @@
 		WHERE id = #{id}
 	</delete>
 	
+	<delete id="comment_delete">
+		DELETE FROM comment
+		WHERE id = #{id}
+	</delete>
+	
 	<insert id="qna_comment">
-		INSERT INTO Comment(content, date)
-		VALUES(#{content}, Now())
+		INSERT INTO comment(content, date, qna_id)
+		VALUES(#{content}, Now(), #{id})
 	</insert>
+
 	
 	<select id="qna_total" resultType="Integer">
 		SELECT COUNT(*) FROM qna
 	</select>
 	
+
+	<select id="notice" resultType="Notice">
+		select id,title,date from notice
+	</select>
+	<select id="notice_item" resultType="Notice">
+		select * from notice where id=#{id}
+	</select>
+
 </mapper>

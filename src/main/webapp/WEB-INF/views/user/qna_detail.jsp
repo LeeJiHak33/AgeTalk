@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +19,23 @@
 	rel="stylesheet" />
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+	
+<script>
+	window.onload = () => {
+		const button = document.getElementById("update");
+		const tr = document.getElementById("cmt_tr");
+		
+		button.addEventListener("click", e => {
+			const input = document.createElement("input");
+			
+			input.setAttribute("type", "text");
+			input.setAttribute("name", "cmt_update");
+			input.setAttribute("placeholder", "수정할 답변을 입력해주세요.");
+			
+			input.append(tr);
+		})
+	}
+</script>
 </head>
 
 <body>
@@ -63,12 +81,22 @@
 					<col data-view="td" style="width: 85%" />
 				</colgroup>
 				<tbody>
-					<tr>
-						<th scope="row" style="display: flex; align-items: center"><span
-							class="icon"></span> <span>관리자</span></th>
-						<td><a> 같이 홍소망을 때리세요 </a></td>
-					</tr>
+					<c:if test="${item.cmt != null}">
+						<tr id="cmt_tr">
+							<th scope="row"><span
+								class="icon"><p class="icon_txt">관리자</p></span></th>
+							<td>${item.cmt}</td>
+							<td style="width: 240px;">
+								<div class="cmt_btn">
+									<a class="button" id="update"> <span>수정</span></a> 
+										<span class="space"></span>
+									<a href="comment_delete/${item.cid}" class="button"> <span>삭제</span></a>
+								</div>
+							</td>
+						</tr>
+					</c:if>
 					
+					<c:if test="${item.cmt == null}">
 					<tr>
 						<th>
 							<form method="post">
@@ -79,7 +107,7 @@
 							</form>
 						</th>
 					</tr>
-					
+					</c:if>
 				</tbody>
 			</table>
 			<div class="btn_area">

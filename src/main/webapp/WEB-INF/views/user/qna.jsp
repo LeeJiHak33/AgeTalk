@@ -69,7 +69,12 @@
 						</td>
 						<td data-table="write">박**</td>
 						<td data-table="date"><fmt:formatDate value="${item.date}" pattern="yyyy-MM-dd" /></td>
+						<c:if test="${item.cmt == null}">
+						<td>답변대기</td>
+						</c:if>
+						<c:if test="${item.cmt != null}">
 						<td>답변완료</td>
+						</c:if>
 					</tr>
 				</c:forEach>
 					
