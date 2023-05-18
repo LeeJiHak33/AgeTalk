@@ -74,11 +74,11 @@
             </div>
             <div class="report_wrap">
               <p>신고 대상 :</p>
-              <p class="report">김철수</p>
+              <p class="report_name">김철수</p>
             </div>
             <div class="content_wrap">
               <p>신고 내용 :</p>
-              <p>어르신께 욕설 사용으로 신고 합니다.</p>
+              <p class="report_content">어르신께 욕설 사용으로 신고 합니다.</p>
             </div>
           </div>
           <div class="btn_wrap">
