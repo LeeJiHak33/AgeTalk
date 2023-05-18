@@ -25,6 +25,7 @@ public interface UserService {
 	Comment cmt(int id);
 
 	void comment_delete(int id);
+	
 	void dummy();
 
 	void init();
@@ -32,6 +33,8 @@ public interface UserService {
 	List<Notice> notice();
 
 	Notice notice_item(int id);
+
+	void comment_update(Comment item);
 
 
 

@@ -245,7 +245,7 @@ p.in_2 {
 	text-align: center !important;
 }
 
-.btn_box input[type="submit"].btn, .btn_box a.btn {
+.btn {
 	font-family: "NotoSansKR";
 	display: inline-block;
 	width: 200px;

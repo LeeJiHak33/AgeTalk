@@ -20,31 +20,19 @@
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 	
-<script>
-	window.onload = () => {
-		const button = document.getElementById("update");
-		const tbody = document.getElementById("cmt_tbody");
+<script type="text/javascript">
+
+	function display(){
+		const tr = document.getElementById("comment");
 		
-		button.addEventListener("click", e => {
-			alert("클릭");
-			
-			const input = document.createElement("input");
-			const tr = document.createElement("tr");
-			const btn = document.createElement("button");
-			
-			input.setAttribute("type", "text");
-			input.setAttribute("name", "cmt_update");
-			input.setAttribute("placeholder", "수정할 답변을 입력해주세요."); 
-			
-			btn.setAttribute("class", "button");
-			btn.setAttribute("class", "button");
-			btn.setAttribute("class", "button");
-			
-			tr.append(input);
-			tbody.append(tr);
-			
-		})
+		if(tr.style.display == 'none'){
+			tr.style.display = 'block';
+		}else{
+			tr.style.display = 'none';
+		}
+		
 	}
+	
 </script>
 </head>
 
@@ -98,7 +86,7 @@
 							<td>${item.cmt}</td>
 							<td style="width: 240px;">
 								<div class="cmt_btn">
-									<a class="button" id="update"> <span>수정</span></a> 
+									<button onclick="display()" class="button" style="border:none; font-size: 16px;"><span>수정</span></button>
 										<span class="space"></span>
 									<a href="comment_delete/${item.cid}" class="button"> <span>삭제</span></a>
 								</div>
@@ -109,7 +97,7 @@
 					<c:if test="${item.cmt == null}">
 					<tr>
 						<th>
-							<form method="post">
+							<form method="post" action="../qna_detail/${item.id}">
 								<div class="comment">
 									<input name="content" type="text" placeholder="답변을 등록해주세요.">
 									<button class="button" style="border: none; font-size: 16px;"> <span>등록</span></button>
@@ -117,11 +105,23 @@
 							</form>
 						</th>
 					</tr>
+
 					</c:if>
+					
+					<tr id="comment" style="display:none;">
+						<td style="border-bottom: none;">
+							<form method="post" action="comment_update/${item.cid}">
+								<div class="comment">
+									<input type="text" name="content" placeholder="수정할 답변을 입력해주세요.">
+									<button class="button" style="border: none; font-size: 16px;"><span>수정하기</span></button>
+								</div>
+							</form>
+						</td>
+					</tr>
 				</tbody>
 			</table>
 			<div class="btn_area">
-				<a href="../qna/" class="button"> <span>목록</span>
+				<a href="../qna" class="button"> <span>목록</span>
 				</a> <span class="space"></span> <a href="../qna_update/${item.id }"
 					class="button"> <span>수정</span>
 				</a> <span class="space"></span>

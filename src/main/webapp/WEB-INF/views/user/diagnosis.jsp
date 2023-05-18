@@ -16,6 +16,8 @@
 	rel="stylesheet" />
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 </head>
 
 <body>
@@ -30,10 +32,8 @@
 		<section class="container">
 			<div class="content" id="content">
 				<div class="wrapper">
-					<form action="/contents/06_diagnosis/sub02-result04.html"
-						method="post" id="diagnosis_form">
-						<input type="hidden" name="score" value="" /> <input
-							type="hidden" name="title" value="한국판 우울척도(PHQ-9)" />
+					<form method="post" id="diagnosis_form">
+						<input id="total" type="hidden" name="score" value="" />
 					</form>
 					<div class="title">
 						<h2>우울도 자가진단 검사지</h2>
@@ -71,162 +71,180 @@
 								<tr>
 									<td>1</td>
 									<td>일 또는 여가 활동을 하는 데 흥미나 즐거움을 느끼지 못함</td>
-									<td class="tac"><input type="radio" id="b1_1" name="b1"
-										value="0" /><label for="b1_1"><span></span></label>
+									<td class="tac"><input type="radio" id="b1_1" name="hyp1"
+										value=0 /><label for="b1_1"><span></span></label>
 									</td>
-									<td class="tac"><input type="radio" id="b1_2" name="b1"
-										value="1" /><label for="b1_2"><span></span></label>
+									<td class="tac"><input type="radio" id="b1_2" name="hyp1"
+										value=1 /><label for="b1_2"><span></span></label>
 									</td>
-									<td class="tac"><input type="radio" id="b1_3" name="b1"
-										value="2" /><label for="b1_3"><span></span></label>
+									<td class="tac"><input type="radio" id="b1_3" name="hyp1"
+										value=2 /><label for="b1_3"><span></span></label>
 									</td>
-									<td class="tac"><input type="radio" id="b1_4" name="b1"
-										value="3" /><label for="b1_4"><span></span></label>
+									<td class="tac"><input type="radio" id="b1_4" name="hyp1"
+										value=3 /><label for="b1_4"><span></span></label>
 									</td>
 								</tr>
 								<tr>
 									<td>2</td>
 									<td>기분이 가라앉거나, 우울하거나, 희망이 없음</td>
-									<td class="tac"><input type="radio" id="b2_1" name="b2"
-										value="0" /><label for="b2_1"><span></span></label>
+									<td class="tac"><input type="radio" id="b2_1" name="hyp2"
+										value=0 /><label for="b2_1"><span></span></label>
 									</td>
-									<td class="tac"><input type="radio" id="b2_2" name="b2"
-										value="1" /><label for="b2_2"><span></span></label>
+									<td class="tac"><input type="radio" id="b2_2" name="hyp2"
+										value=1 /><label for="b2_2"><span></span></label>
 									</td>
-									<td class="tac"><input type="radio" id="b2_3" name="b2"
-										value="2" /><label for="b2_3"><span></span></label>
+									<td class="tac"><input type="radio" id="b2_3" name="hyp2"
+										value=2 /><label for="b2_3"><span></span></label>
 									</td>
-									<td class="tac"><input type="radio" id="b2_4" name="b2"
-										value="3" /><label for="b2_4"><span></span></label>
+									<td class="tac"><input type="radio" id="b2_4" name="hyp2"
+										value=3 /><label for="b2_4"><span></span></label>
 									</td>
 								</tr>
 								<tr>
 									<td>3</td>
 									<td>잠이 들거나 계속 잠을 자는 것이 어려움, 또는 잠을 너무 많이 잠</td>
-									<td class="tac"><input type="radio" id="b3_1" name="b3"
-										value="0" /><label for="b3_1"><span></span></label>
+									<td class="tac"><input type="radio" id="b3_1" name="hyp3"
+										value=0 /><label for="b3_1"><span></span></label>
 									</td>
-									<td class="tac"><input type="radio" id="b3_2" name="b3"
-										value="1" /><label for="b3_2"><span></span></label>
+									<td class="tac"><input type="radio" id="b3_2" name="hyp3"
+										value=1 /><label for="b3_2"><span></span></label>
 									</td>
-									<td class="tac"><input type="radio" id="b3_3" name="b3"
-										value="2" /><label for="b3_3"><span></span></label>
+									<td class="tac"><input type="radio" id="b3_3" name="hyp3"
+										value=2 /><label for="b3_3"><span></span></label>
 									</td>
-									<td class="tac"><input type="radio" id="b3_4" name="b3"
-										value="3" /><label for="b3_4"><span></span></label>
+									<td class="tac"><input type="radio" id="b3_4" name="hyp3"
+										value=3 /><label for="b3_4"><span></span></label>
 									</td>
 								</tr>
 								<tr>
 									<td>4</td>
 									<td>피곤하다고 느끼거나 기운이 거의 없음</td>
-									<td class="tac"><input type="radio" id="b4_1" name="b4"
-										value="0" /><label for="b4_1"><span></span></label>
+									<td class="tac"><input type="radio" id="b4_1" name="hyp4"
+										value=0 /><label for="b4_1"><span></span></label>
 									</td>
-									<td class="tac"><input type="radio" id="b4_2" name="b4"
-										value="1" /><label for="b4_2"><span></span></label>
+									<td class="tac"><input type="radio" id="b4_2" name="hyp4"
+										value=1 /><label for="b4_2"><span></span></label>
 									</td>
-									<td class="tac"><input type="radio" id="b4_3" name="b4"
-										value="2" /><label for="b4_3"><span></span></label>
+									<td class="tac"><input type="radio" id="b4_3" name="hyp4"
+										value=2 /><label for="b4_3"><span></span></label>
 									</td>
-									<td class="tac"><input type="radio" id="b4_4" name="b4"
-										value="3" /><label for="b4_4"><span></span></label>
+									<td class="tac"><input type="radio" id="b4_4" name="hyp4"
+										value=3 /><label for="b4_4"><span></span></label>
 									</td>
 								</tr>
 								<tr>
 									<td>5</td>
 									<td>입맛이 없거나 과식을 함</td>
-									<td class="tac"><input type="radio" id="b5_1" name="b5"
-										value="0" /><label for="b5_1"><span></span></label>
+									<td class="tac"><input type="radio" id="b5_1" name="hyp5"
+										value=0 /><label for="b5_1"><span></span></label>
 									</td>
-									<td class="tac"><input type="radio" id="b5_2" name="b5"
-										value="1" /><label for="b5_2"><span></span></label>
+									<td class="tac"><input type="radio" id="b5_2" name="hyp5"
+										value=1 /><label for="b5_2"><span></span></label>
 									</td>
-									<td class="tac"><input type="radio" id="b5_3" name="b5"
-										value="2" /><label for="b5_3"><span></span></label>
+									<td class="tac"><input type="radio" id="b5_3" name="hyp5"
+										value=2 /><label for="b5_3"><span></span></label>
 									</td>
-									<td class="tac"><input type="radio" id="b5_4" name="b5"
-										value="3" /><label for="b5_4"><span></span></label>
+									<td class="tac"><input type="radio" id="b5_4" name="hyp5"
+										value=3 /><label for="b5_4"><span></span></label>
 									</td>
 								</tr>
 								<tr>
 									<td>6</td>
 									<td>자신을 부정적으로 봄 - 혹은 자신이 실패자라고 느끼거나 자신 또는 가족을 실망시킴</td>
-									<td class="tac"><input type="radio" id="b6_1" name="b6"
-										value="0" /><label for="b6_1"><span></span></label>
+									<td class="tac"><input type="radio" id="b6_1" name="hyp6"
+										value=0 /><label for="b6_1"><span></span></label>
 									</td>
-									<td class="tac"><input type="radio" id="b6_2" name="b6"
-										value="1" /><label for="b6_2"><span></span></label>
+									<td class="tac"><input type="radio" id="b6_2" name="hyp6"
+										value=1 /><label for="b6_2"><span></span></label>
 									</td>
-									<td class="tac"><input type="radio" id="b6_3" name="b6"
-										value="2" /><label for="b6_3"><span></span></label>
+									<td class="tac"><input type="radio" id="b6_3" name="hyp6"
+										value=2 /><label for="b6_3"><span></span></label>
 									</td>
-									<td class="tac"><input type="radio" id="b6_4" name="b6"
-										value="3" /><label for="b6_4"><span></span></label>
+									<td class="tac"><input type="radio" id="b6_4" name="hyp6"
+										value=3 /><label for="b6_4"><span></span></label>
 									</td>
 								</tr>
 								<tr>
 									<td>7</td>
 									<td>신문을 읽거나 텔레비전 보는 것과 같은 일에 집중하는 것이 어려움</td>
-									<td class="tac"><input type="radio" id="b7_1" name="b7"
-										value="0" /><label for="b7_1"><span></span></label>
+									<td class="tac"><input type="radio" id="b7_1" name="hyp7"
+										value=0 /><label for="b7_1"><span></span></label>
 									</td>
-									<td class="tac"><input type="radio" id="b7_2" name="b7"
-										value="1" /><label for="b7_2"><span></span></label>
+									<td class="tac"><input type="radio" id="b7_2" name="hyp7"
+										value=1 /><label for="b7_2"><span></span></label>
 									</td>
-									<td class="tac"><input type="radio" id="b7_3" name="b7"
-										value="2" /><label for="b7_3"><span></span></label>
+									<td class="tac"><input type="radio" id="b7_3" name="hyp7"
+										value=2 /><label for="b7_3"><span></span></label>
 									</td>
-									<td class="tac"><input type="radio" id="b7_4" name="b7"
-										value="3" /><label for="b7_4"><span></span></label>
+									<td class="tac"><input type="radio" id="b7_4" name="hyp7"
+										value=3 /><label for="b7_4"><span></span></label>
 									</td>
 								</tr>
 								<tr>
 									<td>8</td>
 									<td>다른 사람들이 주목할 정도로 너무 느리게 움직이거나 말을 함. 또는 반대로 평상시보다 많이
 										움직여서, 너무 안절부절 못하거나 들떠있음</td>
-									<td class="tac"><input type="radio" id="b8_1" name="b8"
-										value="0" /><label for="b8_1"><span></span></label>
+									<td class="tac"><input type="radio" id="b8_1" name="hyp8"
+										value=0 /><label for="b8_1"><span></span></label>
 									</td>
-									<td class="tac"><input type="radio" id="b8_2" name="b8"
-										value="1" /><label for="b8_2"><span></span></label>
+									<td class="tac"><input type="radio" id="b8_2" name="hyp8"
+										value=1 /><label for="b8_2"><span></span></label>
 									</td>
-									<td class="tac"><input type="radio" id="b8_3" name="b8"
-										value="2" /><label for="b8_3"><span></span></label>
+									<td class="tac"><input type="radio" id="b8_3" name="hyp8"
+										value=2 /><label for="b8_3"><span></span></label>
 									</td>
-									<td class="tac"><input type="radio" id="b8_4" name="b8"
-										value="3" /><label for="b8_4"><span></span></label>
+									<td class="tac"><input type="radio" id="b8_4" name="hyp8"
+										value=3 /><label for="b8_4"><span></span></label>
 									</td>
 								</tr>
 								<tr>
 									<td>9</td>
 									<td>자신이 죽는 것이 더 낫다고 생각하거나 어떤식으로든 자신을 해칠 것이라고 생각함</td>
-									<td class="tac"><input type="radio" id="b9_1" name="b9"
-										value="0" /><label for="b9_1"><span></span></label>
+									<td class="tac"><input type="radio" id="b9_1" name="hyp9"
+										value=0 /><label for="b9_1"><span></span></label>
 									</td>
-									<td class="tac"><input type="radio" id="b9_2" name="b9"
-										value="1" /><label for="b9_2"><span></span></label>
+									<td class="tac"><input type="radio" id="b9_2" name="hyp9"
+										value=1 /><label for="b9_2"><span></span></label>
 									</td>
-									<td class="tac"><input type="radio" id="b9_3" name="b9"
-										value="2" /><label for="b9_3"><span></span></label>
+									<td class="tac"><input type="radio" id="b9_3" name="hyp9"
+										value=2 /><label for="b9_3"><span></span></label>
 									</td>
-									<td class="tac"><input type="radio" id="b9_4" name="b9"
-										value="3" /><label for="b9_4"><span></span></label>
+									<td class="tac"><input type="radio" id="b9_4" name="hyp9"
+										value=3 /><label for="b9_4"><span></span></label>
 									</td>
 								</tr>
 							</tbody>
 						</table>
 
-						<div class="diagnosis_bottom">
-							<div class="btn_box">
-								<input type="submit" value="결과전송" class="btn" id="btn_sub" />
-							</div>
-						</div>
+						
 					</article>
 					
 				</div>
 				
 			</div>
+			<div class="diagnosis_bottom">
+				<div class="btn_box">
+					<button type="button" class="btn" id="btn_sub">결과전송</button>
+				</div>
+			</div>
 		</section>
+		<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const value1 = parseInt($('input[name=hyp1]:checked').val()) || 0;
+		const value2 = parseInt($('input[name=hyp2]:checked').val()) || 0;
+		const value3 = parseInt($('input[name=hyp3]:checked').val()) || 0;
+		const value4 = parseInt($('input[name=hyp4]:checked').val()) || 0;
+		const value5 = parseInt($('input[name=hyp5]:checked').val()) || 0;
+		const value6 = parseInt($('input[name=hyp6]:checked').val()) || 0;
+		const value7 = parseInt($('input[name=hyp7]:checked').val()) || 0;
+		const value8 = parseInt($('input[name=hyp8]:checked').val()) || 0;
+		const value9 = parseInt($('input[name=hyp9]:checked').val()) || 0;
+		
+		const total = value1 + value2 + value3 + value4 + value5 + value6 + value7 + value8 + value9;
+	
+		$('#total').val(total);
+	});
+	</script>
 		<jsp:include page="../footer.jsp"></jsp:include>
 	</div>
 </body>

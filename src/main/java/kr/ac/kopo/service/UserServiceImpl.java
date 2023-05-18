@@ -60,6 +60,7 @@ public class UserServiceImpl implements UserService {
 	public void comment_delete(int id) {
 		dao.comment_delete(id);
 	}
+	
 	public void dummy() {
 		for(int i=1; i<100; i++) {
 			Qna item = new Qna();
@@ -92,7 +93,7 @@ public class UserServiceImpl implements UserService {
 	}
 	
 		
-	}
+	
 	public List<Notice> notice() {
 		// TODO Auto-generated method stub
 		return dao.notice();
@@ -103,6 +104,12 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return dao.notice_item(id);
 
+	}
+
+
+	@Override
+	public void comment_update(Comment item) {
+		dao.comment_update(item);
 	}
 
 }

@@ -31,5 +31,7 @@ public interface UserDao {
 
 	Notice notice_item(int id);
 
+	void comment_update(Comment item);
+
 
 }

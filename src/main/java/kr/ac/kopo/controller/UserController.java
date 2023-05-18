@@ -106,12 +106,14 @@ public class UserController {
 	}
 	
 	@PostMapping("/qna_update/{id}")
-	public String qna_update(@PathVariable int id, Qna item) {
+	public String qna_update(@PathVariable int id, Qna item, HttpServletRequest request) {
+		String referer = request.getHeader("Referer");
+		
 		item.setId(id);
 		
 		service.qna_update(item);
 		
-		return "redirect:../qna";
+		return "redirect:" + referer;
 	}
 	
 	@GetMapping("/qna_delete/{id}")
@@ -126,6 +128,16 @@ public class UserController {
 		String referer = request.getHeader("Referer");
 		
 		service.comment_delete(id);
+		
+		return "redirect:" + referer;
+	}
+	
+	@PostMapping("/qna_detail/comment_update/{id}")
+	public String comment_update(@PathVariable int id, HttpServletRequest request, Comment item) {
+		String referer = request.getHeader("Referer");	
+		item.setId(id);
+		
+		service.comment_update(item);
 		
 		return "redirect:" + referer;
 	}

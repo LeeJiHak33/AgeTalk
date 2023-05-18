@@ -36,6 +36,12 @@
 		WHERE id = #{id}
 	</delete>
 	
+	<update id="comment_update">
+		UPDATE comment
+		SET content = #{content}
+		WHERE id = #{id}
+	</update>
+	
 	<insert id="qna_comment">
 		INSERT INTO comment(content, date, qna_id)
 		VALUES(#{content}, Now(), #{id})
