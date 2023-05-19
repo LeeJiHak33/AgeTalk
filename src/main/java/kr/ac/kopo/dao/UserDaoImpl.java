@@ -91,4 +91,14 @@ public class UserDaoImpl implements UserDao {
 		sql.update("user.update_user", item);
 	}
 
+	@Override
+	public User user_item() {
+		return sql.selectOne("user_item");
+	}
+
+	@Override
+	public Notice notice_new() {
+		return sql.selectOne("user.notice_new");
+	}
+
 }

@@ -2,10 +2,12 @@ package kr.ac.kopo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.User;
 import kr.ac.kopo.service.UserService;
 
@@ -16,7 +18,15 @@ public class RootController {
 	UserService service;
 
 	@RequestMapping("/")
-	public String main() {
+	public String main(Model model) {
+		User user = service.user_item();
+		
+		model.addAttribute("user", user);
+		
+		Notice notice = service.notice_new();
+		
+		model.addAttribute("notice", notice);
+		
 		return "main";
 	}
 	

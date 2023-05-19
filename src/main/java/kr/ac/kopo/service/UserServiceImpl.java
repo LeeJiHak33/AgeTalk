@@ -123,4 +123,14 @@ public class UserServiceImpl implements UserService {
 		dao.update_user(item);
 	}
 
+	@Override
+	public User user_item() {
+		return dao.user_item();
+	}
+
+	@Override
+	public Notice notice_new() {
+		return dao.notice_new();
+	}
+
 }

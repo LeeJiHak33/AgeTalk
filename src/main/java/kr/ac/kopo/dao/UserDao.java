@@ -38,5 +38,9 @@ public interface UserDao {
 
 	void update_user(User item);
 
+	User user_item();
+
+	Notice notice_new();
+
 
 }

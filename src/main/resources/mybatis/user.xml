@@ -72,5 +72,17 @@
 		SET id = #{id}, name = #{name}, phone = #{phone}
 		WHERE id = 'test'
 	</update>
+	
+	<select id="user_item" resultType="User">
+		select *
+		from user
+		where id = 'test'
+	</select>
+	
+	<select id="notice_new" resultType="Notice">
+		select *
+		from notice
+		where id = (select max(id) from notice)
+	</select>
 
 </mapper>

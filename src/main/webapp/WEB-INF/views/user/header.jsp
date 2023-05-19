@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -71,23 +72,23 @@
                 </div>
                 <div class="modal-header">
                   <p class="modal-title text-dark">
-                    {닉네임}님의 마이페이지 입니다.
+                    ${user.name}님의 마이페이지 입니다.
                   </p>
                 </div>
                 <div class="modal-header" style="display: block">
                   <p class="modal-title text_gray">프로필</p>
-                  <p class="text-dark nickname">{닉네임}</p>
+                  <p class="text-dark nickname">${user.name }</p>
                 </div>
                 <div class="modal-header" style="display: block">
                   <p class="modal-title text_gray">계정 정보</p>
                   <div class="info">
-                    <p class="text-dark">아이디 : {아이디}</p>
-                    <p class="text-dark">휴대폰 : 010-1234-5678</p>
-                    <p class="text-dark">이름 : {이름}</p>
+                    <p class="text-dark">아이디 : ${user.id}</p>
+                    <p class="text-dark">휴대폰 : ${user.phone }</p>
+                    <p class="text-dark">이름 : ${user.name }</p>
                     <div style="display: flex; justify-content: flex-start">
-                      <p class="text-dark">설문조사여부 : {완료 & 미완료}</p>
+                      <p class="text-dark">설문조사여부 : <c:if test="${user.hyp == 0}">미완료</c:if><c:if test="${user.hyp > 0}">완료</c:if></p>
                       <!--설문 완료시-->
-                      <a href="../user/diagnosis"><button type="button" class="modal_diagnosis">검사</button></a>
+                      <a href="../user/diagnosis"><button type="button" class="modal_diagnosis"><c:if test="${user.hyp == 0}">검사</c:if><c:if test="${user.hyp > 0}">재검사</c:if></button></a>
                       <!-- 설문 미완료시 -->
                       <!-- <a href="../User/diagnosis.html"><button type="button" class="modal_diagnosis">재검사</button></a> -->
                     </div>
@@ -96,10 +97,10 @@
               </div>
               <div class="modal-notice">
                 <p class="text_gray">공지사항</p>
-                <p class="notice_title">{공지사항 제목}</p>
+                <p class="notice_title">${notice.title}</p>
                 <p style="margin-left: auto">
                   <a
-                    href="../User/notice"
+                    href="../user/notice"
                     style="text-decoration: none; color: black"
                     >></a>
                 </p>
@@ -143,12 +144,12 @@
 	                </div>
 	                <div class="modal-header">
 	                  <p class="modal-title text-dark">
-	                    {닉네임}님의 마이페이지 입니다.
+	                    ${user.name }님의 마이페이지 입니다.
 	                  </p>
 	                </div>
 	                <div class="modal-header" style="display: block">
 	                  <p class="modal-title text_gray">프로필</p>
-	                  <p class="text-dark nickname">{닉네임}</p>
+	                  <p class="text-dark nickname">${user.name}</p>
 	                </div>
 	                <div class="modal-header" style="display: block">
 	                  <p class="modal-title text_gray">계정 정보</p>
@@ -156,15 +157,15 @@
 	                  <div class="info">
 		                  	<div class="input-group mb-4">
 		                    <span class="text-dark input-group-text">아이디</span> 
-		                    <input name="name" type="text" id="id_input"<%-- value="${item.name}" --%> class="form-control">
+		                    <input name="name" type="text" id="id_input" value="${user.id}" class="form-control">
 		                    </div>
 		                    <div class="input-group mb-4">
 		                    <span class="text-dark input-group-text">휴대폰</span> 
-		                    <input name="phone" type="text" id="phone_input"<%-- value="${item.phone}" --%> class="form-control">
+		                    <input name="phone" type="text" id="phone_input" value="${user.phone}" class="form-control">
 		                    </div>
 		                    <div class="input-group mb-4" style="padding-bottom: 10px;">
 		                    <span class="text-dark input-group-text">이름</span> 
-		                    <input name="id" type="text" id="name_input"<%-- value="${item.id}" --%> class="form-control">
+		                    <input name="id" type="text" id="name_input" value="${user.name}" class="form-control">
 		                    </div>
 						
 	                    <div style="display: flex; justify-content: flex-start">
