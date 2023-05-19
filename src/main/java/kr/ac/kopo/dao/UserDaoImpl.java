@@ -86,4 +86,9 @@ public class UserDaoImpl implements UserDao {
 		sql.update("user.hyp_update", item);
 	}
 
+	@Override
+	public void update_user(User item) {
+		sql.update("user.update_user", item);
+	}
+
 }

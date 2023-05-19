@@ -39,6 +39,9 @@ public interface UserService {
 
 	void hyp_update(User item);
 
+	void update_user(User item);
+
+
 
 
 }

@@ -65,7 +65,7 @@ window.onload = function() {
 	        console.log("'결과전송' 버튼이 클릭되었습니다.");
 	        console.log(total);
 	        
-	        alert("설문조사가 완료됐씁니다");
+	        alert("설문조사가 완료됐습니다");
 	        form.submit();
 	    });
 	    

@@ -118,4 +118,9 @@ public class UserServiceImpl implements UserService {
 		dao.hyp_update(item);
 	}
 
+	@Override
+	public void update_user(User item) {
+		dao.update_user(item);
+	}
+
 }

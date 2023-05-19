@@ -1,10 +1,19 @@
 package kr.ac.kopo.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import kr.ac.kopo.model.User;
+import kr.ac.kopo.service.UserService;
 
 @Controller
 public class RootController {
+	
+	@Autowired
+	UserService service;
 
 	@RequestMapping("/")
 	public String main() {
@@ -45,5 +54,13 @@ public class RootController {
 	@RequestMapping("/signup_success_work")
 	public String signup_success_work() {
 		return "signup_success_work";
+	}
+	
+	@ResponseBody
+	@PostMapping("/update_user")
+	public void update_user(User item) {
+		
+		service.update_user(item);
+		
 	}
 }

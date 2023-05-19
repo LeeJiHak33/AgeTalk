@@ -66,5 +66,11 @@
 		SET hyp = #{hyp} * 3.7
 		WHERE id = 'test'
 	</update>
+	
+	<update id="update_user">
+		UPDATE user
+		SET id = #{id}, name = #{name}, phone = #{phone}
+		WHERE id = 'test'
+	</update>
 
 </mapper>

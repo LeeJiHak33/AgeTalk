@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="/resources/css/header.css" />
     <link rel="stylesheet" href="/resources/css/index.css" />
     <link rel="stylesheet" href="/resources/css/modal.css" />
-
   </head>
  <body>
    <header style="position: absolute; z-index: 1">
@@ -34,19 +33,19 @@
             </li>
           </ul>
         </div>
-        <div class="login_wrap">
+        <!-- <div class="login_wrap">
           <a href="../../login_div" style="text-decoration: none;"
             >로그인 &nbsp; | &nbsp; 회원가입</a>
-        </div>
+        </div> -->
         <!-- modal trigger button -->
-        <!-- <div class="login_wrap">
+        <div class="login_wrap">
           <a
             data-bs-toggle="modal"
             data-bs-target="#MyModal"
             style="font-size: 15px; color: #ffff; cursor: pointer;">
             마이페이지
           </a>
-        </div> -->
+        </div>
         <!-- Modal -->
         <div
           class="modal fade"
@@ -56,8 +55,8 @@
           aria-hidden="true"
           style="position: none"
         >
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content" style="top: 70px;">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
               <div class="modal-head">
                 <div class="modal-header">
                   <p class="modal-title text-dark" id="ModalLabel">
@@ -82,9 +81,9 @@
                 <div class="modal-header" style="display: block">
                   <p class="modal-title text_gray">계정 정보</p>
                   <div class="info">
-                    <p class="text-dark">이름 : {이름}</p>
-                    <p class="text-dark">휴대폰 : 010-1234-5678</p>
                     <p class="text-dark">아이디 : {아이디}</p>
+                    <p class="text-dark">휴대폰 : 010-1234-5678</p>
+                    <p class="text-dark">이름 : {이름}</p>
                     <div style="display: flex; justify-content: flex-start">
                       <p class="text-dark">설문조사여부 : {완료 & 미완료}</p>
                       <!--설문 완료시-->
@@ -126,62 +125,112 @@
           aria-hidden="true"
           style="position: none"
         >
+        	
           <div class="modal-dialog modal-lg">
             <div class="modal-content" style="top: 50px;">
               <div class="modal-head">
-                <div class="modal-header">
-                  <p class="modal-title text-dark" id="ModalLabel">
-                    정보 수정
-                  </p>
-                  <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-header">
-                  <p class="modal-title text-dark">
-                    {닉네임}님의 마이페이지 입니다.
-                  </p>
-                </div>
-                <div class="modal-header" style="display: block">
-                  <p class="modal-title text_gray">프로필</p>
-                  <p class="text-dark nickname">{닉네임}</p>
-                </div>
-                <div class="modal-header" style="display: block">
-                  <p class="modal-title text_gray">계정 정보</p>
-                  <div class="info">
-                  	<div class="input-group mb-4">
-                    <span class="text-dark input-group-text">이름</span> 
-                    <input name="name" type="text" <%-- value="${item.name}" --%> class="form-control">
-                    </div>
-                    <div class="input-group mb-4">
-                    <span class="text-dark input-group-text">휴대폰</span> 
-                    <input name="phone" type="text" <%-- value="${item.phone}" --%> class="form-control">
-                    </div>
-                    <div class="input-group mb-4" style="padding-bottom: 10px;">
-                    <span class="text-dark input-group-text">아이디</span> 
-                    <input name="id" type="text" <%-- value="${item.id}" --%> class="form-control">
-                    </div>
-
-                    <div style="display: flex; justify-content: flex-start">
-                      <p class="text-dark" style="font-size: 18px;">설문조사여부 : {완료 & 미완료}</p>
-                      <!--설문 완료시-->
-                      <a href="../user/diagnosis"><button type="button" class="modal_diagnosis">검사</button></a>
-                      <!-- 설문 미완료시 -->
-                      <!-- <a href="../User/diagnosis.html"><button type="button" class="modal_diagnosis">재검사</button></a> -->
-                    </div>
-                  </div>
-                </div>
+              <form method="post" name="update_form">
+	                <div class="modal-header">
+	                  <p class="modal-title text-dark" id="ModalLabel">
+	                    정보 수정
+	                  </p>
+	                  <button
+	                    type="button"
+	                    class="btn-close"
+	                    data-bs-dismiss="modal"
+	                    aria-label="Close"
+	                  ></button>
+	                </div>
+	                <div class="modal-header">
+	                  <p class="modal-title text-dark">
+	                    {닉네임}님의 마이페이지 입니다.
+	                  </p>
+	                </div>
+	                <div class="modal-header" style="display: block">
+	                  <p class="modal-title text_gray">프로필</p>
+	                  <p class="text-dark nickname">{닉네임}</p>
+	                </div>
+	                <div class="modal-header" style="display: block">
+	                  <p class="modal-title text_gray">계정 정보</p>
+	                 
+	                  <div class="info">
+		                  	<div class="input-group mb-4">
+		                    <span class="text-dark input-group-text">아이디</span> 
+		                    <input name="name" type="text" id="id_input"<%-- value="${item.name}" --%> class="form-control">
+		                    </div>
+		                    <div class="input-group mb-4">
+		                    <span class="text-dark input-group-text">휴대폰</span> 
+		                    <input name="phone" type="text" id="phone_input"<%-- value="${item.phone}" --%> class="form-control">
+		                    </div>
+		                    <div class="input-group mb-4" style="padding-bottom: 10px;">
+		                    <span class="text-dark input-group-text">이름</span> 
+		                    <input name="id" type="text" id="name_input"<%-- value="${item.id}" --%> class="form-control">
+		                    </div>
+						
+	                    <div style="display: flex; justify-content: flex-start">
+	                      <p class="text-dark" style="font-size: 18px;">설문조사여부 : {완료 & 미완료}</p>
+	                      <!--설문 완료시-->
+	                      <a href="../user/diagnosis"><button type="button" class="modal_diagnosis">검사</button></a>
+	                      <!-- 설문 미완료시 -->
+	                      <!-- <a href="../User/diagnosis.html"><button type="button" class="modal_diagnosis">재검사</button></a> -->
+	                    </div>
+	                  </div>
+	                </div>
+	                <div class="modal-footer">
+	                <div class="modal_btns">
+	                  <button type="button" class="btn_update" id="modal_submit">정보수정</button>
+	                  <button type="button" class="btn_out">로그아웃</button>
+	                </div>
+	              	</div>
+                </form>
               </div>
-
-              <div class="modal-footer">
-                <div class="modal_btns">
-                  <button type="button" class="btn_update">정보수정</button>
-                  <button type="button" class="btn_out">로그아웃</button>
-                </div>
-              </div>
+				
+              <script>
+				$("#modal_submit").click(function(){
+			
+					const form = document.update_form;
+					const id = $("#id_input").val();
+					const phone = $("#phone_input").val();
+					const name = $("#name_input").val();
+					
+					const data = {id : id,
+								phone : phone,
+								name : name
+								};
+					
+					if(form.id_input.value == ""){		
+						alert("아이디를 입력해주세요.");
+						form.id.focus();			
+						return;
+					} 
+					if(form.phone_input.value == ""){		
+						alert("휴대폰번호를 입력해주세요.");
+						form.phone.focus();			
+						return;
+					} 
+					if(form.name_input.value == ""){		
+						alert("이름을 입력해주세요.");
+						form.name.focus();			
+						return;
+					} 
+					
+					$.ajax({
+						url : "/update_user",
+						type : "post",
+						data : data,
+						success : function(){
+							alert("정보수정이 완료됐습니다.");
+							$("#updateModal").modal('hide');
+							$("#MyModal").modal('show');
+						},
+						error : function(){
+							alert("에러가 발생했습니다. 잠시 후 다시 시도해주세요.")
+							console.log("오류");
+						}
+					});
+				});
+			</script>
+          	
             </div>
           </div>
         </div>
