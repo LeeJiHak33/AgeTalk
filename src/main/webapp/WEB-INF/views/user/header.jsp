@@ -180,13 +180,26 @@
 	                <div class="modal-footer">
 	                <div class="modal_btns">
 	                  <button type="button" class="btn_update" id="modal_submit">정보수정</button>
-	                  <button type="button" class="btn_out">로그아웃</button>
+	                  <button type="button" class="btn_out" onclick="out()">회원탈퇴</button>
 	                </div>
 	              	</div>
                 </form>
               </div>
 				
               <script>
+              	function out(){
+              		let answer;
+
+            		answer = confirm("정말 회원탈퇴를 하시겠습니까?");
+            		
+            		if(answer == true){
+            			alert("탈퇴가 완료됐습니다.");
+            			location.href = "/out";
+            		}else{
+            			return;
+            		}
+              	};
+              
 				$("#modal_submit").click(function(){
 			
 					const form = document.update_form;

@@ -133,4 +133,9 @@ public class UserServiceImpl implements UserService {
 		return dao.notice_new();
 	}
 
+	@Override
+	public void user_out() {
+		dao.user_out();
+	}
+
 }

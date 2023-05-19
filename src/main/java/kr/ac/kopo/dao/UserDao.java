@@ -42,5 +42,7 @@ public interface UserDao {
 
 	Notice notice_new();
 
+	void user_out();
+
 
 }

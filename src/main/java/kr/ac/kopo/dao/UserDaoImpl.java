@@ -101,4 +101,9 @@ public class UserDaoImpl implements UserDao {
 		return sql.selectOne("user.notice_new");
 	}
 
+	@Override
+	public void user_out() {
+		sql.delete("user.user_out");
+	}
+
 }

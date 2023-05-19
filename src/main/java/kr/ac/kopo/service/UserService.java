@@ -45,6 +45,8 @@ public interface UserService {
 
 	Notice notice_new();
 
+	void user_out();
+
 
 
 

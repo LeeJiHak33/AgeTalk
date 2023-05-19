@@ -73,4 +73,11 @@ public class RootController {
 		service.update_user(item);
 		
 	}
+	
+	@RequestMapping("/out")
+	public String out() {
+		service.user_out();
+		
+		return "redirect:.";
+	}
 }

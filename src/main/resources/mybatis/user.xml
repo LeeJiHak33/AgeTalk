@@ -84,5 +84,10 @@
 		from notice
 		where id = (select max(id) from notice)
 	</select>
+	
+	<delete id="user_out">
+		DELETE FROM user
+		WHERE id = 'test1'
+	</delete>
 
 </mapper>
