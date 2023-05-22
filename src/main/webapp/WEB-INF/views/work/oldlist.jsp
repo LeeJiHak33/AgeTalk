@@ -65,7 +65,7 @@
 					<tbody id="list" class="table-group-divider">
 					<c:if test="${list.size() < 1 }">
 					<tr class="">
-						<td colspan="5">등록된 게시글이 없습니다.</td>
+						<td colspan="5">등록된 사용자가 없습니다.</td>
 					</tr>
 				</c:if>
 				

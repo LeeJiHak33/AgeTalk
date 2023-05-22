@@ -15,8 +15,9 @@
 		<typeAlias type="kr.ac.kopo.model.Work" alias="Work"/>
 		<typeAlias type="kr.ac.kopo.model.User" alias="User" />
 		<typeAlias type="kr.ac.kopo.model.Old" alias="Old" />
+		<typeAlias type="kr.ac.kopo.model.All" alias="All" />
 		<typeAlias type="kr.ac.kopo.model.Report" alias="Report"/>
-		
+	
 	</typeAliases>
 	
 	<mappers>

@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import kr.ac.kopo.model.All;
 import kr.ac.kopo.model.Old;
 import kr.ac.kopo.model.User;
 import kr.ac.kopo.pager.Pager;
@@ -45,7 +46,10 @@ public class WorkController {
 	}
 	
 	@RequestMapping("/managelist")
-	public String manage() {
+	public String manage(Model model, Pager pager) {
+		List<All> list = service.alllist(pager);
+		
+		model.addAttribute("list", list);
 		return path + "/managelist";
 	}
 	

@@ -20,6 +20,18 @@
 	<select id="oldlist_total" resultType="Integer">
 		SELECT COUNT(*) FROM old
 	</select>
+	
+	<select id="alllist_total" resultType="Integer">
+		SELECT COUNT(*) FROM old
+	</select>
+	
+	<select id="alllist_select" resultType="All">
+		SELECT o.name, o.hyp, y.name, y.hyp
+	FROM old o
+	LEFT JOIN `match` m ON m.s_id = o.s_id
+	LEFT JOIN user y ON m.user_id = y.id
+
+	</select>	
 	<!-- <insert id="notice_insert">
 		insert into notice(title,content,date,user_id) values (#{title},#{content},NOW(),#{userId})
 	</insert>

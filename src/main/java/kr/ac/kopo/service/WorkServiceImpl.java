@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.dao.WorkDao;
+import kr.ac.kopo.model.All;
 import kr.ac.kopo.model.Old;
 import kr.ac.kopo.model.User;
 import kr.ac.kopo.pager.Pager;
@@ -30,6 +31,15 @@ public class WorkServiceImpl implements WorkService {
 		return dao.oldlist(pager);
 	
 	
+	}
+
+
+	@Override
+	public List<All> alllist(Pager pager) {
+		int alltotal=dao.alltotal(pager);
+		pager.setTotal(alltotal);
+		return dao.alllist(pager);
+		
 	}
 	
 	}
