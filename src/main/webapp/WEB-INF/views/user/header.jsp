@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/resources/css/header.css" />
     <link rel="stylesheet" href="/resources/css/index.css" />
     <link rel="stylesheet" href="/resources/css/modal.css" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   </head>
  <body>
    <header style="position: absolute; z-index: 1">
@@ -113,7 +114,7 @@
                 <div class="modal_btns">
                   <button type="button" class="btn_update" data-bs-toggle="modal"
             data-bs-target="#updateModal">정보수정</button>
-                  <button type="button" class="btn_out">로그아웃</button>
+                  <a href="/logout"><button type="button" class="btn_out">로그아웃</button></a>
                 </div>
               </div>
             </div>

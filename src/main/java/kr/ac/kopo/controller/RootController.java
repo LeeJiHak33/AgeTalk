@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.User;
 import kr.ac.kopo.service.UserService;
@@ -110,5 +109,12 @@ public class RootController {
 		u_service.user_out();
 		
 		return "redirect:.";
+	}
+	
+	@RequestMapping("/logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		
+		return "redirect:/";
 	}
 }
