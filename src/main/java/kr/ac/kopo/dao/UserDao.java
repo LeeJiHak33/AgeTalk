@@ -42,7 +42,7 @@ public interface UserDao {
 
 	Notice notice_new();
 
-	void user_out();
+	void user_out(String id);
 	void signup(User item);
 
 	int checkId(String id);

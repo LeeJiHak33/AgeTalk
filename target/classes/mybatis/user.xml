@@ -8,7 +8,7 @@
 	</select>
 	
 	<select id="login" resultType="User">
-		SELECT *
+		SELECT id, pwd, name, phone, hyp, author, status
 		FROM user
 		WHERE id=#{id} AND pwd=#{pwd}
 			
@@ -87,13 +87,13 @@
 	<update id="hyp_update">
 		UPDATE user
 		SET hyp = #{hyp} * 3.7
-		WHERE id = 'test'
+		WHERE id = #{id}
 	</update>
 	
 	<update id="update_user">
 		UPDATE user
-		SET id = #{id}, name = #{name}, phone = #{phone}
-		WHERE id = 'test'
+		SET name = #{name}, phone = #{phone}
+		WHERE id = #{id}, pwd=#{pwd}
 	</update>
 	
 	<select id="user_item" resultType="User">
@@ -110,7 +110,7 @@
 	
 	<delete id="user_out">
 		DELETE FROM user
-		WHERE id = 'test1'
+		WHERE id = #{id}
 	</delete>
 
 	<select id="notice_total" resultType="Integer">

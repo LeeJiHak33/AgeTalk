@@ -134,8 +134,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void user_out() {
-		dao.user_out();
+	public void user_out(String id) {
+		dao.user_out(id);
 	}
 	
 	@Override
@@ -155,7 +155,11 @@ public class UserServiceImpl implements UserService {
 	public boolean login_user(User user) {
 		User item = dao.login_user(user);
 		if (item != null) {
-
+			user.setHyp(item.getHyp());
+			user.setName(item.getName());
+			user.setPhone(item.getPhone());
+			user.setAuthor(item.getAuthor());
+			user.setStatus(item.getStatus());
 			return true;
 		} else {
 			return false;

@@ -101,8 +101,8 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public void user_out() {
-		sql.delete("user.user_out");
+	public void user_out(String id) {
+		sql.delete("user.user_out", id);
 	}
 
 	public void signup(User item) {

@@ -23,11 +23,8 @@ public class RootController {
 	UserService u_service;
 
 	@RequestMapping("/")
-	public String main(Model model) {
-	
-		User users = u_service.user_item();
-		model.addAttribute("user", users);
-		
+	public String main(Model model, User user) {
+
 		Notice notice = u_service.notice_new();
 		model.addAttribute("notice", notice);
 		
@@ -56,7 +53,7 @@ public class RootController {
 	}
 
 	@PostMapping("/login_user")
-	public String login_user(User item, HttpSession session) {
+	public String login_user(Model model,User item, HttpSession session) {
 		if (u_service.login_user(item)) {
 
 			session.setAttribute("user", item);
@@ -103,15 +100,18 @@ public class RootController {
 	
 	@ResponseBody
 	@PostMapping("/update_user")
-	public void update_user(User item) {
+	public void update_user(User item, HttpSession session) {
 		u_service.update_user(item);	
+		session.setAttribute("user", item);
 	}
 	
-	@RequestMapping("/out")
-	public String out() {
-		u_service.user_out();
+	@RequestMapping("/out/{id}")
+	public String out(@PathVariable String id, HttpSession session) {
 		
-		return "redirect:.";
+		u_service.user_out(id);
+		session.invalidate();
+		return "redirect:/";
+		
 	}
 	
 	@RequestMapping("/logout")
