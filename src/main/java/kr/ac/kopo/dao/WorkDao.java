@@ -9,6 +9,8 @@ import kr.ac.kopo.pager.Pager;
 public interface WorkDao {
 
 	int total(Pager pager);
+	
+	int oldtotal(Pager pager);
 
 	List<User> youthlist(Pager pager);
 

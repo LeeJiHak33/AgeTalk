@@ -28,6 +28,11 @@ public class WorkDaoImpl implements WorkDao {
 
 	@Override
 	public List<Old> oldlist(Pager pager) {
+		return sql.selectList("work.oldlist_select", pager);
+		
+	}
+	@Override
+	public int oldtotal(Pager pager) {
 		return sql.selectOne("work.oldlist_total", pager);
 	}
 }

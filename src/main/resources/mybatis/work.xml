@@ -11,6 +11,11 @@
 	<select id="youthlist_total" resultType="Integer">
 		SELECT COUNT(*) FROM user
 	</select>
+	<select id="oldlist_select" resultType="Old">
+		SELECT name, hyp
+		FROM old
+		ORDER BY name desc
+	</select>	
 	
 	<select id="oldlist_total" resultType="Integer">
 		SELECT COUNT(*) FROM old

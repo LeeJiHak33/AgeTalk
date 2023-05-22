@@ -87,6 +87,24 @@
     </tr>
 </c:forEach>
 </table>
+<script>
+    const progressBarList = document.querySelectorAll('.progress-bar');
+    progressBarList.forEach(progressBar => {
+        progressBar.style.width = '100%';
+        progressBar.style.transition = 'width 3s ease-out-in';
+
+        const number = parseInt(progressBar.querySelector('div').innerText);
+        progressBar.style.width = number + "%";
+
+        if (number >= 80) {
+            progressBar.style.backgroundColor = '#ff0000';
+        } else if (number >= 50) {
+            progressBar.style.backgroundColor = '#ffea00';
+        } else {
+            progressBar.style.backgroundColor = '#0040ff';
+        }
+    });
+</script>
 
 										 
 

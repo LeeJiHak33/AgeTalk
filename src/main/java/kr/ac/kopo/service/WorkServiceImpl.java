@@ -25,8 +25,8 @@ public class WorkServiceImpl implements WorkService {
 
 	@Override
 	public List<Old> oldlist(Pager pager) {
-		int total=dao.total(pager);
-		pager.setTotal(total);
+		int oldtotal=dao.oldtotal(pager);
+		pager.setTotal(oldtotal);
 		return dao.oldlist(pager);
 	
 	
