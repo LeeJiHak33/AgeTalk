@@ -53,5 +53,7 @@ public interface UserDao {
 
 	int notice_total();
 
+	int login_admin(User item);
+
 
 }

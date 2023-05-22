@@ -126,4 +126,10 @@ public class UserDaoImpl implements UserDao {
 		return sql.selectOne("user.notice_total");
 	}
 
+	@Override
+	public int login_admin(User item) {
+		// TODO Auto-generated method stub
+		return sql.selectOne("user.login_admin", item);
+	}
+
 }

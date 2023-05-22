@@ -55,6 +55,8 @@ public interface UserService {
 
 	boolean login_user(User user);
 
+	boolean login_admin(User item);
+
 
 
 }

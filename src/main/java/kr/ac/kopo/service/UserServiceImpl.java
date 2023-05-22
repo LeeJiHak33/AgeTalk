@@ -163,4 +163,17 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 
+	@Override
+	public boolean login_admin(User item) {
+		// TODO Auto-generated method stub
+		if(dao.login_admin(item)>0) {
+			return true;
+		}
+		else {
+			return false;
+		}
+		
+		
+	}
+
 }

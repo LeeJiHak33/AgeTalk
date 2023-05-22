@@ -116,4 +116,8 @@
 	<select id="notice_total" resultType="Integer">
 		select count(*) from notice
 	</select>
+	
+	<select id="login_admin" resultType="Integer">
+		select count(*) from user where author=1 and id=#{id} and pwd=#{pwd}
+	</select>
 </mapper>
