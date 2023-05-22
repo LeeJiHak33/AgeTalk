@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import kr.ac.kopo.model.Old;
 import kr.ac.kopo.model.User;
 import kr.ac.kopo.pager.Pager;
 import kr.ac.kopo.service.WorkService;
@@ -35,7 +37,10 @@ public class WorkController {
 	}
 	
 	@RequestMapping("/oldlist")
-	public String old() {
+	public String old(Model model, Pager pager) {
+	List<Old> list = service.oldlist(pager);
+		
+		model.addAttribute("list", list);
 		return path + "oldlist";
 	}
 	

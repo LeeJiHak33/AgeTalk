@@ -11,6 +11,10 @@
 	<select id="youthlist_total" resultType="Integer">
 		SELECT COUNT(*) FROM user
 	</select>
+	
+	<select id="oldlist_total" resultType="Integer">
+		SELECT COUNT(*) FROM old
+	</select>
 	<!-- <insert id="notice_insert">
 		insert into notice(title,content,date,user_id) values (#{title},#{content},NOW(),#{userId})
 	</insert>

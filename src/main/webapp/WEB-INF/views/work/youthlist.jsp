@@ -71,37 +71,35 @@
         <td data-table="name">${item.name}</td>
         <td>
             <div class="progress" data-table="hyp">
-                <div id="${item.id}" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-                    <div id="${item.id}">${item.hyp}<span>%</span></div>
+                <div id="my_div" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                    <div>${item.hyp}<span>%</span></div>
                 </div>
             </div>
-            <script type="text/javascript">
-									const progressBar = document.querySelector('#${item.id}');
-									if (progressBar) {
-										progressBar.style.width = '100%';
-										progressBar.style.transition = 'width 2s ease-out-in';
-							
-										const number = parseInt(document.querySelector('#progress-value').innerText);
-										progressBar.style.width = number + "%";
-							
-										if (number >= 80) {
-											progressBar.style.backgroundColor = '#ff0000';
-										} else if (number >= 50) {
-											progressBar.style.backgroundColor = '#ffea00';
-										} else {
-											progressBar.style.backgroundColor = '#0040ff';
-										}
-									}
-								
-								</script>
         </td>
         <td data-table="phone">${item.phone}</td>
         <td><button class="del_btn">매칭하기</button></td>
     </tr>
 </c:forEach>
+</table>
+<script>
+    const progressBarList = document.querySelectorAll('.progress-bar');
+    progressBarList.forEach(progressBar => {
+        progressBar.style.width = '100%';
+        progressBar.style.transition = 'width 3s ease-out-in';
 
-					</table>
-					
+        const number = parseInt(progressBar.querySelector('div').innerText);
+        progressBar.style.width = number + "%";
+
+        if (number >= 80) {
+            progressBar.style.backgroundColor = '#ff0000';
+        } else if (number >= 50) {
+            progressBar.style.backgroundColor = '#ffea00';
+        } else {
+            progressBar.style.backgroundColor = '#0040ff';
+        }
+    });
+</script>
+	
  
 
 			</div>

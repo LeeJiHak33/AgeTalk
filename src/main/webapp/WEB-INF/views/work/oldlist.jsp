@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
 
 <head>
@@ -61,175 +63,31 @@
 					</thead>
 
 					<tbody id="list" class="table-group-divider">
+					<c:if test="${list.size() < 1 }">
+					<tr class="">
+						<td colspan="5">등록된 게시글이 없습니다.</td>
+					</tr>
+				</c:if>
+				
+	<c:forEach items="${list}" var="item">
+    <tr>
+   
+        <td data-table="name">${item.name}</td>
+        <td>
+            <div class="progress" data-table="hyp">
+                <div id="my_div" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                    <div>${item.hyp}<span>%</span></div>
+                </div>
+            </div>
+        </td>        
+        <td><button class="update_btn"
+            data-bs-toggle="modal"
+            data-bs-target="#oldupdateModal"
+            style=" cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>
+    </tr>
+</c:forEach>
+</table>
 
-						<tr>
-							<td>김갑수</td>
-							<td>
-								<div class="progress">
-									<div id="progress-bar1" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-										<div id="progress-value">40<span>%</span></div>
-									</div>
-								</div>
-								<script>
-									const progressBar = document.querySelector('#progress-bar1');
-									if (progressBar) {
-										progressBar.style.width = '100%';
-										progressBar.style.transition = 'width 2s ease-out-in';
-							
-										const number = parseInt(document.querySelector('#progress-value').innerText);
-										progressBar.style.width = number + "%";
-							
-										if (number >= 80) {
-											progressBar.style.backgroundColor = '#ff0000';
-										} else if (number >= 50) {
-											progressBar.style.backgroundColor = '#ffea00';
-										} else {
-											progressBar.style.backgroundColor = '#0040ff';
-										}
-									}
-								
-								</script>
-							</td>
-							
-							
-<td><button class="update_btn"
-            data-bs-toggle="modal"
-            data-bs-target="#oldupdateModal"
-            style=" cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
-
-						<tr>
-							
-							<td>김갑환</td>
-							<td>
-								<div class="progress">
-									<div class="progress-bar" role="progressbar"
-										style="width: 90%; background-color: #ff0000" aria-valuenow="100"
-										aria-valuemin="0" aria-valuemax="100">90%</div>
-								</div>
-							</td>
-							
-<td><button class="update_btn"
-            data-bs-toggle="modal"
-            data-bs-target="#oldupdateModal"
-            style="font-size: 15px; cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>							</tr>
-						<tr>
-							
-							<td>황갑수</td>
-							<td>
-								<div class="progress">
-									<div class="progress-bar" role="progressbar"
-										style="width: 90%; background-color: #ff0000" aria-valuenow="100"
-										aria-valuemin="0" aria-valuemax="100">90%</div>
-
-								</div>
-							</td>
-<td><button class="update_btn"
-            data-bs-toggle="modal"
-            data-bs-target="#oldupdateModal"
-            style=" cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
-						<tr>
-							<td>김갑수</td>
-							<td>
-								<div class="progress">
-									<div class="progress-bar" role="progressbar"
-										style="width: 50%; background-color: #ffea00" aria-valuenow="25"
-										aria-valuemin="0" aria-valuemax="100">50%
-									</div>
-								</div>
-							</td>
-							
-<td><button class="update_btn"
-            data-bs-toggle="modal"
-            data-bs-target="#oldupdateModal"
-            style="font-size: 15px; cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
-						<tr>
-							<td>김진수</td>
-							<td>
-								<div class="progress">
-									<div class="progress-bar" role="progressbar"
-										style="width: 25%; background-color: #0040ff" aria-valuenow="100"
-										aria-valuemin="0" aria-valuemax="100">25%</div>
-								</div>
-							</td>
-							
-<td><button class="update_btn"
-            data-bs-toggle="modal"
-            data-bs-target="#oldupdateModal"
-            style=" cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
-						<tr>
-							
-							<td>김강랑</td>
-							<td>
-								<div class="progress">
-									<div class="progress-bar" role="progressbar"
-										style="width: 90%; background-color: #ff0000" aria-valuenow="100"
-										aria-valuemin="0" aria-valuemax="100">90%</div>
-								</div>
-							</td>
-<td><button class="update_btn"
-            data-bs-toggle="modal"
-            data-bs-target="#oldupdateModal"
-            style="cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
-						<tr id="y_list">
-							
-							<td>이화찬</td>
-							<td>
-								<div class="progress">
-									<div class="progress-bar" role="progressbar"
-										style="width: 90%; background-color: #ff0000" aria-valuenow="100"
-										aria-valuemin="0" aria-valuemax="100">90%</div>
-
-								</div>
-							</td>
-<td><button class="update_btn"
-            data-bs-toggle="modal"
-            data-bs-target="#oldupdateModal"
-            style=" cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
-						<tr id="y_list">							
-							<td>박하진</td>
-							<td>
-								<div class="progress">
-									<div class="progress-bar" role="progressbar"
-										style="width: 90%; background-color: #ff0000" aria-valuenow="100"
-										aria-valuemin="0" aria-valuemax="100">90%</div>
-								</div>
-							</td>
-<td><button class="update_btn"
-            data-bs-toggle="modal"
-            data-bs-target="#oldupdateModal"
-            style=" cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
-						<tr>
-							
-							<td>김환랑</td>
-							<td>
-								<div class="progress">
-									<div class="progress-bar" role="progressbar"
-										style="width: 90%; background-color: #ff0000" aria-valuenow="100"
-										aria-valuemin="0" aria-valuemax="100">90%</div>
-
-								</div>
-							</td>
-							<td><button class="update_btn"
-            data-bs-toggle="modal"
-            data-bs-target="#oldupdateModal"
-            style=" cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
-						
-						<tr>							
-							<td>최화랑</td>
-							<td>
-								<div class="progress">
-									<div class="progress-bar" role="progressbar"
-										style="width: 90%; background-color: #ff0000" aria-valuenow="100"
-										aria-valuemin="0" aria-valuemax="100">90%</div>
-								</div>
-							</td>
-							<td>
-          <button class="update_btn"
-            data-bs-toggle="modal"
-            data-bs-target="#oldupdateModal"
-                        style=" cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>						</tr>
-
-					</table>
 										 
 
 			</div>

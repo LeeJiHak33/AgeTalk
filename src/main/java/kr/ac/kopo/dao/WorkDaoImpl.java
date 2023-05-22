@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import kr.ac.kopo.model.Old;
 import kr.ac.kopo.model.User;
 import kr.ac.kopo.pager.Pager;
 
@@ -23,5 +24,10 @@ public class WorkDaoImpl implements WorkDao {
 	@Override
 	public List<User> youthlist(Pager pager) {
 		return sql.selectList("work.youthlist_select", pager);
+	}
+
+	@Override
+	public List<Old> oldlist(Pager pager) {
+		return sql.selectOne("work.oldlist_total", pager);
 	}
 }
