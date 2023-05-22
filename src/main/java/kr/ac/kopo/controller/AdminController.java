@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.Report;
-import kr.ac.kopo.model.User;
 import kr.ac.kopo.model.Work;
 import kr.ac.kopo.pager.Pager;
 import kr.ac.kopo.service.AdminService;

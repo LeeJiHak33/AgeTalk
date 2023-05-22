@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="work">
+	<select id="youthlist_select" resultType="User">
+		SELECT name, hyp, phone
+		FROM user
+		ORDER BY name desc
+	</select>
+	<select id="youthlist_total" resultType="Integer">
+		SELECT COUNT(*) FROM user
+	</select>
+	<select id="oldlist_select" resultType="Old">
+		SELECT name, hyp
+		FROM old
+		ORDER BY name desc
+	</select>	
+	
+	<select id="oldlist_total" resultType="Integer">
+		SELECT COUNT(*) FROM old
+	</select>
+	<!-- <insert id="notice_insert">
+		insert into notice(title,content,date,user_id) values (#{title},#{content},NOW(),#{userId})
+	</insert>
+	<select id="notice_item" resultType="Notice">
+		select * from notice where id=#{id}
+	</select>
+	
+	<update id="notice_update">
+		update notice set title=#{title} , content=#{content} where id=#{id}
+	</update>
+	<delete id="notice_delete">
+		delete from notice where id=#{id}
+	</delete> -->
+</mapper>
