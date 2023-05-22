@@ -78,10 +78,15 @@
 
 	<select id="notice" resultType="Notice">
 		select id,title,date from notice
+		ORDER BY id desc
+		LiMIT #{offset},#{perPager} 
 	</select>
 	
 	<select id="notice_item" resultType="Notice">
-		select * from notice where id=#{id}
+		select n.*,
+		(SELECT id FROM notice where id  <![CDATA[>]]> #{id} ORDER BY id  LIMIT 1) prev,
+		(SELECT id FROM notice where id  <![CDATA[<]]> #{id} ORDER BY id DESC LIMIT 1) next
+		from notice n where id=#{id}
 	</select>
 	
 	<update id="hyp_update">
