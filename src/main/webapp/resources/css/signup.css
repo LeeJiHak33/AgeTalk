@@ -210,6 +210,7 @@ h1 {
 }
 
 .signup_btn button {
+	width: 472px !important;
 	border: 0 !important;
 	background-color:transparent;
 	outline: 0;
