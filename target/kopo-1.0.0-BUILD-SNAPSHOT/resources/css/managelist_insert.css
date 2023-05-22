@@ -1,0 +1,176 @@
+
+  
+  .btn_area .button {
+	margin-top: 30px;
+	height: 45px;
+	line-height: 43px;
+}
+
+.button {
+	display: block;
+	overflow: hidden;
+	position: relative;
+	min-width: 100px;
+	height: 45px;
+	line-height: 43px;
+	border: none;
+	box-sizing: border-box;
+	padding: 0 15px;
+	margin: 2px 0px;
+	background: #fe8e8d;
+	color: #fff !important;
+	text-align: center;
+	transition: all 0.4s ease-out 0.1s;
+	float: right;
+}
+
+.button:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	z-index: 1;
+	width: 120%;
+	height: 110%;
+	color: #ffffff !important;
+	background: #ff6e6d;
+	transform: translateX(-120%) skew(-15deg);
+	transition: transform 0.7s cubic-bezier(0, 0, 0.21, 0.87) 0s;
+}
+
+.button:hover:before, .button:focus:before {
+	color: #ffffff !important;
+	background: #ff6e6d;
+	transform: translateX(-10%) skew(-15deg) perspective(500px);
+}
+
+.button:hover {
+	color: #ffffff !important;
+	background-color: #ff6e6d;
+	box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+.button span {
+	position: relative;
+	z-index: 2;
+}
+
+span.btn_write {
+	font-family: "NotoSansKR";
+	color: #fff;
+}
+  .modal-header{
+    margin: 0px 30px;
+  }
+
+  .modal-head{
+    margin-top: 50px;
+  }
+  .modal-body{
+    margin: 40px 30px;
+    margin: 0;
+  }
+
+  .modal-footer{
+    margin: 40px 30px;
+    margin-top: 0;
+  }
+
+  .nickname{
+    margin: 0;
+    margin-top: 20px;
+  }
+
+  .info{
+    margin-top: 20px;
+  }
+
+  .modal-notice{
+    margin: 0 30px;
+    margin-top: 20px;
+    padding: 0 16px;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .notice_title{
+    margin-left: 20px;
+  }
+
+#ModalLabel{
+    font-size: 23px;
+    font-family: "NotoSansKR-Bold";
+}
+
+  .btn_out{
+    background-color: #fe8e8d;
+    border: none;
+    border-radius: 30px;
+    width: 105px;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    margin-left: 10px;
+  }
+
+  .btn_out:hover{
+    background-color: #f48382;
+  }
+
+  .btn_update{
+    background-color: #ffdd67;
+    border: none;
+    border-radius: 30px;
+    width: 105px;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    
+  }
+
+  .btn_update:hover{
+    background-color: #f7d664;
+  }
+
+  .modal_diagnosis{
+    background-color: #fe8e8d;
+    border: none;
+    border-radius: 30px;
+    width: 105px;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    margin-left: 30px;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    bottom: 7px;
+  }
+
+  .modal_diagnosis:hover{
+    background-color: #f48382;
+  }
+
+  .modal_btns{
+    padding-top: 30px;
+  }
+
+  .text_gray{
+    color: #999999;
+    opacity: 80%;
+  }
+  
+  .modal-dialog {
+	width: 700px;
+}
+
+.modal-content {
+	border-radius: 45px;
+}
+
+.modal-backdrop {
+	z-index: 0;
+}

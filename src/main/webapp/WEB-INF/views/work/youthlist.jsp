@@ -72,24 +72,28 @@
         <td>
             <div class="progress" data-table="hyp">
                 <div id="${item.id}" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-                    <div id="${item.id}_value">${item.hyp}<span>%</span></div>
+                    <div id="${item.id}">${item.hyp}<span>%</span></div>
                 </div>
             </div>
-            <script>
-                const progressbar_ + ${item.id} = document.querySelector(#${item.id});
-                if (progressbar_${item.id}) {
-                    const hypValue = parseInt(document.querySelector('#${item.id}_value').innerText);
-                    progressbar_${item.id}.style.width = hypValue + "%";
-                    
-                    if (hypValue >= 80) {
-                        progressbar_${item.id}.style.backgroundColor = '#ff0000';
-                    } else if (hypValue >= 50) {
-                        progressbar_${item.id}.style.backgroundColor = '#ffea00';
-                    } else {
-                        progressbar_${item.id}.style.backgroundColor = '#0040ff';
-                    }
-                }
-            </script>
+            <script type="text/javascript">
+									const progressBar = document.querySelector('#${item.id}');
+									if (progressBar) {
+										progressBar.style.width = '100%';
+										progressBar.style.transition = 'width 2s ease-out-in';
+							
+										const number = parseInt(document.querySelector('#progress-value').innerText);
+										progressBar.style.width = number + "%";
+							
+										if (number >= 80) {
+											progressBar.style.backgroundColor = '#ff0000';
+										} else if (number >= 50) {
+											progressBar.style.backgroundColor = '#ffea00';
+										} else {
+											progressBar.style.backgroundColor = '#0040ff';
+										}
+									}
+								
+								</script>
         </td>
         <td data-table="phone">${item.phone}</td>
         <td><button class="del_btn">매칭하기</button></td>
