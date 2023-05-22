@@ -15,21 +15,21 @@
  <body>
    <header style="position: absolute; z-index: 1">
         <div class="logo_wrap">
-          <a href="../../"><img src="/resources/image/agetalk_logo.png" alt="logo" /></a>
+          <a href="/"><img src="/resources/image/agetalk_logo.png" alt="logo" /></a>
         </div>
         <div class="menu_wrap">
           <ul class="menu_list" style="margin-bottom: 0; padding-left: 0">
-            <li><a href="../user/explain" style="text-decoration: none">소개</a></li>
+            <li><a href="../../user/explain" style="text-decoration: none">소개</a></li>
             <li>
               <a class="popup" style="text-decoration: none; cursor: pointer"
                 >채팅하기
                 </a>
             </li>
             <li>
-              <a href="../user/notice" style="text-decoration: none">고객센터</a>
+              <a href="../../user/notice" style="text-decoration: none">고객센터</a>
               	<ul class="sub_list" style="padding:0; padding-top:20px;">
-						<li class="sub_menu"><a href="../user/notice">공지사항</a></li>
-						<li class="sub_menu"><a href="../user/qna">QnA</a></li>
+						<li class="sub_menu"><a href="../../user/notice">공지사항</a></li>
+						<li class="sub_menu"><a href="../../user/qna">QnA</a></li>
 				</ul>
             </li>
           </ul>
@@ -81,7 +81,7 @@
                 </div>
                 <div class="modal-header" style="display: block">
                   <p class="modal-title text_gray">계정 정보</p>
-                  <div class="info">
+                  <div class="info" id="info_reload">
                     <p class="text-dark">아이디 : ${user.id}</p>
                     <p class="text-dark">휴대폰 : ${user.phone }</p>
                     <p class="text-dark">이름 : ${user.name }</p>
@@ -97,7 +97,7 @@
               </div>
               <div class="modal-notice">
                 <p class="text_gray">공지사항</p>
-                <p class="notice_title">${notice.title}</p>
+                <p class="notice_title"><a href="../../user/notice" style="color:black;">${notice.title}</a></p>
                 <p style="margin-left: auto">
                   <a
                     href="../user/notice"
@@ -127,8 +127,8 @@
           style="position: none"
         >
         	
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content" style="top: 50px;">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
               <div class="modal-head">
               <form method="post" name="update_form">
 	                <div class="modal-header">
@@ -169,9 +169,9 @@
 		                    </div>
 						
 	                    <div style="display: flex; justify-content: flex-start">
-	                      <p class="text-dark" style="font-size: 18px;">설문조사여부 : {완료 & 미완료}</p>
+	                      <p class="text-dark" style="font-size: 18px;">설문조사여부 :  <c:if test="${user.hyp == 0}">미완료</c:if><c:if test="${user.hyp > 0}">완료</c:if></p>
 	                      <!--설문 완료시-->
-	                      <a href="../user/diagnosis"><button type="button" class="modal_diagnosis">검사</button></a>
+	                      <a href="../user/diagnosis"><button type="button" class="modal_diagnosis"><c:if test="${user.hyp == 0}">검사</c:if><c:if test="${user.hyp > 0}">재검사</c:if></button></a>
 	                      <!-- 설문 미완료시 -->
 	                      <!-- <a href="../User/diagnosis.html"><button type="button" class="modal_diagnosis">재검사</button></a> -->
 	                    </div>
@@ -227,7 +227,7 @@
 						form.name.focus();			
 						return;
 					} 
-					
+					if(confirm("정보를 수정하시겠습니까?")){
 					$.ajax({
 						url : "/update_user",
 						type : "post",
@@ -235,13 +235,17 @@
 						success : function(){
 							alert("정보수정이 완료됐습니다.");
 							$("#updateModal").modal('hide');
-							$("#MyModal").modal('show');
+							$('#info_reload').load(location.href+' #info_reload');
+					        $("#MyModal").modal("show"); 
 						},
 						error : function(){
 							alert("에러가 발생했습니다. 잠시 후 다시 시도해주세요.")
 							console.log("오류");
 						}
 					});
+					} else{
+						return false;
+					}
 				});
 			</script>
           	

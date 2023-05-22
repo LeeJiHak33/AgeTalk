@@ -44,16 +44,14 @@ h2 {
 }
 
 .container > h2 {
-  font-size: 43px;
+  font-size: 32px;
   font-weight: 500;
   font-family: "NotoSansKR-Black";
-  padding-bottom: 30px;
 }
 
 .container > h3 {
-	font-size : 32px;
+	font-size : 36px;
 	font-family: "NotoSansKR-Bold";
-	padding-bottom: 30px;
 }
 
 .container {
@@ -64,7 +62,61 @@ h2 {
   text-align: center;
 }
 
-.container > p {
+
+.introduce{
+	width: 1400px;
+	margin:0 auto;
+}
+.introduce_content > p{
 	font-size : 19px;
+	color:#777777;
 }
 
+
+.introduce_content{
+	font-size: 19px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+}
+
+.introduce_div{
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	margin-top: 40px;
+	color:#777777;
+}
+
+
+.second{
+	margin-top: 130px;
+}
+
+.content_div{
+	width: 1400px;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 40px;
+}
+
+.content_div > p{
+	font-size: 20px;
+	line-height: 35px;
+}
+
+.content_div #last_content{
+	font-family: "NotoSansKR-Bold";
+	font-size: 24px;
+	margin-top: 60px;
+	margin-bottom: 0;
+}
+
+.about{
+	text-decoration: underline;
+	text-underline-position: under;
+	font-size: 24px;
+	font-family: "NotoSansKR-Bold";
+	color:#fe8e8d;
+	margin-bottom: 50px;
+}

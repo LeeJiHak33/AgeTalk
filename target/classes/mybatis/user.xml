@@ -15,8 +15,8 @@
 	</insert>
 	
 	<select id="qna_item" resultType="Qna">
-		SELECT qna.*, comment.id cid, comment.content cmt, comment.date cdate, qna_id
-		FROM qna left join comment on(qna.id = comment.qna_id)
+		SELECT qna.*, comment.id cid, comment.content cmt, comment.date cdate, qna_id, user.name
+		FROM qna left join comment on(qna.id = comment.qna_id) left join user on(qna.user_id = user.id)
 		WHERE qna.id = #{id}
 	</select>
 	

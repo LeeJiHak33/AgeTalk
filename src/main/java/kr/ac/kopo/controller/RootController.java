@@ -20,11 +20,9 @@ public class RootController {
 	@RequestMapping("/")
 	public String main(Model model) {
 		User user = service.user_item();
-		
 		model.addAttribute("user", user);
 		
 		Notice notice = service.notice_new();
-		
 		model.addAttribute("notice", notice);
 		
 		return "main";

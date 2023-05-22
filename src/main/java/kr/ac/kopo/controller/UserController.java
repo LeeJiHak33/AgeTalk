@@ -51,6 +51,13 @@ public class UserController {
 	public String notice(Model model) {
 		List<Notice> list =service.notice();
 		model.addAttribute("list", list);
+		
+		User user = service.user_item();
+		model.addAttribute("user", user);
+		
+		Notice notice = service.notice_new();
+		model.addAttribute("notice", notice);
+		
 		return path + "notice";
 	}
 	
@@ -58,14 +65,26 @@ public class UserController {
 	public String notice_detail(@PathVariable int id,Model model) {
 		Notice item=service.notice_item(id);
 		model.addAttribute("item", item);
+		
+		User user = service.user_item();
+		model.addAttribute("user", user);
+		
+		Notice notice = service.notice_new();
+		model.addAttribute("notice", notice);
+		
 		return path + "notice_detail";
 	}
 	
 	@GetMapping("/qna")
 	public String qna(Model model, Pager pager) {
 		List<Qna> list = service.qna(pager);
-		
 		model.addAttribute("list", list);
+		
+		User user = service.user_item();
+		model.addAttribute("user", user);
+		
+		Notice notice = service.notice_new();
+		model.addAttribute("notice", notice);
 		
 		return path + "qna";
 	}
@@ -85,7 +104,13 @@ public class UserController {
 	}
 	
 	@GetMapping("/qna_insert")
-	public String qna_insert() {
+	public String qna_insert(Model model) {
+		User user = service.user_item();
+		model.addAttribute("user", user);
+		
+		Notice notice = service.notice_new();
+		model.addAttribute("notice", notice);
+		
 		return path + "qna_insert";
 	}
 	
@@ -102,6 +127,12 @@ public class UserController {
 		Qna item = service.item(id);
 		item.setId(id);
 		model.addAttribute("item", item);
+		
+		User user = service.user_item();
+		model.addAttribute("user", user);
+		
+		Notice notice = service.notice_new();
+		model.addAttribute("notice", notice);
 		
 		return path + "qna_update";
 	}
@@ -145,10 +176,16 @@ public class UserController {
 	
 	@GetMapping("/qna_detail/{id}")
 	public String qna_detail(@PathVariable int id, Model model, Qna qna, Comment comment) {
-		
 		Qna item = service.item(id);
 		item.setId(id);
 		model.addAttribute("item", item);
+		
+		User user = service.user_item();
+		model.addAttribute("user", user);
+		
+		Notice notice = service.notice_new();
+		model.addAttribute("notice", notice);
+		
 		return path + "qna_detail";
 	}
 	
@@ -163,12 +200,24 @@ public class UserController {
 	}
 	
 	@RequestMapping("/explain")
-	public String explain() {
+	public String explain(Model model) {
+		User user = service.user_item();
+		model.addAttribute("user", user);
+		
+		Notice notice = service.notice_new();
+		model.addAttribute("notice", notice);
+		
 		return path + "explain";
 	}
 	
 	@GetMapping("/diagnosis")
-	public String diagnosis() {
+	public String diagnosis(Model model) {
+		User user = service.user_item();
+		model.addAttribute("user", user);
+		
+		Notice notice = service.notice_new();
+		model.addAttribute("notice", notice);
+		
 		return path + "diagnosis";
 	}
 	
