@@ -13,6 +13,8 @@
 		<typeAlias type="kr.ac.kopo.model.Comment" alias="Comment"/>
 		<typeAlias type="kr.ac.kopo.model.User" alias="User"/>
 
+		<typeAlias type="kr.ac.kopo.model.Report" alias="Report"/>
+		<typeAlias type="kr.ac.kopo.model.Work" alias="Work"/>
 	</typeAliases>
 	
 	<mappers>

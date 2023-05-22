@@ -76,5 +76,7 @@
 	<select id="notice_item" resultType="Notice">
 		select * from notice where id=#{id}
 	</select>
-
+	<select id="notice_total" resultType="Integer">
+		select count(*) from notice
+	</select>
 </mapper>

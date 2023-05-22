@@ -33,8 +33,8 @@ public class UserController {
 	}
 		
 	@GetMapping("/notice")
-	public String notice(Model model) {
-		List<Notice> list =service.notice();
+	public String notice(Model model,Pager pager) {
+		List<Notice> list =service.notice(pager);
 		model.addAttribute("list", list);
 		return path + "notice";
 	}

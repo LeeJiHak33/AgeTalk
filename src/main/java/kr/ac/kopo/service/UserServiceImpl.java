@@ -63,6 +63,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	
+	
 	public void dummy() {
 		for (int i = 1; i < 100; i++) {
 			Qna item = new Qna();
@@ -89,13 +91,16 @@ public class UserServiceImpl implements UserService {
 
 				dao.qna_delete(item.getId());
 			}
-
-		} while (qna.size() > 0);
+			
+		} while(qna.size() > 0);
 	}
-
+	
+		
 	@Override
-	public List<Notice> notice() {
-		return dao.notice();
+	public List<Notice> notice(Pager pager) {
+		int total=dao.notice_total();
+		pager.setTotal(total);
+		return dao.notice(pager);
 	}
 
 	@Override
