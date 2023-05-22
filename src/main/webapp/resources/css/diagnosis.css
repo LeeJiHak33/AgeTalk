@@ -245,20 +245,6 @@ p.in_2 {
 	text-align: center !important;
 }
 
-.btn_box input[type="submit"].btn, .btn_box a.btn {
-	font-family: "NotoSansKR";
-	display: inline-block;
-	width: 200px;
-	height: 74px;
-	line-height: 54px;
-	font-size: 20px;
-	color: white;
-	background-color: #fe8e8d;
-	border-radius: 45px;
-	cursor: pointer;
-	text-decoration: none;
-	border: none;
-}
 
 .diagnosis_bottom {
 	padding-top: 50px;

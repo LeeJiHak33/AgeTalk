@@ -2,6 +2,29 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="user">
+	<select id="user" resultType="User">
+		SELECT *
+		FROM user
+	</select>
+	
+	<select id="login" resultType="User">
+		SELECT *
+		FROM user
+		WHERE id=#{id} AND pwd=#{pwd}
+			
+	</select>
+	
+	<insert id="add">
+		INSERT INTO user(id, pwd, name, phone)
+		VALUES(#{id}, #{pwd}, #{name}, #{phone})
+	</insert>
+	
+	<select id ="check_id" resultType="Integer">
+		SELECT COUNT(*)
+		FROM user
+		WHERE id=#{id}
+	</select>
+	
 	<select id="qna" resultType="Qna">
 		SELECT qna.*, comment.content cmt
 		FROM qna left join comment on(qna.id = comment.qna_id)
@@ -15,8 +38,8 @@
 	</insert>
 	
 	<select id="qna_item" resultType="Qna">
-		SELECT qna.*, comment.id cid, comment.content cmt, comment.date cdate, qna_id
-		FROM qna left join comment on(qna.id = comment.qna_id)
+		SELECT qna.*, comment.id cid, comment.content cmt, comment.date cdate, qna_id, user.name
+		FROM qna left join comment on(qna.id = comment.qna_id) left join user on(qna.user_id = user.id)
 		WHERE qna.id = #{id}
 	</select>
 	
@@ -36,6 +59,12 @@
 		WHERE id = #{id}
 	</delete>
 	
+	<update id="comment_update">
+		UPDATE comment
+		SET content = #{content}
+		WHERE id = #{id}
+	</update>
+	
 	<insert id="qna_comment">
 		INSERT INTO comment(content, date, qna_id)
 		VALUES(#{content}, Now(), #{id})
@@ -50,8 +79,41 @@
 	<select id="notice" resultType="Notice">
 		select id,title,date from notice
 	</select>
+	
 	<select id="notice_item" resultType="Notice">
 		select * from notice where id=#{id}
 	</select>
+	
+	<update id="hyp_update">
+		UPDATE user
+		SET hyp = #{hyp} * 3.7
+		WHERE id = 'test'
+	</update>
+	
+	<update id="update_user">
+		UPDATE user
+		SET id = #{id}, name = #{name}, phone = #{phone}
+		WHERE id = 'test'
+	</update>
+	
+	<select id="user_item" resultType="User">
+		select *
+		from user
+		where id = 'test'
+	</select>
+	
+	<select id="notice_new" resultType="Notice">
+		select *
+		from notice
+		where id = (select max(id) from notice)
+	</select>
+	
+	<delete id="user_out">
+		DELETE FROM user
+		WHERE id = 'test1'
+	</delete>
 
+	<select id="notice_total" resultType="Integer">
+		select count(*) from notice
+	</select>
 </mapper>

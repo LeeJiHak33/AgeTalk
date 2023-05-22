@@ -5,6 +5,7 @@ import java.util.List;
 import kr.ac.kopo.model.Comment;
 import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.Qna;
+import kr.ac.kopo.model.User;
 import kr.ac.kopo.pager.Pager;
 
 
@@ -25,13 +26,34 @@ public interface UserService {
 	Comment cmt(int id);
 
 	void comment_delete(int id);
+	
 	void dummy();
 
 	void init();
 
-	List<Notice> notice();
+	List<Notice> notice(Pager pager);
 
 	Notice notice_item(int id);
+
+	void comment_update(Comment item);
+
+	void hyp_update(User item);
+
+	void update_user(User item);
+
+	User user_item();
+
+	Notice notice_new();
+
+	void user_out();
+
+
+
+	void signup(User item);
+
+	boolean checkId(String id);
+
+	boolean login_user(User user);
 
 
 

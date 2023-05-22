@@ -7,7 +7,14 @@ public class User {
 	private String phone;
 	private int hyp;
 	private int author;
+	private int status;
 	
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
+	}
 	public String getId() {
 		return id;
 	}
