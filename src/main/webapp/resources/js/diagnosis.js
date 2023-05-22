@@ -60,7 +60,17 @@ window.onload = function() {
 	            return;
 	        }
 		
-			const total = parseInt(values.value1) + parseInt(values.value2) + parseInt(values.value3) + parseInt(values.value4) + parseInt(values.value5) + parseInt(values.value6) + parseInt(values.value7) + parseInt(values.value8) + parseInt(values.value9);
+			const value1 = parseInt(values.value1);
+			const value2 = parseInt(values.value2);
+			const value3 = parseInt(values.value3);
+			const value4 = parseInt(values.value4);
+			const value5 = parseInt(values.value5);
+			const value6 = parseInt(values.value6);
+			const value7 = parseInt(values.value7);
+			const value8 = parseInt(values.value8);
+			const value9 = parseInt(values.value9);
+			
+			const total = (value1 + value2 + value3 + value4 + value5 + value6 + value7 + value8 + value9) * 3.7;
 			$('#total').val(total);
 	        console.log("'결과전송' 버튼이 클릭되었습니다.");
 	        console.log(total);

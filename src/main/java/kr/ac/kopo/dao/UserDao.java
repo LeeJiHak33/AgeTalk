@@ -36,9 +36,9 @@ public interface UserDao {
 
 	void hyp_update(User item);
 
-	void update_user(User item);
+	User update_user(User item);
 
-	User user_item();
+	User user_item(User item);
 
 	Notice notice_new();
 

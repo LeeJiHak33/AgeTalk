@@ -100,9 +100,12 @@ public class RootController {
 	
 	@ResponseBody
 	@PostMapping("/update_user")
-	public void update_user(User item, HttpSession session) {
+	public User update_user(User item, HttpSession session) {
 		u_service.update_user(item);	
+		
 		session.setAttribute("user", item);
+		
+		return item;
 	}
 	
 	@RequestMapping("/out/{id}")

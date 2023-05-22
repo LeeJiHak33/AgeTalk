@@ -86,13 +86,14 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public void update_user(User item) {
+	public User update_user(User item) {
 		sql.update("user.update_user", item);
+		return item;
 	}
 
 	@Override
-	public User user_item() {
-		return sql.selectOne("user_item");
+	public User user_item(User item) {
+		return sql.selectOne("user_item", item);
 	}
 
 	@Override

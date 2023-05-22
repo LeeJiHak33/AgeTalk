@@ -86,14 +86,14 @@
 	
 	<update id="hyp_update">
 		UPDATE user
-		SET hyp = #{hyp} * 3.7
+		SET hyp = #{hyp}
 		WHERE id = #{id}
 	</update>
 	
 	<update id="update_user">
 		UPDATE user
 		SET name = #{name}, phone = #{phone}
-		WHERE id = #{id}, pwd=#{pwd}
+		WHERE id = #{id}
 	</update>
 	
 	<select id="user_item" resultType="User">

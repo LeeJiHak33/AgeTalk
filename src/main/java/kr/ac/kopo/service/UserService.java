@@ -39,9 +39,7 @@ public interface UserService {
 
 	void hyp_update(User item);
 
-	void update_user(User item);
-
-	User user_item();
+	User update_user(User item);
 
 	Notice notice_new();
 

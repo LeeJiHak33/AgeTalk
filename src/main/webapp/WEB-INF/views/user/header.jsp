@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html>
+<html id="reload">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -103,7 +103,7 @@
                   <div class="info" id="info_reload">
                     <p class="text-dark">아이디 : ${sessionScope.user.id}</p>
                     <p class="text-dark">휴대폰 : ${sessionScope.user.phone}</p>
-                    <p class="text-dark">이름 : ${sessionScope.user.name}</p>
+                    <p class="text-dark" id="name">이름 : ${sessionScope.user.name}</p>
                     <div style="display: flex; justify-content: flex-start">
                       <p class="text-dark">설문조사여부 : <c:if test="${sessionScope.user.hyp == 0}">미완료</c:if><c:if test="${sessionScope.user.hyp > 0}">완료</c:if></p>
                       <a href="../user/diagnosis/${sessionScope.user.id}"><button type="button" class="modal_diagnosis"><c:if test="${sessionScope.user.hyp == 0}">검사</c:if><c:if test="${sessionScope.user.hyp > 0}">재검사</c:if></button></a>
@@ -170,9 +170,9 @@
 	                <div class="modal-header" style="display: block">
 	                  <p class="modal-title text_gray">계정 정보</p>
 	                 
-	                  <div class="info" id="info_reload">
-	
-		                    <p class="text-dark" id="id">아이디 : ${sessionScope.user.id}</p>
+	                  <div class="info">
+							<p style="display:none;" id="id">${sessionScope.user.id}</p>
+		                    <p class="text-dark">아이디 : ${sessionScope.user.id}</p>
 		                   
 		                    <div class="input-group mb-4">
 		                    <span class="text-dark input-group-text">휴대폰</span> 
@@ -190,7 +190,10 @@
 	                      <!-- 설문 미완료시 -->
 	                      <!-- <a href="../User/diagnosis.html"><button type="button" class="modal_diagnosis">재검사</button></a> -->
 	                    </div>
-	                    <p id="password" style="display: none;">${sessionScope.user.pwd}</p>
+	                    <input name="pwd" type="text" id="password" value="${sessionScope.user.pwd}" style="display:none;">
+	                    <input name="hyp" type="number" id="hyp" value="${sessionScope.user.hyp}" >
+	                    <input name="author" type="number" id="author" value="${sessionScope.user.author}" >
+	                    <input name="status" type="number" id="status" value="${sessionScope.user.status}" >
 	                  </div>
 	                </div>
 	                <div class="modal-footer">
@@ -213,10 +216,9 @@
 						return;
 					}
 					
-					const pwd = document.querySelector('#password');
-					const upwd = pwd.textContent;
+					const pwd = $("#password").val();
 					
-					if(password == upwd){
+					if(password == pwd){
 						const delConfirm = confirm("정말 회원탈퇴를 진행하시겠습니까?");
 						if(delConfirm){
 							alert("회원탈퇴가 완료됐습니다.");
@@ -225,7 +227,7 @@
 							return;
 						}
 						
-					}else if(password != upwd){
+					}else if(password != pwd){
 						alert("비밀번호가 일치하지 않습니다.");
 						return;
 					} 
@@ -236,9 +238,20 @@
 					const form = document.update_form;
 					const phone = $("#phone_input").val();
 					const name = $("#name_input").val();
+					const pwds = $("#password").val();
+					const hyp = $("#hyp").val();
+					const author = $("#author").val();
+					const status = $("#status").val();
+					const uid = document.querySelector('#id');
+					const id = uid.textContent;
 					
-					const data = {phone : phone,
-								name : name
+					const data = {id : id,
+								name : name,
+								phone : phone,
+								pwd : pwds,
+								hyp : hyp,
+								author : author,
+								status : status
 								};
 					
 					
@@ -258,31 +271,31 @@
 						return;
 					}
 					
-					const pwd = document.querySelector('#password');
-					const upwd = pwd.textContent;
+					const pwd = $("#password").val();
 					
-					if(password == upwd){
+					if(password == pwd){
 					$.ajax({
 						url : "/update_user",
 						type : "post",
 						data : data,
-						success : function(){
+						success : function(response){
 							alert("정보수정이 완료됐습니다.");
 							$("#updateModal").modal('hide');
-							$('#info_reload').load(location.href+' #info_reload');
-					        $("#MyModal").modal("show"); 
+							location.reload();
 						},
 						error : function(){
-							alert("에러가 발생했습니다. 잠시 후 다시 시도해주세요.")
+							alert("에러가 발생했습니다. 잠시 후 다시 시도해주세요.");
+							console.log(data);
 							console.log("오류");
 						}
 					});
-					}else if(password != upwd){
+					}else if(password != pwd){
 						alert("비밀번호가 일치하지 않습니다.")
 						return;
 					} 
 					
 				});
+              	
               	
               	const autoHyphen = (target) => {
               	  target.value = target.value

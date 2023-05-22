@@ -115,17 +115,21 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public void hyp_update(User item) {
+		User user = dao.user_item(item);
+		
+		item.setId(user.getId());
+		item.setName(user.getName());
+		item.setPhone(user.getPhone());
+		item.setPwd(user.getPwd());
+		item.setStatus(user.getStatus());
+		item.setAuthor(user.getAuthor());
+		
 		dao.hyp_update(item);
 	}
 
 	@Override
-	public void update_user(User item) {
-		dao.update_user(item);
-	}
-
-	@Override
-	public User user_item() {
-		return dao.user_item();
+	public User update_user(User item) {
+		return dao.update_user(item);
 	}
 
 	@Override
