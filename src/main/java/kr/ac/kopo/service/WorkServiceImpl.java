@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import kr.ac.kopo.dao.WorkDao;
 import kr.ac.kopo.model.Old;
 import kr.ac.kopo.model.User;
+import kr.ac.kopo.model.Work;
 import kr.ac.kopo.pager.Pager;
 @Service
 public class WorkServiceImpl implements WorkService {
@@ -31,5 +32,36 @@ public class WorkServiceImpl implements WorkService {
 	
 	
 	}
+
+
+	@Override
+	public boolean login_work(Work work) {
+		Work item = dao.login_work(work);
+		if (item != null) {
+			work.setName(item.getName());
+			return true;
+		} else {
+			return false;
+
+		}
+	}
 	
+
+
+	@Override
+	public void signup_work(Work item) {
+		dao.signup_work(item);
+		
+	}
+
+
+	@Override
+	public boolean checkId_work(String id) {
+		if (dao.checkId_work(id) == 0)
+			return true;
+		else
+			return false;
+	}
+
+
 	}

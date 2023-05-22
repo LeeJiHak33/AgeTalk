@@ -12,10 +12,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.User;
+import kr.ac.kopo.model.Work;
 import kr.ac.kopo.service.UserService;
+import kr.ac.kopo.service.WorkService;
 
 @Controller
 public class RootController {
+	
+	@Autowired
+	WorkService w_service;
 
 	@Autowired
 	UserService u_service;
@@ -59,7 +64,7 @@ public class RootController {
 			session.setAttribute("user", item);
 			
 			String targetUrl = (String) session.getAttribute("target_url");
-			/* session.removeAttribute("target_url"); */
+			session.removeAttribute("target_url");
 			System.out.println("targetUrl"+ targetUrl);
 			if (targetUrl == null) {
 				return "redirect:/";
@@ -72,12 +77,7 @@ public class RootController {
 		}
 
 	}
-
-	@RequestMapping("/login_work")
-	public String login_work() {
-		return "login_work";
-	}
-
+	
 	@ResponseBody
 	@GetMapping("/checkId/{id}")
 	public String checkId(@PathVariable String id) {
@@ -88,14 +88,52 @@ public class RootController {
 			return "FAIL";
 	}
 
-	@RequestMapping("/signup_work")
-	public String signup_work() {
+	@GetMapping("/login_work")
+	public String login_work() {
+		return "login_work";
+	}
+
+	@PostMapping("/login_work")
+	public String login_work(Work item, HttpSession session) {
+		if (w_service.login_work(item)) {
+
+			session.setAttribute("work", item);
+			
+			String targetUrl = (String) session.getAttribute("target_url");
+			session.removeAttribute("target_url"); 
+			System.out.println("targetUrl"+ targetUrl);
+			if (targetUrl == null) {
+				return "redirect:/work/managelist";
+			} else {
+				return "redirect:/" + targetUrl;
+		}
+
+		} else {
+			return "redirect:login_work";
+		}
+
+	}
+	
+
+	@GetMapping("/signup_work")
+	public String signup_work(Model model) {
 		return "signup_work";
 	}
 
-	@RequestMapping("/signup_success_work")
-	public String signup_success_work() {
+	@PostMapping("/signup_work")
+	public String signup_work(Work item) {
+		w_service.signup_work(item);
 		return "signup_success_work";
+	}
+	
+	@ResponseBody
+	@GetMapping("/checkId_work/{id}")
+	public String checkId_work(@PathVariable String id) {
+
+		if (w_service.checkId_work(id))
+			return "OK";
+		else
+			return "FAIL";
 	}
 	
 	@ResponseBody
@@ -117,4 +155,5 @@ public class RootController {
 		
 		return "redirect:/";
 	}
+	
 }

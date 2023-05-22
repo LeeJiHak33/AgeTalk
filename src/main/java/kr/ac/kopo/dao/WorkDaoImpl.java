@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import kr.ac.kopo.model.Old;
 import kr.ac.kopo.model.User;
+import kr.ac.kopo.model.Work;
 import kr.ac.kopo.pager.Pager;
 
 @Repository
@@ -34,5 +35,21 @@ public class WorkDaoImpl implements WorkDao {
 	@Override
 	public int oldtotal(Pager pager) {
 		return sql.selectOne("work.oldlist_total", pager);
+	}
+
+	@Override
+	public Work login_work(Work work) {
+		return sql.selectOne("work.login", work);
+	}
+
+	@Override
+	public void signup_work(Work item) {
+		sql.insert("work.add", item);
+		
+	}
+
+	@Override
+	public int checkId_work(String id) {
+		return sql.selectOne("work.check_id", id);
 	}
 }

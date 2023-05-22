@@ -122,7 +122,6 @@ public class UserDaoImpl implements UserDao {
 
 	@Override	
 	public int notice_total() {
-		// TODO Auto-generated method stub
 		return sql.selectOne("user.notice_total");
 	}
 
