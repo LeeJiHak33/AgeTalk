@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import kr.ac.kopo.model.Comment;
 import kr.ac.kopo.model.Notice;
@@ -28,29 +29,21 @@ public class UserController {
 	UserService service;
 	
 	
-	/*
-	 * @RequestMapping("/login_div") public String login_div() { return "login_div";
-	 * }
-	 * 
-	 * @RequestMapping("/login_user") public String login_user() { return path+
-	 * "login_user"; }
-	 * 
-	 * @RequestMapping("/signup") public String signup() { return path+ "signup"; }
-	 * 
-	 * @RequestMapping("/signup_success") public String signup_success() { return
-	 * path+ "signup_success"; }
-	 */
-	
-	
 	@GetMapping("/chatting")
 	public String chatting() {
 		return path+"chatting";
 	}
 		
 	@GetMapping("/notice")
-	public String notice(Model model) {
-		List<Notice> list =service.notice();
+	public String notice(Model model,Pager pager) {
+		List<Notice> list =service.notice(pager);
 		model.addAttribute("list", list);
+		
+
+		
+		Notice notice = service.notice_new();
+		model.addAttribute("notice", notice);
+		
 		return path + "notice";
 	}
 	
@@ -58,26 +51,35 @@ public class UserController {
 	public String notice_detail(@PathVariable int id,Model model) {
 		Notice item=service.notice_item(id);
 		model.addAttribute("item", item);
+		
+		
+		Notice notice = service.notice_new();
+		model.addAttribute("notice", notice);
+		
 		return path + "notice_detail";
 	}
 	
 	@GetMapping("/qna")
 	public String qna(Model model, Pager pager) {
 		List<Qna> list = service.qna(pager);
-		
 		model.addAttribute("list", list);
+		
+	
+		
+		Notice notice = service.notice_new();
+		model.addAttribute("notice", notice);
 		
 		return path + "qna";
 	}
 	
-	@RequestMapping("/dummy")
+	@RequestMapping("/qna_dummy")
 	public String dummy() {
 		service.dummy();
 		
 		return "redirect:qna";
 	}
 	
-	@RequestMapping("/init")
+	@RequestMapping("/qna_init")
 	public String init() {
 		service.init();
 		
@@ -85,7 +87,11 @@ public class UserController {
 	}
 	
 	@GetMapping("/qna_insert")
-	public String qna_insert() {
+	public String qna_insert(Model model) {
+
+		Notice notice = service.notice_new();
+		model.addAttribute("notice", notice);
+		
 		return path + "qna_insert";
 	}
 	
@@ -102,6 +108,10 @@ public class UserController {
 		Qna item = service.item(id);
 		item.setId(id);
 		model.addAttribute("item", item);
+	
+		
+		Notice notice = service.notice_new();
+		model.addAttribute("notice", notice);
 		
 		return path + "qna_update";
 	}
@@ -145,10 +155,14 @@ public class UserController {
 	
 	@GetMapping("/qna_detail/{id}")
 	public String qna_detail(@PathVariable int id, Model model, Qna qna, Comment comment) {
-		
 		Qna item = service.item(id);
 		item.setId(id);
 		model.addAttribute("item", item);
+	
+		
+		Notice notice = service.notice_new();
+		model.addAttribute("notice", notice);
+		
 		return path + "qna_detail";
 	}
 	
@@ -163,20 +177,29 @@ public class UserController {
 	}
 	
 	@RequestMapping("/explain")
-	public String explain() {
+	public String explain(Model model) {
+		
+		Notice notice = service.notice_new();
+		model.addAttribute("notice", notice);
+		
 		return path + "explain";
 	}
 	
-	@GetMapping("/diagnosis")
-	public String diagnosis() {
+	@GetMapping("/diagnosis/{id}")
+	public String diagnosis(Model model, @PathVariable String id) {
+		
+		Notice notice = service.notice_new();
+		model.addAttribute("notice", notice);
+		
 		return path + "diagnosis";
 	}
 	
-	@PostMapping("/diagnosis")
-	public String diagnosis(User item) {
+	@PostMapping("/diagnosis/{id}")
+	public String diagnosis(User item, @PathVariable String id) {
+		item.setId(id);
 		service.hyp_update(item);
 		
-		return "redirect:..";
+		return "redirect:../../";
 	}
 	
 }

@@ -72,6 +72,7 @@
                     <a href="signup_success_work" style="color:white">회원가입</a>
                   </div>
                 </form>
+                
               </div>
       </div>
 

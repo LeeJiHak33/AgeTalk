@@ -1,6 +1,5 @@
 package kr.ac.kopo.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +9,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.ac.kopo.model.Notice;
+import kr.ac.kopo.model.Report;
+import kr.ac.kopo.model.Work;
+import kr.ac.kopo.pager.Pager;
 import kr.ac.kopo.service.AdminService;
 
 @Controller
@@ -22,16 +25,23 @@ public class AdminController {
 	@Autowired
 	AdminService service;
 	
+	
 	@RequestMapping("/report_list")
 	public String report_list() {
 		return path+"report_list";
 	}
 	@RequestMapping("/work_list")
-	public String work_list() {
+	public String work_list(Pager pager,Model model) {
+		List<Work> list=service.work_list(pager);
+		model.addAttribute("list", list);
+		
 		return path+"work_list";
 	}
-	@RequestMapping("/work_detail")
-	public String work_detail() {
+	@GetMapping("/work_detail/{id}")
+	public String work_detail(@PathVariable String id, Model model) {
+		Work item=service.work_item(id);
+		model.addAttribute("item", item);
+		
 		return path+"work_detail";
 	}
 	
@@ -41,8 +51,8 @@ public class AdminController {
 	}
 	
 	@RequestMapping("/notice")
-	public String notice_list(Model model) {
-		List<Notice> list =service.notice_list();
+	public String notice_list(Model model,Pager pager) {
+		List<Notice> list =service.notice_list(pager);
 		model.addAttribute("list",list);
 		return path+"notice";
 	}
@@ -85,5 +95,33 @@ public class AdminController {
 	public String notice_delete(@PathVariable int id) {
 		service.notice_delete(id);
 		return "redirect:../notice";
+	}
+	
+	@GetMapping("/report_list")
+	public String report_list(Model model, Pager pager) {
+		List<Report> list =service.report_list(pager);
+		model.addAttribute("list", list);
+		return path+"report_list";
+	}
+	
+	@ResponseBody
+	@GetMapping("report_detail/{id}")
+	public Report report_detail(@PathVariable int id) {
+		Report item=service.report_detail(id);
+		
+		return item; 
+	}
+	
+	@ResponseBody
+	@GetMapping("account_stop/{id}")
+	public String account_stop(@PathVariable String id) {
+		service.account_stop(id);
+		return id;
+	}
+	
+	@GetMapping("work_confirm/{id}")
+	public String work_confirm(@PathVariable String id) {
+		service.work_confirm(id);
+		return "redirect:../work_list";
 	}
 }

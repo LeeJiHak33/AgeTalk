@@ -1,0 +1,31 @@
+.pagenation_wrap {
+  width: 100%;
+  height: 50px;
+  margin: 15px 0;
+}
+.pagenation_wrap .pagenation {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.pagenation_wrap .pagenation .page a {
+  display: block;
+  width: 28px;
+  height: 28px;
+  text-align: center;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  margin: 0 2px;
+  font-size: 13px;
+  line-height: 25px;
+  color: #999999;
+}
+.pagenation_wrap .pagenation .page a.active {
+  color: #fe8e8d;
+  border: 2px solid #fe8e8d;
+}
+.pagenation_wrap .pagenation .page a.active2 {
+  background: #fe8e8d;
+  color: white;
+  border: 2px solid #fe8e8d;
+}

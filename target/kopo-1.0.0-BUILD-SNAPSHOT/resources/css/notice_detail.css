@@ -1,0 +1,203 @@
+.layout {
+  width: 100%;
+  height: 100%;
+}
+.layout .banner {
+  width: 100%;
+  min-width: 1400px;
+  height: 400px;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("../image/sub_img_2.jpg") no-repeat;
+  background-size: cover;
+  background-position: 40% 30%;
+}
+
+.inner_banner {
+  padding-top: 130px;
+  text-align: center;
+  font-family: "NotoSerif";
+  color: #ffffff;
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 54px;
+  font-weight: 300;
+  font-family: "NotoSerif";
+}
+p.in_2 {
+  font-family: "NotoSerif";
+}
+
+.container {
+  margin: 0 auto;
+  padding: 130px 0;
+  overflow: hidden;
+  width: 1400px;
+}
+
+.title {
+  text-align: center;
+  font-size: 43px;
+  font-weight: 500;
+  font-family: "NotoSerifKR";
+}
+
+.title h2 {
+  font-size: 43px;
+  padding-bottom: 80px;
+}
+
+table {
+  width: 100%;
+}
+
+.bbsTitle {
+  padding: 25px 10px !important;
+  margin: 0px !important;
+  border-top: 2px solid #fe8e8d;
+  border-bottom: 1px dotted #8c92a3;
+  font-size: 21px !important;
+  font-weight: 400 !important;
+  color: #222 !important;
+  text-align: center;
+}
+
+.bbsView {
+  border-top: 1px solid #505c78;
+  border-collapse: inherit;
+  table-layout: fixed;
+}
+
+.bbsTitle ~ .bbsView {
+  border-top-width: 0px;
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+.bbsView th[data-view="file"],
+.bbsView th[data-view="date"],
+.bbsView th[data-view="count"] {
+  padding-left: 0;
+}
+
+.bbsView > tbody > tr > th {
+  text-align: left;
+  font-weight: 500;
+  letter-spacing: -1px;
+  font-weight: 500;
+}
+
+.bbsView > tbody > tr > th,
+.bbsView > tbody > tr > td,
+.bbsView > thead > tr > th {
+  padding: 15px 0;
+  border-bottom: 1px solid #eaecf1;
+}
+
+th {
+  display: table-cell;
+  vertical-align: inherit;
+  font-weight: bold;
+  text-align: center;
+}
+
+.bbsView td.conts {
+  padding: 30px 20px;
+  border: 0px;
+}
+
+.bbsView > tbody > tr > td {
+  color: #777;
+  word-break: break-all;
+}
+
+.bbsView.page {
+  margin-top: 20px;
+}
+
+.bbsView.page tr:first-child th,
+.bbsView.page tr:first-child td {
+  border-top: 1px solid #eaecf1;
+  border-bottom: 1px dotted #eaecf1;
+}
+
+*[class^="bbs"] ~ .btn_area {
+  padding-top: 50px;
+}
+
+.btn_area {
+  padding: 30px 0;
+  text-align: center;
+}
+
+.btn_area .button {
+  height: 45px;
+  line-height: 43px;
+}
+
+.button {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  min-width: 100px;
+  height: 45px;
+  line-height: 43px;
+  box-sizing: border-box;
+  padding: 0 15px;
+  margin: 2px 0px;
+  background: #fe8e8d;
+  color: #fff !important;
+  text-align: center;
+  vertical-align: middle;
+  transition: all 0.4s ease-out 0.1s;
+}
+.button:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 1;
+  width: 120%;
+  height: 110%;
+  color: #ffffff !important;
+  background: #ff6e6d;
+  transform: translateX(-120%) skew(-15deg);
+  transition: transform 0.7s cubic-bezier(0, 0, 0.21, 0.87) 0s;
+}
+.button:hover:before,
+.button:focus:before {
+  color: #ffffff !important;
+  background: #ff6e6d;
+  transform: translateX(-10%) skew(-15deg) perspective(500px);
+}
+.button:hover {
+  color: #ffffff !important;
+  background-color: #ff6e6d;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+.button span {
+  position: relative;
+  z-index: 2;
+}
+
+.container h3 {
+  font: 500 43px "NotoSerif";
+  color: #222;
+}
+
+.bbsView tbody tr td {
+  font-family: "NotoSerif";
+}
+
+.bbsView.page tbody tr td a {
+  font-family: "NotoSerif";
+}

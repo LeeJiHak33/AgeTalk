@@ -31,7 +31,7 @@ public interface UserService {
 
 	void init();
 
-	List<Notice> notice();
+	List<Notice> notice(Pager pager);
 
 	Notice notice_item(int id);
 
@@ -45,8 +45,15 @@ public interface UserService {
 
 	Notice notice_new();
 
-	void user_out();
+	void user_out(String id);
 
+
+
+	void signup(User item);
+
+	boolean checkId(String id);
+
+	boolean login_user(User user);
 
 
 

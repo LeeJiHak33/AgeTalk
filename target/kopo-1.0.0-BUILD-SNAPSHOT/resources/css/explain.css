@@ -1,0 +1,70 @@
+a {
+  color: #222;
+}
+.layout {
+  width: 100%;
+  height: 100%;
+}
+.layout .banner {
+  width: 100%;
+  min-width: 1400px;
+  height: 400px;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("../image/sub_img_2.jpg") no-repeat;
+  background-size: cover;
+  background-position: 40% 30%;
+}
+
+h2 {
+  font-size: 54px;
+  font-weight: 300;
+}
+
+.title h2 {
+  font-family: "NotoSerif";
+  font-size: 43px;
+  padding-bottom: 80px;
+}
+
+.inner_banner {
+  padding-top: 130px;
+  text-align: center;
+  font-family: "NotoSerifKR";
+  src: url("../font/NotoSerifKR/NotoSerifKR-Regular.otf") format("opentype");
+  color: #ffffff;
+  font-size: 32px;
+}
+
+.inner_banner h2 {
+  font-family: "NotoSerif";
+}
+
+.inner_banner p {
+  font-family: "NotoSerif";
+}
+
+.container > h2 {
+  font-size: 43px;
+  font-weight: 500;
+  font-family: "NotoSansKR-Black";
+  padding-bottom: 30px;
+}
+
+.container > h3 {
+	font-size : 32px;
+	font-family: "NotoSansKR-Bold";
+	padding-bottom: 30px;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 130px 0;
+  overflow: hidden;
+  width: 1400px;
+  text-align: center;
+}
+
+.container > p {
+	font-size : 19px;
+}
+

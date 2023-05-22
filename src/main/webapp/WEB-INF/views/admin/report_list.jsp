@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +19,7 @@
         width: calc(100% / 4);
       }
     </style>
+  
 </head>
 <body>
   <!-- 헤더 -->
@@ -39,72 +42,20 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td><a class="report_title">욕설 신고</a></td>
-              <td>길복순</td>
-              <td>2022-04-30</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td><a class="report_title">욕설 신고</a></td>
-              <td>길복순</td>
-              <td>2022-04-30</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td><a class="report_title">욕설 신고</a></td>
-              <td>길복순</td>
-              <td>2022-04-30</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td><a class="report_title">욕설 신고</a></td>
-              <td>길복순</td>
-              <td>2022-04-30</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td><a class="report_title">욕설 신고</a></td>
-              <td>길복순</td>
-              <td>2022-04-30</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td><a class="report_title">욕설 신고</a></td>
-              <td>길복순</td>
-              <td>2022-04-30</td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td><a class="report_title">욕설 신고</a></td>
-              <td>길복순</td>
-              <td>2022-04-30</td>
-            </tr>
-            <tr>
-              <td>7</td>
-              <td><a class="report_title">욕설 신고</a></td>
-              <td>길복순</td>
-              <td>2022-04-30</td>
-            </tr>
-            <tr>
-              <td>8</td>
-              <td><a class="report_title">욕설 신고</a></td>
-              <td>길복순</td>
-              <td>2022-04-30</td>
-            </tr>
-            <tr>
-              <td>9</td>
-              <td><a class="report_title">욕설 신고</a></td>
-              <td>길복순</td>
-              <td>2022-04-30</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td><a class="report_title">욕설 신고</a></td>
-              <td>길복순</td>
-              <td>2022-04-30</td>
-            </tr>
+          	<c:if test="${list.size()< 1 }">
+          		<p>정보가 없습니다.</p>
+          	</c:if>
+          	
+          	<c:forEach items="${list}" var="item">
+          		<tr data-id="${item.id}">
+              		<td>${item.id }</td>
+              		<td><a class="report_title" >${item.title }</a></td>
+              		<td>${item.workName}</td>
+              		<td><fmt:formatDate value="${item.date}" pattern="yyyy-MM-dd" /></td>
+            	</tr>
+          	</c:forEach>
+            
+            
           </tbody>
         </table>
         <div class="modal" style="display: none">
@@ -120,15 +71,15 @@
           <div class="modal_inner_wrap">
             <div class="ttile_wrap">
               <p>제목 :</p>
-              <p class="title">욕설 신고</p>
+              <p class="title"></p>
             </div>
             <div class="report_wrap">
               <p>신고 대상 :</p>
-              <p class="report">김철수</p>
+              <p class="report_name"></p>
             </div>
             <div class="content_wrap">
               <p>신고 내용 :</p>
-              <p>어르신께 욕설 사용으로 신고 합니다.</p>
+              <p class="report_content"></p>
             </div>
           </div>
           <div class="btn_wrap">
