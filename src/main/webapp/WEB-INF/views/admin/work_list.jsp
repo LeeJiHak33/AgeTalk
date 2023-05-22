@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +12,7 @@
 
 <style>
 table td, table th {
-	width: calc(100% / 3);
+	width: calc(100%/ 3);
 }
 </style>
 </head>
@@ -35,76 +36,18 @@ table td, table th {
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>1</td>
-						<td><a class="walfarework_btn"
-							href="work_detail">길복순</a>
-						</td>
-						<td><a class="confirm_btn" href="">승인</a></td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td><a class="walfarework_btn"
-							href="work_detail">홍길동</a>
-						</td>
-						<td><a class="confirm_btn" href="">승인</a></td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td><a class="walfarework_btn"
-							href="work_detail">홍길동</a>
-						</td>
-						<td><a class="confirm_btn" href="">승인</a></td>
-					</tr>
-					<tr>
-						<td>4</td>
-						<td><a class="walfarework_btn"
-							href="work_detail">홍길동</a>
-						</td>
-						<td><a class="confirm_btn" href="">승인</a></td>
-					</tr>
-					<tr>
-						<td>5</td>
-						<td><a class="walfarework_btn"
-							href="work_detail">홍길동</a>
-						</td>
-						<td><a class="confirm_btn" href="">승인</a></td>
-					</tr>
-					<tr>
-						<td>6</td>
-						<td><a class="walfarework_btn"
-							href="work_detail">홍길동</a>
-						</td>
-						<td><a class="confirm_btn" href="">승인</a></td>
-					</tr>
-					<tr>
-						<td>7</td>
-						<td><a class="walfarework_btn"
-							href="work_detail">홍길동</a>
-						</td>
-						<td><a class="confirm_btn" href="">승인</a></td>
-					</tr>
-					<tr>
-						<td>8</td>
-						<td><a class="walfarework_btn"
-							href="work_detail">홍길동</a>
-						</td>
-						<td><a class="confirm_btn" href="">승인</a></td>
-					</tr>
-					<tr>
-						<td>9</td>
-						<td><a class="walfarework_btn"
-							href="work_detail">홍길동</a>
-						</td>
-						<td><a class="confirm_btn" href="">승인</a></td>
-					</tr>
-					<tr>
-						<td>10</td>
-						<td><a class="walfarework_btn"
-							href="work_detail">홍길동</a>
-						</td>
-						<td><a class="confirm_btn" href="">승인</a></td>
-					</tr>
+					<c:if test="${list.size()<1}">
+						<tr>
+							<td colspan="3">가입한 복지사가 없습니다.</td>
+						</tr>
+					</c:if>
+					<c:forEach items="${list}" var="item" varStatus="status">
+						<tr>
+							<td>${status.count}</td>
+							<td><a class="walfarework_btn" href="work_detail/${item.id}">${item.name}</a></td>
+							<td><a class="confirm_btn" href="work_confirm/${item.id}">승인</a></td>
+						</tr>
+					</c:forEach>
 				</tbody>
 			</table>
 		</div>

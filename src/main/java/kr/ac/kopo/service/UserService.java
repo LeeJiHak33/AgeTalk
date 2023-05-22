@@ -29,7 +29,7 @@ public interface UserService {
 
 	void init();
 
-	List<Notice> notice();
+	List<Notice> notice(Pager pager);
 
 	Notice notice_item(int id);
 

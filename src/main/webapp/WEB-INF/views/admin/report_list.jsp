@@ -19,6 +19,7 @@
         width: calc(100% / 4);
       }
     </style>
+  
 </head>
 <body>
   <!-- 헤더 -->
@@ -46,9 +47,9 @@
           	</c:if>
           	
           	<c:forEach items="${list}" var="item">
-          		<tr>
+          		<tr data-id="${item.id}">
               		<td>${item.id }</td>
-              		<td><a class="report_title">${item.title }</a></td>
+              		<td><a class="report_title" >${item.title }</a></td>
               		<td>${item.workName}</td>
               		<td><fmt:formatDate value="${item.date}" pattern="yyyy-MM-dd" /></td>
             	</tr>
@@ -70,15 +71,15 @@
           <div class="modal_inner_wrap">
             <div class="ttile_wrap">
               <p>제목 :</p>
-              <p class="title">욕설 신고</p>
+              <p class="title"></p>
             </div>
             <div class="report_wrap">
               <p>신고 대상 :</p>
-              <p class="report_name">김철수</p>
+              <p class="report_name"></p>
             </div>
             <div class="content_wrap">
               <p>신고 내용 :</p>
-              <p class="report_content">어르신께 욕설 사용으로 신고 합니다.</p>
+              <p class="report_content"></p>
             </div>
           </div>
           <div class="btn_wrap">

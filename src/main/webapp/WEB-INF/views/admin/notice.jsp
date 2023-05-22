@@ -14,6 +14,17 @@
 
 <link rel="stylesheet" href="/resources/css/notice.css" />
 
+<style type="text/css">
+	.layout .banner{
+		background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
+		url(/resources/image/sub_img_1.jpg) no-repeat;
+		background-size: cover;
+    	background-position: 40% 30%;
+	}
+	.inner_banner h2{
+		font-size:45px;
+	}
+</style>
 </head>
 
 <body>
@@ -22,7 +33,7 @@
 			 <jsp:include page="header.jsp"></jsp:include>
 			<div class="inner_banner" style="padding-top: 135px !important;">
 				<h2>공지사항 관리</h2>
-				<p>Notice Management</p>
+				
 			</div>
 		</div>
 		<section class="container">

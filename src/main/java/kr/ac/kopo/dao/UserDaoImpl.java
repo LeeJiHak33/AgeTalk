@@ -64,9 +64,9 @@ public class UserDaoImpl implements UserDao {
 
 
 	@Override
-	public List<Notice> notice() {
+	public List<Notice> notice(Pager pager) {
 		// TODO Auto-generated method stub
-		return sql.selectList("user.notice");
+		return sql.selectList("user.notice",pager);
 	}
 
 	@Override
@@ -74,6 +74,12 @@ public class UserDaoImpl implements UserDao {
 		// TODO Auto-generated method stub
 		return sql.selectOne("user.notice_item", id);
 
+	}
+
+	@Override
+	public int notice_total() {
+		// TODO Auto-generated method stub
+		return sql.selectOne("user.notice_total");
 	}
 
 }

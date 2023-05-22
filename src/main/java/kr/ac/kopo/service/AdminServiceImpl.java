@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import kr.ac.kopo.dao.AdminDao;
 import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.Report;
+import kr.ac.kopo.model.User;
+import kr.ac.kopo.model.Work;
 import kr.ac.kopo.pager.Pager;
 
 @Service
@@ -16,9 +18,11 @@ public class AdminServiceImpl implements AdminService {
 	AdminDao dao;
 
 	@Override
-	public List<Notice> notice_list() {
+	public List<Notice> notice_list(Pager pager) {
 		// TODO Auto-generated method stub
-		return dao.notice_list();
+		int total=dao.notice_total();
+		pager.setTotal(total);
+		return dao.notice_list(pager);
 	}
 
 	@Override
@@ -53,6 +57,38 @@ public class AdminServiceImpl implements AdminService {
 		pager.setTotal(total);
 		
 		return dao.report_list(pager);
+	}
+
+	@Override
+	public Report report_detail(int id) {
+		// TODO Auto-generated method stub
+		return dao.report_detail(id);
+	}
+
+	@Override
+	public void account_stop(String id) {
+		// TODO Auto-generated method stub
+		 dao.account_stop(id);
+	}
+
+	@Override
+	public List<Work> work_list(Pager pager) {
+		// TODO Auto-generated method stub
+		int total=dao.work_total();
+		pager.setTotal(total);
+		return dao.work_list(pager);
+	}
+
+	@Override
+	public Work work_item(String id) {
+		// TODO Auto-generated method stub
+		return dao.work_item(id);
+	}
+
+	@Override
+	public void work_confirm(String id) {
+		// TODO Auto-generated method stub
+		dao.work_confirm(id);
 	}
 	
 	

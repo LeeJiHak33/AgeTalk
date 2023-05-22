@@ -14,8 +14,14 @@ public class Report {
 	private String workId;
 	private String userName;
 	private String workName;
+	private int userStatus;
 	
-	
+	public int getUserStatus() {
+		return userStatus;
+	}
+	public void setUserStatus(int userStatus) {
+		this.userStatus = userStatus;
+	}
 	public int getId() {
 		return id;
 	}

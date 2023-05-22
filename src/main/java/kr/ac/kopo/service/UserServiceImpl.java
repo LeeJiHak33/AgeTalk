@@ -95,9 +95,11 @@ public class UserServiceImpl implements UserService {
 	
 		
 	
-	public List<Notice> notice() {
+	public List<Notice> notice(Pager pager) {
 		// TODO Auto-generated method stub
-		return dao.notice();
+		int total=dao.notice_total();
+		pager.setTotal(total);
+		return dao.notice(pager);
 	}
 
 	@Override
