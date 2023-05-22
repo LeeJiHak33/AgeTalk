@@ -166,3 +166,10 @@ h1 {
 .lg_btn:hover {
   background-color: #ff6e6d;
 }
+
+.lg_btn button {
+	color: white;
+	border: 0 !important;
+	background-color:transparent;
+	outline: 0;
+}

@@ -7,10 +7,23 @@
 		FROM user
 	</select>
 	
+	<select id="login" resultType="User">
+		SELECT *
+		FROM user
+		WHERE id=#{id} AND pwd=#{pwd}
+			
+	</select>
+	
 	<insert id="add">
 		INSERT INTO user(id, pwd, name, phone)
 		VALUES(#{id}, #{pwd}, #{name}, #{phone})
 	</insert>
+	
+	<select id ="check_id" resultType="Integer">
+		SELECT COUNT(*)
+		FROM user
+		WHERE id=#{id}
+	</select>
 	
 	<select id="qna" resultType="Qna">
 		SELECT qna.*, comment.content cmt

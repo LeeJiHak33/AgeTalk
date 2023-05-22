@@ -36,7 +36,7 @@
            <p>환영합니다! 지금 바로 로그인 후 AgeTalk에서<br/>소통하며 새로운 경험을 쌓아보세요.</p>
            <a href="login_user" style="color: white;" class="lg_btn">로그인 바로가기</a>
       </div>
-
+    </div>
     </div>
    	<jsp:include page="footer.jsp"></jsp:include>
 </body>

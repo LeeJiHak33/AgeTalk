@@ -37,6 +37,10 @@ public interface UserService {
 
 	void signup(User item);
 
+	boolean checkId(String id);
+
+	boolean login_user(User user);
+
 
 
 }

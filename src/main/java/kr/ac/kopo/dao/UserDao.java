@@ -34,5 +34,12 @@ public interface UserDao {
 
 	void signup(User item);
 
+	int checkId(String id);
+
+	User login_user(User user);
+
+
+
+
 
 }

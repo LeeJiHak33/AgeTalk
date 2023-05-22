@@ -82,4 +82,14 @@ public class UserDaoImpl implements UserDao {
 		
 	}
 
+	@Override
+	public int checkId(String id) {
+		return sql.selectOne("user.check_id", id);
+	}
+
+	@Override
+	public User login_user(User user) {
+		return sql.selectOne("user.login", user);
+	}
+
 }
