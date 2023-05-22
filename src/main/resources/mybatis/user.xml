@@ -125,4 +125,7 @@
 	<select id="login_admin" resultType="Integer">
 		select count(*) from user where author=1 and id=#{id} and pwd=#{pwd}
 	</select>
+	<update id="notice_viewCount">
+		update notice set view=view+1 where id=#{id}
+	</update>
 </mapper>

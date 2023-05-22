@@ -176,4 +176,10 @@ public class UserServiceImpl implements UserService {
 		
 	}
 
+	@Override
+	public void notice_viewCount(int id) {
+		// TODO Auto-generated method stub
+		dao.notice_viewCount(id);
+	}
+
 }

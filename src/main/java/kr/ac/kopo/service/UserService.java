@@ -57,6 +57,8 @@ public interface UserService {
 
 	boolean login_admin(User item);
 
+	void notice_viewCount(int id);
+
 
 
 }

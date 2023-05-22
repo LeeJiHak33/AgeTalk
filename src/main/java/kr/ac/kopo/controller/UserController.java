@@ -52,8 +52,7 @@ public class UserController {
 		Notice item=service.notice_item(id);
 		model.addAttribute("item", item);
 		
-		User user = service.user_item();
-		model.addAttribute("user", user);
+		service.notice_viewCount(id);
 		
 		Notice notice = service.notice_new();
 		model.addAttribute("notice", notice);

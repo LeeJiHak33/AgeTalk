@@ -55,5 +55,7 @@ public interface UserDao {
 
 	int login_admin(User item);
 
+	void notice_viewCount(int id);
+
 
 }
