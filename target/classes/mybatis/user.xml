@@ -99,7 +99,7 @@
 	<select id="user_item" resultType="User">
 		select *
 		from user
-		where id = 'test'
+		where id = #{id}
 	</select>
 	
 	<select id="notice_new" resultType="Notice">

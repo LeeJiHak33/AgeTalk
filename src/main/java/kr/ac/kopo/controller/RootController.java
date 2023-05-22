@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttribute;
+
 import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.User;
 import kr.ac.kopo.service.UserService;
@@ -22,8 +24,9 @@ public class RootController {
 
 	@RequestMapping("/")
 	public String main(Model model) {
-		User user = u_service.user_item();
-		model.addAttribute("user", user);
+	
+		User users = u_service.user_item();
+		model.addAttribute("user", users);
 		
 		Notice notice = u_service.notice_new();
 		model.addAttribute("notice", notice);
