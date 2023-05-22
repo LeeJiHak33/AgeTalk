@@ -17,19 +17,16 @@ import kr.ac.kopo.service.UserService;
 
 @Controller
 public class RootController {
-	
-	@Autowired
-	UserService service;
 
 	@Autowired
 	UserService u_service;
 
 	@RequestMapping("/")
 	public String main(Model model) {
-		User user = service.user_item();
+		User user = u_service.user_item();
 		model.addAttribute("user", user);
 		
-		Notice notice = service.notice_new();
+		Notice notice = u_service.notice_new();
 		model.addAttribute("notice", notice);
 		
 		return "main";
@@ -105,14 +102,12 @@ public class RootController {
 	@ResponseBody
 	@PostMapping("/update_user")
 	public void update_user(User item) {
-		
-		service.update_user(item);
-		
+		u_service.update_user(item);	
 	}
 	
 	@RequestMapping("/out")
 	public String out() {
-		service.user_out();
+		u_service.user_out();
 		
 		return "redirect:.";
 	}
