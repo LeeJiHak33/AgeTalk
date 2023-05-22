@@ -28,7 +28,7 @@ public interface UserDao {
 	int total(Pager pager);
 
 
-	List<Notice> notice();
+	List<Notice> notice(Pager pager);
 
 	Notice notice_item(int id);
 
@@ -43,6 +43,15 @@ public interface UserDao {
 	Notice notice_new();
 
 	void user_out();
+	void signup(User item);
+
+	int checkId(String id);
+
+	User login_user(User user);
+
+
+
+	int notice_total();
 
 
 }

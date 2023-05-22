@@ -35,7 +35,7 @@
                 <div class="work_box animatedFadeInUp fadeInUp">
                     <img src="/resources/image/welfare.png" style="width: 300px; height: 300px;">    
                     <p>복지사</p>
-                    <a href="signup_work">로그인 &nbsp; | &nbsp; 회원가입</a>
+                    <a href="login_work">로그인 &nbsp; | &nbsp; 회원가입</a>
                 </div>
             </div>    
           </div>

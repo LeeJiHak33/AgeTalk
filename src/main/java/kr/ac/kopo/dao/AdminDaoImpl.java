@@ -7,6 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kr.ac.kopo.model.Notice;
+import kr.ac.kopo.model.Report;
+import kr.ac.kopo.model.User;
+import kr.ac.kopo.model.Work;
+import kr.ac.kopo.pager.Pager;
 
 @Repository
 public class AdminDaoImpl implements AdminDao {
@@ -16,9 +20,9 @@ public class AdminDaoImpl implements AdminDao {
 	SqlSession sql;
 
 	@Override
-	public List<Notice> notice_list() {
+	public List<Notice> notice_list(Pager pager) {
 		// TODO Auto-generated method stub
-		return sql.selectList("admin.notice_list");
+		return sql.selectList("admin.notice_list",pager);
 	}
 
 	@Override
@@ -43,6 +47,60 @@ public class AdminDaoImpl implements AdminDao {
 	public void notice_delete(int id) {
 		// TODO Auto-generated method stub
 		sql.delete("admin.notice_delete", id);
+	}
+
+	@Override
+	public int report_total() {
+		// TODO Auto-generated method stub
+		return sql.selectOne("admin.report_total");
+	}
+
+	@Override
+	public List<Report> report_list(Pager pager) {
+		// TODO Auto-generated method stub
+		return sql.selectList("admin.report_list", pager);
+	}
+
+	@Override
+	public Report report_detail(int id) {
+		// TODO Auto-generated method stub
+		return sql.selectOne("admin.report_detail", id);
+	}
+
+	@Override
+	public void account_stop(String id) {
+		// TODO Auto-generated method stub
+		 sql.update("admin.account_stop", id);
+	}
+
+	@Override
+	public int notice_total() {
+		// TODO Auto-generated method stub
+		return sql.selectOne("admin.notice_total");
+	}
+
+	@Override
+	public int work_total() {
+		// TODO Auto-generated method stub
+		return sql.selectOne("admin.work_total");
+	}
+
+	@Override
+	public List<Work> work_list(Pager pager) {
+		// TODO Auto-generated method stub
+		return sql.selectList("admin.work_list", pager);
+	}
+
+	@Override
+	public Work work_item(String id) {
+		// TODO Auto-generated method stub
+		return sql.selectOne("admin.work_item", id);
+	}
+
+	@Override
+	public void work_confirm(String id) {
+		// TODO Auto-generated method stub
+		sql.update("admin.work_confirm", id);
 	}
 	
 	

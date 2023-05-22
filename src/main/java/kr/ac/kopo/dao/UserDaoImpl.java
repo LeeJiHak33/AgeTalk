@@ -64,14 +64,13 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public List<Notice> notice() {
+	public List<Notice> notice(Pager pager) {
 		// TODO Auto-generated method stub
-		return sql.selectList("user.notice");
+		return sql.selectList("user.notice",pager);
 	}
 
 	@Override
 	public Notice notice_item(int id) {
-		// TODO Auto-generated method stub
 		return sql.selectOne("user.notice_item", id);
 
 	}
@@ -104,6 +103,27 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public void user_out() {
 		sql.delete("user.user_out");
+	}
+
+	public void signup(User item) {
+		sql.insert("user.add", item);
+		
+	}
+
+	@Override
+	public int checkId(String id) {
+		return sql.selectOne("user.check_id", id);
+	}
+
+	@Override
+	public User login_user(User user) {
+		return sql.selectOne("user.login", user);
+	}
+
+	@Override	
+	public int notice_total() {
+		// TODO Auto-generated method stub
+		return sql.selectOne("user.notice_total");
 	}
 
 }

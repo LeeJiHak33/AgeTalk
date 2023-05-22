@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -34,11 +34,14 @@
             </li>
           </ul>
         </div>
-        <!-- <div class="login_wrap">
+        <c:if test="${sessionScope.user == null}">
+        <div class="login_wrap">
           <a href="../../login_div" style="text-decoration: none;"
             >로그인 &nbsp; | &nbsp; 회원가입</a>
-        </div> -->
+        </div>
+        </c:if>
         <!-- modal trigger button -->
+        <c:if test="${sessionScope.user != null}">
         <div class="login_wrap">
           <a
             data-bs-toggle="modal"
@@ -47,6 +50,7 @@
             마이페이지
           </a>
         </div>
+         </c:if>
         <!-- Modal -->
         <div
           class="modal fade"

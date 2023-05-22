@@ -47,7 +47,7 @@
                   </label>
                 </div>
                 <div class="right-options">
-                  <a href="signup" class="login-link" style="color: white">회원가입</a>
+                  <a href="signup_work" class="login-link" style="color: white">회원가입</a>
 
                 </div>
               </div>

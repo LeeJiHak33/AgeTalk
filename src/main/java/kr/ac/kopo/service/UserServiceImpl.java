@@ -17,11 +17,11 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	UserDao dao;
-	
+
 	@Override
 	public List<Qna> qna(Pager pager) {
-		
-		int total=dao.total(pager);
+
+		int total = dao.total(pager);
 		pager.setTotal(total);
 
 		return dao.qna(pager);
@@ -61,32 +61,32 @@ public class UserServiceImpl implements UserService {
 	public void comment_delete(int id) {
 		dao.comment_delete(id);
 	}
-	
+
+	@Override
 	public void dummy() {
-		for(int i=1; i<100; i++) {
+		for (int i = 1; i < 100; i++) {
 			Qna item = new Qna();
-			
+
 			item.setTitle("글제목" + i);
 			item.setContent("내용" + i);
-			
-	
-		dao.qna_insert(item);
+
+			dao.qna_insert(item);
 		}
-		
+
 	}
 
 	@Override
 	public void init() {
 		List<Qna> qna;
-		
+
 		Pager pager = new Pager();
 		pager.setPerPager(9999);
-		
+
 		do {
 			qna = dao.qna(pager);
-			
-			for(Qna item : qna) {
-				
+
+			for (Qna item : qna) {
+
 				dao.qna_delete(item.getId());
 			}
 			
@@ -94,15 +94,15 @@ public class UserServiceImpl implements UserService {
 	}
 	
 		
-	
-	public List<Notice> notice() {
-		// TODO Auto-generated method stub
-		return dao.notice();
+	@Override
+	public List<Notice> notice(Pager pager) {
+		int total=dao.notice_total();
+		pager.setTotal(total);
+		return dao.notice(pager);
 	}
 
 	@Override
 	public Notice notice_item(int id) {
-		// TODO Auto-generated method stub
 		return dao.notice_item(id);
 
 	}
@@ -136,6 +136,31 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void user_out() {
 		dao.user_out();
+	}
+	
+	@Override
+	public void signup(User item) {
+		dao.signup(item);
+	}
+
+	@Override
+	public boolean checkId(String id) {
+		if (dao.checkId(id) == 0)
+			return true;
+		else
+			return false;
+	}
+
+	@Override
+	public boolean login_user(User user) {
+		User item = dao.login_user(user);
+		if (item != null) {
+
+			return true;
+		} else {
+			return false;
+
+		}
 	}
 
 }

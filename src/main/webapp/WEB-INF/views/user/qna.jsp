@@ -86,10 +86,10 @@
 				</a>
 			</div>
 			<div>
-				<a href="dummy">대량등록</a>
+				<a href="qna_dummy">대량등록</a>
 			</div>
 			<div>
-				<a href="init">초기화</a>
+				<a href="qna_init">초기화</a>
 			</div>
 			<jsp:include page="../pagenation.jsp"></jsp:include>
 		</section>	

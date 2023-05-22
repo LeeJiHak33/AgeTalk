@@ -208,3 +208,10 @@ h1 {
 .signup_btn:hover {
   background-color: #ff6e6d;
 }
+
+.signup_btn button {
+	border: 0 !important;
+	background-color:transparent;
+	outline: 0;
+	
+}
