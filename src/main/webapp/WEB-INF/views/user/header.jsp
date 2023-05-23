@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="/resources/css/header.css" />
     <link rel="stylesheet" href="/resources/css/index.css" />
     <link rel="stylesheet" href="/resources/css/modal.css" />
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   </head>
  <body>
    <header style="position: absolute; z-index: 1">
@@ -28,13 +27,13 @@
                 </a>
               </c:if>
             
-             <c:if test="${sessionScope.user.hyp == 0}">
+             <c:if test="${sessionScope.user.inspection == 0}">
               <a href="../user/diagnosis/${sessionScope.user.id}" style="text-decoration: none; cursor: pointer"
                 >채팅하기
                 </a>
               </c:if>
               
-              <c:if test="${sessionScope.user.hyp > 0}">
+              <c:if test="${sessionScope.user.inspection == 1}">
               <a class="popup" style="text-decoration: none; cursor: pointer"
                 >채팅하기
                 </a>
@@ -104,9 +103,11 @@
                     <p class="text-dark">아이디 : ${sessionScope.user.id}</p>
                     <p class="text-dark">휴대폰 : ${sessionScope.user.phone}</p>
                     <p class="text-dark" id="name">이름 : ${sessionScope.user.name}</p>
+                    <p>${sessionScope.user.inspection}</p>
+                    <p>${sessionScope.user.hyp}</p>
                     <div style="display: flex; justify-content: flex-start">
-                      <p class="text-dark">설문조사여부 : <c:if test="${sessionScope.user.hyp == 0}">미완료</c:if><c:if test="${sessionScope.user.hyp > 0}">완료</c:if></p>
-                      <a href="../user/diagnosis/${sessionScope.user.id}"><button type="button" class="modal_diagnosis"><c:if test="${sessionScope.user.hyp == 0}">검사</c:if><c:if test="${sessionScope.user.hyp > 0}">재검사</c:if></button></a>
+                      <p class="text-dark">설문조사여부 : <c:if test="${sessionScope.user.inspection == 0}">미완료</c:if><c:if test="${sessionScope.user.inspection == 1}">완료</c:if></p>
+                      <a href="../user/diagnosis/${sessionScope.user.id}"><button type="button" class="modal_diagnosis"><c:if test="${sessionScope.user.inspection == 0}">검사</c:if><c:if test="${sessionScope.user.inspection == 1}">재검사</c:if></button></a>
                     </div>
                   </div>
                 </div>
@@ -186,14 +187,15 @@
 	                    <div style="display: flex; justify-content: flex-start">
 	                      <p class="text-dark" style="font-size: 18px;">설문조사여부 :  <c:if test="${sessionScope.user.hyp == 0}">미완료</c:if><c:if test="${sessionScope.user.hyp > 0}">완료</c:if></p>
 	                      <!--설문 완료시-->
-	                      <a href="../user/diagnosis"><button type="button" class="modal_diagnosis"><c:if test="${sessionScope.user.hyp == 0}">검사</c:if><c:if test="${sessionScope.user.hyp > 0}">재검사</c:if></button></a>
+	                      <a href="../user/diagnosis/${sessionScope.user.id}"><button type="button" class="modal_diagnosis"><c:if test="${sessionScope.user.hyp == 0}">검사</c:if><c:if test="${sessionScope.user.hyp > 0}">재검사</c:if></button></a>
 	                      <!-- 설문 미완료시 -->
 	                      <!-- <a href="../User/diagnosis.html"><button type="button" class="modal_diagnosis">재검사</button></a> -->
 	                    </div>
 	                    <input name="pwd" type="text" id="password" value="${sessionScope.user.pwd}" style="display:none;">
-	                    <input name="hyp" type="number" id="hyp" value="${sessionScope.user.hyp}" >
-	                    <input name="author" type="number" id="author" value="${sessionScope.user.author}" >
-	                    <input name="status" type="number" id="status" value="${sessionScope.user.status}" >
+	                    <input name="hyp" type="number" id="hyp" value="${sessionScope.user.hyp}" style="display:none;">
+	                    <input name="author" type="number" id="author" value="${sessionScope.user.author}" style="display:none;">
+	                    <input name="status" type="number" id="status" value="${sessionScope.user.status}" style="display:none;">
+	                    <input name="inspection" type="number" id="inspection" value="${sessionScope.user.inspection}" style="display:none;">
 	                  </div>
 	                </div>
 	                <div class="modal-footer">
@@ -242,6 +244,7 @@
 					const hyp = $("#hyp").val();
 					const author = $("#author").val();
 					const status = $("#status").val();
+					const inspection = $("#inspection").val();
 					const uid = document.querySelector('#id');
 					const id = uid.textContent;
 					
@@ -251,7 +254,8 @@
 								pwd : pwds,
 								hyp : hyp,
 								author : author,
-								status : status
+								status : status,
+								inspection : inspection
 								};
 					
 					

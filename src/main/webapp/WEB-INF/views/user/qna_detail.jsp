@@ -62,7 +62,7 @@
 				<tbody>
 					<tr>
 						<th scope="row" data-view="count">작성자</th>
-						<td>0</td>
+						<td>${item.name}</td>
 						<th scope="row" data-view="date">작성일</th>
 						<td><fmt:formatDate value="${item.date}" pattern="yyyy-MM-dd" /></td>
 					</tr>
@@ -84,50 +84,61 @@
 							<th scope="row"><span
 								class="icon"><p class="icon_txt">관리자</p></span></th>
 							<td>${item.cmt}</td>
-							<td style="width: 240px;">
-								<div class="cmt_btn">
-									<button onclick="display()" class="button" style="border:none; font-size: 16px;"><span>수정</span></button>
-										<span class="space"></span>
-									<a href="comment_delete/${item.cid}" class="button"> <span>삭제</span></a>
-								</div>
-							</td>
+							
+							<c:if test="${sessionScope.user.author == 1}">
+								<td style="width: 240px;">
+									<div class="cmt_btn">
+										<button onclick="display()" class="button" style="border:none; font-size: 16px;"><span>수정</span></button>
+											<span class="space"></span>
+										<a href="comment_delete/${item.cid}" class="button"> <span>삭제</span></a>
+									</div>
+								</td>
+							</c:if>
 						</tr>
 					</c:if>
 					
-					<c:if test="${item.cmt == null}">
-					<tr>
-						<th>
-							<form method="post" action="../qna_detail/${item.id}">
-								<div class="comment">
-									<input name="content" type="text" placeholder="답변을 등록해주세요.">
-									<button class="button" style="border: none; font-size: 16px;"> <span>등록</span></button>
-								</div>
-							</form>
-						</th>
-					</tr>
-
-					</c:if>
+					<c:if test="${sessionScope.user.author == 1}">
+						<c:if test="${item.cmt == null}">
+						<tr>
+							<th>
+								<form method="post" action="../qna_detail/${item.id}">
+									<div class="comment">
+										<input name="content" type="text" placeholder="답변을 등록해주세요.">
+										<button class="button" style="border: none; font-size: 16px;"> <span>등록</span></button>
+									</div>
+								</form>
+							</th>
+						</tr>
+	
+						</c:if>
+					</c:if>		
 					
-					<tr id="comment" style="display:none;">
-						<td style="border-bottom: none;">
-							<form method="post" action="comment_update/${item.cid}">
-								<div class="comment">
-									<input type="text" name="content" placeholder="수정할 답변을 입력해주세요.">
-									<button class="button" style="border: none; font-size: 16px;"><span>수정하기</span></button>
-								</div>
-							</form>
-						</td>
-					</tr>
+					<c:if test="${sessionScope.user.author == 1}">			
+						<tr id="comment" style="display:none;">
+							<td style="border-bottom: none;">
+								<form method="post" action="comment_update/${item.cid}">
+									<div class="comment">
+										<input type="text" name="content" placeholder="수정할 답변을 입력해주세요.">
+										<button class="button" style="border: none; font-size: 16px;"><span>수정하기</span></button>
+									</div>
+								</form>
+							</td>
+						</tr>
+					</c:if>
 				</tbody>
 			</table>
 			<div class="btn_area">
 				<a href="../qna" class="button"> <span>목록</span>
-				</a> <span class="space"></span> <a href="../qna_update/${item.id }"
-					class="button"> <span>수정</span>
-				</a> <span class="space"></span>
-				<a href="../qna_delete/${item.id }"
-					class="button"> <span>삭제</span>
-				</a>
+				</a> 
+				<c:if test="${sessionScope.user.author == 1 || sessionScope.user.name == item.name}">
+					<span class="space"></span>
+					 <a href="../qna_update/${item.id}"
+						class="button"> <span>수정</span>
+					</a> <span class="space"></span>
+					<a href="../qna_delete/${item.id}"
+						class="button"> <span>삭제</span>
+					</a>
+				</c:if>
 			</div>
 		</section>
 		<jsp:include page="../footer.jsp"></jsp:include>

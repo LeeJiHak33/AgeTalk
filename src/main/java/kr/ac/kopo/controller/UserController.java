@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import kr.ac.kopo.model.Comment;
@@ -97,8 +98,10 @@ public class UserController {
 	}
 	
 	@PostMapping("/qna_insert")
-	public String qna_insert(Qna item) {
+	public String qna_insert(Qna item, @SessionAttribute User user) {
 
+		item.setUserId(user.getId());
+		
 		service.qna_insert(item);
 		
 		return "redirect:qna";

@@ -8,7 +8,7 @@
 	</select>
 	
 	<select id="login" resultType="User">
-		SELECT id, pwd, name, phone, hyp, author, status
+		SELECT id, pwd, name, phone, hyp, author, status, inspection
 		FROM user
 		WHERE id=#{id} AND pwd=#{pwd}
 			
@@ -26,19 +26,20 @@
 	</select>
 	
 	<select id="qna" resultType="Qna">
-		SELECT qna.*, comment.content cmt
-		FROM qna left join comment on(qna.id = comment.qna_id)
+		SELECT qna.*, comment.content cmt, user.name, user.author
+		FROM qna LEFT JOIN comment ON qna.id = comment.qna_id
+		LEFT JOIN user ON qna.user_id = user.id
 		ORDER BY qna.id desc
 		LiMIT #{offset},#{perPager} 
 	</select>
 	
 	<insert id="qna_insert">
-		INSERT INTO qna(title, content, date)
-		VALUES(#{title}, #{content}, Now())
+		INSERT INTO qna(title, content, date, user_id)
+		VALUES(#{title}, #{content}, Now(), #{userId})
 	</insert>
 	
 	<select id="qna_item" resultType="Qna">
-		SELECT qna.*, comment.id cid, comment.content cmt, comment.date cdate, qna_id, user.name
+		SELECT qna.*, comment.id cid, comment.content cmt, comment.date cdate, qna_id, user.name, user.author
 		FROM qna left join comment on(qna.id = comment.qna_id) left join user on(qna.user_id = user.id)
 		WHERE qna.id = #{id}
 	</select>
@@ -86,7 +87,7 @@
 	
 	<update id="hyp_update">
 		UPDATE user
-		SET hyp = #{hyp}
+		SET hyp = #{hyp}, inspection = 1
 		WHERE id = #{id}
 	</update>
 	
@@ -97,7 +98,7 @@
 	</update>
 	
 	<select id="user_item" resultType="User">
-		select *
+		select id, pwd, name, phone, hyp, author, status, inspection
 		from user
 		where id = #{id}
 	</select>

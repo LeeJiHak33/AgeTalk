@@ -70,7 +70,7 @@ window.onload = function() {
 			const value8 = parseInt(values.value8);
 			const value9 = parseInt(values.value9);
 			
-			const total = (value1 + value2 + value3 + value4 + value5 + value6 + value7 + value8 + value9) * 3.7;
+			const total = parseInt((value1 + value2 + value3 + value4 + value5 + value6 + value7 + value8 + value9) * 3.7);
 			$('#total').val(total);
 	        console.log("'결과전송' 버튼이 클릭되었습니다.");
 	        console.log(total);

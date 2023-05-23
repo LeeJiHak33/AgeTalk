@@ -164,6 +164,7 @@ public class UserServiceImpl implements UserService {
 			user.setPhone(item.getPhone());
 			user.setAuthor(item.getAuthor());
 			user.setStatus(item.getStatus());
+			user.setInspection(item.getInspection());
 			return true;
 		} else {
 			return false;

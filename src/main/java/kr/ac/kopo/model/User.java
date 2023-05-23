@@ -6,9 +6,10 @@ public class User {
 	private String name;
 	private String phone;
 	private String userId;
-	private int hyp;
+	private float hyp;
 	private int author;
 	private int status;
+	private int inspection;
 
 	public int getStatus() {
 		return status;
@@ -50,13 +51,6 @@ public class User {
 		this.phone = phone;
 	}
 
-	public int getHyp() {
-		return hyp;
-	}
-
-	public void setHyp(int hyp) {
-		this.hyp = hyp;
-	}
 
 	public int getAuthor() {
 		return author;
@@ -72,6 +66,22 @@ public class User {
 
 	public void setUserId(String userId) {
 		this.userId = userId;
+	}
+
+	public int getInspection() {
+		return inspection;
+	}
+
+	public void setInspection(int inspection) {
+		this.inspection = inspection;
+	}
+
+	public float getHyp() {
+		return hyp;
+	}
+
+	public void setHyp(float hyp) {
+		this.hyp = hyp;
 	}
 
 }
