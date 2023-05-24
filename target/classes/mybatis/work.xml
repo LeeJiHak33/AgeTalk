@@ -9,50 +9,55 @@
 		ORDER BY name desc
 	</select>
 	<select id="youthlist_total" resultType="Integer">
-		SELECT COUNT(*) FROM user
+		SELECT COUNT(*) FROM
+		user
 	</select>
 	<select id="oldlist_select" resultType="Old">
 		SELECT name, hyp
 		FROM old
 		ORDER BY name desc
-	</select>	
-	
+	</select>
+
 	<select id="oldlist_total" resultType="Integer">
 		SELECT COUNT(*) FROM old
 	</select>
-	
+
 	<select id="alllist_total" resultType="Integer">
 		SELECT COUNT(*) FROM old
+	</select>
 	<select id="login" resultType="Work">
 		SELECT *
 		FROM work
-		WHERE id=#{id} AND pwd=#{pwd}
+		WHERE id=#{id}
+		AND pwd=#{pwd}
 	</select>
-	
+
 	<insert id="add">
 		INSERT INTO work(id, pwd, name, phone)
-		VALUES(#{id}, #{pwd}, #{name}, #{phone})
+		VALUES(#{id},
+		#{pwd}, #{name}, #{phone})
 	</insert>
-	
-	<select id ="check_id_work" resultType="Integer">
+
+	<select id="check_id_work" resultType="Integer">
 		SELECT COUNT(*)
 		FROM work
 		WHERE id=#{id}
 	</select>
-	
-	
-	<select id="alllist_select" resultType="Manage">
-		SELECT o.name oname, o.hyp ohyp, y.name yname, y.hyp yhyp, o.s_id oid
-		FROM old o
-		LEFT JOIN `match` m ON (m.s_id = o.s_id)
-		LEFT JOIN user y ON (m.user_id = y.id)
 
+
+	<select id="alllist_select" resultType="Manage">
+		SELECT o.name oname,
+		o.hyp ohyp, y.name yname, y.hyp yhyp, o.s_id oid
+		FROM old o
+		LEFT JOIN
+		`match` m ON (m.s_id = o.s_id)
+		LEFT JOIN user y ON (m.user_id = y.id)
 	</select>
 	<select id="oldlist_item" resultType="Old">
 		SELECT s_id from old;
-	</select>	
+	</select>
 	<insert id="match_insert">
-	INSERT INTO match(id matchid, user_id yid, s_id id)
+		INSERT INTO match(id matchid, user_id yid, s_id id)
 		VALUES(#{id}, #{yid})
 	</insert>
 </mapper>

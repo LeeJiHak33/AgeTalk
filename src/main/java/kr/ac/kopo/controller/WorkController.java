@@ -59,7 +59,9 @@ public class WorkController {
 		List<Manage> list = service.alllist(pager);
 		
 		model.addAttribute("list", list);
+		return path + "managelist";
 
+	}
 	
 	@GetMapping("/maninsert")
 	public String maninsert() {

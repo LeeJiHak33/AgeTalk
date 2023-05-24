@@ -42,12 +42,13 @@ public class WorkServiceImpl implements WorkService {
 
 
 	@Override
-
 	public List<Manage> alllist(Pager pager) {
 		int alltotal=dao.alltotal(pager);
 		pager.setTotal(alltotal);
 		return dao.alllist(pager);
-
+	}
+	
+	@Override
 	public boolean login_work(Work work) {
 		Work item = dao.login_work(work);
 		if (item != null) {
