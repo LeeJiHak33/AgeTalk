@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.dao.AdminDao;
+import kr.ac.kopo.model.Attach;
 import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.Report;
 import kr.ac.kopo.model.Work;
@@ -88,6 +89,12 @@ public class AdminServiceImpl implements AdminService {
 	public void work_confirm(String id) {
 		// TODO Auto-generated method stub
 		dao.work_confirm(id);
+	}
+
+	@Override
+	public Attach attach_item(String id) {
+
+		return dao.attach_item(id);
 	}
 	
 	

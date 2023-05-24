@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import kr.ac.kopo.model.Attach;
 import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.Report;
 import kr.ac.kopo.model.User;
@@ -43,8 +44,9 @@ public class AdminController {
 	@GetMapping("/work_detail/{id}")
 	public String work_detail(@PathVariable String id, Model model) {
 		Work item=service.work_item(id);
+		Attach attach=service.attach_item(id); 
 		model.addAttribute("item", item);
-		
+		model.addAttribute("attach", attach);
 		return path+"work_detail";
 	}
 	

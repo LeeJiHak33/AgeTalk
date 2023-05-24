@@ -2,6 +2,7 @@ package kr.ac.kopo.dao;
 
 import java.util.List;
 
+import kr.ac.kopo.model.Attach;
 import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.Report;
 import kr.ac.kopo.model.Work;
@@ -36,5 +37,7 @@ public interface AdminDao {
 	Work work_item(String id);
 
 	void work_confirm(String id);
+
+	Attach attach_item(String id);
 
 }

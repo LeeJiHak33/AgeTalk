@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import kr.ac.kopo.model.Attach;
 import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.Report;
 import kr.ac.kopo.model.Work;
@@ -86,6 +87,12 @@ public class AdminDaoImpl implements AdminDao {
 	@Override
 	public void work_confirm(String id) {
 		sql.update("admin.work_confirm", id);
+	}
+
+	@Override
+	public Attach attach_item(String id) {
+		// TODO Auto-generated method stub
+		return sql.selectOne("attach.item", id);
 	}
 	
 	

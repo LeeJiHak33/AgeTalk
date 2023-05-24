@@ -123,7 +123,7 @@
 		select count(*) from notice
 	</select>
 	
-	<select id="login_admin" resultType="Integer">
+	<select id="login_admin" resultType="User">
 		select name,id from user where author=1 and id=#{id} and pwd=#{pwd}
 	</select>
 	<update id="notice_viewCount">

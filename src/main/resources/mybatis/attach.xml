@@ -10,4 +10,7 @@
 	<delete id="delete">
 		DELETE FROM attach WHERE id=#{id}
 	</delete>
+	<select id="item" resultType="Attach">
+		select * from attach where work_id=#{id}
+	</select>
 </mapper>
