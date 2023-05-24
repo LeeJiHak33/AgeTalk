@@ -60,6 +60,8 @@ public interface UserService {
 
 	List<Chat> chat_list(int matchId);
 
+	void chatting_add(Chat item);
+
 
 
 }

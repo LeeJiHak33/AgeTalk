@@ -8,7 +8,7 @@ public class Chat {
 	private Date date;
 	private String content;
 	private int status;
-	private int match_id;
+	private int matchId;
 	public int getId() {
 		return id;
 	}
@@ -33,12 +33,12 @@ public class Chat {
 	public void setStatus(int status) {
 		this.status = status;
 	}
-	public int getMatch_id() {
-		return match_id;
+	public int getMatchId() {
+		return matchId;
 	}
-	public void setMatch_id(int match_id) {
-		this.match_id = match_id;
+	public void setMatchId(int matchId) {
+		this.matchId = matchId;
 	}
-	
+
 	
 }

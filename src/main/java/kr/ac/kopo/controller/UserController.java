@@ -11,7 +11,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import kr.ac.kopo.model.Comment;
 import kr.ac.kopo.model.Notice;
@@ -36,7 +38,16 @@ public class UserController {
 		model.addAttribute("list", list);
 		return path+"chatting";
 	}
-		
+	
+	@ResponseBody
+	@PostMapping("/chatting_add")
+	public Chat chatting_add(@RequestBody Chat item) {
+		System.out.println("dfsfs"+item.getContent());
+		service.chatting_add(item);
+	
+		return item;
+	}
+	
 	@GetMapping("/notice")
 	public String notice(Model model,Pager pager) {
 		List<Notice> list =service.notice(pager);

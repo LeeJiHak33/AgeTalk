@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,7 +32,13 @@
             <p>${item.phone}</p>
           </div>
           <div class="img_wrap">
-            <img src="/resources/image/no_image.png" alt="no_image.png" />
+          	<c:if test="${attach.workId == item.id }">
+          		<img src="/upload/${attach.uuid }_${attach.name}"  alt="no_image.png" />
+          	</c:if>
+          	<c:if test="${attach.workId != item.id }">
+          		 <img src="/resources/image/no_image.png" alt="no_image.png" />
+          	</c:if>
+           
           </div>
         </div>
         <div class="ok_btn_wrap">

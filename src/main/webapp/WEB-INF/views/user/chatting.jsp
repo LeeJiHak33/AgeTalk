@@ -16,6 +16,11 @@
 
 <link rel="shortcut icon" href="/resources/image/favicon/favicon.ico">
 <!--추가-->
+<style type="text/css">
+	.off{
+		
+	}
+</style>
 </head>
 <body>
 	<header>
@@ -68,10 +73,10 @@
 
 
 			<div class="chatting_input_wrap">
-				<form class="chatting_form" action="" method="post">
-					<input type="text" class="chatting" />
+				
+					<input type="text" class="chatting " ${list.get(list.size()-1).status == 0 ? 'disabled':''} />
 					<button type="button" class="chatting_btn"></button>
-				</form>
+				
 			</div>
 		</div>
 	</div>

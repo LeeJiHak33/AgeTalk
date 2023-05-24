@@ -123,13 +123,17 @@
 		select count(*) from notice
 	</select>
 	
-	<select id="login_admin" resultType="Integer">
+	<select id="login_admin" resultType="User">
 		select name,id from user where author=1 and id=#{id} and pwd=#{pwd}
 	</select>
 	<update id="notice_viewCount">
 		update notice set view=view+1 where id=#{id}
 	</update>
 	<select id="chat_list" resultType="Chat">
-		select * from chat where id=#{matchId}
+		select * from chat where match_id=#{matchId}
 	</select>
+	
+	<insert id="chatting_add">
+		insert into chat (date,content,status,match_id) values (now(),#{content},0,#{matchId})
+	</insert>
 </mapper>
