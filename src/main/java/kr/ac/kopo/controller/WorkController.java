@@ -38,9 +38,10 @@ public class WorkController {
 		
 		return path + "youthlist";
 	}
-	@RequestMapping("/youthlist/{id}/{yid}")
-	public String match(@PathVariable String id, @PathVariable String yid) {
-		service.match(id, yid);
+	@RequestMapping("/youthlist/{sid}/{yid}")
+	public String match(@PathVariable String sid, @PathVariable String yid) {
+		service.match(sid, yid);
+		
 		return "redirect:managelist";
 	}
 	

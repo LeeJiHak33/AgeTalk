@@ -3,7 +3,6 @@ package kr.ac.kopo.service;
 import java.util.List;
 
 import kr.ac.kopo.model.Manage;
-import kr.ac.kopo.model.Match;
 import kr.ac.kopo.model.Old;
 import kr.ac.kopo.model.User;
 import kr.ac.kopo.model.Work;
@@ -17,7 +16,8 @@ public interface WorkService {
 
 	List<Manage> alllist(Pager pager);
 	
-	void match(String id, String yid);
+	void match(String sid, String yid);
+	
 	boolean login_work(Work work);
 
 	void signup_work(Work item);

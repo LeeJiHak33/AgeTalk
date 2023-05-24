@@ -55,7 +55,7 @@ public class WorkDaoImpl implements WorkDao {
 		sql.insert("work.match_insert", item);	
 	}	
 	
-
+	@Override
 	public Work login_work(Work work) {
 		return sql.selectOne("work.login", work);
 	}

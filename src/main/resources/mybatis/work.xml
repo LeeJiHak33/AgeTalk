@@ -4,7 +4,7 @@
 
 <mapper namespace="work">
 	<select id="youthlist_select" resultType="User">
-		SELECT name, hyp, phone
+		SELECT id, name, hyp, phone
 		FROM user
 		ORDER BY name desc
 	</select>
@@ -23,6 +23,7 @@
 	
 	<select id="alllist_total" resultType="Integer">
 		SELECT COUNT(*) FROM old
+		</select>
 	<select id="login" resultType="Work">
 		SELECT *
 		FROM work
@@ -51,8 +52,9 @@
 	<select id="oldlist_item" resultType="Old">
 		SELECT s_id from old;
 	</select>	
+	
 	<insert id="match_insert">
-	INSERT INTO match(id matchid, user_id yid, s_id id)
-		VALUES(#{id}, #{yid})
+	INSERT INTO match(user_id yid, s_id sid)
+		VALUES(#{sid}, #{yid})
 	</insert>
 </mapper>

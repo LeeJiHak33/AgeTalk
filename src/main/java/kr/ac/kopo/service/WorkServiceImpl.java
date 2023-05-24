@@ -47,6 +47,7 @@ public class WorkServiceImpl implements WorkService {
 		int alltotal=dao.alltotal(pager);
 		pager.setTotal(alltotal);
 		return dao.alllist(pager);
+	}
 
 	public boolean login_work(Work work) {
 		Work item = dao.login_work(work);
@@ -65,20 +66,17 @@ public class WorkServiceImpl implements WorkService {
 		dao.signup_work(item);
 		
 		dao.addAttach(item.getAttachs());
-		
-
-		
+			
 	}
 	
 	@Override
-	public void match(String id, String yid) {
+	public void match(String sid, String yid) {
 		Match item = new Match();
-		item.setId(id);
+		item.setSid(sid);
 		item.setYid(yid);
 		
 		dao.match_insert(item);
-	
-	}
+		}
 
 	@Override
 	public boolean checkId_work(String id) {

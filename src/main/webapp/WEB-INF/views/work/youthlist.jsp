@@ -10,7 +10,7 @@
 	<title>사용자 관리</title>
 	
 <!--파비콘-->
-    <link rel="shortcut icon" href="../resources/image/favicon/favicon.ico">
+    <link rel="shortcut icon" href="/resources/image/favicon/favicon.ico">
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -77,7 +77,7 @@
             </div>
         </td>
         <td data-table="phone">${item.phone}</td>
-        <td><a href="/${item.id}"><button class="del_btn">매칭하기</button></a></td>
+        <td><a href="/work/youthlist/${item.id}"><button class="del_btn">매칭하기</button></a></td>
     </tr>
 </c:forEach>
 </table>
