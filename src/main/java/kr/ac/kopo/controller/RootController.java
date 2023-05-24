@@ -110,7 +110,6 @@ public class RootController {
 			
 			String targetUrl = (String) session.getAttribute("target_url");
 			session.removeAttribute("target_url"); 
-			System.out.println("targetUrl"+ targetUrl);
 			if (targetUrl == null) {
 				return "redirect:/work/managelist";
 			} else {
@@ -132,11 +131,8 @@ public class RootController {
 	@PostMapping("/signup_work")
 	public String signup_work(Work item) {
 		
-		System.out.println("item");
-		
 		try {
 			MultipartFile file = item.getFiles();
-		    System.out.println("controller: "+ item.getFiles());
 
 				if (file != null) {
 					String name = file.getOriginalFilename();
