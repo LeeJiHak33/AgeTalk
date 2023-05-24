@@ -18,7 +18,7 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 <!--파비콘-->
 <link rel="shortcut icon" href="/resources/image/favicon/favicon.ico">
-<script src="/resources/js/login_user.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 
 </head>
 <body>
@@ -36,7 +36,7 @@
 						<div class="lg_wrap">
 
 							<div class="id_wrap">
-								<label>아이디</label> <input type="text" name="id"
+								<label>아이디</label> <input type="text" name="id" id="userId"
 									placeholder="아이디 입력">
 							</div>
 
@@ -51,7 +51,7 @@
 
 							<div class="left-options">
 								<label class="checkbox-label"> <input type="checkbox"
-									name="id-save" value="yes"> 아이디 저장
+									name="checkId" id="idSaveCheck"/> 아이디 저장
 								</label>
 
 							</div>
@@ -73,6 +73,7 @@
 			</div>
 		</div>
 
+		<script src="/resources/js/login_user.js"></script>
 		<jsp:include page="footer.jsp"></jsp:include>
 
 	</div>
