@@ -73,4 +73,19 @@ $(document).ready(function () {
     maxDate: "+1M", //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)
   });
   $("#date").css("display", "hidden");
+  
+  console.log(`${matchId}`);  
+
+  $(".chatting_btn").click(function(){
+    const content=$("chatting").val();
+    fetch('../chatting_add')
+    .then(resp =>{
+      if(resp.status==200){
+        return resp.json()
+      }
+    })
+    .then(result =>{
+
+    });
+  });  
 });

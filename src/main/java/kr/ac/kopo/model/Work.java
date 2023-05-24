@@ -1,11 +1,31 @@
 package kr.ac.kopo.model;
 
+
+import org.springframework.web.multipart.MultipartFile;
+
 public class Work {
 	private String id;
 	private String pwd;
 	private String name;
 	private String phone;
 	private int status;
+	
+	private MultipartFile files;
+	private Attach attachs;
+	
+	
+	public Attach getAttachs() {
+		return attachs;
+	}
+	public void setAttachs(Attach attachs) {
+		this.attachs = attachs;
+	}
+	public MultipartFile getFiles() {
+		return files;
+	}
+	public void setFiles(MultipartFile files) {
+		this.files = files;
+	}
 	
 	public String getId() {
 		return id;

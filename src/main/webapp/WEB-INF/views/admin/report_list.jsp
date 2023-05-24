@@ -43,7 +43,9 @@
           </thead>
           <tbody>
           	<c:if test="${list.size()< 1 }">
-          		<p>정보가 없습니다.</p>
+          		<tr>
+          			<td colspan="4">정보가 없습니다</td>
+          		</tr>
           	</c:if>
           	
           	<c:forEach items="${list}" var="item">

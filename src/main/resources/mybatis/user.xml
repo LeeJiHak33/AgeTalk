@@ -8,9 +8,9 @@
 	</select>
 	
 	<select id="login" resultType="User">
-		SELECT *
-		FROM user
-		WHERE id=#{id} AND pwd=#{pwd}
+		SELECT u.* ,m.id matchId FROM 
+		user u  left JOIN `match` m ON u.id=m.user_id 
+		WHERE u.id=#{id} AND pwd=#{pwd} ;
 			
 	</select>
 	
@@ -26,19 +26,20 @@
 	</select>
 	
 	<select id="qna" resultType="Qna">
-		SELECT qna.*, comment.content cmt
-		FROM qna left join comment on(qna.id = comment.qna_id)
+		SELECT qna.*, comment.content cmt, user.name, user.author
+		FROM qna LEFT JOIN comment ON qna.id = comment.qna_id
+		LEFT JOIN user ON qna.user_id = user.id
 		ORDER BY qna.id desc
 		LiMIT #{offset},#{perPager} 
 	</select>
 	
 	<insert id="qna_insert">
-		INSERT INTO qna(title, content, date)
-		VALUES(#{title}, #{content}, Now())
+		INSERT INTO qna(title, content, date, user_id)
+		VALUES(#{title}, #{content}, Now(), #{userId})
 	</insert>
 	
 	<select id="qna_item" resultType="Qna">
-		SELECT qna.*, comment.id cid, comment.content cmt, comment.date cdate, qna_id, user.name
+		SELECT qna.*, comment.id cid, comment.content cmt, comment.date cdate, qna_id, user.name, user.author
 		FROM qna left join comment on(qna.id = comment.qna_id) left join user on(qna.user_id = user.id)
 		WHERE qna.id = #{id}
 	</select>
@@ -78,28 +79,33 @@
 
 	<select id="notice" resultType="Notice">
 		select id,title,date from notice
+		ORDER BY id desc
+		LiMIT #{offset},#{perPager} 
 	</select>
 	
 	<select id="notice_item" resultType="Notice">
-		select * from notice where id=#{id}
+		select n.*,
+		(SELECT id FROM notice where id  <![CDATA[>]]> #{id} ORDER BY id  LIMIT 1) prev,
+		(SELECT id FROM notice where id  <![CDATA[<]]> #{id} ORDER BY id DESC LIMIT 1) next
+		from notice n where id=#{id}
 	</select>
 	
 	<update id="hyp_update">
 		UPDATE user
-		SET hyp = #{hyp} * 3.7
-		WHERE id = 'test'
+		SET hyp = #{hyp}, inspection = #{inspection}
+		WHERE id = #{id}
 	</update>
 	
 	<update id="update_user">
 		UPDATE user
-		SET id = #{id}, name = #{name}, phone = #{phone}
-		WHERE id = 'test'
+		SET name = #{name}, phone = #{phone}
+		WHERE id = #{id}
 	</update>
 	
 	<select id="user_item" resultType="User">
-		select *
+		select id, pwd, name, phone, hyp, author, status, inspection
 		from user
-		where id = 'test'
+		where id = #{id}
 	</select>
 	
 	<select id="notice_new" resultType="Notice">
@@ -110,10 +116,20 @@
 	
 	<delete id="user_out">
 		DELETE FROM user
-		WHERE id = 'test1'
+		WHERE id = #{id}
 	</delete>
 
 	<select id="notice_total" resultType="Integer">
 		select count(*) from notice
+	</select>
+	
+	<select id="login_admin" resultType="Integer">
+		select name,id from user where author=1 and id=#{id} and pwd=#{pwd}
+	</select>
+	<update id="notice_viewCount">
+		update notice set view=view+1 where id=#{id}
+	</update>
+	<select id="chat_list" resultType="Chat">
+		select * from chat where id=#{matchId}
 	</select>
 </mapper>

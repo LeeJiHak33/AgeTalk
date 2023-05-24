@@ -10,6 +10,7 @@ import kr.ac.kopo.model.Comment;
 import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.Qna;
 import kr.ac.kopo.model.User;
+import kr.ac.kopo.model.Chat;
 import kr.ac.kopo.pager.Pager;
 
 @Service
@@ -115,17 +116,21 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public void hyp_update(User item) {
+		User user = dao.user_item(item);
+		
+		item.setId(user.getId());
+		item.setName(user.getName());
+		item.setPhone(user.getPhone());
+		item.setPwd(user.getPwd());
+		item.setStatus(user.getStatus());
+		item.setAuthor(user.getAuthor());
+		
 		dao.hyp_update(item);
 	}
 
 	@Override
-	public void update_user(User item) {
-		dao.update_user(item);
-	}
-
-	@Override
-	public User user_item() {
-		return dao.user_item();
+	public User update_user(User item) {
+		return dao.update_user(item);
 	}
 
 	@Override
@@ -134,8 +139,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void user_out() {
-		dao.user_out();
+	public void user_out(String id) {
+		dao.user_out(id);
 	}
 	
 	@Override
@@ -155,12 +160,46 @@ public class UserServiceImpl implements UserService {
 	public boolean login_user(User user) {
 		User item = dao.login_user(user);
 		if (item != null) {
-
+			user.setHyp(item.getHyp());
+			user.setName(item.getName());
+			user.setPhone(item.getPhone());
+			user.setAuthor(item.getAuthor());
+			user.setStatus(item.getStatus());
+			user.setInspection(item.getInspection());
+			user.setMatchId(item.getMatchId());
 			return true;
 		} else {
 			return false;
 
 		}
+	}
+
+	@Override
+	public boolean login_admin(User item) {
+		// TODO Auto-generated method stub
+		
+		User user = dao.login_admin(item);
+		if(user != null) {
+			
+			return true;
+		}
+		else {
+			return false;
+		}
+		
+		
+	}
+
+	@Override
+	public void notice_viewCount(int id) {
+		// TODO Auto-generated method stub
+		dao.notice_viewCount(id);
+	}
+
+	@Override
+	public List<Chat> chat_list(int matchId) {
+		// TODO Auto-generated method stub
+		return dao.chat_list(matchId);
 	}
 
 }

@@ -13,6 +13,10 @@ public class Notice {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date date;
 	private String userId;
+	private int prev;
+	private int next;
+	
+	
 	public int getId() {
 		return id;
 	}
@@ -48,6 +52,18 @@ public class Notice {
 	}
 	public void setUserId(String userId) {
 		this.userId = userId;
+	}
+	public int getPrev() {
+		return prev;
+	}
+	public void setPrev(int prev) {
+		this.prev = prev;
+	}
+	public int getNext() {
+		return next;
+	}
+	public void setNext(int next) {
+		this.next = next;
 	}
 	
 	

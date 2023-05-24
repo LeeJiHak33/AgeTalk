@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,21 +23,27 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
       $(document).ready(function () {
-        $(".popup").click(function () {
-          console.log("팝업");
-          window.open(
-            "../user/chatting",
-            "_blank",
-            "top=100, left=300, width=430, height=750, toolbar=no, menubar=no, location=no, status=no,  resizable=no"
-          ).onresize = (_) => {
-            popupWindow.resizeTo(430, 750);
-          };
-        });
+    	
+    	//const matchId=$('.matchId').text();
+    	const matchId=${sessionScope.user.matchId};
+    	console.log("df",matchId);
+    
+    	    $(".popup").click(function () {
+    	          console.log("팝업");
+    	          window.open(
+    	            "../user/chatting/"+matchId,
+    	            "_blank",
+    	            "top=100, left=300, width=430, height=750, toolbar=no, menubar=no, location=no, status=no,  resizable=no"
+    	          ).onresize = (_) => {
+    	            popupWindow.resizeTo(430, 750);
+    	          };
+    	        });   	
       });
     </script>
 </head>
 
 <body>
+
 	<div class="main">
 		<jsp:include page="user/header.jsp"></jsp:include>
 		<div class="bg_img">
@@ -117,11 +124,29 @@
       </script>
 	</div>
 	<!-- 채팅 바로가기 타원 -->
+	<c:if test="${sessionScope.user == null}">
+	<a href="../user/diagnosis/admin" style="text-decoration: none; cursor: pointer">
+		<div class="circle">
+			<img src="/resources/image/logo_circle.png" alt="logo_circle" />
+		</div>
+	</a>
+	</c:if>
+	
+	<c:if test="${sessionScope.user.inspection == 0}">
+	<a href="../user/diagnosis/${sessionScope.user.id}" style="text-decoration: none; cursor: pointer">
+		<div class="circle">
+			<img src="/resources/image/logo_circle.png" alt="logo_circle" />
+		</div>
+	</a>
+	</c:if>
+	
+	<c:if test="${sessionScope.user.inspection == 1}">
 	<a class="popup" style="text-decoration: none; cursor: pointer">
 		<div class="circle">
 			<img src="/resources/image/logo_circle.png" alt="logo_circle" />
 		</div>
 	</a>
+	</c:if>
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
 </html>

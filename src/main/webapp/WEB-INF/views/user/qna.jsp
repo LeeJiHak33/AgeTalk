@@ -67,7 +67,7 @@
 						<td data-table="number">${item.id}</td>
 						<td data-table="subject"><a href="qna_detail/${item.id}">${item.title}</a>
 						</td>
-						<td data-table="write">박**</td>
+						<td data-table="write">${item.name}</td>
 						<td data-table="date"><fmt:formatDate value="${item.date}" pattern="yyyy-MM-dd" /></td>
 						<c:if test="${item.cmt == null}">
 						<td>답변대기</td>

@@ -8,11 +8,16 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>관리자 공지사항 상세페이지</title>
-
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <link rel="shortcut icon" href="/resources/image/favicon/favicon.ico" />
 
 <link rel="stylesheet" href="/resources/css/notice_detail.css" />
 
+<script type="text/javascript">
+	$(document).ready(function(){
+			$('.off').removeAttr('href');
+	});
+</script>
 </head>
 
 <body>
@@ -61,11 +66,11 @@
 				<tbody>
 					<tr>
 						<th scope="row">이전글</th>
-						<td><a> 이전 공지사항 </a></td>
+						<td><a class="${item.prev == 0 ? 'off':'bottom' }" href="../notice_detail/${item.prev}"> 이전 공지사항 </a></td>
 					</tr>
 					<tr>
 						<th scope="row">다음글</th>
-						<td><a> 다음 공지사항 </a></td>
+						<td><a class="${item.next ==0  ? 'off':'bottom' }" href="../notice_detail/${item.next}"> 다음 공지사항 </a></td>
 					</tr>
 				</tbody>
 			</table>

@@ -23,7 +23,23 @@
 	
 	<select id="alllist_total" resultType="Integer">
 		SELECT COUNT(*) FROM old
+	<select id="login" resultType="Work">
+		SELECT *
+		FROM work
+		WHERE id=#{id} AND pwd=#{pwd}
 	</select>
+	
+	<insert id="add">
+		INSERT INTO work(id, pwd, name, phone)
+		VALUES(#{id}, #{pwd}, #{name}, #{phone})
+	</insert>
+	
+	<select id ="check_id_work" resultType="Integer">
+		SELECT COUNT(*)
+		FROM work
+		WHERE id=#{id}
+	</select>
+	
 	
 	<select id="alllist_select" resultType="Manage">
 		SELECT o.name oname, o.hyp ohyp, y.name yname, y.hyp yhyp, o.s_id oid

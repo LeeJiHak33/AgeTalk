@@ -3,6 +3,7 @@ package kr.ac.kopo.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,11 +12,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import kr.ac.kopo.model.Comment;
 import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.Qna;
 import kr.ac.kopo.model.User;
+import kr.ac.kopo.model.Chat;
 import kr.ac.kopo.pager.Pager;
 import kr.ac.kopo.service.UserService;
 
@@ -28,8 +32,10 @@ public class UserController {
 	UserService service;
 	
 	
-	@GetMapping("/chatting")
-	public String chatting() {
+	@GetMapping("/chatting/{matchId}")
+	public String chatting(@PathVariable int matchId, Model model) {
+		List<Chat> list =service.chat_list(matchId);
+		model.addAttribute("list", list);
 		return path+"chatting";
 	}
 		
@@ -38,8 +44,7 @@ public class UserController {
 		List<Notice> list =service.notice(pager);
 		model.addAttribute("list", list);
 		
-		User user = service.user_item();
-		model.addAttribute("user", user);
+
 		
 		Notice notice = service.notice_new();
 		model.addAttribute("notice", notice);
@@ -52,8 +57,7 @@ public class UserController {
 		Notice item=service.notice_item(id);
 		model.addAttribute("item", item);
 		
-		User user = service.user_item();
-		model.addAttribute("user", user);
+		service.notice_viewCount(id);
 		
 		Notice notice = service.notice_new();
 		model.addAttribute("notice", notice);
@@ -66,8 +70,7 @@ public class UserController {
 		List<Qna> list = service.qna(pager);
 		model.addAttribute("list", list);
 		
-		User user = service.user_item();
-		model.addAttribute("user", user);
+	
 		
 		Notice notice = service.notice_new();
 		model.addAttribute("notice", notice);
@@ -91,9 +94,7 @@ public class UserController {
 	
 	@GetMapping("/qna_insert")
 	public String qna_insert(Model model) {
-		User user = service.user_item();
-		model.addAttribute("user", user);
-		
+
 		Notice notice = service.notice_new();
 		model.addAttribute("notice", notice);
 		
@@ -101,8 +102,10 @@ public class UserController {
 	}
 	
 	@PostMapping("/qna_insert")
-	public String qna_insert(Qna item) {
+	public String qna_insert(Qna item, @SessionAttribute User user) {
 
+		item.setUserId(user.getId());
+		
 		service.qna_insert(item);
 		
 		return "redirect:qna";
@@ -113,9 +116,7 @@ public class UserController {
 		Qna item = service.item(id);
 		item.setId(id);
 		model.addAttribute("item", item);
-		
-		User user = service.user_item();
-		model.addAttribute("user", user);
+	
 		
 		Notice notice = service.notice_new();
 		model.addAttribute("notice", notice);
@@ -165,9 +166,7 @@ public class UserController {
 		Qna item = service.item(id);
 		item.setId(id);
 		model.addAttribute("item", item);
-		
-		User user = service.user_item();
-		model.addAttribute("user", user);
+	
 		
 		Notice notice = service.notice_new();
 		model.addAttribute("notice", notice);
@@ -187,8 +186,6 @@ public class UserController {
 	
 	@RequestMapping("/explain")
 	public String explain(Model model) {
-		User user = service.user_item();
-		model.addAttribute("user", user);
 		
 		Notice notice = service.notice_new();
 		model.addAttribute("notice", notice);
@@ -196,10 +193,8 @@ public class UserController {
 		return path + "explain";
 	}
 	
-	@GetMapping("/diagnosis")
-	public String diagnosis(Model model) {
-		User user = service.user_item();
-		model.addAttribute("user", user);
+	@GetMapping("/diagnosis/{id}")
+	public String diagnosis(Model model, @PathVariable String id) {
 		
 		Notice notice = service.notice_new();
 		model.addAttribute("notice", notice);
@@ -207,11 +202,14 @@ public class UserController {
 		return path + "diagnosis";
 	}
 	
-	@PostMapping("/diagnosis")
-	public String diagnosis(User item) {
+	@PostMapping("/diagnosis/{id}")
+	public String diagnosis(User item, @PathVariable String id, HttpSession session) {
+		item.setId(id);
 		service.hyp_update(item);
 		
-		return "redirect:..";
+		session.setAttribute("user", item);
+		
+		return "redirect:../../";
 	}
 	
 }

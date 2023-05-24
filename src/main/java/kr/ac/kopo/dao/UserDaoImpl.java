@@ -10,6 +10,7 @@ import kr.ac.kopo.model.Comment;
 import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.Qna;
 import kr.ac.kopo.model.User;
+import kr.ac.kopo.model.Chat;
 import kr.ac.kopo.pager.Pager;
 
 @Repository
@@ -86,13 +87,14 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public void update_user(User item) {
+	public User update_user(User item) {
 		sql.update("user.update_user", item);
+		return item;
 	}
 
 	@Override
-	public User user_item() {
-		return sql.selectOne("user_item");
+	public User user_item(User item) {
+		return sql.selectOne("user_item", item);
 	}
 
 	@Override
@@ -101,8 +103,8 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public void user_out() {
-		sql.delete("user.user_out");
+	public void user_out(String id) {
+		sql.delete("user.user_out", id);
 	}
 
 	public void signup(User item) {
@@ -122,8 +124,25 @@ public class UserDaoImpl implements UserDao {
 
 	@Override	
 	public int notice_total() {
-		// TODO Auto-generated method stub
 		return sql.selectOne("user.notice_total");
+	}
+
+	@Override
+	public User login_admin(User item) {
+		// TODO Auto-generated method stub
+		return sql.selectOne("user.login_admin", item);
+	}
+
+	@Override
+	public void notice_viewCount(int id) {
+		// TODO Auto-generated method stub
+		sql.update("user.notice_viewCount", id);
+	}
+
+	@Override
+	public List<Chat> chat_list(int matchId) {
+		// TODO Auto-generated method stub
+		return sql.selectList("user.chat_list", matchId);
 	}
 
 }
