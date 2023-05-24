@@ -22,7 +22,7 @@
             <li><a href="../../user/explain" style="text-decoration: none">소개</a></li>
             <li>
              <c:if test="${sessionScope.user == null}">
-              <a href="../user/diagnosis/${sessionScope.user.id}" style="text-decoration: none; cursor: pointer"
+              <a href="../user/diagnosis/admin" style="text-decoration: none; cursor: pointer"
                 >채팅하기
                 </a>
               </c:if>
@@ -103,8 +103,6 @@
                     <p class="text-dark">아이디 : ${sessionScope.user.id}</p>
                     <p class="text-dark">휴대폰 : ${sessionScope.user.phone}</p>
                     <p class="text-dark" id="name">이름 : ${sessionScope.user.name}</p>
-                    <p>${sessionScope.user.inspection}</p>
-                    <p>${sessionScope.user.hyp}</p>
                     <div style="display: flex; justify-content: flex-start">
                       <p class="text-dark">설문조사여부 : <c:if test="${sessionScope.user.inspection == 0}">미완료</c:if><c:if test="${sessionScope.user.inspection == 1}">완료</c:if></p>
                       <a href="../user/diagnosis/${sessionScope.user.id}"><button type="button" class="modal_diagnosis"><c:if test="${sessionScope.user.inspection == 0}">검사</c:if><c:if test="${sessionScope.user.inspection == 1}">재검사</c:if></button></a>

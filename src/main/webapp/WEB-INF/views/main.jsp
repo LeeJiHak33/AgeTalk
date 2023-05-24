@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -117,11 +118,29 @@
       </script>
 	</div>
 	<!-- 채팅 바로가기 타원 -->
+	<c:if test="${sessionScope.user == null}">
+	<a href="../user/diagnosis/admin" style="text-decoration: none; cursor: pointer">
+		<div class="circle">
+			<img src="/resources/image/logo_circle.png" alt="logo_circle" />
+		</div>
+	</a>
+	</c:if>
+	
+	<c:if test="${sessionScope.user.inspection == 0}">
+	<a href="../user/diagnosis/${sessionScope.user.id}" style="text-decoration: none; cursor: pointer">
+		<div class="circle">
+			<img src="/resources/image/logo_circle.png" alt="logo_circle" />
+		</div>
+	</a>
+	</c:if>
+	
+	<c:if test="${sessionScope.user.inspection == 1}">
 	<a class="popup" style="text-decoration: none; cursor: pointer">
 		<div class="circle">
 			<img src="/resources/image/logo_circle.png" alt="logo_circle" />
 		</div>
 	</a>
+	</c:if>
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
 </html>

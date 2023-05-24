@@ -87,7 +87,7 @@
 	
 	<update id="hyp_update">
 		UPDATE user
-		SET hyp = #{hyp}, inspection = 1
+		SET hyp = #{hyp}, inspection = #{inspection}
 		WHERE id = #{id}
 	</update>
 	

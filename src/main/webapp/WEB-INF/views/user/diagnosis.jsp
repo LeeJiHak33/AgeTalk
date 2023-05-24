@@ -226,6 +226,7 @@
 				<div class="btn_box">
 					<form method="post" name="diagnosis_form">
 					<input id="total" type="hidden" name="hyp" value="" />
+					<input id="total" type="hidden" name="inspection" value=1 />
 					
 					<button type="button" class="sub_btn" id="btn_sub"
 					style=" font-family: 'NotosansKR';

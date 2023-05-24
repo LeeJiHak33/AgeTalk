@@ -99,19 +99,18 @@
 					
 					<c:if test="${sessionScope.user.author == 1}">
 						<c:if test="${item.cmt == null}">
-						<tr>
-							<th>
-								<form method="post" action="../qna_detail/${item.id}">
-									<div class="comment">
-										<input name="content" type="text" placeholder="답변을 등록해주세요.">
-										<button class="button" style="border: none; font-size: 16px;"> <span>등록</span></button>
-									</div>
-								</form>
-							</th>
-						</tr>
-	
+							<tr>						
+								<th>
+									<form method="post" action="../qna_detail/${item.id}">
+										<div class="comment">
+											<input name="content" type="text" placeholder="답변을 등록해주세요.">
+											<button class="button" style="border: none; font-size: 16px;"> <span>등록</span></button>
+										</div>
+									</form>
+								</th>
+							</tr>
 						</c:if>
-					</c:if>		
+					</c:if>	
 					
 					<c:if test="${sessionScope.user.author == 1}">			
 						<tr id="comment" style="display:none;">
