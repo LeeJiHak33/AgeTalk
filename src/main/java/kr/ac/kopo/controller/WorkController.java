@@ -53,14 +53,12 @@ public class WorkController {
 		return path + "oldlist";
 	}
 	
-
 	@RequestMapping("/managelist")
 	public String manage(Model model, Pager pager) {
 		List<Manage> list = service.alllist(pager);
 		
 		model.addAttribute("list", list);
-		return path + "managelist";
-
+		return path + "/managelist";
 	}
 	
 	@GetMapping("/maninsert")
