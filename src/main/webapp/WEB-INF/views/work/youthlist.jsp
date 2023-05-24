@@ -77,7 +77,7 @@
             </div>
         </td>
         <td data-table="phone">${item.phone}</td>
-        <td><button class="del_btn">매칭하기</button></td>
+        <td><a href="/${item.id}"><button class="del_btn">매칭하기</button></a></td>
     </tr>
 </c:forEach>
 </table>

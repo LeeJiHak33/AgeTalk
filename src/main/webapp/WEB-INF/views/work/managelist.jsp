@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <html>
 
 <head>
@@ -87,46 +87,58 @@ header .menu_wrap .sub_list {
 							<c:forEach items="${list}" var="item">
 								<tr>
 
-									<td data-table="name">${item.old.name}</td>
+									<td data-table="name">${item.oname}</td>
 									<td>
 										<div class="progress" data-table="hyp">
 											<div id="my_div" class="progress-bar" role="progressbar"
 												aria-valuemin="0" aria-valuemax="100">
-												<div>${item.old.hyp}<span>%</span>
+												<div>${item.ohyp}<span>%</span>
 												</div>
 											</div>
 										</div>
 									</td>
-									<td data-table="name">${item.user.name}</td>
-									<td>
-										<div class="progress" data-table="hyp">
-											<div id="my_div" class="progress-bar" role="progressbar"
-												aria-valuemin="0" aria-valuemax="100">
-												<div>${item.user.hyp}<span>%</span>
+									<c:if test="${empty item.yname}">
+										<td>매칭 상대가 없습니다.</td>
+										<td></td>
+										<td>진행중인 채팅이 없습니다</td>
+										<td><a href="../work/youthlist/${item.oid}"><button
+													class="youthlist_btn">매칭하기</button></a></td>
+									</c:if>
+									<c:if test="${not empty item.yname}">
+										<td data-table="name">${item.yname}</td>
+										<td>
+											<div class="progress" data-table="hyp">
+												<div id="my_div" class="progress-bar" role="progressbar"
+													aria-valuemin="0" aria-valuemax="100">
+													<div>${item.yhyp}<span>%</span>
+													</div>
 												</div>
 											</div>
-										</div>
-									</td>									
-										
+										</td>
+									</c:if>
+
 								</tr>
 							</c:forEach>
-							<tr>
-								<td>매칭 상대가 없습니다.</td>
-
-
-								<td><div class="progress">
-										<div class="progress-bar" role="progressbar"
-											style="width: 00%; background-color: #ffff" aria-valuenow="0"
-											aria-valuemin="0" aria-valuemax="100">0%</div>
-									</div></td>
-								<td>진행중인 채팅이 없습니다.</td>
-
-								<td><a href="../work/youthlist"><button
-											class="youthlist_btn">매칭하기</button></a></td>
-
-							</tr>
 					</table>
-					<jsp:include page="./maninsert.jsp"></jsp:include>						
+					<script>
+    const progressBarList = document.querySelectorAll('.progress-bar');
+    progressBarList.forEach(progressBar => {
+        progressBar.style.width = '100%';
+        progressBar.style.transition = 'width 3s ease-out-in';
+
+        const number = parseInt(progressBar.querySelector('div').innerText);
+        progressBar.style.width = number + "%";
+
+        if (number >= 80) {
+            progressBar.style.backgroundColor = '#ff0000';
+        } else if (number >= 50) {
+            progressBar.style.backgroundColor = '#ffea00';
+        } else {
+            progressBar.style.backgroundColor = '#0040ff';
+        }
+    });
+</script>
+					<jsp:include page="./maninsert.jsp"></jsp:include>
 				</div>
 
 			</div>

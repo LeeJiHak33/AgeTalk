@@ -6,9 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import kr.ac.kopo.model.All;
+import kr.ac.kopo.model.Manage;
 import kr.ac.kopo.model.Old;
 import kr.ac.kopo.model.User;
 import kr.ac.kopo.pager.Pager;
@@ -28,14 +29,21 @@ public class WorkController {
 	 * return path + "youthlist"; }
 	 *
 	 */	
-	@RequestMapping("/youthlist")
-	public String youth(Model model, Pager pager) {
-	List<User> list = service.youthlist(pager);
+	@RequestMapping("/youthlist/{id}")
+	public String youth(@PathVariable String id, Model model, Pager pager) {
 		
+		List<User> list = service.youthlist(pager);
+	
 		model.addAttribute("list", list);
 		
 		return path + "youthlist";
 	}
+	@RequestMapping("/youthlist/{id}/{yid}")
+	public String match(@PathVariable String id, @PathVariable String yid) {
+		service.match(id, yid);
+		return "redirect:managelist";
+	}
+	
 	
 	@RequestMapping("/oldlist")
 	public String old(Model model, Pager pager) {
@@ -47,7 +55,7 @@ public class WorkController {
 	
 	@RequestMapping("/managelist")
 	public String manage(Model model, Pager pager) {
-		List<All> list = service.alllist(pager);
+		List<Manage> list = service.alllist(pager);
 		
 		model.addAttribute("list", list);
 		return path + "/managelist";
@@ -60,8 +68,7 @@ public class WorkController {
 	
 	@GetMapping("/chatting")
 	public String chatting() {
-		return path + "chatting";
-	
+		return path + "chatting";	
 	}
 		
 	

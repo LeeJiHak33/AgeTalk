@@ -6,7 +6,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import kr.ac.kopo.model.All;
+import kr.ac.kopo.model.Manage;
+import kr.ac.kopo.model.Match;
 import kr.ac.kopo.model.Old;
 import kr.ac.kopo.model.User;
 import kr.ac.kopo.pager.Pager;
@@ -43,8 +44,17 @@ public class WorkDaoImpl implements WorkDao {
 	}
 
 	@Override
-	public List<All> alllist(Pager pager) {
+	public List<Manage> alllist(Pager pager) {
 		return sql.selectList("work.alllist_select", pager);
 	}
+
+	@Override
+	public void match_insert(Match item) {
+		sql.insert("work.match_insert", item);	
+	}
+
+	
+	
+	
 	
 }

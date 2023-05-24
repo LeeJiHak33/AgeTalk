@@ -25,24 +25,18 @@
 		SELECT COUNT(*) FROM old
 	</select>
 	
-	<select id="alllist_select" resultType="All">
-		SELECT o.name, o.hyp, y.name, y.hyp
-	FROM old o
-	LEFT JOIN `match` m ON m.s_id = o.s_id
-	LEFT JOIN user y ON m.user_id = y.id
+	<select id="alllist_select" resultType="Manage">
+		SELECT o.name oname, o.hyp ohyp, y.name yname, y.hyp yhyp, o.s_id oid
+		FROM old o
+		LEFT JOIN `match` m ON (m.s_id = o.s_id)
+		LEFT JOIN user y ON (m.user_id = y.id)
 
-	</select>	
-	<!-- <insert id="notice_insert">
-		insert into notice(title,content,date,user_id) values (#{title},#{content},NOW(),#{userId})
-	</insert>
-	<select id="notice_item" resultType="Notice">
-		select * from notice where id=#{id}
 	</select>
-	
-	<update id="notice_update">
-		update notice set title=#{title} , content=#{content} where id=#{id}
-	</update>
-	<delete id="notice_delete">
-		delete from notice where id=#{id}
-	</delete> -->
+	<select id="oldlist_item" resultType="Old">
+		SELECT s_id from old;
+	</select>	
+	<insert id="match_insert">
+	INSERT INTO match(id matchid, user_id yid, s_id id)
+		VALUES(#{id}, #{yid})
+	</insert>
 </mapper>
