@@ -192,14 +192,20 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public void notice_viewCount(int id) {
-		// TODO Auto-generated method stub
+
 		dao.notice_viewCount(id);
 	}
 
 	@Override
 	public List<Chat> chat_list(int matchId) {
-		// TODO Auto-generated method stub
+		
 		return dao.chat_list(matchId);
+	}
+
+	@Override
+	public void chatting_add(Chat item) {
+		dao.chatting_add(item);
+		
 	}
 
 }

@@ -145,4 +145,9 @@ public class UserDaoImpl implements UserDao {
 		return sql.selectList("user.chat_list", matchId);
 	}
 
+	@Override
+	public void chatting_add(Chat item) {
+		sql.insert("user.chatting_add",item);		
+	}
+
 }

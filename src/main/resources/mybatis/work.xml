@@ -23,6 +23,8 @@
 	
 	<select id="alllist_total" resultType="Integer">
 		SELECT COUNT(*) FROM old
+		
+	</select>
 	<select id="login" resultType="Work">
 		SELECT *
 		FROM work

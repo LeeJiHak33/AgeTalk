@@ -74,18 +74,76 @@ $(document).ready(function () {
   });
   $("#date").css("display", "hidden");
   
-  console.log(`${matchId}`);  
+  console.log($(location).attr('pathname'));
+  const pathname=$(location).attr('pathname');
+  const path=  pathname.split('/');
+  const matchId=parseInt(path[3])
+  console.log(path[3]);
 
+  $(".chatting").keydown(function (key){
+    if(key.keyCode ==13){
+      const content=$(".chatting").val();
+      console.log(content);
+      const item ={
+        content:content,
+        matchId:matchId
+      }
+      console.log(item);
+      fetch('../chatting_add',{
+        method: "POST",
+        headers:{'content-type':'application/json'},
+        body:JSON.stringify(item)
+      })
+      .then(resp =>{
+        if(resp.status==200){
+          return resp.json()
+        }
+      })
+      .then(result =>{
+          console.log(result);
+          const tag=$('.chatting_list');
+          const div=document.createElement("div");
+          div.classList.add('my_chatting_wrap');
+          div.innerHTML=
+            "<div class=\"my_chatting\">"+
+            "<p>"+result.content+"</p>"+
+            "</div>";
+            tag.append(div)
+         $(".chatting").val('');
+          $(".chatting").prop('disabled',true)
+      });
+    }
+  });
   $(".chatting_btn").click(function(){
-    const content=$("chatting").val();
-    fetch('../chatting_add')
+    const content=$(".chatting").val();
+    console.log(content);
+    const item ={
+      content:content,
+      matchId:matchId
+    }
+    console.log(item);
+    fetch('../chatting_add',{
+      method: "POST",
+      headers:{'content-type':'application/json'},
+      body:JSON.stringify(item)
+    })
     .then(resp =>{
       if(resp.status==200){
         return resp.json()
       }
     })
     .then(result =>{
-
+        console.log(result);
+        const tag=$('.chatting_list');
+        const div=document.createElement("div");
+        div.classList.add('my_chatting_wrap');
+        div.innerHTML=
+          "<div class=\"my_chatting\">"+
+          "<p>"+result.content+"</p>"+
+          "</div>";
+          tag.append(div)
+       $(".chatting").val('');
+        $(".chatting").prop('disabled',true)
     });
   });  
 });
