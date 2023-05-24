@@ -16,6 +16,7 @@ import kr.ac.kopo.model.Comment;
 import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.Qna;
 import kr.ac.kopo.model.User;
+import kr.ac.kopo.model.Chat;
 import kr.ac.kopo.pager.Pager;
 import kr.ac.kopo.service.UserService;
 
@@ -28,8 +29,10 @@ public class UserController {
 	UserService service;
 	
 	
-	@GetMapping("/chatting")
-	public String chatting() {
+	@GetMapping("/chatting/{matchId}")
+	public String chatting(@PathVariable int matchId, Model model) {
+		List<Chat> list =service.chat_list(matchId);
+		model.addAttribute("list", list);
 		return path+"chatting";
 	}
 		

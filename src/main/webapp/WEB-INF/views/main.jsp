@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,21 +23,27 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
       $(document).ready(function () {
-        $(".popup").click(function () {
-          console.log("팝업");
-          window.open(
-            "../user/chatting",
-            "_blank",
-            "top=100, left=300, width=430, height=750, toolbar=no, menubar=no, location=no, status=no,  resizable=no"
-          ).onresize = (_) => {
-            popupWindow.resizeTo(430, 750);
-          };
-        });
+    	
+    	//const matchId=$('.matchId').text();
+    	const matchId=${sessionScope.user.matchId}
+    	console.log("df",matchId);
+    
+    	    $(".popup").click(function () {
+    	          console.log("팝업");
+    	          window.open(
+    	            "../user/chatting/"+matchId,
+    	            "_blank",
+    	            "top=100, left=300, width=430, height=750, toolbar=no, menubar=no, location=no, status=no,  resizable=no"
+    	          ).onresize = (_) => {
+    	            popupWindow.resizeTo(430, 750);
+    	          };
+    	        });   	
       });
     </script>
 </head>
 
 <body>
+
 	<div class="main">
 		<jsp:include page="user/header.jsp"></jsp:include>
 		<div class="bg_img">

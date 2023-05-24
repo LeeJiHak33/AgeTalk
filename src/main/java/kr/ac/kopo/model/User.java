@@ -8,6 +8,7 @@ public class User {
 	private int hyp;
 	private int author;
 	private int status;
+	private int matchId;
 	
 	public int getStatus() {
 		return status;
@@ -50,6 +51,12 @@ public class User {
 	}
 	public void setAuthor(int author) {
 		this.author = author;
+	}
+	public int getMatchId() {
+		return matchId;
+	}
+	public void setMatchId(int matchId) {
+		this.matchId = matchId;
 	}
 
 }

@@ -22,7 +22,7 @@
           <ul class="menu_list" style="margin-bottom: 0; padding-left: 0">
             <li><a href="../../user/explain" style="text-decoration: none">소개</a></li>
             <li>
-              <a class="popup" style="text-decoration: none; cursor: pointer"
+              <a class="popup" style="text-decoration: none; cursor: pointer" 
                 >채팅하기
                 </a>
             </li>

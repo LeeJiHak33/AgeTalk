@@ -8,9 +8,9 @@
 	</select>
 	
 	<select id="login" resultType="User">
-		SELECT *
-		FROM user
-		WHERE id=#{id} AND pwd=#{pwd}
+		SELECT u.* ,m.id matchId FROM 
+		user u  left JOIN `match` m ON u.id=m.user_id 
+		WHERE u.id=#{id} AND pwd=#{pwd} ;
 			
 	</select>
 	
@@ -123,9 +123,12 @@
 	</select>
 	
 	<select id="login_admin" resultType="Integer">
-		select count(*) from user where author=1 and id=#{id} and pwd=#{pwd}
+		select name,id from user where author=1 and id=#{id} and pwd=#{pwd}
 	</select>
 	<update id="notice_viewCount">
 		update notice set view=view+1 where id=#{id}
 	</update>
+	<select id="chat_list" resultType="Chat">
+		select * from chat where id=#{matchId}
+	</select>
 </mapper>
