@@ -201,3 +201,10 @@ th {
 .bbsView.page tbody tr td a {
   font-family: "NotoSerif";
 }
+.bottom{
+	color: #000000;
+}
+.off{
+	color:#777;
+	cursor: default;
+}

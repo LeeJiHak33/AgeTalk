@@ -16,7 +16,7 @@
 		<typeAlias type="kr.ac.kopo.model.User" alias="User" />
 		<typeAlias type="kr.ac.kopo.model.Old" alias="Old" />
 		<typeAlias type="kr.ac.kopo.model.Report" alias="Report"/>
-	
+		<typeAlias type="kr.ac.kopo.model.Chat" alias="Chat"/>
 	</typeAliases>
 	
 	<mappers>

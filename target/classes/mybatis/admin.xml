@@ -15,7 +15,10 @@
 		insert into notice(title,content,date,user_id) values (#{title},#{content},NOW(),#{userId})
 	</insert>
 	<select id="notice_item" resultType="Notice">
-		select * from notice where id=#{id}
+		select n.*,
+		(SELECT id FROM notice where id  <![CDATA[>]]> #{id} ORDER BY id  LIMIT 1) prev,
+		(SELECT id FROM notice where id  <![CDATA[<]]> #{id} ORDER BY id DESC LIMIT 1) next
+		from notice n where id=#{id}
 	</select>
 	
 	<update id="notice_update">

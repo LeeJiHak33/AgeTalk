@@ -6,6 +6,7 @@ import kr.ac.kopo.model.Comment;
 import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.Qna;
 import kr.ac.kopo.model.User;
+import kr.ac.kopo.model.Chat;
 import kr.ac.kopo.pager.Pager;
 
 public interface UserDao {
@@ -52,6 +53,12 @@ public interface UserDao {
 
 
 	int notice_total();
+
+	User login_admin(User item);
+
+	void notice_viewCount(int id);
+
+	List<Chat> chat_list(int matchId);
 
 
 }

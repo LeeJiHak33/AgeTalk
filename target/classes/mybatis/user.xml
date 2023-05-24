@@ -8,9 +8,9 @@
 	</select>
 	
 	<select id="login" resultType="User">
-		SELECT id, pwd, name, phone, hyp, author, status, inspection
-		FROM user
-		WHERE id=#{id} AND pwd=#{pwd}
+		SELECT u.* ,m.id matchId FROM 
+		user u  left JOIN `match` m ON u.id=m.user_id 
+		WHERE u.id=#{id} AND pwd=#{pwd} ;
 			
 	</select>
 	
@@ -79,10 +79,15 @@
 
 	<select id="notice" resultType="Notice">
 		select id,title,date from notice
+		ORDER BY id desc
+		LiMIT #{offset},#{perPager} 
 	</select>
 	
 	<select id="notice_item" resultType="Notice">
-		select * from notice where id=#{id}
+		select n.*,
+		(SELECT id FROM notice where id  <![CDATA[>]]> #{id} ORDER BY id  LIMIT 1) prev,
+		(SELECT id FROM notice where id  <![CDATA[<]]> #{id} ORDER BY id DESC LIMIT 1) next
+		from notice n where id=#{id}
 	</select>
 	
 	<update id="hyp_update">
@@ -116,5 +121,15 @@
 
 	<select id="notice_total" resultType="Integer">
 		select count(*) from notice
+	</select>
+	
+	<select id="login_admin" resultType="Integer">
+		select name,id from user where author=1 and id=#{id} and pwd=#{pwd}
+	</select>
+	<update id="notice_viewCount">
+		update notice set view=view+1 where id=#{id}
+	</update>
+	<select id="chat_list" resultType="Chat">
+		select * from chat where id=#{matchId}
 	</select>
 </mapper>

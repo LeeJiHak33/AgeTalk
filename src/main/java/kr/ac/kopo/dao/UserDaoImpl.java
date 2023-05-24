@@ -10,6 +10,7 @@ import kr.ac.kopo.model.Comment;
 import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.Qna;
 import kr.ac.kopo.model.User;
+import kr.ac.kopo.model.Chat;
 import kr.ac.kopo.pager.Pager;
 
 @Repository
@@ -124,6 +125,24 @@ public class UserDaoImpl implements UserDao {
 	@Override	
 	public int notice_total() {
 		return sql.selectOne("user.notice_total");
+	}
+
+	@Override
+	public User login_admin(User item) {
+		// TODO Auto-generated method stub
+		return sql.selectOne("user.login_admin", item);
+	}
+
+	@Override
+	public void notice_viewCount(int id) {
+		// TODO Auto-generated method stub
+		sql.update("user.notice_viewCount", id);
+	}
+
+	@Override
+	public List<Chat> chat_list(int matchId) {
+		// TODO Auto-generated method stub
+		return sql.selectList("user.chat_list", matchId);
 	}
 
 }
