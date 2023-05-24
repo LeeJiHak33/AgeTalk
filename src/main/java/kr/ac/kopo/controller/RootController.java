@@ -1,5 +1,9 @@
 package kr.ac.kopo.controller;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.UUID;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +14,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+
+import kr.ac.kopo.model.Attach;
 import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.User;
 import kr.ac.kopo.model.Work;
@@ -18,6 +25,8 @@ import kr.ac.kopo.service.WorkService;
 
 @Controller
 public class RootController {
+	final String uploadPath = "d://upload/";
+	
 	
 	@Autowired
 	WorkService w_service;
@@ -122,8 +131,44 @@ public class RootController {
 
 	@PostMapping("/signup_work")
 	public String signup_work(Work item) {
-		w_service.signup_work(item);
+		
+		System.out.println("item");
+		
+		try {
+			MultipartFile file = item.getFiles();
+		    System.out.println("controller: "+ item.getFiles());
+
+				if (file != null) {
+					String name = file.getOriginalFilename();
+					String uuid = UUID.randomUUID().toString();
+
+					file.transferTo(new File(uploadPath + uuid + "_" + name));
+
+					Attach attachItem = new Attach();
+					attachItem.setUuid(uuid);
+					attachItem.setName(name);
+					attachItem.setWorkId(item.getId());
+					item.setAttachs(attachItem);
+				}
+			
+		
+			w_service.signup_work(item);
+			
+		} catch (IllegalStateException | IOException e) {
+			e.printStackTrace();
+		}
+		
 		return "signup_success_work";
+	}
+	
+	@ResponseBody
+	@RequestMapping("/delete_attach/{id}")
+	public String deleteAttach(@PathVariable int id) {
+		if(w_service.deleteAttach(id)) {
+			return "OK";
+		}else {
+			return "FAIL";
+		}
 	}
 	
 	@ResponseBody

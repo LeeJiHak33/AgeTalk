@@ -2,6 +2,7 @@ package kr.ac.kopo.dao;
 
 import java.util.List;
 
+import kr.ac.kopo.model.Attach;
 import kr.ac.kopo.model.Old;
 import kr.ac.kopo.model.User;
 import kr.ac.kopo.model.Work;
@@ -22,5 +23,7 @@ public interface WorkDao {
 	void signup_work(Work item);
 
 	int checkId_work(String id);
+
+	void addAttach(Attach attachs);
 
 }

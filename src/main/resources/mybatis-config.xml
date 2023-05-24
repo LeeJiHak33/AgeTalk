@@ -11,7 +11,7 @@
 		<typeAlias type="kr.ac.kopo.model.Qna" alias="Qna"/>
 		<typeAlias type="kr.ac.kopo.model.Notice" alias="Notice"/>
 		<typeAlias type="kr.ac.kopo.model.Comment" alias="Comment"/>
-
+		<typeAlias type="kr.ac.kopo.model.Attach" alias="Attach"/>
 		<typeAlias type="kr.ac.kopo.model.Work" alias="Work"/>
 		<typeAlias type="kr.ac.kopo.model.User" alias="User" />
 		<typeAlias type="kr.ac.kopo.model.Old" alias="Old" />
@@ -23,5 +23,6 @@
 		<mapper resource="mybatis/user.xml"/>
 		<mapper resource="mybatis/admin.xml"/>
 		<mapper resource="mybatis/work.xml"/>
+		<mapper resource="mybatis/attach.xml"/>
 	</mappers>
 </configuration>

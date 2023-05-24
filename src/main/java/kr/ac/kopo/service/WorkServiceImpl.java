@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import kr.ac.kopo.dao.AttachDao;
 import kr.ac.kopo.dao.WorkDao;
 import kr.ac.kopo.model.Old;
 import kr.ac.kopo.model.User;
@@ -12,9 +14,12 @@ import kr.ac.kopo.model.Work;
 import kr.ac.kopo.pager.Pager;
 @Service
 public class WorkServiceImpl implements WorkService {
+	
 	@Autowired
 	WorkDao dao;
 
+	@Autowired
+	AttachDao attachDao;
 
 	@Override
 	public List<User> youthlist(Pager pager) {
@@ -49,8 +54,12 @@ public class WorkServiceImpl implements WorkService {
 
 
 	@Override
+	@Transactional
 	public void signup_work(Work item) {
 		dao.signup_work(item);
+		
+		dao.addAttach(item.getAttachs());
+		
 		
 	}
 
@@ -62,6 +71,19 @@ public class WorkServiceImpl implements WorkService {
 		else
 			return false;
 	}
+
+
+	@Override
+	public boolean deleteAttach(int id) {
+		if(attachDao.delete(id)) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+
 
 
 	}

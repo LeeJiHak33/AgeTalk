@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import kr.ac.kopo.model.Attach;
 import kr.ac.kopo.model.Old;
 import kr.ac.kopo.model.User;
 import kr.ac.kopo.model.Work;
@@ -51,5 +52,11 @@ public class WorkDaoImpl implements WorkDao {
 	@Override
 	public int checkId_work(String id) {
 		return sql.selectOne("work.check_id", id);
+	}
+
+	@Override
+	public void addAttach(Attach attachs) {
+		sql.insert("attach.add", attachs);
+		
 	}
 }

@@ -19,5 +19,9 @@ public interface WorkService {
 
 	boolean checkId_work(String id);
 
+	boolean deleteAttach(int id);
+
+	
+
 
 }

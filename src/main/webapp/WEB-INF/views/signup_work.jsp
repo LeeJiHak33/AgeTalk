@@ -30,7 +30,7 @@
 
 			<div class="su_wrap">
 				<h2>복지사 회원가입</h2>
-				<form method="post" name="signup_form">
+				<form method="post" name="signup_form"  enctype="multipart/form-data">
 					<div class="lg_wrap">
 						<div class="id_wrap">
 							<label>아이디</label>
@@ -57,15 +57,12 @@
 								placeholder="'-'를 제외하고 입력해주세요" oninput="autoHyphen(this)">
 						</div>
 					</div>
-
-					<form action="upload" method="post" enctype="multipart/form-data">
 						<label id="file_label">관련 서류제출</label>
 						<div class="filebox btn_upload">
 							<input class="upload_name" value="선택된 파일이 없습니다."
 								disabled="disabled"> <label for="files">파일선택</label> <input
 								type="file" name="files" id="files" class="upload_hidden">
 						</div>
-					</form>
 					<div id="file_chk">
 						<p>*복지사임을 인증할 수 있는 파일을 첨부해주세요.</p>
 					</div>
