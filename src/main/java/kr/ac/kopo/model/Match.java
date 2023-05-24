@@ -2,7 +2,7 @@ package kr.ac.kopo.model;
 
 public class Match {
 private int matchid;
-private String id;
+private String sid;
 private String yid;
 
 public int getMatchid() {
@@ -11,11 +11,12 @@ public int getMatchid() {
 public void setMatchid(int matchid) {
 	this.matchid = matchid;
 }
-public String getId() {
-	return id;
+
+public String getSid() {
+	return sid;
 }
-public void setId(String id) {
-	this.id = id;
+public void setSid(String sid) {
+	this.sid = sid;
 }
 public String getYid() {
 	return yid;

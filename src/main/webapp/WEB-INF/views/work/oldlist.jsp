@@ -48,11 +48,7 @@
 		<div class="sub_tle">
 			
 			<div class="y_list">
-				<div class="ct_2">
-					<a href="./youthlist" class="yetc-link">청년 목록</a>
-					<span class="separator">|</span>
-					<a class="chosen-link" href="./oldlist" >어르신 목록</a>
-				  </div>
+				
 				<table border="1" class="table table-sm  table-hover">
 					<thead>
 						<tr>

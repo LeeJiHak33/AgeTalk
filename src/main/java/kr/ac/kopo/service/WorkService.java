@@ -16,7 +16,8 @@ public interface WorkService {
 
 	List<Manage> alllist(Pager pager);
 	
-	void match(String id, String yid);
+	void match(String sid, String yid);
+	
 	boolean login_work(Work work);
 
 	void signup_work(Work item);
@@ -24,6 +25,8 @@ public interface WorkService {
 	boolean checkId_work(String id);
 
 	boolean deleteAttach(int id);
+
+	void matchdelete(int matchid);
 
 	
 

@@ -76,4 +76,10 @@ public class WorkDaoImpl implements WorkDao {
 		sql.insert("attach.add", attachs);
 		
 	}
+
+	@Override
+	public void match_delete(Match item) {
+		sql.delete("work.match_delete", item);	
+		
+	}
 }
