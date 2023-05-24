@@ -37,7 +37,7 @@
               </div>
               <div class="pw_wrap">
                 <label>비밀번호</label>
-                <input type="password" name="passwd" placeholder="비밀번호 입력">
+                <input type="password" name="pwd" placeholder="비밀번호 입력">
               </div>
             </div>
               <div class="login-options">
@@ -52,7 +52,7 @@
                 </div>
               </div>
               <div class="lg_btn">
-                <a>로그인</a>
+               	<button type="submit">로그인</button>
               </div>
             </form>
           </div>
