@@ -18,8 +18,8 @@
 		<typeAlias type="kr.ac.kopo.model.Manage" alias="Manage" />
 		<typeAlias type="kr.ac.kopo.model.Report" alias="Report"/>
 		<typeAlias type="kr.ac.kopo.model.Match" alias="Match"/>
-		<typeAlias type="kr.ac.kopo.model.Chat" alias="Chat"/>
 	
+		<typeAlias type="kr.ac.kopo.model.Chat" alias="Chat"/>
 	</typeAliases>
 	
 	<mappers>
