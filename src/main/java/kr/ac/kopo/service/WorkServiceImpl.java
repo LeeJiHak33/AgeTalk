@@ -47,7 +47,8 @@ public class WorkServiceImpl implements WorkService {
 		pager.setTotal(alltotal);
 		return dao.alllist(pager);
 	}
-
+	
+	@Override
 	public boolean login_work(Work work) {
 		Work item = dao.login_work(work);
 		if (item != null) {
