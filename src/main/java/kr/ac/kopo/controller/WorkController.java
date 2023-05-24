@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.ac.kopo.model.Manage;
@@ -44,6 +45,15 @@ public class WorkController {
 		
 		model.addAttribute("list", list);
 		return path+"managelist";
+	}
+	@GetMapping("/add")
+	public String add(Model model) {
+		return path + "add";
+	}
+	@PostMapping
+	public String add() {
+	service.add(item);
+	return "redirect:managelist";
 	}
 	
 	@GetMapping("/maninsert")

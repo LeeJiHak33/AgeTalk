@@ -103,6 +103,15 @@ public class WorkServiceImpl implements WorkService {
 		
 		dao.match_delete(item);
 		
+	}
+
+
+	
+
+	@Override
+	public void add() {
+		dao.add(item);
+		
 	}	
 	}
 

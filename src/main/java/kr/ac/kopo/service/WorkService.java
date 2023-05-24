@@ -28,6 +28,8 @@ public interface WorkService {
 
 	void matchdelete(int matchid);
 
+	void add();
+
 	
 
 
