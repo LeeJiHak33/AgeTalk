@@ -8,8 +8,8 @@
 	</select>
 	
 	<select id="login" resultType="User">
-		SELECT u.* ,m.id matchId FROM 
-		user u  left JOIN `match` m ON u.id=m.user_id 
+		SELECT u.* , m.id matchId 
+		FROM user u LEFT JOIN `match` m ON u.id = m.user_id 
 		WHERE u.id=#{id} AND pwd=#{pwd} ;
 			
 	</select>

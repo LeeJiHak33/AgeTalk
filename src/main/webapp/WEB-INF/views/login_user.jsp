@@ -72,8 +72,12 @@
 				</div>
 			</div>
 		</div>
+<<<<<<< Updated upstream
 
 		<script src="/resources/js/login_user.js"></script>
+=======
+		
+>>>>>>> Stashed changes
 		<jsp:include page="footer.jsp"></jsp:include>
 
 	</div>
