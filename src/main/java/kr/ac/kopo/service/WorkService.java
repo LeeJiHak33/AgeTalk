@@ -26,6 +26,8 @@ public interface WorkService {
 
 	boolean deleteAttach(int id);
 
+	void matchdelete(int matchid);
+
 	
 
 

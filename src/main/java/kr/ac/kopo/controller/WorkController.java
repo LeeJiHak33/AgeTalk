@@ -28,23 +28,7 @@ public class WorkController {
 	 * 
 	 * return path + "youthlist"; }
 	 *
-	 */	
-	@RequestMapping("/youthlist/{id}")
-	public String youth(@PathVariable String id, Model model, Pager pager) {
-		
-		List<User> list = service.youthlist(pager);
-	
-		model.addAttribute("list", list);
-		
-		return path + "youthlist";
-	}
-	@RequestMapping("/youthlist/{sid}/{yid}")
-	public String match(@PathVariable String sid, @PathVariable String yid) {
-		service.match(sid, yid);
-		
-		return "redirect:managelist";
-	}
-	
+	 */				
 	
 	@RequestMapping("/oldlist")
 	public String old(Model model, Pager pager) {

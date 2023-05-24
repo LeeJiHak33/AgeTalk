@@ -44,11 +44,7 @@
 		<div class="sub_tle">
 			
 			<div class="y_list">
-				<div class="ct_2">
-					<a class="chosen-link" href="../work/youthlist">청년 목록</a>
-					<span class="separator">|</span>
-					<a href="../work/oldlist" class="yetc-link">어르신 목록</a>
-				  </div>
+				
 				<table border="1" class="table table-sm  table-hover">
 					<thead>
 						<tr>
@@ -77,7 +73,7 @@
             </div>
         </td>
         <td data-table="phone">${item.phone}</td>
-        <td><a href="/work/youthlist/${item.id}"><button class="del_btn">매칭하기</button></a></td>
+        <td><a href="../../work/youthlist/${item.id}"><button class="del_btn">매칭하기</button></a></td>
     </tr>
 </c:forEach>
 </table>

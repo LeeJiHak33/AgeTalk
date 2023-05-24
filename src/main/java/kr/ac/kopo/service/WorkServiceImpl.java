@@ -96,4 +96,14 @@ public class WorkServiceImpl implements WorkService {
 		}
 	}
 
+	@Override
+	public void matchdelete(int matchid) {
+		Match item = new Match();
+		item.setMatchid(matchid);
+		
+		dao.match_delete(item);
+		
+	}	
 	}
+
+	

@@ -56,7 +56,7 @@
 
               <div class="modal-footer">
                 <div class="modal_btns">
-                  <button type="button" class="btn_update">정보수정</button>                  
+                  <button type="button" class="btn_update">사용자 등록</button>                  
                 </div>
               </div>
             </div>

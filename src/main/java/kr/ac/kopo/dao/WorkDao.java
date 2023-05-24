@@ -36,4 +36,6 @@ public interface WorkDao {
 
 	void addAttach(Attach attachs);
 
+	void match_delete(Match item);
+
 }

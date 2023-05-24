@@ -43,7 +43,7 @@
 	
 	
 	<select id="alllist_select" resultType="Manage">
-		SELECT o.name oname, o.hyp ohyp, y.name yname, y.hyp yhyp, o.s_id oid
+		SELECT o.name oname, o.hyp ohyp, y.name yname, y.hyp yhyp, o.s_id oid, y.id yid, m.id matchid
 		FROM old o
 		LEFT JOIN `match` m ON (m.s_id = o.s_id)
 		LEFT JOIN user y ON (m.user_id = y.id)
@@ -54,7 +54,11 @@
 	</select>	
 	
 	<insert id="match_insert">
-	INSERT INTO match(user_id yid, s_id sid)
+	INSERT INTO `match`(s_id, user_id)
 		VALUES(#{sid}, #{yid})
 	</insert>
+	<delete id="match_delete">
+		DELETE FROM `match`
+		WHERE id = #{matchid}
+	</delete>
 </mapper>

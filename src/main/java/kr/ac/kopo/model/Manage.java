@@ -6,7 +6,21 @@ private String yname;
 private int ohyp;
 private int yhyp;
 private String oid;
+private String yid;
+private int matchid;
 
+public int getMatchid() {
+	return matchid;
+}
+public void setMatchid(int matchid) {
+	this.matchid = matchid;
+}
+public String getYid() {
+	return yid;
+}
+public void setYid(String yid) {
+	this.yid = yid;
+}
 public String getOid() {
 	return oid;
 }

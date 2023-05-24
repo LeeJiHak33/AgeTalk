@@ -101,7 +101,7 @@ header .menu_wrap .sub_list {
 										<td>매칭 상대가 없습니다.</td>
 										<td></td>
 										<td>진행중인 채팅이 없습니다</td>
-										<td><a href="../work/youthlist/${item.oid}"><button
+										<td><a href="/${item.oid}/work/youthlist/"><button
 													class="youthlist_btn">매칭하기</button></a></td>
 									</c:if>
 									<c:if test="${not empty item.yname}">
@@ -111,6 +111,9 @@ header .menu_wrap .sub_list {
 												<div id="my_div" class="progress-bar" role="progressbar"
 													aria-valuemin="0" aria-valuemax="100">
 													<div>${item.yhyp}<span>%</span>
+													<td>채팅 바로가기</td>
+													<td><a href="/${item.matchid}/work/youthlist/delete"><button
+													class="del_btn">매칭해제</button></a></td>
 													</div>
 												</div>
 											</div>
