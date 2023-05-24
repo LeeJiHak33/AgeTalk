@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import kr.ac.kopo.dao.AdminDao;
 import kr.ac.kopo.model.Notice;
 import kr.ac.kopo.model.Report;
-import kr.ac.kopo.model.User;
 import kr.ac.kopo.model.Work;
 import kr.ac.kopo.pager.Pager;
 

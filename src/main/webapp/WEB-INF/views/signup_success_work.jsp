@@ -7,15 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
-    <link rel="stylesheet" href="resources/css/signup_success_work.css">
-    <link rel="stylesheet" href="resoruces/css/index.css">
+    <link rel="stylesheet" href="/resources/css/signup_success_work.css">
+    <link rel="stylesheet" href="/resources/css/index.css">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <!--파비콘-->
-    <link rel="shortcut icon" href="resources/image/favicon/favicon.ico"> <!--추가-->
+    <link rel="shortcut icon" href="/resources/image/favicon/favicon.ico"> <!--추가-->
 
 </head>
 <body>
@@ -38,6 +38,7 @@
            <a href=".." style="color: white;" class="lg_btn">메인으로</a>
       </div>
 
+    </div>
     </div>
     <jsp:include page="footer.jsp"></jsp:include>
 </body>

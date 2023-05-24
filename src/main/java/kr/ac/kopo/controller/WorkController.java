@@ -44,7 +44,7 @@ public class WorkController {
 		return path + "oldlist";
 	}
 	
-	@RequestMapping("/managelist")
+	@RequestMapping("/managelist" )
 	public String manage() {
 		return path + "/managelist";
 	}
