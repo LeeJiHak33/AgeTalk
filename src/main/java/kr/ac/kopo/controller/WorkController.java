@@ -50,8 +50,8 @@ public class WorkController {
 	public String add(Model model) {
 		return path + "add";
 	}
-	@PostMapping
-	public String add() {
+	@PostMapping("/add")
+	public String add(Old item) {
 	service.add(item);
 	return "redirect:managelist";
 	}

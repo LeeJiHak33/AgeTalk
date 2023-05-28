@@ -38,4 +38,6 @@ public interface WorkDao {
 
 	void match_delete(Match item);
 
+	void add(Old item);
+
 }

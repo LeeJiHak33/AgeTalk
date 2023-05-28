@@ -30,6 +30,8 @@ public interface WorkService {
 
 	void add();
 
+	void add(Old item);
+
 	
 
 

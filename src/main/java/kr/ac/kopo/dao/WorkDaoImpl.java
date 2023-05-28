@@ -82,4 +82,10 @@ public class WorkDaoImpl implements WorkDao {
 		sql.delete("work.match_delete", item);	
 		
 	}
+
+	@Override
+	public void add(Old item) {
+		sql.insert("work.old_insert", item);	
+		
+	}
 }

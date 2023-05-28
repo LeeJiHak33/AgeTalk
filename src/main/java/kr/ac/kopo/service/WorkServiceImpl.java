@@ -109,8 +109,15 @@ public class WorkServiceImpl implements WorkService {
 	
 
 	@Override
-	public void add() {
+	public void add(Old item) {
 		dao.add(item);
+		
+	}
+
+
+	@Override
+	public void add() {
+		// TODO Auto-generated method stub
 		
 	}	
 	}
