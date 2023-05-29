@@ -198,7 +198,7 @@
 	                </div>
 	                <div class="modal-footer">
 	                <div class="modal_btns">
-	                  <button type="button" class="btn_update" id="modal_submit">정보수정</button>
+	                  <button type="button" class="btn_update" id="modal_submit">수정하기</button>
 	                  <button type="button" class="btn_out" id="modal_out">회원탈퇴</button>
 	                </div>
 	              	</div>
