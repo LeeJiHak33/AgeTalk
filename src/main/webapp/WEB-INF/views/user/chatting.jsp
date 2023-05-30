@@ -73,8 +73,10 @@
 
 
 			<div class="chatting_input_wrap">
-				
-					<input type="text" class="chatting " ${list.get(list.size()-1).status == 0 ? 'disabled':''} />
+					<c:if test="${list.size() >0 }">
+						<c:set  var="status" value=" ${list.get(list.size()-1).status == 0 ? 'disabled':''}"></c:set>
+					</c:if>
+					<input type="text" class="chatting "  ${status} />
 					<button type="button" class="chatting_btn"></button>
 				
 			</div>
