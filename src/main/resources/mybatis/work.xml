@@ -54,7 +54,7 @@
 	</select>	
 	<insert id="old_insert">
 	INSERT INTO old(s_id, name, hyp)
-		VALUES(#{s_id}, #{name}, #{hyp})
+		VALUES(#{sId}, #{name}, #{hyp})
 	</insert>
 	<insert id="match_insert">
 	INSERT INTO `match`(s_id, user_id)

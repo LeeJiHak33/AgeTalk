@@ -50,7 +50,7 @@
 							</div>
 							<div class="input-group mb-4">
 								<span class="text-dark input-group-text">기기번호</span> <input
-									name="s_id" type="text" id="s_id"
+									name="sId" type="text" id="sId"
 									placeholder="기기의 시리얼 번호를 입력해주세요."
 									<%-- value="${item.work_id}" --%> class="form-control">
 
@@ -71,11 +71,11 @@
 		const form = document.add_form;
 		const name = $("#name").val();
 		const hyp = $("#hyp").val();
-		const s_id = $("#s_id").val();
+		const s_id = $("#sId").val();
 		const work_id = null;
 
 		const data = {
-			s_id : s_id,
+			sId : s_id,
 			name : name,
 			hyp : hyp,
 			work_id : work_id
@@ -84,7 +84,7 @@
 		if (work_id == null) {
 		$.ajax({
 				url: "../work/add",
-				type: "get",
+				type: "post",
 				data: data,
 				success: function(response) {
 					alert("등록이 완료되었습니다.");
