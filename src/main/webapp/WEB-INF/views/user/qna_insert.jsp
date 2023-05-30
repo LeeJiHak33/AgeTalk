@@ -31,7 +31,33 @@
 			lang : "ko-KR",
 			placeholder : "최대 2048자까지 쓸 수 있습니다",
 		});
+		
+		const btn = document.getElementById('insert');
+		const form = document.insert_form;
+		
+		 btn.addEventListener('click', function() {
+
+			 event.preventDefault();
+			 
+			  if (form.title.value == "") {
+			    alert("제목을 입력해 주세요");
+			    form.title.focus();
+			    return;
+			  }
+			  
+			  if (form.content.value == "") {
+			    alert("내용을 입력해 주세요");
+			    form.content.focus();
+			    return;
+			  }
+			  
+			  	alert("등록이 완료됐습니다.");
+				form.submit();
+				return;
+	
+		 });
 	});
+
 </script>
 </head>
 
@@ -49,7 +75,7 @@
 			<h2>Q&A작성</h2>
 		</div>
 		
-		<form method="post">
+		<form method="post" name="insert_form">
 		<div class="edit">
 			<div class="insert_title">
 				<input name="title" type="text" placeholder="제목을 입력하세요" />
@@ -58,7 +84,7 @@
 				<textarea id="summernote" name="content"></textarea>
 		</div>
 		<div class="btn_area">
-			<button class="button" style="border: none; font-size: 16px;"> <span>등록</span></button>
+			<button class="button" style="border: none; font-size: 16px;" id="insert"> <span>등록</span></button>
 			
 			<span class="space"></span>
 			<a href="qna" class="button"> <span>취소</span>
@@ -67,5 +93,6 @@
 		</form>
 	</div>
 	<jsp:include page="../footer.jsp"></jsp:include>
+
 </body>
 </html>

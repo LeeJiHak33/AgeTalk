@@ -16,6 +16,7 @@
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
 	rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -85,15 +86,16 @@
 					class="btn_write">글쓰기</span>
 				</a>
 			</div>
-			<div>
+			<!-- <div>
 				<a href="qna_dummy">대량등록</a>
 			</div>
 			<div>
 				<a href="qna_init">초기화</a>
-			</div>
+			</div> -->
 			<jsp:include page="../pagenation.jsp"></jsp:include>
 		</section>	
 	</div>
+
 	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

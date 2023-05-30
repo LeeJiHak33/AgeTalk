@@ -19,7 +19,7 @@
 	rel="stylesheet" />
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-	
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script type="text/javascript">
 
 	function display(){
@@ -32,6 +32,7 @@
 		}
 		
 	}
+	
 	
 </script>
 </head>
@@ -134,14 +135,24 @@
 					 <a href="../qna_update/${item.id}"
 						class="button"> <span>수정</span>
 					</a> <span class="space"></span>
-					<a href="../qna_delete/${item.id}"
-						class="button"> <span>삭제</span>
+					<a class="button" id="delete" style="cursor:pointer;"> <span>삭제</span>
 					</a>
 				</c:if>
 			</div>
 		</section>
 		<jsp:include page="../footer.jsp"></jsp:include>
 	</div>
-	
+	<script>
+	document.getElementById('delete').addEventListener('click', function() {
+		let result = confirm("정말로 삭제하시겠습니까?")
+		
+		if(result){
+			alert("삭제가 완료됐습니다.");
+			location.href= '../qna_delete/${item.id}';
+		} else{
+			return;
+		}
+	});
+	</script>
 </body>
 </html>

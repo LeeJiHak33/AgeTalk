@@ -31,6 +31,31 @@
 			focus : true,
 			lang : "ko-KR",
 		});
+		
+		const btn = document.getElementById('insert');
+		const form = document.insert_form;
+		
+		 btn.addEventListener('click', function() {
+
+			 event.preventDefault();
+			 
+			  if (form.title.value == "") {
+			    alert("제목을 입력해 주세요");
+			    form.title.focus();
+			    return;
+			  }
+			  
+			  if (form.content.value == "") {
+			    alert("내용을 입력해 주세요");
+			    form.content.focus();
+			    return;
+			  }
+			  
+			  	alert("수정이 완료됐습니다.");
+				form.submit();
+				return;
+	
+		 });
 	});
 </script>
 </head>
@@ -58,7 +83,7 @@
 	
 		</div>
 		<div class="btn_area">
-			<button class="button" style="border: none; font-size: 16px;"> <span>변경</span></button>
+			<button class="button" style="border: none; font-size: 16px;" id="insert"> <span>변경</span></button>
 			
 			<span class="space"></span>
 			<a href="../qna" class="button"> <span>취소</span>

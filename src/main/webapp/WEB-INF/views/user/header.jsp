@@ -183,9 +183,9 @@
 		                    </div>
 						
 	                    <div style="display: flex; justify-content: flex-start">
-	                      <p class="text-dark" style="font-size: 18px;">설문조사여부 :  <c:if test="${sessionScope.user.hyp == 0}">미완료</c:if><c:if test="${sessionScope.user.hyp > 0}">완료</c:if></p>
+	                      <p class="text-dark" style="font-size: 18px;">설문조사여부 :  <c:if test="${sessionScope.user.inspection == 0}">미완료</c:if><c:if test="${sessionScope.user.inspection == 1}">완료</c:if></p>
 	                      <!--설문 완료시-->
-	                      <a href="../user/diagnosis/${sessionScope.user.id}"><button type="button" class="modal_diagnosis"><c:if test="${sessionScope.user.hyp == 0}">검사</c:if><c:if test="${sessionScope.user.hyp > 0}">재검사</c:if></button></a>
+	                      <a href="../user/diagnosis/${sessionScope.user.id}"><button type="button" class="modal_diagnosis"><c:if test="${sessionScope.user.inspection == 0}">검사</c:if><c:if test="${sessionScope.user.inspection == 1}">재검사</c:if></button></a>
 	                      <!-- 설문 미완료시 -->
 	                      <!-- <a href="../User/diagnosis.html"><button type="button" class="modal_diagnosis">재검사</button></a> -->
 	                    </div>
@@ -198,7 +198,7 @@
 	                </div>
 	                <div class="modal-footer">
 	                <div class="modal_btns">
-	                  <button type="button" class="btn_update" id="modal_submit">정보수정</button>
+	                  <button type="button" class="btn_update" id="modal_submit">수정하기</button>
 	                  <button type="button" class="btn_out" id="modal_out">회원탈퇴</button>
 	                </div>
 	              	</div>
