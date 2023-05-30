@@ -14,7 +14,7 @@ pageEncoding="UTF-8"%>
   <body>
     <header>
       <div class="logo_wrap">
-		<a href="../"><img src="../../../resources/image/agetalk_logo.png" alt="logo" /></a>
+		<a href="../"><img src="/resources/image/agetalk_logo.png" alt="logo" /></a>
       </div>
       <div class="menu_wrap">
         <ul class="menu_list">
@@ -22,15 +22,15 @@ pageEncoding="UTF-8"%>
           <li>
             <a href="">관리</a>
             <ul class="sub_list">
-              <li class="sub_menu"><a href="./oldlist">사용자 관리</a></li>
-			  <li class="sub_menu"><a href="./managelist">매칭 관리</a></li>
+              <li class="sub_menu"><a href="../../../work/oldlist">사용자 관리</a></li>
+			  <li class="sub_menu"><a href="../../../work/managelist">매칭 관리</a></li>
             </ul>
           </li>
           <li>
               <a href="../user/notice" style="text-decoration: none">고객센터</a>
               	<ul class="sub_list" style="padding:0; padding-top:20px;">
-						<li class="sub_menu"><a href="../user/notice">공지사항</a></li>
-						<li class="sub_menu"><a href="../user/qna">QnA</a></li>
+						<li class="sub_menu"><a href="../../user/notice">공지사항</a></li>
+						<li class="sub_menu"><a href="../../user/qna">QnA</a></li>
 				</ul>
             </li>
         </ul>

@@ -30,6 +30,11 @@ public interface WorkService {
 
 	void add(Old item);
 
+	void update_old(Old item, String id);
+
+	void olddelete(String sId);
+
+
 	
 
 

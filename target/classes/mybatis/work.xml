@@ -12,7 +12,7 @@
 		SELECT COUNT(*) FROM user
 	</select>
 	<select id="oldlist_select" resultType="Old">
-		SELECT name, hyp
+		SELECT s_id, name, hyp
 		FROM old
 		ORDER BY name desc
 	</select>	
@@ -64,4 +64,14 @@
 		DELETE FROM `match`
 		WHERE id = #{matchid}
 	</delete>
+	<update id="work.update_old">
+		UPDATE old
+		SET name = #{name}, hyp = #{hyp}
+		WHERE s_id = #{sId}
+	</update>
+	<delete id="olddelete">
+		DELETE FROM old
+		WHERE s_id = #{sId}
+	</delete>
+	
 </mapper>

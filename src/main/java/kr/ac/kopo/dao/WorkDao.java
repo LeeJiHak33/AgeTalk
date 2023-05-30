@@ -40,4 +40,8 @@ public interface WorkDao {
 
 	void add(Old item);
 
+	Old update_old(Old item, String id);
+
+	void olddelete(String sId);
+
 }

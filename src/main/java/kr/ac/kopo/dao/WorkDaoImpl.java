@@ -88,4 +88,17 @@ public class WorkDaoImpl implements WorkDao {
 		sql.insert("work.old_insert", item);	
 		
 	}
+
+	@Override
+	public Old update_old(Old item, String id) {
+		sql.update("work.update_old", item);
+		return item;
+		
+	}
+
+	@Override
+	public void olddelete(String sId) {
+		sql.delete("work.olddelete", sId);	
+		
+	}
 }
