@@ -180,6 +180,8 @@ public class RootController {
 
 		return item;
 	}
+	
+	
 
 	@RequestMapping("/out/{id}")
 	public String out(@PathVariable String id, HttpSession session) {

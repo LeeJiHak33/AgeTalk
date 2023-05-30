@@ -53,8 +53,8 @@
 		SELECT s_id from old;
 	</select>	
 	<insert id="old_insert">
-	INSERT INTO old(name, hyp, s_id)
-		VALUES(#{name}, #{hyp}, #{s_id})
+	INSERT INTO old(s_id, name, hyp)
+		VALUES(#{s_id}, #{name}, #{hyp})
 	</insert>
 	<insert id="match_insert">
 	INSERT INTO `match`(s_id, user_id)
