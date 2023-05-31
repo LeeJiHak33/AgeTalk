@@ -5,8 +5,8 @@
 <mapper namespace="work">
 	<select id="youthlist_select" resultType="User">
 		SELECT id, name, hyp, phone
-		FROM user
-		ORDER BY name desc
+		FROM user		
+		WHERE id not in (select user_id from `match`) and author != 1;
 	</select>
 	<select id="youthlist_total" resultType="Integer">
 		SELECT COUNT(*) FROM user
