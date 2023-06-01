@@ -177,9 +177,10 @@ public class RootController {
 		u_service.update_user(item);
 
 		session.setAttribute("user", item);
-
 		return item;
 	}
+	
+	
 
 	@RequestMapping("/out/{id}")
 	public String out(@PathVariable String id, HttpSession session) {

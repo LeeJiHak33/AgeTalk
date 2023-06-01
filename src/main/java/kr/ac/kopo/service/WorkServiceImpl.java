@@ -103,7 +103,28 @@ public class WorkServiceImpl implements WorkService {
 		
 		dao.match_delete(item);
 		
-	}	
+	}
+
+	@Override
+	public void add(Old item) {
+		dao.add(item);		
+	}
+
+
+	@Override
+	public void update_old(Old item, String id) {
+		dao.update_old(item, id);
+		
+	}
+
+
+	@Override
+	public void olddelete(String sId) {
+		dao.olddelete(sId);
+	}
+
+
+	
 	}
 
 	

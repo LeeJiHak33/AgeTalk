@@ -67,7 +67,6 @@
 				
 	<c:forEach items="${list}" var="item">
     <tr>
-   
         <td data-table="name">${item.name}</td>
         <td>
             <div class="progress" data-table="hyp">
@@ -75,11 +74,12 @@
                     <div>${item.hyp}<span>%</span></div>
                 </div>
             </div>
-        </td>        
+        </td>          
         <td><button class="update_btn"
             data-bs-toggle="modal"
             data-bs-target="#oldupdateModal"
-            style=" cursor: pointer;">수정</button><span class="gap"></span>  <button class="del_btn">삭제</button></td>
+            data-info="${item}"
+            style=" cursor: pointer;">수정</button><span class="gap"></span><a href="/work/delete/${item.sId}"> <button class="del_btn">삭제</button></a></td>
     </tr>
 </c:forEach>
 </table>
@@ -115,6 +115,7 @@
 <div>
 		<jsp:include page="../footer.jsp"></jsp:include>
 	</div>
+	
 	<div class="modal fade"
           id="oldupdateModal"
           tabindex="-1"
@@ -136,45 +137,90 @@
                   ></button>
                 </div>
                 <div class="modal-header">
+                
                   <p class="modal-title text-dark">
-                    {어르신 성함} 정보 수정하기
+                   ${item.name}님 정보 수정하기	                 
+                    
                   </p>
                 </div>
                 <div class="modal-header" style="display: block">
                   <p class="modal-title text_gray">프로필</p>
-                  <p class="text-dark nickname">{이름}</p>
+                  <p class="text-dark nickname" data-table="name">${item.name}</p>
                 </div>
                 <div class="modal-header" style="display: block">
                   <p class="modal-title text_gray">계정 정보</p>
                   <div class="info">
                   	<div class="input-group mb-4">
                     <span class="text-dark input-group-text">이름</span> 
-                    <input name="name" type="text" <%-- value="${item.name}" --%> class="form-control">
+                    <input name="name" data-table="name" type="text" id="name" value="${item.name}" class="form-control">
                     </div>
                     <div class="input-group mb-4">
+                    <span class="text-dark input-group-text">우울도</span> 
+                    <input name="hyp" type="number" id="hyp" value="${item.hyp}"  class="form-control">
+                    </div>                   
+                    <div class="input-group mb-4">
                     <span class="text-dark input-group-text">기기 고유 번호</span> 
-                    <input name="phone" type="text" <%-- value="${item.phone}" --%> class="form-control">
-                    </div>
-                   
-
-                    <div style="display: flex; justify-content: flex-start">
-                      <p class="text-dark" style="font-size: 18px;">설문등록여부 : {완료 & 미완료}</p>
-                      <!--설문 완료시-->
-                      <a href="../user/diagnosis"><button type="button" class="modal_diagnosis">검사 결과</button></a>
-                      
+                    <input name="sId" type="text" id="sId" value="${item.sId}" class="form-control">
+                    </div>                   
+					
+					
                     </div>
                   </div>
                 </div>
+                <div class="modal-footer">
+                <div class="modal_btns">
+                  <button type="button" class="btn_update" id="modal_submit">정보수정</button>                  
               </div>
 
-              <div class="modal-footer">
-                <div class="modal_btns">
-                  <button type="button" class="btn_update">정보수정</button>                  
+          
                 </div>
               </div>
             </div>
           </div>
-          </div>
+         
+          <script>          	
+          	$("#modal_submit").click(function(){ 
+          			const form = document.update_form;
+					const name = $("#name").val();
+					const hyp = $("#hyp").val();
+					const sId = $("#sId").val();
+					const work_id = null;
+									
+					const data = {name : name,
+								hyp : hyp,
+								sId : sId,
+								work_id : work_id
+								};
+          	
+					if(name == null){		
+						alert("이름을 입력해주세요.");									
+						return;
+					} 										
+					
+					if(sId != null){
+					$.ajax({
+						url : "/work/update_old/" + sId,
+						type : "post",
+						data : data,
+						success : function(response){
+							alert("정보수정이 완료됐습니다.");
+							$("#updateModal").modal('hide');
+							location.reload();
+						},
+						error : function(){
+							alert("에러가 발생했습니다. 잠시 후 다시 시도해주세요.");
+							console.log(data);
+							console.log("오류");
+						}
+					});
+					}else if(work_id != null){
+						alert("기기고유번호를 입력해주세요.")
+						
+						return;
+					} 
+					
+				});
+          	</script>
 </body>
 
 </html>

@@ -38,4 +38,10 @@ public interface WorkDao {
 
 	void match_delete(Match item);
 
+	void add(Old item);
+
+	Old update_old(Old item, String id);
+
+	void olddelete(String sId);
+
 }

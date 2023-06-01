@@ -26,7 +26,14 @@ public interface WorkService {
 
 	boolean deleteAttach(int id);
 
-	void matchdelete(int matchid);
+	void matchdelete(int matchid);	
+
+	void add(Old item);
+
+	void update_old(Old item, String id);
+
+	void olddelete(String sId);
+
 
 	
 
