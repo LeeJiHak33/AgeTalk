@@ -14,6 +14,7 @@ import kr.ac.kopo.model.Old;
 import kr.ac.kopo.model.User;
 import kr.ac.kopo.model.Work;
 import kr.ac.kopo.pager.Pager;
+import kr.ac.kopo.pager.WorkPager;
 @Service
 public class WorkServiceImpl implements WorkService {
 	
@@ -43,7 +44,7 @@ public class WorkServiceImpl implements WorkService {
 
 	@Override
 
-	public List<Manage> alllist(Pager pager) {
+	public List<Manage> alllist(WorkPager pager) {
 		int alltotal=dao.alltotal(pager);
 		pager.setTotal(alltotal);
 		return dao.alllist(pager);

@@ -13,6 +13,7 @@ import kr.ac.kopo.model.Old;
 import kr.ac.kopo.model.User;
 import kr.ac.kopo.model.Work;
 import kr.ac.kopo.pager.Pager;
+import kr.ac.kopo.pager.WorkPager;
 
 @Repository
 public class WorkDaoImpl implements WorkDao {
@@ -46,7 +47,7 @@ public class WorkDaoImpl implements WorkDao {
 	}
 
 	@Override
-	public List<Manage> alllist(Pager pager) {
+	public List<Manage> alllist(WorkPager pager) {
 		return sql.selectList("work.alllist_select", pager);
 	}
 

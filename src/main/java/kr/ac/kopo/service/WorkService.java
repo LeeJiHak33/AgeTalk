@@ -7,6 +7,7 @@ import kr.ac.kopo.model.Old;
 import kr.ac.kopo.model.User;
 import kr.ac.kopo.model.Work;
 import kr.ac.kopo.pager.Pager;
+import kr.ac.kopo.pager.WorkPager;
 
 public interface WorkService {
 
@@ -14,7 +15,7 @@ public interface WorkService {
 
 	List<Old> oldlist(Pager pager);
 
-	List<Manage> alllist(Pager pager);
+	List<Manage> alllist(WorkPager pager);
 	
 	void match(String sid, String yid);
 	
