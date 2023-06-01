@@ -32,7 +32,7 @@ public class WorkDaoImpl implements WorkDao {
 	}
 
 	@Override
-	public List<Old> oldlist(Pager pager) {
+	public List<Old> oldlist(WorkPager pager) {
 		return sql.selectList("work.oldlist_select", pager);
 		
 	}

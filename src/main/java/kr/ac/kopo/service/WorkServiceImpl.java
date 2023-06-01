@@ -33,7 +33,7 @@ public class WorkServiceImpl implements WorkService {
 
 
 	@Override
-	public List<Old> oldlist(Pager pager) {
+	public List<Old> oldlist(WorkPager pager) {
 		int oldtotal=dao.oldtotal(pager);
 		pager.setTotal(oldtotal);
 		return dao.oldlist(pager);

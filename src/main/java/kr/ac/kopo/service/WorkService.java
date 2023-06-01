@@ -13,7 +13,7 @@ public interface WorkService {
 
 	List<User> youthlist(Pager pager);
 
-	List<Old> oldlist(Pager pager);
+	List<Old> oldlist(WorkPager pager);
 
 	List<Manage> alllist(WorkPager pager);
 	

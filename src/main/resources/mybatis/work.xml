@@ -14,7 +14,9 @@
 	<select id="oldlist_select" resultType="Old">
 		SELECT s_id, name, hyp
 		FROM old
+		where work_id=#{id}
 		ORDER BY name desc
+		
 	</select>	
 	
 	<select id="oldlist_total" resultType="Integer">
@@ -48,16 +50,16 @@
 		FROM old o
 		LEFT JOIN `match` m ON (m.s_id = o.s_id)
 		LEFT JOIN user y ON (m.user_id = y.id)
-		where work_id=#{Id}
+		where o.work_id=#{id}
 
 	</select>
 	<select id="oldlist_item" resultType="Old">
 		SELECT s_id from old;
 	</select>	
 	<insert id="old_insert">
-	INSERT INTO old(s_id, name, hyp)
-		VALUES(#{sId}, #{name}, #{hyp})
-		where work_id=#{workId}
+	INSERT INTO old(s_id, name, hyp, work_id)
+		VALUES(#{sId}, #{name}, #{hyp}, #{workId})
+		
 	</insert>
 	<insert id="match_insert">
 	INSERT INTO `match`(s_id, user_id)

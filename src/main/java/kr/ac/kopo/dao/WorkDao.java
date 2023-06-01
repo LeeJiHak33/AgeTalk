@@ -19,7 +19,7 @@ public interface WorkDao {
 
 	List<User> youthlist(Pager pager);
 
-	List<Old> oldlist(Pager pager);
+	List<Old> oldlist(WorkPager pager);
 	
 	int alltotal(Pager pager);
 

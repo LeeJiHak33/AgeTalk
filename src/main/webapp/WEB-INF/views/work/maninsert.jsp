@@ -35,7 +35,7 @@
 					<div class="modal-header" style="display: block">
 
 
-						<p class="modal-title text_gray">사용자 정보</p>
+						<p class="modal-title text_gray"></p>
 						<div class="info">
 							<div class="input-group mb-4">
 								<span class="text-dark input-group-text">이름</span> <input
@@ -67,12 +67,13 @@
 								등록</button>
 						</div>
 						<script>
+						
 	$("#modal_submit").click(function() {
 		const form = document.add_form;
 		const name = $("#name").val();
 		const hyp = $("#hyp").val();
 		const s_id = $("#sId").val();
-		const work_id = null;
+		const work_id = $("#workId").val();
 
 		const data = {
 			sId : s_id,
@@ -97,8 +98,8 @@
 					console.log("오류");
 				}
 			});
-		} else if (work_id != null) {
-			alert("정보가 일치하지 않습니다.");
+		} else if (work_id == null) {
+			alert("로그인 후 이용해주세요.");
 			return;
 		}
 	});

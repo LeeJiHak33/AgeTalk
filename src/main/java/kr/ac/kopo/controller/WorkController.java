@@ -40,20 +40,20 @@ public class WorkController {
 	 */				
 	
 	@RequestMapping("/oldlist")
-	public String old(Model model, Pager pager) {
-	List<Old> list = service.oldlist(pager);
-		
+	public String old(Model model, @SessionAttribute Work work, WorkPager pager) {
+		pager.setId(work.getId()); 
+		List<Old> list = service.oldlist(pager);		
 		model.addAttribute("list", list);
 		return path + "oldlist";
 	}
 	
 	@RequestMapping("/managelist")
-	public String manage(Work item, Model model, @SessionAttribute Work id, HttpSession session, WorkPager pager) {
-		List<Manage> list = service.alllist(pager);
-		session.setAttribute("Work", item);
-		pager.setId(id);
-		model.addAttribute("list", list);
-		return path+"managelist";
+	public String manage(Model model, @SessionAttribute Work work, WorkPager pager) {
+		pager.setId(work.getId());
+		
+		List<Manage> list = service.alllist(pager);	    
+	    model.addAttribute("list", list);
+	    return path + "managelist";
 	}
 	@GetMapping("/add")
 	public String add(Model model) {
@@ -61,10 +61,11 @@ public class WorkController {
 	}
 	@ResponseBody
 	@PostMapping("/add")
-	public String add(Old item, HttpSession session) {
-	session.setAttribute("old", item);
-	service.add(item);	
-	return path + "/oldlist";
+	public String add(Old item, HttpSession session, @SessionAttribute Work work) {
+		item.setWorkId(work.getId());
+		session.setAttribute("old", item);
+		service.add(item);	
+		return path + "/oldlist";
 	}
 	
 	@ResponseBody
