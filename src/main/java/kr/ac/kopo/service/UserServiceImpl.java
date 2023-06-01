@@ -159,7 +159,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public boolean login_user(User user) {
 		User item = dao.login_user(user);
-		if (item != null) {
+		if (item != null && item.getStatus() == 0) {
 			user.setHyp(item.getHyp());
 			user.setName(item.getName());
 			user.setPhone(item.getPhone());
@@ -176,7 +176,6 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public boolean login_admin(User item) {
-		// TODO Auto-generated method stub
 		
 		User user = dao.login_admin(item);
 		if(user != null) {

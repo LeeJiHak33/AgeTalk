@@ -31,7 +31,7 @@
 			<div class="login_box animatedFadeInUp fadeInUp">
 				<h1>로그인</h1>
 				<div>
-					<form method="post">
+					<form method="post" onsubmit="return loginUser()">
 
 						<div class="lg_wrap">
 
