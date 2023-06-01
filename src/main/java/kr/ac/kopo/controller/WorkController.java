@@ -13,11 +13,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kr.ac.kopo.model.Manage;
 import kr.ac.kopo.model.Old;
 import kr.ac.kopo.model.Qna;
 import kr.ac.kopo.model.User;
+import kr.ac.kopo.model.Work;
 import kr.ac.kopo.pager.Pager;
 import kr.ac.kopo.pager.WorkPager;
 import kr.ac.kopo.service.WorkService;
@@ -45,10 +47,11 @@ public class WorkController {
 		return path + "oldlist";
 	}
 	
-	@RequestMapping("/managelist/{id}")
-	public String manage(@PathVariable String id, Model model, @ModelAttribute("pager") WorkPager pager) {
+	@RequestMapping("/managelist")
+	public String manage(Work item, Model model, @SessionAttribute Work id, HttpSession session, WorkPager pager) {
 		List<Manage> list = service.alllist(pager);
-		pager.setWorkId(id);
+		session.setAttribute("Work", item);
+		pager.setId(id);
 		model.addAttribute("list", list);
 		return path+"managelist";
 	}

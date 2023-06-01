@@ -1,13 +1,17 @@
 package kr.ac.kopo.pager;
 
-public class WorkPager extends Pager {
-	private String workId;
+import kr.ac.kopo.model.Work;
 
-	public String getWorkId() {
-		return workId;
+public class WorkPager extends Pager {
+	private Work id;
+
+	public Work getId() {
+		return id;
 	}
 
-	public void setWorkId(String workId) {
-		this.workId = workId;
+	public void setId(Work id) {
+		this.id = id;
 	}
 }
+
+	

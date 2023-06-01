@@ -48,6 +48,7 @@
 		FROM old o
 		LEFT JOIN `match` m ON (m.s_id = o.s_id)
 		LEFT JOIN user y ON (m.user_id = y.id)
+		where work_id=#{Id}
 
 	</select>
 	<select id="oldlist_item" resultType="Old">
