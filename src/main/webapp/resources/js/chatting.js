@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
   $(".search_btn").click(function () {
     $(".search_wrap").css("display", "flex");
   });
@@ -102,6 +103,17 @@ $(document).ready(function () {
       .then(result =>{
           console.log(result);
           const tag=$('.chatting_list');
+          const before_date=$(".date_wrap> .date> p:last").text();
+          const now_date=dateFormat();
+          if(now_date != before_date){
+            const div_date=document.createElement("div");
+            div_date.classList.add('date_wrap');
+            div_date.innerHTML=
+            "<div class=\"date\">"+	
+            "<p>"+now_date+"</p>"+
+            "</div>";
+            tag.append(div_date);
+          }
           const div=document.createElement("div");
           div.classList.add('my_chatting_wrap');
           div.innerHTML=
@@ -135,15 +147,42 @@ $(document).ready(function () {
     .then(result =>{
         console.log(result);
         const tag=$('.chatting_list');
+
+        const before_date=$(".date_wrap> .date> p:last").text();
+        const now_date=dateFormat();
+
+        if(now_date != before_date){
+          const div_date=document.createElement("div");
+        
+          div_date.classList.add('date_wrap');
+          div_date.innerHTML=
+          "<div class=\"date\">"+	
+          "<p>"+now_date+"</p>"+
+          "</div>";
+        
+          tag.append(div_date);
+        }
         const div=document.createElement("div");
+        
         div.classList.add('my_chatting_wrap');
         div.innerHTML=
           "<div class=\"my_chatting\">"+
           "<p>"+result.content+"</p>"+
           "</div>";
+        
           tag.append(div)
-       $(".chatting").val('');
+       
+        $(".chatting").val('');
         $(".chatting").prop('disabled',true)
     });
   });  
 });
+function dateFormat(){
+    let dateF=new Date();
+    let yyyy=dateF.getFullYear();
+    let mm=dateF.getMonth()+1;
+    mm=mm>=10 ? mm:'0'+mm;
+    let dd=dateF.getDate();
+    dd=dd>= 10?dd:'0'+dd;
+    return yyyy+'.'+mm+'.'+dd;
+}
