@@ -45,4 +45,6 @@ public interface WorkDao {
 
 	void olddelete(String sId);
 
+	Old item(String id);
+
 }

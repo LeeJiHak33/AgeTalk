@@ -102,4 +102,10 @@ public class WorkDaoImpl implements WorkDao {
 		sql.delete("work.olddelete", sId);	
 		
 	}
+
+	@Override
+	public Old item(String id) {
+		return sql.selectOne("work.old_item", id);
+		
+	}
 }

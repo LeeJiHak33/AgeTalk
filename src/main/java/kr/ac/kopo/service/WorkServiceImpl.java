@@ -125,6 +125,12 @@ public class WorkServiceImpl implements WorkService {
 	}
 
 
+	@Override
+	public Old item(String id) {
+		return dao.item(id);
+	}
+
+
 	
 	}
 

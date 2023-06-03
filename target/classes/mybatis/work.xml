@@ -54,7 +54,16 @@
 
 	</select>
 	<select id="oldlist_item" resultType="Old">
-		SELECT s_id from old;
+		
+		select s_id, name, hyp
+		from old
+		where s_id = #{id}
+	</select>	
+	<select id="old_item" resultType="Old">
+		
+		select s_id, name, hyp
+		from old
+		where s_id = #{id}
 	</select>	
 	<insert id="old_insert">
 	INSERT INTO old(s_id, name, hyp, work_id)

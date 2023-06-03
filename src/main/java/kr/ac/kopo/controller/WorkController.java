@@ -67,14 +67,19 @@ public class WorkController {
 		service.add(item);	
 		return path + "/oldlist";
 	}
-	
+	@ResponseBody
+	@GetMapping("/update_old/{id}")
+	public Old update_old(@PathVariable String id) {
+	    Old item = service.item(id);
+	    item.setsId(id);
+	    return item;
+	}
 	@ResponseBody
 	@PostMapping("/update_old/{id}")
 	public Old update_old(Old item,@PathVariable String id, HttpSession session) {
-		service.update_old(item, id);
 		item.setsId(id);					
 		session.setAttribute("old", item);
-		
+		service.update_old(item, id);
 		return item;
 	}
 	@RequestMapping("/delete/{sId}")
