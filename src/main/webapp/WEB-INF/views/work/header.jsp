@@ -14,7 +14,7 @@ pageEncoding="UTF-8"%>
   <body>
     <header>
       <div class="logo_wrap">
-		<a href="../"><img src="/resources/image/agetalk_logo.png" alt="logo" /></a>
+		<a href="../../../"><img src="/resources/image/agetalk_logo.png" alt="logo" /></a>
       </div>
       <div class="menu_wrap">
         <ul class="menu_list">

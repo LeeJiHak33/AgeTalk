@@ -6,6 +6,7 @@ import kr.ac.kopo.model.Manage;
 import kr.ac.kopo.model.Match;
 import kr.ac.kopo.model.Attach;
 import kr.ac.kopo.model.Old;
+import kr.ac.kopo.model.Report;
 import kr.ac.kopo.model.User;
 import kr.ac.kopo.model.Work;
 import kr.ac.kopo.pager.Pager;
@@ -46,5 +47,7 @@ public interface WorkDao {
 	void olddelete(String sId);
 
 	Old item(String id);
+
+	void report_insert(Report item);
 
 }

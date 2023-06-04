@@ -11,6 +11,7 @@ import kr.ac.kopo.dao.WorkDao;
 import kr.ac.kopo.model.Manage;
 import kr.ac.kopo.model.Match;
 import kr.ac.kopo.model.Old;
+import kr.ac.kopo.model.Report;
 import kr.ac.kopo.model.User;
 import kr.ac.kopo.model.Work;
 import kr.ac.kopo.pager.Pager;
@@ -128,6 +129,13 @@ public class WorkServiceImpl implements WorkService {
 	@Override
 	public Old item(String id) {
 		return dao.item(id);
+	}
+
+
+	@Override
+	public void report_insert(Report item) {
+		dao.report_insert(item);
+		
 	}
 
 

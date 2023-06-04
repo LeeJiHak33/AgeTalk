@@ -87,5 +87,8 @@
 		DELETE FROM old
 		WHERE s_id = #{sId}
 	</delete>
-	
+	<insert id="report_insert">
+	INSERT INTO report(title,content,date, user_id, work_id)
+	values (#{title},#{content},NOW(),#{userId}, #{workId})
+	</insert>
 </mapper>

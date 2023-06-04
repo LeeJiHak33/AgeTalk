@@ -10,6 +10,7 @@ import kr.ac.kopo.model.Manage;
 import kr.ac.kopo.model.Match;
 import kr.ac.kopo.model.Attach;
 import kr.ac.kopo.model.Old;
+import kr.ac.kopo.model.Report;
 import kr.ac.kopo.model.User;
 import kr.ac.kopo.model.Work;
 import kr.ac.kopo.pager.Pager;
@@ -106,6 +107,12 @@ public class WorkDaoImpl implements WorkDao {
 	@Override
 	public Old item(String id) {
 		return sql.selectOne("work.old_item", id);
+		
+	}
+
+	@Override
+	public void report_insert(Report item) {
+		sql.insert("work.report_insert", item);
 		
 	}
 }
