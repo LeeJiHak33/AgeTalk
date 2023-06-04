@@ -31,7 +31,7 @@
 			<div class="login_box animatedFadeInUp fadeInUp">
 				<h1>로그인</h1>
 				<div>
-					<form method="post" onsubmit="return loginUser()">
+					<form method="post" onsubmit="return loginUser()" name="login_form">
 
 						<div class="lg_wrap">
 
@@ -64,7 +64,7 @@
 						</div>
 
 						<div class="lg_btn">
-							<button type="submit">로그인</button>
+							<button type="submit" onclick="checkLogin(true)">로그인</button>
 						</div>
 
 					</form>

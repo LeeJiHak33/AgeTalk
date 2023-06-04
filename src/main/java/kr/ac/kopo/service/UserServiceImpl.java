@@ -155,6 +155,23 @@ public class UserServiceImpl implements UserService {
 		else
 			return false;
 	}
+	
+	@Override
+	public boolean checkLogin(String id, String pwd) {
+		 if (dao.checkLogin(id, pwd) == 0) {
+		        return true;  
+		    } else {
+		        return false; 
+		    }
+	}
+	
+	@Override
+	public boolean checkBen(String id) {
+		if (dao.checkBen(id) == 1)
+			return true;
+		else
+			return false;
+	}
 
 	@Override
 	public boolean login_user(User user) {
@@ -206,5 +223,6 @@ public class UserServiceImpl implements UserService {
 		dao.chatting_add(item);
 		
 	}
+
 
 }
