@@ -1,0 +1,30 @@
+https://www.devicemart.co.kr/goods/view?no=2034 || axial resistor
+
+https://www.devicemart.co.kr/goods/view?no=1329504 || [유니즈] 컬러 미니 브레드보드 170핀
+
+https://www.devicemart.co.kr/goods/view?no=1113721 || 소켓 점퍼 케이블 40p
+
+https://www.devicemart.co.kr/goods/view?no=1322139 || 택트 스위치(3개)
+
+https://www.devicemart.co.kr/goods/view?no=1322148 || 투명캡 노브(빨강 2개 노랑 1개 총 3개)
+
+https://www.devicemart.co.kr/goods/view?no=10888027 || 소형 스틱 콘덴서마이크 (품절)
+
+https://www.devicemart.co.kr/goods/view?no=12957532 || usb 콘덴서 마이크
+
+https://www.devicemart.co.kr/goods/view?no=10888709 || 블루투스 스피커
+
+https://www.devicemart.co.kr/goods/view?no=14451963 || 동글
+
+
+이지학
+
+- 미승인 복지사 로그인 막기
+- 신고 당한 사용자 로그인 막기
+- 인터셉터
+- 입력안하고 로그인 버튼 클릭시 얼럿 출력 (사용자, 복지사)
+
+장지호 
+- 복지사별로 노인이 다르게 들어가 있어야됨
+- 청년에서 매칭된 사람 빼기 관리자 뺴기
+- 매칭 해제하고 신고로 넘어가기
