@@ -91,7 +91,7 @@ public class AdminDaoImpl implements AdminDao {
 
 	@Override
 	public Attach attach_item(String id) {
-		// TODO Auto-generated method stub
+		
 		return sql.selectOne("attach.item", id);
 	}
 	

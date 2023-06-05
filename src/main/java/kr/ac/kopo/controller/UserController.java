@@ -1,5 +1,6 @@
 package kr.ac.kopo.controller;
 
+import java.io.File;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,6 +22,7 @@ import kr.ac.kopo.model.Qna;
 import kr.ac.kopo.model.User;
 import kr.ac.kopo.model.Chat;
 import kr.ac.kopo.pager.Pager;
+import kr.ac.kopo.service.TTSService;
 import kr.ac.kopo.service.UserService;
 
 @Controller
@@ -31,6 +33,8 @@ public class UserController {
 	@Autowired
 	UserService service;
 	
+	@Autowired
+	TTSService ttsService;
 	
 	@GetMapping("/chatting/{matchId}")
 	public String chatting(@PathVariable int matchId, Model model) {
@@ -43,9 +47,15 @@ public class UserController {
 	@PostMapping("/chatting_add")
 	public Chat chatting_add(@RequestBody Chat item) {
 		System.out.println("dfsfs"+item.getContent());
-		service.chatting_add(item);
-	
-		return item;
+		if(service.chatting_add(item)) {
+			File f =ttsService.add(item);
+			
+			return item;
+		}else {
+			return null;
+		}
+		
+		
 	}
 	
 	@GetMapping("/notice")

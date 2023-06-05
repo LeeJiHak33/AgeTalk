@@ -61,7 +61,7 @@ public interface UserService {
 
 	List<Chat> chat_list(int matchId);
 
-	void chatting_add(Chat item);
+	boolean chatting_add(Chat item);
 
 	boolean checkLogin(String id, String pwd);
 

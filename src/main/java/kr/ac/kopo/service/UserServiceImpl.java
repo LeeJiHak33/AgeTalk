@@ -1,13 +1,11 @@
 package kr.ac.kopo.service;
 
-import java.io.File;
+
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import kr.ac.kopo.api.TTSApi;
 import kr.ac.kopo.dao.UserDao;
 import kr.ac.kopo.model.Comment;
 import kr.ac.kopo.model.Notice;
@@ -21,6 +19,8 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	UserDao dao;
+	
+	
 
 	@Override
 	public List<Qna> qna(Pager pager) {
@@ -221,12 +221,17 @@ public class UserServiceImpl implements UserService {
 		return dao.chat_list(matchId);
 	}
 
-	@Transactional
+	
 	@Override
-	public void chatting_add(Chat item) {
-		dao.chatting_add(item);
-		TTSApi api=new TTSApi();
-		File file= api.add(item.getContent());
+	public boolean chatting_add(Chat item) {
+		
+		if(dao.chatting_add(item) > 0) {
+			
+			return true;
+		}else {
+			return false;
+		}
+		
 	}
 
 
