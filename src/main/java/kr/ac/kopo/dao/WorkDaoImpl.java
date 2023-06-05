@@ -1,6 +1,8 @@
 package kr.ac.kopo.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -100,5 +102,18 @@ public class WorkDaoImpl implements WorkDao {
 	public void olddelete(String sId) {
 		sql.delete("work.olddelete", sId);	
 		
+	}
+
+	@Override
+	public int checkWorkLogin(String id, String pwd) {
+		Map<String, String> paramMap = new HashMap<>();
+	    paramMap.put("id", id);
+	    paramMap.put("pwd", pwd);
+		return sql.selectOne("work.check_login", paramMap);
+	}
+
+	@Override
+	public int checkAccess(String id) {
+		return sql.selectOne("work.check_access", id);
 	}
 }

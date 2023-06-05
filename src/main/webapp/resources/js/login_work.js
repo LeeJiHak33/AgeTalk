@@ -50,18 +50,22 @@ function checkLogin_Async() {
           console.log("로그인 실패");
           alert("비밀번호가 틀렸습니다.");
         } else if (result == "STOP") {
-          console.log("정지된 사용자");
-          alert("이용제한 사용자 입니다.");
+          console.log("미승인 복지사");
+          alert("승인이 완료되지 않았습니다");
         } else {
           return true;
         }
       } else {
-        alert("등록되지 않은 사용자 입니다.");
+        alert("등록되지 않은 정보 입니다.");
       }
     }
   };
 
-  xhr.open("GET", "checkLogin/" + form.id.value + "/" + form.pwd.value, true);
+  xhr.open(
+    "GET",
+    "checkWorkLogin/" + form.id.value + "/" + form.pwd.value,
+    true
+  );
 
   xhr.send();
 }

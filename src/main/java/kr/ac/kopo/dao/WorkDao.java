@@ -44,4 +44,8 @@ public interface WorkDao {
 
 	void olddelete(String sId);
 
+	int checkWorkLogin(String id, String pwd);
+
+	int checkAccess(String id);
+
 }

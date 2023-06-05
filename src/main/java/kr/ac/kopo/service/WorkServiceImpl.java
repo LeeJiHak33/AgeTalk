@@ -51,8 +51,10 @@ public class WorkServiceImpl implements WorkService {
 	@Override
 	public boolean login_work(Work work) {
 		Work item = dao.login_work(work);
-		if (item != null) {
+		if (item != null && item.getStatus() == 1) {
 			work.setName(item.getName());
+			work.setPhone(item.getPhone());
+			work.setStatus(item.getStatus());
 			return true;
 		} else {
 			return false;
@@ -121,6 +123,25 @@ public class WorkServiceImpl implements WorkService {
 	@Override
 	public void olddelete(String sId) {
 		dao.olddelete(sId);
+	}
+
+
+	@Override
+	public boolean checkWorkLogin(String id, String pwd) {
+		if (dao.checkWorkLogin(id, pwd) == 0) {
+	        return true;  
+	    } else {
+	        return false; 
+	    }
+	}
+
+
+	@Override
+	public boolean checkAccess(String id) {
+		if (dao.checkAccess(id) == 0)
+			return true;
+		else
+			return false;
 	}
 
 
