@@ -39,6 +39,11 @@ public interface WorkService {
 	Old item(String id);
 
 	void report_insert(Report item);
+	
+	boolean checkAccess(String id);
+
+	boolean checkWorkLogin(String id, String pwd);
+
 
 
 	

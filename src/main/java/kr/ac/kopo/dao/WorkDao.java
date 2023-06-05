@@ -49,5 +49,8 @@ public interface WorkDao {
 	Old item(String id);
 
 	void report_insert(Report item);
+	int checkWorkLogin(String id, String pwd);
+
+	int checkAccess(String id);
 
 }

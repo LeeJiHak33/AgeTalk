@@ -25,6 +25,19 @@
 		WHERE id=#{id}
 	</select>
 	
+	<select id ="check_login" resultType="Integer">
+		SELECT COUNT(*)
+		FROM user
+		WHERE id=#{id} AND pwd=#{pwd}
+	</select>
+	
+	<select id ="check_ben" resultType="Integer">
+		SELECT status
+		FROM user
+		WHERE id=#{id}
+	</select>
+	
+	
 	<select id="qna" resultType="Qna">
 		SELECT qna.*, comment.content cmt, user.name, user.author
 		FROM qna LEFT JOIN comment ON qna.id = comment.qna_id
