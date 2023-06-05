@@ -81,7 +81,7 @@ header .menu_wrap .sub_list {
 						<tbody id="list" class="table-group-divider">
 							<c:if test="${list.size() < 1 }">
 								<tr class="">
-									<td colspan="5">등록된 사용자 없습니다.</td>
+									<td colspan="6">등록된 사용자 없습니다.</td>
 								</tr>
 							</c:if>
 							<c:forEach items="${list}" var="item">

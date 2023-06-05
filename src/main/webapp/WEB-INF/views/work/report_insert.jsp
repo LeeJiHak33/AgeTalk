@@ -6,14 +6,13 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Q&A작성</title>
+<title>신고하기</title>
 
 <link rel="shortcut icon" href="/resources/image/favicon/favicon.ico" />
 
 <link rel="stylesheet" href="/resources/css/main.css">
 		<link rel="stylesheet" href="/resources/css/list.css" />
 	<link rel="stylesheet" href="/resources/css/pagenation.css">
-<link rel="stylesheet" href="/resources/css/index.css" />
 <link rel="stylesheet" href="/resources/css/report_insert.css" />
 <link rel="stylesheet" href="/resources/css/summernote/summernote-lite.css" />
 <link
@@ -66,11 +65,8 @@
 
 <body>		<div class="tle">
 			<div class="sub_image">
-
-			<jsp:include page="header.jsp"></jsp:include>
-				
-
-				<h1>사용자 관리</h1>
+			<jsp:include page="./header.jsp"></jsp:include>
+				<h1>사용자 신고</h1>
 			</div>	
 		</div>
 		<div class="sub_tle">

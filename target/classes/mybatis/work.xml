@@ -10,6 +10,7 @@
 	</select>
 	<select id="youthlist_total" resultType="Integer">
 		SELECT COUNT(*) FROM user
+		where id not in (select user_id from `match`)
 	</select>
 	<select id="oldlist_select" resultType="Old">
 		SELECT s_id, name, hyp
