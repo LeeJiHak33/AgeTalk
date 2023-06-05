@@ -41,7 +41,7 @@
 	
 	<select id="alllist_total" resultType="Integer">
 		SELECT COUNT(*) FROM old
-		
+		where work_id=#{id}
 		</select>
 	<select id="login" resultType="Work">
 		SELECT *
