@@ -134,6 +134,21 @@ public class RootController {
 		}
 
 	}
+	
+	@ResponseBody
+	@GetMapping("/checkWorkLogin/{id}/{pwd}")
+	public String checkWorkLogin(@PathVariable String id, @PathVariable String pwd) {
+	    boolean isLoginSuccess = w_service.checkWorkLogin(id, pwd);
+	    boolean isWorkAccess = w_service.checkAccess(id);
+
+	    if (isLoginSuccess) {
+	        return "OK";
+	    } else if (isWorkAccess) {
+	        return "STOP";
+	    } else {
+	        return "FAIL";
+	    }
+	}
 
 	@GetMapping("/signup_work")
 	public String signup_work(Model model) {

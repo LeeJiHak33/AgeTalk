@@ -15,6 +15,18 @@
 		SELECT s_id, name, hyp
 		FROM old
 		ORDER BY name desc
+	</select>
+	
+	<select id ="check_login" resultType="Integer">
+		SELECT COUNT(*)
+		FROM work
+		WHERE id=#{id} AND pwd=#{pwd}
+	</select>
+	
+	<select id ="check_access" resultType="Integer">
+		SELECT status
+		FROM work
+		WHERE id=#{id}
 	</select>	
 	
 	<select id="oldlist_total" resultType="Integer">

@@ -34,6 +34,11 @@ public interface WorkService {
 
 	void olddelete(String sId);
 
+	boolean checkAccess(String id);
+
+	boolean checkWorkLogin(String id, String pwd);
+
+
 
 	
 
