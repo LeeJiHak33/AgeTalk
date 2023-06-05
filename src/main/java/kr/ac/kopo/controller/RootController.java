@@ -72,9 +72,9 @@ public class RootController {
 			session.removeAttribute("target_url");
 			System.out.println("targetUrl" + targetUrl);
 			if (targetUrl == null) {
-				return "redirect:/";
+				return "redirect:.";
 			} else {
-				return "redirect:/" + targetUrl;
+				return "redirect:" + targetUrl;
 			}
 
 		} else {
