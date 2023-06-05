@@ -12,6 +12,7 @@ import kr.ac.kopo.pager.Pager;
 
 public interface UserService {
 
+
 	List<Qna> qna(Pager pager);
 
 	void qna_insert(Qna item);
@@ -61,6 +62,10 @@ public interface UserService {
 	List<Chat> chat_list(int matchId);
 
 	void chatting_add(Chat item);
+
+	boolean checkLogin(String id, String pwd);
+
+	boolean checkBen(String id);
 
 
 

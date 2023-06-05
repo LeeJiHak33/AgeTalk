@@ -14,14 +14,14 @@ pageEncoding="UTF-8"%>
   <body>
     <header>
       <div class="logo_wrap">
-		<a href="../"><img src="/resources/image/agetalk_logo.png" alt="logo" /></a>
+		<a href="../../../"><img src="/resources/image/agetalk_logo.png" alt="logo" /></a>
       </div>
       <div class="menu_wrap">
-        <ul class="menu_list">
+        <ul class="menu_list"  style="padding:0; padding-top:20px;">
           <li><a href="">소개</a></li>
           <li>
             <a href="">관리</a>
-            <ul class="sub_list">
+            <ul class="sub_list"  style="padding:0; padding-top:20px;">
               <li class="sub_menu"><a href="../../../work/oldlist">사용자 관리</a></li>
 			  <li class="sub_menu"><a href="../../../work/managelist">매칭 관리</a></li>
             </ul>

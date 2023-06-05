@@ -30,6 +30,18 @@
 	
 	<context:component-scan base-package="kr.ac.kopo" />
 	
+	<interceptors>
+		<interceptor>
+			<mapping path="/user/**"/>
+			
+			<exclude-mapping path="/user/explain"/>
+			<exclude-mapping path="/user/notice/**"/>
+			<exclude-mapping path="/user/notice_detail/**"/>
+			
+			<beans:bean class="kr.ac.kopo.interceptor.UserInterceptor"></beans:bean>
+		</interceptor>
+	</interceptors>
+	
 	
 	
 </beans:beans>

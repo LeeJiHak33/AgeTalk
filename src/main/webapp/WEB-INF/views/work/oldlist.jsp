@@ -78,7 +78,7 @@
         <td><button class="update_btn"
             data-bs-toggle="modal"
             data-bs-target="#oldupdateModal"
-            data-info="${item}"
+            data-info="${item.sId}"
             style=" cursor: pointer;">수정</button><span class="gap"></span><a href="/work/delete/${item.sId}"> <button class="del_btn">삭제</button></a></td>
     </tr>
 </c:forEach>
@@ -139,13 +139,13 @@
                 <div class="modal-header">
                 
                   <p class="modal-title text-dark">
-                   ${item.name}님 정보 수정하기	                 
+                  정보 수정                 
                     
                   </p>
                 </div>
                 <div class="modal-header" style="display: block">
                   <p class="modal-title text_gray">프로필</p>
-                  <p class="text-dark nickname" data-table="name">${item.name}</p>
+                  <p class="text-dark nickname" data-table="name"></p>
                 </div>
                 <div class="modal-header" style="display: block">
                   <p class="modal-title text_gray">계정 정보</p>
@@ -178,18 +178,41 @@
             </div>
           </div>
          
-          <script>          	
+          <script>     
+          $(document).ready(function() {
+        	  $('.update_btn').click(function() {
+        	    // 선택한 데이터 가져오기
+        	    var item = $(this).data('info');
+        	
+        	    
+        	    // Ajax 요청 전송
+        	    $.ajax({
+        	      type: 'GET',
+        	      url: '/work/update_old/' + item,
+        	      dataType: 'json',
+        	      success: function(response) {
+        	        // 모달에 데이터 표시
+        	        $('#name').val(response.name);
+        	        $('#hyp').val(response.hyp);
+        	        $('#sId').val(response.sId);
+        	      },
+        	      error: function(xhr, status, error) {
+        	        console.log(xhr, status, error);
+        	      }
+        	    });
+        	  });
+        	});
           	$("#modal_submit").click(function(){ 
           			const form = document.update_form;
 					const name = $("#name").val();
 					const hyp = $("#hyp").val();
 					const sId = $("#sId").val();
-					const work_id = null;
+					
 									
 					const data = {name : name,
 								hyp : hyp,
 								sId : sId,
-								work_id : work_id
+								
 								};
           	
 					if(name == null){		
@@ -213,7 +236,7 @@
 							console.log("오류");
 						}
 					});
-					}else if(work_id != null){
+					}else if(sId == null){
 						alert("기기고유번호를 입력해주세요.")
 						
 						return;

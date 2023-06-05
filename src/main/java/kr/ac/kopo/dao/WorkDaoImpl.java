@@ -1,6 +1,8 @@
 package kr.ac.kopo.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,9 +12,11 @@ import kr.ac.kopo.model.Manage;
 import kr.ac.kopo.model.Match;
 import kr.ac.kopo.model.Attach;
 import kr.ac.kopo.model.Old;
+import kr.ac.kopo.model.Report;
 import kr.ac.kopo.model.User;
 import kr.ac.kopo.model.Work;
 import kr.ac.kopo.pager.Pager;
+import kr.ac.kopo.pager.WorkPager;
 
 @Repository
 public class WorkDaoImpl implements WorkDao {
@@ -31,7 +35,7 @@ public class WorkDaoImpl implements WorkDao {
 	}
 
 	@Override
-	public List<Old> oldlist(Pager pager) {
+	public List<Old> oldlist(WorkPager pager) {
 		return sql.selectList("work.oldlist_select", pager);
 		
 	}
@@ -46,7 +50,7 @@ public class WorkDaoImpl implements WorkDao {
 	}
 
 	@Override
-	public List<Manage> alllist(Pager pager) {
+	public List<Manage> alllist(WorkPager pager) {
 		return sql.selectList("work.alllist_select", pager);
 	}
 
@@ -100,5 +104,29 @@ public class WorkDaoImpl implements WorkDao {
 	public void olddelete(String sId) {
 		sql.delete("work.olddelete", sId);	
 		
+	}
+
+	@Override
+	public Old item(String id) {
+		return sql.selectOne("work.old_item", id);
+		
+	}
+
+	@Override
+	public void report_insert(Report item) {
+		sql.insert("work.report_insert", item);
+	}
+	@Override
+	public int checkWorkLogin(String id, String pwd) {
+		Map<String, String> paramMap = new HashMap<>();
+	    paramMap.put("id", id);
+	    paramMap.put("pwd", pwd);
+		return sql.selectOne("work.check_login", paramMap);
+	}
+
+	@Override
+	public int checkAccess(String id) {
+		return sql.selectOne("work.check_access", id);
+
 	}
 }
