@@ -22,7 +22,7 @@
             <li><a href="../../user/explain" style="text-decoration: none">소개</a></li>
             <li>
              <c:if test="${sessionScope.user == null}">
-              <a href="../user/diagnosis/admin" style="text-decoration: none; cursor: pointer"
+              <a href="../user/diagnosis/1" style="text-decoration: none; cursor: pointer"
                 >채팅하기
                 </a>
               </c:if>
