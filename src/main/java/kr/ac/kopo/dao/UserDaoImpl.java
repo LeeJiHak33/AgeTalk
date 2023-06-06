@@ -1,6 +1,8 @@
 package kr.ac.kopo.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -116,6 +118,20 @@ public class UserDaoImpl implements UserDao {
 	public int checkId(String id) {
 		return sql.selectOne("user.check_id", id);
 	}
+	
+	@Override
+	public int checkLogin(String id, String pwd) {
+		Map<String, String> paramMap = new HashMap<>();
+	    paramMap.put("id", id);
+	    paramMap.put("pwd", pwd);
+		return sql.selectOne("user.check_login", paramMap);
+	}
+	
+	@Override
+	public int checkBen(String id) {
+		return sql.selectOne("user.check_ben", id);
+	}
+
 
 	@Override
 	public User login_user(User user) {
@@ -149,5 +165,8 @@ public class UserDaoImpl implements UserDao {
 	public void chatting_add(Chat item) {
 		sql.insert("user.chatting_add",item);		
 	}
+
+	
+	
 
 }

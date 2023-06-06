@@ -5,16 +5,32 @@
 <mapper namespace="work">
 	<select id="youthlist_select" resultType="User">
 		SELECT id, name, hyp, phone
-		FROM user
-		ORDER BY name desc
+		FROM user		
+		WHERE id not in (select user_id from `match`) and author != 1;
 	</select>
 	<select id="youthlist_total" resultType="Integer">
 		SELECT COUNT(*) FROM user
+		where id not in (select user_id from `match`)
 	</select>
 	<select id="oldlist_select" resultType="Old">
-		SELECT name, hyp
+		SELECT s_id, name, hyp
 		FROM old
+		where work_id=#{id}
 		ORDER BY name desc
+
+	</select>
+	
+	<select id ="check_login" resultType="Integer">
+		SELECT COUNT(*)
+		FROM work
+		WHERE id=#{id} AND pwd=#{pwd}
+	</select>
+	
+	<select id ="check_access" resultType="Integer">
+		SELECT status
+		FROM work
+		WHERE id=#{id}
+
 	</select>	
 	
 	<select id="oldlist_total" resultType="Integer">
@@ -23,6 +39,7 @@
 	
 	<select id="alllist_total" resultType="Integer">
 		SELECT COUNT(*) FROM old
+		
 		</select>
 	<select id="login" resultType="Work">
 		SELECT *
@@ -47,12 +64,26 @@
 		FROM old o
 		LEFT JOIN `match` m ON (m.s_id = o.s_id)
 		LEFT JOIN user y ON (m.user_id = y.id)
+		where o.work_id=#{id}
 
 	</select>
 	<select id="oldlist_item" resultType="Old">
-		SELECT s_id from old;
+		
+		select s_id, name, hyp
+		from old
+		where s_id = #{id}
 	</select>	
-	
+	<select id="old_item" resultType="Old">
+		
+		select s_id, name, hyp
+		from old
+		where s_id = #{id}
+	</select>	
+	<insert id="old_insert">
+	INSERT INTO old(s_id, name, hyp, work_id)
+		VALUES(#{sId}, #{name}, #{hyp}, #{workId})
+		
+	</insert>
 	<insert id="match_insert">
 	INSERT INTO `match`(s_id, user_id)
 		VALUES(#{sid}, #{yid})
@@ -61,4 +92,17 @@
 		DELETE FROM `match`
 		WHERE id = #{matchid}
 	</delete>
+	<update id="work.update_old">
+		UPDATE old
+		SET name = #{name}, hyp = #{hyp}
+		WHERE s_id = #{sId}
+	</update>
+	<delete id="olddelete">
+		DELETE FROM old
+		WHERE s_id = #{sId}
+	</delete>
+	<insert id="report_insert">
+	INSERT INTO report(title,content,date, user_id, work_id)
+	values (#{title},#{content},NOW(),#{userId}, #{workId})
+	</insert>
 </mapper>

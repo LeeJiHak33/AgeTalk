@@ -61,9 +61,9 @@ public class RootController {
 	public String login_user() {
 		return "login_user";
 	}
-
+	
 	@PostMapping("/login_user")
-	public String login_user(Model model, User item, HttpSession session) {
+	public String login_user(User item, HttpSession session ,Model model) {
 		if (u_service.login_user(item)) {
 
 			session.setAttribute("user", item);
@@ -72,9 +72,9 @@ public class RootController {
 			session.removeAttribute("target_url");
 			System.out.println("targetUrl" + targetUrl);
 			if (targetUrl == null) {
-				return "redirect:/";
+				return "redirect:.";
 			} else {
-				return "redirect:/" + targetUrl;
+				return "redirect:" + targetUrl;
 			}
 
 		} else {
@@ -92,6 +92,23 @@ public class RootController {
 		else
 			return "FAIL";
 	}
+	
+	
+	@ResponseBody
+	@GetMapping("/checkLogin/{id}/{pwd}")
+	public String checkUserLogin(@PathVariable String id, @PathVariable String pwd) {
+	    boolean isLoginSuccess = u_service.checkLogin(id, pwd);
+	    boolean isUserBen = u_service.checkBen(id);
+
+	    if (isLoginSuccess) {
+	        return "OK";
+	    } else if (isUserBen) {
+	        return "STOP";
+	    } else {
+	        return "FAIL";
+	    }
+	}
+	
 
 	@GetMapping("/login_work")
 	public String login_work() {
@@ -116,6 +133,21 @@ public class RootController {
 			return "redirect:login_work";
 		}
 
+	}
+	
+	@ResponseBody
+	@GetMapping("/checkWorkLogin/{id}/{pwd}")
+	public String checkWorkLogin(@PathVariable String id, @PathVariable String pwd) {
+	    boolean isLoginSuccess = w_service.checkWorkLogin(id, pwd);
+	    boolean isWorkAccess = w_service.checkAccess(id);
+
+	    if (isLoginSuccess) {
+	        return "OK";
+	    } else if (isWorkAccess) {
+	        return "STOP";
+	    } else {
+	        return "FAIL";
+	    }
 	}
 
 	@GetMapping("/signup_work")
@@ -177,9 +209,10 @@ public class RootController {
 		u_service.update_user(item);
 
 		session.setAttribute("user", item);
-
 		return item;
 	}
+	
+	
 
 	@RequestMapping("/out/{id}")
 	public String out(@PathVariable String id, HttpSession session) {

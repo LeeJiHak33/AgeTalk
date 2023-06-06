@@ -81,7 +81,7 @@ header .menu_wrap .sub_list {
 						<tbody id="list" class="table-group-divider">
 							<c:if test="${list.size() < 1 }">
 								<tr class="">
-									<td colspan="5">등록된 사용자 없습니다.</td>
+									<td colspan="6">등록된 사용자 없습니다.</td>
 								</tr>
 							</c:if>
 							<c:forEach items="${list}" var="item">
@@ -113,7 +113,9 @@ header .menu_wrap .sub_list {
 													<div>${item.yhyp}<span>%</span>
 													<td>채팅 바로가기</td>
 													<td><a href="/${item.matchid}/work/youthlist/delete"><button
-													class="del_btn">매칭해제</button></a></td>
+													class="del_btn">매칭해제</button></a>
+													<a href="/${item.yid}/work/report"><button
+													class="youthlist_btn">신고</button></a></td>
 													</div>
 												</div>
 											</div>
@@ -140,6 +142,7 @@ header .menu_wrap .sub_list {
             progressBar.style.backgroundColor = '#0040ff';
         }
     });
+   
 </script>
 					<jsp:include page="./maninsert.jsp"></jsp:include>
 				</div>
@@ -154,6 +157,7 @@ header .menu_wrap .sub_list {
 		<jsp:include page="../pagenation.jsp"></jsp:include>
 	</div>
 	<jsp:include page="../footer.jsp"></jsp:include>
+	
 </body>
 
 </html>

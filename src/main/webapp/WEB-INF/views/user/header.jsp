@@ -22,7 +22,7 @@
             <li><a href="../../user/explain" style="text-decoration: none">소개</a></li>
             <li>
              <c:if test="${sessionScope.user == null}">
-              <a href="../user/diagnosis/admin" style="text-decoration: none; cursor: pointer"
+              <a href="../user/diagnosis/1" style="text-decoration: none; cursor: pointer"
                 >채팅하기
                 </a>
               </c:if>
@@ -112,7 +112,12 @@
               </div>
               <div class="modal-notice">
                 <p class="text_gray">공지사항</p>
-                <p class="notice_title"><a href="../../user/notice" style="color:black;">${notice.title}</a></p>
+                <c:if test="${notice.title eq null}">
+                	<p class="notice_title">등록된 공지사항이 없습니다.</p>
+                </c:if>
+                <c:if test="${notice.title != null}">
+           	     <p class="notice_title"><a href="../../user/notice" style="color:black;">${notice.title}</a></p>
+                </c:if>
                 <p style="margin-left: auto">
                   <a
                     href="../user/notice"

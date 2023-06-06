@@ -62,5 +62,9 @@ public interface UserDao {
 
 	void chatting_add(Chat item);
 
+	int checkLogin(String id, String pwd);
+
+	int checkBen(String id);
+
 
 }

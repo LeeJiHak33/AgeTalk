@@ -4,7 +4,7 @@ public class Old {
 	private String sId;
 	private int hyp;
 	private String name;
-	private int workId;
+	private String workId;
 	
 	public String getsId() {
 		return sId;
@@ -24,11 +24,12 @@ public class Old {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getWorkId() {
+	public String getWorkId() {
 		return workId;
 	}
-	public void setWorkId(int workId) {
+	public void setWorkId(String workId) {
 		this.workId = workId;
 	}
+	
 	
 }
