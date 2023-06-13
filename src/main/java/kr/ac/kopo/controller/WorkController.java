@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,7 +39,7 @@ public class WorkController {
 	 */				
 	
 	@RequestMapping("/oldlist")
-	public String old(Model model, @SessionAttribute Work work, WorkPager pager) {
+	public String old(Model model, @SessionAttribute Work work, @ModelAttribute("pager") WorkPager pager) {
 		pager.setId(work.getId()); 
 		List<Old> list = service.oldlist(pager);		
 		model.addAttribute("list", list);
@@ -46,7 +47,7 @@ public class WorkController {
 	}
 	
 	@RequestMapping("/managelist")
-	public String manage(Model model, @SessionAttribute Work work, WorkPager pager) {
+	public String manage(Model model, @SessionAttribute Work work, @ModelAttribute("pager") WorkPager pager) {
 		pager.setId(work.getId());
 		
 		List<Manage> list = service.alllist(pager);	    
