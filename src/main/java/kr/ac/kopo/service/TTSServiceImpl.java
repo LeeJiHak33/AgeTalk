@@ -23,12 +23,13 @@ public class TTSServiceImpl implements TTSService {
 
 	
 	@Override
-	public File add(Chat item) {
+	public String add(Chat item) {
 		File f = null;
+		 String tempname ="";
 		String clientId = "c05uw5m8sn";//애플리케이션 클라이언트 아이디값";
         String clientSecret = "67HWPFsMjWKnJCbCnjYShpP6FACDUjyejGrJ5eLd";//애플리케이션 클라이언트 시크릿값";
         try {
-            String text = URLEncoder.encode(item.getContent(), "UTF-8"); // 13자
+            String text = URLEncoder.encode(item.getContent(), "UTF-8"); 
             String apiURL = "https://naveropenapi.apigw.ntruss.com/tts-premium/v1/tts";
             URL url = new URL(apiURL);
             HttpURLConnection con = (HttpURLConnection)url.openConnection();
@@ -49,7 +50,7 @@ public class TTSServiceImpl implements TTSService {
                 int read = 0;
                 byte[] bytes = new byte[1024];
                 // 랜덤한 이름으로 mp3 파일 생성
-                String tempname = Long.valueOf(new Date().getTime()).toString();
+                tempname = Long.valueOf(new Date().getTime()).toString();
                 f = new File(uploadPath+tempname + ".mp3");
                 f.createNewFile();
                 OutputStream outputStream = new FileOutputStream(f);
@@ -72,7 +73,7 @@ public class TTSServiceImpl implements TTSService {
         } catch (Exception e) {
             System.out.println(e);
         }
-        return f;
+        return tempname+".mp3";
 	}
 
 }

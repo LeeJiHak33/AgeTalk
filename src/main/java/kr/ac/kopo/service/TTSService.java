@@ -6,6 +6,6 @@ import kr.ac.kopo.model.Chat;
 
 public interface TTSService {
 
-	File add(Chat item);
+	String add(Chat item);
 
 }

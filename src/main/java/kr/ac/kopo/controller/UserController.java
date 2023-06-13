@@ -47,8 +47,10 @@ public class UserController {
 	@PostMapping("/chatting_add")
 	public Chat chatting_add(@RequestBody Chat item) {
 		System.out.println("dfsfs"+item.getContent());
+		String fileName =ttsService.add(item);
+		item.setAttach(fileName);
 		if(service.chatting_add(item)) {
-			File f =ttsService.add(item);
+		
 			
 			return item;
 		}else {
