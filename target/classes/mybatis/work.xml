@@ -6,7 +6,8 @@
 	<select id="youthlist_select" resultType="User">
 		SELECT id, name, hyp, phone
 		FROM user		
-		WHERE id not in (select user_id from `match`) and author != 1;
+		WHERE id not in (select user_id from `match`) and author != 1
+		LiMIT #{offset},#{perPager};
 	</select>
 	<select id="youthlist_total" resultType="Integer">
 		SELECT COUNT(*) FROM user
@@ -17,7 +18,7 @@
 		FROM old
 		where work_id=#{id}
 		ORDER BY name desc
-
+		LiMIT #{offset},#{perPager};
 	</select>
 	
 	<select id ="check_login" resultType="Integer">
@@ -35,11 +36,13 @@
 	
 	<select id="oldlist_total" resultType="Integer">
 		SELECT COUNT(*) FROM old
+		where work_id=#{id}
+		
 	</select>
 	
 	<select id="alllist_total" resultType="Integer">
 		SELECT COUNT(*) FROM old
-		
+		where work_id=#{id}
 		</select>
 	<select id="login" resultType="Work">
 		SELECT *
@@ -65,7 +68,7 @@
 		LEFT JOIN `match` m ON (m.s_id = o.s_id)
 		LEFT JOIN user y ON (m.user_id = y.id)
 		where o.work_id=#{id}
-
+LiMIT #{offset},#{perPager}
 	</select>
 	<select id="oldlist_item" resultType="Old">
 		
