@@ -1,0 +1,11 @@
+speechrecognizer 라이브러리 추가로 stt기능 추가완료
+인스턴스 생성
+채팅치면은 tts로 변환돼서 음성파일로 변경 - 했음
+해당 파일을 파이썬으로 읽는 방법
+tts 클로바 api로 구현 완료
+스프링이랑 파이썬 코딩을 둘다 해야함
+https://dkswngus7.tistory.com/24
+https://lngnat.tistory.com/entry/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%9D%8C%EC%84%B1-%ED%85%8D%EC%8A%A4%ED%8A%B8-%EB%B3%80%ED%99%98-SpeechRecognizer-%EC%82%AC%EC%9A%A9-how-to-convert-speech-to-text
+마리아디비를 파이썬에 라이브러리 추가해서 구현 완료
+db에 값 넘기기는 성공
+db에 stt한 결과값을 content에 넣기 || 성공
