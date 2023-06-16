@@ -21,6 +21,9 @@
 	.off{
 		
 	}
+	.serarch_btn span{
+		display:none;
+	}
 </style>
 </head>
 <body>
@@ -47,6 +50,10 @@
 			<button class="close"></button>
 	</header>
 	<div class="layout">
+		<audio id="audioContainer"> <!-- audio play를 위함 -->
+        	<source id="audioSource" src="" /> <!-- audio 파일 -->
+        	Your browser does not support the audio format.
+      	</audio>
 		<div class="chatting_list">
 			<c:forEach items="${list }" var="item" varStatus="status_item">
 				<c:if test="${list.size()<= 1 }">
@@ -81,7 +88,7 @@
 					<div class="other_chatting">
 						<p>${item.content }</p>
 					</div>
-					<button class="speaker_btn"></button>
+					<button class="speaker_btn"><span></span></button>
 				</div>
 				</c:if>
 				<c:if test="${item.status == 0 }">

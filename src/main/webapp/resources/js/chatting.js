@@ -175,7 +175,23 @@ $(document).ready(function () {
         $(".chatting").val('');
         $(".chatting").prop('disabled',true)
     });
-  });  
+  }); 
+
+  const myAudio=document.querySelector('#audioContainer');
+  $(".speaker_btn").click(function(){
+    console.log("버튼눌림");
+    //let attach=$(".speaker_btn span");
+    const source =document.querySelector('#audioSource');
+    source.src = `/mp3/1685940566325.mp3`;
+    myAudio.load();
+    myAudio.oncanplaythrough=function(){
+      myAudio.play();
+    }
+    
+
+    
+    
+  }); 
 });
 function dateFormat(){
     let dateF=new Date();
