@@ -147,6 +147,6 @@
 	</select>
 	
 	<insert id="chatting_add">
-		insert into chat (date,content,status,match_id) values (now(),#{content},0,#{matchId})
+		insert into chat (date,content,attach,status,match_id) values (now(),#{content},#{attach},0,#{matchId})
 	</insert>
 </mapper>

@@ -205,3 +205,4 @@ header .header_wrap .search_btn_wrap .search_btn {
   border: none;
   margin-left: 10px;
 }
+input:focus {outline: none;} 

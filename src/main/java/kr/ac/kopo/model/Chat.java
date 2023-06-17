@@ -7,6 +7,7 @@ public class Chat {
 	private int id;
 	private Date date;
 	private String content;
+	private String attach;
 	private int status;
 	private int matchId;
 	public int getId() {
@@ -26,6 +27,12 @@ public class Chat {
 	}
 	public void setContent(String content) {
 		this.content = content;
+	}
+	public String getAttach() {
+		return attach;
+	}
+	public void setAttach(String attach) {
+		this.attach = attach;
 	}
 	public int getStatus() {
 		return status;

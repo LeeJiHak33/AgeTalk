@@ -68,7 +68,6 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public List<Notice> notice(Pager pager) {
-		// TODO Auto-generated method stub
 		return sql.selectList("user.notice",pager);
 	}
 
@@ -145,25 +144,25 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public User login_admin(User item) {
-		// TODO Auto-generated method stub
+		
 		return sql.selectOne("user.login_admin", item);
 	}
 
 	@Override
 	public void notice_viewCount(int id) {
-		// TODO Auto-generated method stub
+	
 		sql.update("user.notice_viewCount", id);
 	}
 
 	@Override
 	public List<Chat> chat_list(int matchId) {
-		// TODO Auto-generated method stub
+		
 		return sql.selectList("user.chat_list", matchId);
 	}
 
 	@Override
-	public void chatting_add(Chat item) {
-		sql.insert("user.chatting_add",item);		
+	public int chatting_add(Chat item) {
+		return sql.insert("user.chatting_add",item);		
 	}
 
 	
