@@ -19,7 +19,7 @@ import kr.ac.kopo.model.Chat;
 @Service
 public class TTSServiceImpl implements TTSService {
 
-	final String uploadPath = "d://mp3/";
+	final String uploadPath = "/home/team1/recordupload/";
 
 	
 	@Override
