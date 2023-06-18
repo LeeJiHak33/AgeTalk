@@ -1,10 +1,11 @@
 package kr.ac.kopo.service;
 
+
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import kr.ac.kopo.dao.UserDao;
 import kr.ac.kopo.model.Comment;
 import kr.ac.kopo.model.Notice;
@@ -18,6 +19,8 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	UserDao dao;
+	
+	
 
 	@Override
 	public List<Qna> qna(Pager pager) {
@@ -218,9 +221,16 @@ public class UserServiceImpl implements UserService {
 		return dao.chat_list(matchId);
 	}
 
+	
 	@Override
-	public void chatting_add(Chat item) {
-		dao.chatting_add(item);
+	public boolean chatting_add(Chat item) {
+		
+		if(dao.chatting_add(item) > 0) {
+			
+			return true;
+		}else {
+			return false;
+		}
 		
 	}
 
