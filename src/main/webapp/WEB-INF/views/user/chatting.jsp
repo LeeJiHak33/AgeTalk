@@ -21,7 +21,7 @@
 	.off{
 		
 	}
-	.serarch_btn span{
+	.speaker_btn span{
 		display:none;
 	}
 </style>
@@ -88,7 +88,10 @@
 					<div class="other_chatting">
 						<p>${item.content }</p>
 					</div>
-					<button class="speaker_btn"><span></span></button>
+					<c:if test="${item.attach != null }">
+						<button class="speaker_btn"><span>${item.attach }</span></button>
+					</c:if>
+					
 				</div>
 				</c:if>
 				<c:if test="${item.status == 0 }">
