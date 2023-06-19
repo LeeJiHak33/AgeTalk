@@ -7,11 +7,12 @@
 		SELECT id, name, hyp, phone
 		FROM user		
 		WHERE id not in (select user_id from `match`) and author != 1 and status = 0 and inspection != 0
+		ORDER BY name desc
 		LiMIT #{offset},#{perPager};
 	</select>
 	<select id="youthlist_total" resultType="Integer">
 		SELECT COUNT(*) FROM user
-		where id not in (select user_id from `match`)
+		where id not in (select user_id from `match`) and author != 1 and status = 0 and inspection != 0
 	</select>
 	<select id="oldlist_select" resultType="Old">
 		SELECT s_id, name, hyp
@@ -68,7 +69,7 @@
 		LEFT JOIN `match` m ON (m.s_id = o.s_id)
 		LEFT JOIN user y ON (m.user_id = y.id)
 		where o.work_id=#{id}
-LiMIT #{offset},#{perPager}
+	LiMIT #{offset},#{perPager}
 	</select>
 	<select id="oldlist_item" resultType="Old">
 		

@@ -136,17 +136,8 @@
                     aria-label="Close"
                   ></button>
                 </div>
-                <div class="modal-header">
+              
                 
-                  <p class="modal-title text-dark">
-                  정보 수정                 
-                    
-                  </p>
-                </div>
-                <div class="modal-header" style="display: block">
-                  <p class="modal-title text_gray">프로필</p>
-                  <p class="text-dark nickname" data-table="name"></p>
-                </div>
                 <div class="modal-header" style="display: block">
                   <p class="modal-title text_gray">계정 정보</p>
                   <div class="info">
