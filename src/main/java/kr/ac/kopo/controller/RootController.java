@@ -126,7 +126,7 @@ public class RootController {
 			if (targetUrl == null) {
 				return "redirect:/work/managelist";
 			} else {
-				return "redirect:/" + targetUrl;
+				return "redirect:" + targetUrl;
 			}
 
 		} else {

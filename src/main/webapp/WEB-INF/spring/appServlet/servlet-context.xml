@@ -44,6 +44,13 @@
 			<exclude-mapping path="/user/chatting_add/**"/>
 			<beans:bean class="kr.ac.kopo.interceptor.UserInterceptor"></beans:bean>
 		</interceptor>
+		
+		<interceptor>
+			<mapping path="/work/**"/>
+			
+			
+			<beans:bean class="kr.ac.kopo.interceptor.WorkInterceptor"></beans:bean>
+		</interceptor>
 	</interceptors>
 	
 	
