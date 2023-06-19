@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt"%>   
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,8 +13,15 @@
     <script src="/resources/js/chatting.js"></script>
     <link rel="stylesheet" href="/resources/css/chatting.css" />
     <link rel="stylesheet" href="/resources/css/index.css" />
-   
     <link rel="shortcut icon" href="/resources/image/favicon/favicon.ico"> <!--추가-->
+    <style type="text/css">
+	.off{
+		
+	}
+	.speaker_btn span{
+		display:none;
+	}
+</style>
 </head>
 <body>
 <header>
@@ -59,7 +68,7 @@
 							</div>
 						</div>
 					</c:if>
-					<c:if test="${status_item.count>=2 }">
+					<c:if test="${status_item.count >= 2 }">
 						<fmt:formatDate var="prev_date" value="${list.get(status_item.count-2).date}" pattern="yyyy.MM.dd" />
 						<fmt:formatDate var="now_date" value="${item.date}" pattern="yyyy.MM.dd" />
 						<c:if test="${prev_date != now_date }">
@@ -74,6 +83,7 @@
 				<c:if test="${item.status == 1 }">
 					<div class="other_chatting_wrap">
 					<div class="other_chatting">
+				
 						<p>${item.content }</p>
 					</div>
 					<c:if test="${item.attach != null }">
