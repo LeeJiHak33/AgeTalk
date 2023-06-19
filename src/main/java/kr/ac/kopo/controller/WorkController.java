@@ -15,12 +15,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
+import kr.ac.kopo.model.Chat;
 import kr.ac.kopo.model.Manage;
 import kr.ac.kopo.model.Old;
 
 import kr.ac.kopo.model.Work;
 
 import kr.ac.kopo.pager.WorkPager;
+import kr.ac.kopo.service.UserService;
 import kr.ac.kopo.service.WorkService;
 
 @Controller
@@ -31,6 +33,9 @@ public class WorkController {
 	@Autowired
 	WorkService service;
 
+	
+	@Autowired
+	UserService userService;
 	/*
 	 * @RequestMapping("/youthlist") public String youth() {
 	 * 
@@ -93,8 +98,10 @@ public class WorkController {
 		return path + "/maninsert";
 	}
 	
-	@GetMapping("/chatting")
-	public String chatting() {
+	@GetMapping("/chatting/{matchId}")
+	public String chatting(@PathVariable int matchId, Model model) {
+		List<Chat> list =userService.chat_list(matchId);
+		model.addAttribute("list", list);
 		return path + "chatting";	
 	}
 	

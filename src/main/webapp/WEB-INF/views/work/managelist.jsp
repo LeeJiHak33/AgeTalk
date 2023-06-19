@@ -40,11 +40,13 @@ header .menu_wrap .sub_list {
 </style>
 
 <script>
-		 $(document).ready(function () {
-    $(".popup").click(function () {
+$(document).ready(function () {
+    $(".popup").click(function (e) {
+    	console.log(e.target.id);
+    	const matchId=e.target.id;
       console.log("팝업");
       window.open(
-        "../work/chatting",
+        "../work/chatting/"+matchId,
         "_blank",
         "top=100, left=300, width=430, height=750, toolbar=no, menubar=no, location=no, status=no,  resizable=no"
       ).onresize = (_) => {
@@ -111,7 +113,12 @@ header .menu_wrap .sub_list {
 												<div id="my_div" class="progress-bar" role="progressbar"
 													aria-valuemin="0" aria-valuemax="100">
 													<div>${item.yhyp}<span>%</span>
-													<td>채팅 바로가기</td>
+													<td >
+														<c:if test="${item.matchid != 0 }">
+														
+															<a class="popup" id="${item.matchid}">채팅 바로가기</a>
+														</c:if>
+													</td>
 													<td><a href="/${item.matchid}/work/youthlist/delete"><button
 													class="del_btn">매칭해제</button></a>
 													<a href="/${item.yid}/work/report"><button
