@@ -178,11 +178,13 @@ $(document).ready(function () {
   }); 
 
   const myAudio=document.querySelector('#audioContainer');
-  $(".speaker_btn").click(function(){
+  $(".speaker_btn").click(function(e){
     console.log("버튼눌림");
-    //let attach=$(".speaker_btn span");
+    const button=e.target;
+    let attach=button.querySelector('span').innerText;
+    console.log(attach);
     const source =document.querySelector('#audioSource');
-    source.src = `/mp3/1685940566325.mp3`;
+    source.src = `/home/team1/recordupload/${attach}`;
     myAudio.load();
     myAudio.oncanplaythrough=function(){
       myAudio.play();

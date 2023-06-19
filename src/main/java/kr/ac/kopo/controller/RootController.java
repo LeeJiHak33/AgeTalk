@@ -24,7 +24,7 @@ import kr.ac.kopo.service.WorkService;
 
 @Controller
 public class RootController {
-	final String uploadPath = "d://upload/";
+	final String uploadPath = "/home/team1/photoupload/";
 
 	@Autowired
 	WorkService w_service;

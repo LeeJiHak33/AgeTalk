@@ -11,6 +11,32 @@
     <link rel="stylesheet" href="/resources/css/header.css" />
     <link rel="stylesheet" href="/resources/css/index.css" />
     <link rel="stylesheet" href="/resources/css/modal.css" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript">
+ $(document).ready(function () {
+    	
+    	//const matchId=$('.matchId').text();
+    	const matchId=${sessionScope.user.matchId};
+    	console.log("df",matchId);
+    		
+    	$(".popup").click(function () {
+      	 	if(matchId==0){
+      	 		alert("매칭을 기다려주세요");
+      	 	}else{
+      	 	 console.log("팝업");
+         	  window.open(
+         	  "../user/chatting/"+matchId,
+         	  "_blank",
+         	  "top=100, left=300, width=430, height=750, toolbar=no, menubar=no, location=no, status=no,  resizable=no"
+         	  ).onresize = (_) => {
+         	  	popupWindow.resizeTo(430, 750);
+         	  };
+      	 	}
+      	});   		
+    		
+    		
+      });
+    </script>
   </head>
  <body>
    <header style="position: absolute; z-index: 1">
