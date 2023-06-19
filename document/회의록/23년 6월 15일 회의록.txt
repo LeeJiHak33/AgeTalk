@@ -9,6 +9,7 @@ https://lngnat.tistory.com/entry/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%9D%8C%EC%84%B1-
 마리아디비를 파이썬에 라이브러리 추가해서 구현 완료
 db에 값 넘기기는 성공
 db에 stt한 결과값을 content에 넣기 || 성공
+<<<<<<< Updated upstream
 
 
 
@@ -26,3 +27,6 @@ db에 stt한 결과값을 content에 넣기 || 성공
 
 8. 파이썬으로 서버에 파일 올리기
 9. 스프링으로 서버에 파일 올리기
+=======
+aws 신청
+>>>>>>> Stashed changes
