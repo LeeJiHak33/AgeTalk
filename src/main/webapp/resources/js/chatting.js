@@ -184,7 +184,7 @@ $(document).ready(function () {
     let attach=button.querySelector('span').innerText;
     console.log(attach);
     const source =document.querySelector('#audioSource');
-    source.src = `/home/team1/recordupload/${attach}`;
+    source.src = `/mp3/${attach}`;
     myAudio.load();
     myAudio.oncanplaythrough=function(){
       myAudio.play();
